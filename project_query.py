@@ -3,6 +3,7 @@ import json
 import argparse
 import tiktoken
 import random
+from pathlib import Path
 
 # Load configuration from config/config.json
 def load_config():
@@ -22,13 +23,28 @@ def count_tokens(text):
     """Count tokens in text using tiktoken."""
     return len(ENCODING.encode(text))
 
-# Define a prompt template that includes background information
-PROMPT_TEMPLATE = """
+def load_project_background():
+    """
+    Loads the main README.md file as the project background.
+    If reading fails, returns a fallback message.
+    """
+    readme_path = Path(__file__).parent / "README.md"
+    try:
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            return f.read().strip()
+    except Exception as e:
+        print(f"Error loading project background from {readme_path}: {e}")
+        return "Project background not available."
+
+PROJECT_BACKGROUND = load_project_background()
+
+# Define a prompt template that includes the dynamically loaded project background.
+PROMPT_TEMPLATE = f"""
 Project Background:
-This project is an ambitious tabletop role-playing game that integrates high-level strategic simulation with AI-based procedural generation. The system is designed to manage dynamic narratives, large-scale battles (including land, sea, and air engagements), and detailed management of characters, organizations, and events. By leveraging a robust simulation engine alongside AI-powered narrative generation, the project aims to produce a living world where every decision is enriched with context-specific storytelling.
+{PROJECT_BACKGROUND}
 
 User Query:
-{user_prompt}
+{{user_prompt}}
 """
 
 def build_prompt_header(user_prompt):
@@ -94,7 +110,8 @@ def gemini_assess_file(content, user_prompt, config):
             error_message = str(e).lower()
             # Check for rate limit error indicators: 429 status code or RESOURCE_EXHAUSTED keyword
             if "429" in error_message or "resource_exhausted" in error_message:
-                logging.warning("Rate limit exceeded. Waiting 60 seconds before retrying...")
+                print("Rate limit exceeded. Waiting 60 seconds before retrying...")
+                import time
                 time.sleep(60)
                 retries -= 1
                 continue  # Try the request again
@@ -134,7 +151,6 @@ def process_file(file_path, user_prompt, config):
     else:
         # In case of unexpected decision, fallback to summarizing.
         return header + content[:1000] + "\n\n"
-
 
 def traverse_and_collect(directory, user_prompt, token_limit, config):
     """
