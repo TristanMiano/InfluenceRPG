@@ -1,0 +1,86 @@
+Below is a first draft of the character creation process for our game. This draft focuses on establishing your character’s core identity and attributes—the foundation upon which all leadership, influence, and strategic decisions will be built.
+
+---
+
+## **Character Creation: First Draft**
+
+### **Step 1: Concept & Background**
+
+Before diving into numbers, take a moment to envision who your character is. Are they a retired military general whose commanding presence still turns heads, a charismatic public figure whose words move nations, or perhaps an innovative entrepreneur who reshaped their industry? Consider the following:
+
+- **Concept:** Write a short description (a few sentences) of your character’s identity, background, and sphere of influence.  
+- **Role & Legacy:** Think about how your past has shaped you. Have you got the physical legacy of youth or combat training? Do you rely on persuasive charm, strategic planning, or a distinctive moral stance?  
+- **Personal Goals:** Note a few key ambitions or challenges your character might face. These goals will influence how you allocate your strengths later in the process.
+
+### **Step 2: Core Attributes Overview**
+
+Our game uses six core attributes designed to capture the spectrum of influence. These are:
+
+1. **Stature** – The enduring impact of your physical legacy. Even if you’re no longer on the battlefield, your past achievements and physical presence continue to command respect.  
+2. **Charisma** – Your natural magnetism and persuasive force, whether in public speaking, media, or one-on-one interactions.  
+3. **Tactics** – Your ability to devise and execute effective strategies in complex, high-pressure situations.  
+4. **Gravitas** – The ethical weight and moral authority that influence how others perceive and trust you.  
+5. **Resolve** – Your inner determination and mental toughness, crucial for enduring setbacks and making hard decisions.  
+6. **Ingenuity** – Your capacity for creative problem-solving and innovation—staying ahead in a rapidly changing world.
+
+Each attribute starts with a baseline score of **10**, representing the average level of ability. The numbers above or below 10 will affect the outcome of various challenges and actions in the game.
+
+### **Step 3: Assigning Attribute Scores**
+
+You have a pool of points to distribute among your six attributes. (Note: In future iterations, we can offer multiple methods, such as rolling dice or point-buy systems. For now, assume you have a fixed number of points or a standard array to assign.)
+
+- **Default Value:** Every attribute begins at 10.
+- **Customization:** Decide where your character excels and where they might be less dominant. For example, a former soldier might have higher Stature and Tactics, while a media mogul might lean toward Charisma and Ingenuity.
+
+#### **Example:**
+Imagine a character who is a charismatic military strategist with a strong ethical core but less emphasis on innovation. Their attribute allocation might look like this:
+- **Stature:** 12 (A touch above average, reflecting a commanding presence built on a history of physical training.)
+- **Charisma:** 14 (Highly persuasive and influential in social settings.)
+- **Tactics:** 16 (Exceptional strategic insight and battlefield acumen.)
+- **Gravitas:** 14 (Strong moral authority and ethical influence.)
+- **Resolve:** 12 (Good mental toughness and determination.)
+- **Ingenuity:** 10 (Average creativity and problem-solving ability.)
+
+### **Step 4: Calculating Modifiers**
+
+For every 2 points your attribute score is above or below the average of 10, your character receives a modifier. This modifier will adjust the results of your dice rolls when you attempt tasks related to that attribute. The calculation is straightforward:
+
+- **Modifier Formula:**  
+  \[
+  \text{Modifier} = \frac{\text{Attribute Score} - 10}{2} \quad (\text{round down})
+  \]
+
+#### **Example Calculations:**
+
+- **Stature (12):**  
+  \((12 - 10) / 2 = +1\) modifier.
+- **Charisma (14):**  
+  \((14 - 10) / 2 = +2\) modifier.
+- **Tactics (16):**  
+  \((16 - 10) / 2 = +3\) modifier.
+- **Gravitas (14):**  
+  \((14 - 10) / 2 = +2\) modifier.
+- **Resolve (12):**  
+  \((12 - 10) / 2 = +1\) modifier.
+- **Ingenuity (10):**  
+  \((10 - 10) / 2 = +0\) modifier.
+
+These modifiers will come into play during both narrative challenges and strategic conflict resolutions, helping you determine the likelihood of success when you rely on your character’s innate abilities.
+
+### **Step 5: Integrating Your Attributes into Gameplay**
+
+Once you have your attributes and modifiers established, they will influence many aspects of the game:
+- **Task Resolution:** When attempting any action related to one of these attributes—whether negotiating a high-stakes deal (Charisma) or planning a complex military maneuver (Tactics)—you’ll roll dice and add the relevant modifier.
+- **Narrative Influence:** Your attribute scores help define how other characters perceive you. A high Gravitas might mean that your opinions carry extra weight in political or ethical debates.
+- **Strategic Decisions:** In broader strategic scenarios (like managing an organization or leading an army), these attributes will factor into the outcomes of your decisions, affecting both immediate encounters and long-term campaign success.
+
+### **Step 6: Final Touches & Next Steps**
+
+After setting your attributes and calculating your modifiers:
+- **Refine Your Background:** Adjust your backstory to reflect the choices you made during attribute allocation. Emphasize why your character is strong in certain areas and perhaps hint at challenges they might face due to lower scores in other aspects.
+- **Choose Additional Elements:** In subsequent stages of character creation, you’ll likely select skills, equipment, and other resources that further define your influence. These choices will also interact with your core attributes.
+- **Review & Balance:** Ensure that your attribute distribution matches your character concept. Consider how each attribute contributes to your overall narrative and strategic potential.
+
+---
+
+This first draft establishes the basic framework for your character’s creation, from conceptualization to the technical details of attribute scores and modifiers. It lays the foundation for a system where every influential decision, strategic maneuver, or personal interaction is backed by a clear, quantifiable measure of your character’s inherent abilities. Future iterations of the character creation process will expand upon this foundation by incorporating skills, specializations, and additional narrative layers that further bring your influential persona to life.

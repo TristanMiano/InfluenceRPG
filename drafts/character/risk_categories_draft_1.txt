@@ -1,0 +1,274 @@
+Below is a first draft of a mechanical, rule‐based system for your risk/danger mechanic. This draft is written in an algorithmic style (using pseudocode and clear step‐by‐step instructions), and I’ve noted which steps are best served by narrative-based creative input (from players, the game master, or an AI).
+
+---
+
+## **I. Core Concepts & Data Structures**
+
+1. **Risk Levels:**  
+   We define four discrete risk levels as follows:
+   - **Low-Risk:** Level 3  
+   - **Normal:** Level 2  
+   - **High-Risk:** Level 1  
+   - **Critical:** Level 0  
+   
+   *Note:* If a character’s risk level drops below Critical (i.e. becomes -1), the character dies.
+
+2. **Risk Check Intervals:**  
+   The frequency at which a risk check occurs is determined by the current risk level:
+   - **Level 3 (Low-Risk):** Once per **year**  
+   - **Level 2 (Normal):** Once per **month**  
+   - **Level 1 (High-Risk):** Once per **week**  
+   - **Level 0 (Critical):** Once per **day**
+
+3. **Character Object (Partial Example):**
+
+   ```python
+   class Character:
+       def __init__(self, name, risk_level=3):
+           self.name = name
+           self.risk_level = risk_level  # 3 = Low-Risk, 2 = Normal, 1 = High-Risk, 0 = Critical
+           self.is_alive = True
+           # Other attributes (e.g., Resolve, Gravitas) can influence risk modifiers.
+   ```
+
+---
+
+## **II. Risk Check Algorithm**
+
+### **A. Scheduling a Risk Check**
+
+Every character should have a scheduled risk check based on their current risk level.
+
+```python
+def schedule_risk_check(character):
+    # Define the interval based on risk_level
+    intervals = {
+        3: "1 year",   # Low-Risk
+        2: "1 month",  # Normal
+        1: "1 week",   # High-Risk
+        0: "1 day"     # Critical
+    }
+    interval = intervals.get(character.risk_level, "undefined")
+    # (Implementation Note: Use your game engine's scheduler to call risk_check(character) after 'interval')
+    print(f"Scheduled risk check for {character.name} in {interval}.")
+```
+
+*— Narrative Input:*  
+*The game master or AI may describe the passage of time and any looming sense of danger as the next risk check interval begins.*
+
+### **B. Performing the Risk Check**
+
+At the scheduled time, run the following algorithm:
+
+```python
+import random
+
+def risk_check(character):
+    if not character.is_alive:
+        return  # No checks for dead characters
+
+    # Step 1: Roll the dice (example: 1d10)
+    roll = random.randint(1, 10)
+    
+    # Step 2: Calculate risk modifiers (could be based on attributes, current situation, etc.)
+    # For now, we use a placeholder function.
+    modifier = calculate_risk_modifier(character)  # Returns an integer value
+    total = roll + modifier
+
+    # Step 3: Define thresholds (these numbers can be adjusted during playtesting)
+    negative_threshold = 4  # Example: If total <= 4, then a negative event occurs
+    positive_threshold = 7  # Example: If total >= 7, then a positive event occurs
+
+    # Step 4: Determine the outcome based on total roll
+    if total <= negative_threshold:
+        process_negative_event(character, total)
+    elif total >= positive_threshold:
+        process_positive_event(character, total)
+    else:
+        process_neutral_event(character, total)
+    
+    # Step 5: Reschedule the next risk check based on the updated risk level
+    schedule_risk_check(character)
+```
+
+#### **Supporting Functions:**
+
+1. **Calculating Risk Modifier:**
+
+   This function can incorporate character attributes (like high Resolve or Gravitas) and situational factors.
+
+   ```python
+   def calculate_risk_modifier(character):
+       # Example: Simple modifier based on character attributes (placeholder)
+       # In practice, modifiers could be the sum of bonuses from Resolve, recent actions, etc.
+       # For now, return 0 for neutrality.
+       return 0
+   ```
+
+2. **Processing a Negative Event:**
+
+   ```python
+   def process_negative_event(character, total):
+       # Lower the risk level by one step
+       character.risk_level -= 1
+       print(f"[NEGATIVE] {character.name} suffers a negative event (roll: {total}). Risk level decreases to {character.risk_level_description()}.")
+       
+       # Narrative Generation (GM/AI input):
+       # - The game master or AI should generate a description of the negative event.
+       #   E.g., “A sudden illness strikes” or “An assassination attempt weakens your defenses.”
+       generate_narrative_event(character, "negative", total)
+       
+       # Check if risk level is below Critical
+       if character.risk_level < 0:
+           character_die(character)
+   ```
+
+3. **Processing a Positive Event:**
+
+   ```python
+   def process_positive_event(character, total):
+       # Increase the risk level by one step, but cap at Low-Risk (level 3)
+       character.risk_level = min(character.risk_level + 1, 3)
+       print(f"[POSITIVE] {character.name} benefits from a positive event (roll: {total}). Risk level increases to {character.risk_level_description()}.")
+       
+       # Narrative Generation (GM/AI input):
+       # - The GM or AI creates a narrative for the positive event.
+       #   E.g., “A stroke of good fortune brings allies to your side.”
+       generate_narrative_event(character, "positive", total)
+   ```
+
+4. **Processing a Neutral Event:**
+
+   ```python
+   def process_neutral_event(character, total):
+       # No change to risk level
+       print(f"[NEUTRAL] {character.name} experiences a neutral event (roll: {total}). Risk level remains {character.risk_level_description()}.")
+       
+       # Optional Narrative:
+       # - A brief narrative description may still be provided.
+       generate_narrative_event(character, "neutral", total)
+   ```
+
+5. **Handling Character Death:**
+
+   ```python
+   def character_die(character):
+       character.is_alive = False
+       print(f"{character.name} has fallen! Risk level dropped below Critical. The character dies.")
+       # Narrative generation:
+       # - The GM or AI should elaborate on the circumstances of the character’s demise.
+       generate_narrative_event(character, "death", None)
+   ```
+
+6. **Helper: Risk Level Description**
+
+   It can be helpful to have a method that returns a text description of the current risk level:
+
+   ```python
+   def risk_level_description(character):
+       descriptions = {
+           3: "Low-Risk",
+           2: "Normal",
+           1: "High-Risk",
+           0: "Critical"
+       }
+       return descriptions.get(character.risk_level, "Undefined")
+       
+   # You might add this as a method in the Character class:
+   Character.risk_level_description = risk_level_description
+   ```
+
+7. **Generating Narrative Events:**
+
+   This function is a placeholder that signals where narrative creativity is required.
+
+   ```python
+   def generate_narrative_event(character, event_type, roll_total):
+       # This function should trigger narrative-based content generation.
+       # Depending on your implementation, it could:
+       #   - Prompt the game master for a description.
+       #   - Call an AI module to generate a detailed narrative.
+       #   - Request player input for what happens next.
+       #
+       # For now, we print a placeholder message.
+       if event_type == "negative":
+           narrative = f"A negative event occurs (roll: {roll_total}). Describe the setback."
+       elif event_type == "positive":
+           narrative = f"A positive event occurs (roll: {roll_total}). Describe the boon."
+       elif event_type == "neutral":
+           narrative = f"Nothing significant happens (roll: {roll_total})."
+       elif event_type == "death":
+           narrative = "The fatal blow is dealt. Describe the dramatic final moments."
+       print(f"Narrative Event for {character.name}: {narrative}")
+   ```
+
+---
+
+## **III. Integrating Action-Based Risk Adjustments**
+
+Apart from the periodic risk checks, player actions can have immediate risk consequences. For example:
+
+```python
+def apply_action_risk(character, action_description, risk_modifier):
+    """
+    Adjusts the risk level based on a specific player action.
+    :param action_description: A narrative description of the action.
+    :param risk_modifier: An integer (positive to improve safety, negative to worsen risk).
+    """
+    print(f"Action taken: {action_description} (Risk modifier: {risk_modifier})")
+    character.risk_level += risk_modifier
+    # Clamp risk_level between -1 and 3
+    if character.risk_level > 3:
+        character.risk_level = 3
+    if character.risk_level < -1:
+        character.risk_level = -1
+    if character.risk_level < 0:
+        character_die(character)
+    else:
+        print(f"{character.name}'s risk level is now {character.risk_level_description()}.")
+```
+
+*— Narrative Input:*  
+*Here, the player and/or GM can collaboratively decide on the description of the risk-altering event (e.g., “A daring escape reduces your risk temporarily” or “A failed negotiation increases your vulnerability”).*
+
+---
+
+## **IV. Summary Flow**
+
+1. **Initialization:**  
+   - Create character(s) with a starting risk level (default is 3, Low-Risk).  
+   - Schedule the first risk check using `schedule_risk_check(character)`.
+
+2. **Periodic Risk Check:**  
+   - At the designated interval (yearly, monthly, weekly, or daily), run `risk_check(character)`.
+   - Roll dice, apply modifiers, and compare against thresholds.
+   - Adjust the risk level accordingly:
+     - **Negative Outcome:** Decrease risk level by 1 (if already at Critical, death occurs).
+     - **Positive Outcome:** Increase risk level by 1 (max at Low-Risk).
+     - **Neutral Outcome:** No change.
+   - Trigger narrative generation for flavor and context.
+   - Reschedule the next risk check based on the updated risk level.
+
+3. **Player-Driven Actions:**  
+   - When a player takes a risky or mitigating action, call `apply_action_risk(character, action_description, risk_modifier)`.
+   - Adjust the risk level immediately and provide narrative context.
+
+4. **Narrative Generation:**  
+   - At key steps (after risk checks, during action adjustments, and on character death), call `generate_narrative_event` to ensure the mechanical events are richly described with narrative input.
+
+---
+
+## **V. Next Steps & Testing**
+
+- **Playtesting:**  
+  Adjust thresholds, modifiers, and time intervals based on gameplay testing to ensure that risk changes are dramatic but fair.
+
+- **Integration:**  
+  Integrate this system with other game mechanics (e.g., resource management, diplomatic interactions) so that risk is interwoven with broader narrative and strategy.
+
+- **Expansion:**  
+  Enhance the narrative generation functions to use templates or AI-driven storytelling that fits your game’s tone.
+
+---
+
+This first-draft algorithm provides a clear, mechanical foundation for a risk-based system that replaces traditional hitpoints. It is designed to be modular and to invite narrative enrichment at critical junctures, ensuring that the gameplay remains both mechanically sound and richly immersive.

@@ -1,0 +1,99 @@
+Below is a detailed specification ("spec") document for a ship modeled after HMS Victory. This spec is intended to serve as a reference file (for example, stored as `reference/military/naval/hms_victory_spec.txt`) and includes both technical data and gameplay-relevant attributes for your RPG. You can adjust values as needed for balance in your game.
+
+---
+
+# Ship Specification: HMS Victory (Model)
+
+## Overview
+HMS Victory is a legendary First Rate ship of the line and flagship of the Royal Navy. Renowned for its formidable firepower, imposing design, and storied history—most notably as Admiral Nelson’s flagship at the Battle of Trafalgar—this vessel epitomizes the might and discipline of 18th-century naval warfare. In our game, HMS Victory (or a similar vessel) serves not only as a potent war machine but also as a symbol of leadership, strategic command, and morale on the high seas.
+
+## Technical Specifications
+
+- **Name:** HMS Victory
+- **Ship Class:** First Rate Ship of the Line
+- **Role:** Flagship, Command Vessel, Naval Warfare
+- **Launched:** 1765
+- **Designer:** Sir Thomas Slade
+- **Builder:** [Historical Builder Name] *(for simulation purposes, assume exemplary British craftsmanship)*
+
+### Dimensions
+- **Overall Length:** ~227 feet (69.1 meters)
+- **Beam (Width):** ~51 feet (15.5 meters)
+- **Draft:** ~23 feet (7 meters)
+- **Displacement:** ~3500 tons
+
+### Crew
+- **Complement:** Approximately 850 men (including officers, sailors, and marines)
+
+### Performance
+- **Sailing Rig:** Fully rigged, three-masted ship with square sails
+- **Speed:** Average speed of 8–9 knots, with the potential for bursts in favorable winds
+- **Maneuverability:** Designed for effective handling despite its size; factors such as turning radius and windward performance are notable for tactical maneuvers
+
+## Armament
+
+HMS Victory was armed to deliver devastating broadside attacks and to dominate naval engagements:
+
+- **Total Guns:** 104
+- **Gun Distribution:**
+  - **Lower Gun Deck:** Approximately 30–32 heavy cannons (typically 32-pounders)
+  - **Middle Gun Deck:** Approximately 28–30 cannons (18 to 24-pounders)
+  - **Upper Gun Deck:** Approximately 28 cannons (12-pounders)
+  - **Quarterdeck & Forecastle:** Additional smaller-caliber guns for anti-personnel support and flexible firepower
+- **Firepower Profile:** Exceptionally high; capable of delivering concentrated, high-volume cannon fire over a broad arc, making it a fearsome opponent in fleet actions
+
+## Structural and Design Attributes
+
+- **Hull Construction:** Robust wooden hull using traditional methods with reinforced frames and multiple layers of timbers to absorb heavy cannon fire.
+- **Damage Resistance:** Exceptional; the ship’s compartmentalized design and layered hull contribute to high resilience against enemy broadsides.
+- **Rigging and Sails:** Extensive, adjustable rigging that allows for variable sail configurations to optimize speed, balance, and handling in different weather conditions.
+- **Aesthetic and Symbolic Value:** As a floating monument of naval prowess, HMS Victory carries significant symbolic weight, influencing morale and command effectiveness in battle.
+
+## Tactical and Operational Attributes (Game Mechanics)
+
+For integration into the strategic RPG, consider incorporating these gameplay attributes:
+
+- **Command Rating:** High  
+  *As a flagship, HMS Victory acts as a command center for fleet operations, providing bonuses to allied vessels and strategic decision-making.*
+
+- **Damage Capacity:** Very High  
+  *The robust hull and compartmentalized design ensure high resistance to damage. In-game, this could translate into elevated hit points or damage thresholds.*
+
+- **Firepower Index:** Extremely High  
+  *With 104 guns distributed over multiple decks, its offensive capability is unparalleled in a fleet action.*
+
+- **Maneuverability Score:** Moderate to High  
+  *Despite its size, superior design and a skilled crew yield respectable maneuverability, affecting turning radius and windward performance in simulations.*
+
+- **Crew Efficiency:** High  
+  *A complement of ~850 ensures rapid reloading, effective damage control, and the capacity to execute complex battle maneuvers.*
+
+- **Logistical Support:** High  
+  *Functions as a mobile base, capable of supporting allied vessels with repairs, resupply, and strategic coordination.*
+
+- **Morale Influence:** Significant  
+  *Its historical legacy and imposing presence boost the morale of friendly forces and can affect enemy willingness to engage.*
+
+- **Special Abilities:**  
+  - **Broadside Barrage:** A concentrated volley that can temporarily overwhelm enemy defenses.  
+  - **Flagship Command:** Enhances the tactical performance of nearby friendly ships.  
+  - **Historical Legacy:** Provides narrative bonuses reflecting its storied past and symbolic impact on naval engagements.
+
+## Historical Context and Narrative Flavor
+
+- **Battle of Trafalgar:**  
+  HMS Victory is best known as Admiral Nelson’s flagship during the Battle of Trafalgar in 1805—a decisive engagement that showcased the ship’s power and the strategic brilliance of its crew.
+
+- **Symbolism:**  
+  Beyond its combat role, HMS Victory represents the pinnacle of naval engineering and the enduring spirit of maritime tradition. Its presence inspires both fear in enemies and pride among allies.
+
+- **Cultural Impact:**  
+  The ship has been immortalized in art, literature, and naval history, making it a perfect candidate for narratives that involve epic sea battles, high-stakes command, and the clash of empires.
+
+## Conclusion
+
+HMS Victory is not only a technical marvel of its era but also an ideal in-game asset for simulating large-scale naval battles and strategic command. Its detailed attributes—from its immense firepower and robust construction to its commanding presence and historical legacy—provide a rich framework for both tactical gameplay and immersive storytelling. Integrating such a vessel into your RPG will offer players a unique opportunity to command a legendary warship, influence fleet dynamics, and experience the thrill of naval warfare on a grand scale.
+
+---
+
+This specification is designed to be both comprehensive and flexible, allowing you to tweak individual parameters for gameplay balance while retaining the essence of a historically inspired, high-impact naval asset.
