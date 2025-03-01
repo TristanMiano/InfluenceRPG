@@ -1,0 +1,6354 @@
+{
+  "reference\\README.md": [
+    {
+      "category": "person",
+      "name": "characters",
+      "attributes": {}
+    }
+  ],
+  "reference\\military\\naval\\hms_victory.txt": [
+    {
+      "category": "ship",
+      "name": "HMS Victory",
+      "attributes": {}
+    },
+    {
+      "category": "military_rank",
+      "name": "Admiral",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Nelson",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Trafalgar",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "Designer",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sir Thomas Slade",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "Builder",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "officers",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "sailors",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "marines",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "cannons",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles.txt": [
+    {
+      "category": "place name",
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Gaugamela",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Cannae",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Zama",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Hastings",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Agincourt",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Lepanto",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Blenheim",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Poltava",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Saratoga",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Yorktown",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Austerlitz",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Trafalgar",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Waterloo",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Gettysburg",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Antietam",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Stalingrad",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Midway",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Normandy",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Bulge",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Britain",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Antietam.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Antietam",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Sharpsburg",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "General Robert E. Lee",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Army of Northern Virginia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Major General George B. McClellan",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Army of the Potomac",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sharpsburg",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Maryland",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Antietam Creek",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Major General Joseph Hooker",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "corps",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Miller's Cornfield",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "Dunker Church",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Sunken Road",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Major General Ambrose Burnside",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "bridge",
+      "name": "stone bridge",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Major General A. P. Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "division",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Harpers Ferry",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Potomac River",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "President Abraham Lincoln",
+      "attributes": {
+        "title": "President"
+      }
+    },
+    {
+      "category": "item",
+      "name": "Emancipation Proclamation",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "British",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "French",
+      "attributes": {}
+    },
+    {
+      "category": "government",
+      "name": "Confederacy",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "Maryland",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Second Bull Run",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "Kentucky",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Braxton Bragg",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Edmund Kirby Smith",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "Virginia",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Baltimore",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "President Jefferson Davis",
+      "attributes": {
+        "title": "President"
+      }
+    },
+    {
+      "category": "country",
+      "name": "United Kingdom",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "Cpl. Barton W. Mitchell",
+      "attributes": {
+        "title": "Cpl."
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "First Sergeant John M. Bloss",
+      "attributes": {
+        "title": "First Sergeant"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "27th Indiana Volunteer Infantry",
+      "attributes": {}
+    },
+    {
+      "category": "item",
+      "name": "cigars",
+      "attributes": {}
+    },
+    {
+      "category": "order",
+      "name": "Special Order 191",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Hagerstown",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "West Virginia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thomas J. Stonewall Jackson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "Battle of South Mountain",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "Army of Virginia",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "I Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "XII Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "II Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "V Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "VI Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "IX Corps",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "North Carolina",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "IV Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "regiments",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Edwin Vose Sumner",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Fitz John Porter",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "building",
+      "name": "Washington, D.C.",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "William B. Franklin",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Jesse Reno",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Jacob D. Cox",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Joseph K. F. Mansfield",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Alfred Pleasonton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "D. Scott Hartwig",
+      "attributes": {
+        "title": "historian"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Cavalry Division",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James Longstreet",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Lafayette McLaws",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Richard H. Anderson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "David Rumph Jones",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John G. Walker",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John Bell Hood",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Daniel Harvey (D.H.) Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Ambrose Powell (A.P.) Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Alexander R. Lawton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John R. Jones",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "J. E. B. Stuart",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William Nelson Pendleton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "weapon",
+      "name": "cannons",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Joseph T. Glatthaar",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sharpsburg",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Potomac River",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Antietam Creek",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Boteler's Ford",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Shepherdstown",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Williamsport",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Harpers Ferry",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Hagerstown",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "East Woods",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Boonsboro",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Philip Pry house",
+      "attributes": {}
+    },
+    {
+      "category": "road",
+      "name": "Hagerstown Turnpike",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Abner Doubleday",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James Ricketts",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George Meade",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Pennsylvania Reserves",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "West Woods",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alexander Lawton",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John R. Jones",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Jeb Stuart",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Stephen D. Lee",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "place",
+      "name": "North Woods",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "Parrott rifles",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James Walker",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Abram Dury\u00e9e",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Marcellus Douglass",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "George L. Hartsuff",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William A. Christian",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Louisiana Tiger Brigade",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Harry Hays",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "12th Massachusetts Infantry",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John Gibbon",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Iron Brigade",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Starke",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George T. Anderson",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "D.H. Hill",
+      "attributes": {}
+    },
+    {
+      "category": "farm",
+      "name": "Mumma Farm",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Jubal Early",
+      "attributes": {}
+    },
+    {
+      "category": "farm",
+      "name": "Nicodemus Farm",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "Battery B, 4th U.S. Artillery",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Maj. Rufus Dawes",
+      "attributes": {
+        "title": "Maj."
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "6th Wisconsin Regiment",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Fredericksburg",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Spotsylvania's Bloody Angle",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Cold Harbor",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alpheus Williams",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Colquitt",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "McRae",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George Sears Greene",
+      "attributes": {}
+    },
+    {
+      "category": "sharpshooter",
+      "name": "sharpshooter",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "William H. French",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "West Woods",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Col. Van H. Manning",
+      "attributes": {
+        "title": "Col."
+      }
+    },
+    {
+      "category": "person",
+      "name": "M. V. Armstrong",
+      "attributes": {
+        "title": "Historian"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Bloody Lane",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Max Weber",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Dwight Morris",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Nathan Kimball",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Alabama Brigade",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Robert Rodes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Israel B. Richardson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Thomas F. Meagher",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Irish Brigade",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Father William Corby",
+      "attributes": {
+        "title": "regimental chaplain"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John C. Caldwell",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Charles C. Tew",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John B. Gordon",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Francis C. Barlow",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Nelson Miles",
+      "attributes": {
+        "title": "Lieutenant Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "James N. Lightfoot",
+      "attributes": {
+        "title": "Lt. Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Winfield S. Hancock",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George Sykes",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Burnside Bridge",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Brig. Gens. David R. Jones",
+      "attributes": {
+        "title": "Brig. Gens."
+      }
+    },
+    {
+      "category": "person",
+      "name": "John G. Walker",
+      "attributes": {
+        "title": "Brig. Gens."
+      }
+    },
+    {
+      "category": "bridge",
+      "name": "Rohrbach's Bridge",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Robert Toombs",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "George Crook",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Samuel Sturgis",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Isaac Rodman",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Henry W. Kingsbury",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Edward Ferrero",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Delos B. Sackett",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Maxcy Gregg",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Harrison Fairchild",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Rush Hawkins",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "category": "farm",
+      "name": "John Otto",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "Cameron Highlanders",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "Virginia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Lawrence O. Branch",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William E. Starke",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "George B. Anderson",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "Shiloh",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Clara Barton",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "American Red Cross",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Henry W. Halleck",
+      "attributes": {
+        "title": "General-in-Chief"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "Gettysburg",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Vicksburg",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Atlanta",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Mississippi",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Kentucky",
+      "attributes": {}
+    },
+    {
+      "category": "state",
+      "name": "Maryland",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James M. McPherson",
+      "attributes": {
+        "title": "American historian"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William H. Seward",
+      "attributes": {
+        "title": "Secretary of State"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Alexander Gardner",
+      "attributes": {
+        "title": "Photographers"
+      }
+    },
+    {
+      "category": "person",
+      "name": "James F. Gibson",
+      "attributes": {
+        "title": "Photographers"
+      }
+    },
+    {
+      "category": "organization",
+      "name": "Antietam National Battlefield",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "American Battlefield Trust",
+      "attributes": {}
+    },
+    {
+      "category": "farm",
+      "name": "Wilson farm",
+      "attributes": {}
+    },
+    {
+      "category": "road",
+      "name": "Hagerstown Pike",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Blenheim.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Britain.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Gaugamela.txt": [
+    {
+      "category": "town",
+      "name": "Gaugamela",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Arbela",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alexander the Great",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Darius III",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "empire",
+      "name": "Achaemenid Empire",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Bumodus",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Iraqi Kurdistan",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "League of Corinth",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Issus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Stateira II",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Drypetis",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Asia Minor",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Turkey",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Babylon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Tyre",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Levant",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Gaza",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "satrap",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Mazaces",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Halys",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Justin",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Arrian",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Curtius Rufus",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Diodorus Siculus",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "item",
+      "name": "silver",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sisygambis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Parmenion",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Plutarch",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "place name",
+      "name": "Euphrates",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Syria",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Tigris",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Thapsacus",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Mesopotamia",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Armenia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cyrus the Younger",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "town",
+      "name": "Cunaxa",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Jona Lendering",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "category": "place name",
+      "name": "Tel Gomel",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Karamlesh",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Qaraqosh",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Tell Aswad",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Wardak",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aurel Stein",
+      "attributes": {
+        "profession": "archeologist"
+      }
+    },
+    {
+      "category": "place name",
+      "name": "Nineveh Plains",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Iraq",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Mosul",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Erbil",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Jebel Maqlub",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Mount Alfaf",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Bactria",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Satrap",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Bessus",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Gand\u0101ra",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Barsentes",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "sarissa",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Immortals",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Macedon",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "Hellenic League",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Paeonian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Thracian",
+      "attributes": {}
+    },
+    {
+      "category": "unit",
+      "name": "cavalry",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "scythed chariots",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "chariots",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "elephants",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Carian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Mardian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Dahae",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Arachosian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Susian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Cadusian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Scythians",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Syrian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Median",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Mesopotamian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Parthian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Sacian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Tapurian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Hyrcanian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Caucasian Albanian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Sacesinian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Cappadocian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Armenian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Amardi",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Companion",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Paionian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Agrianes",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Thessalians",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Thracian",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Cretan",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Phillip",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Achaean",
+      "attributes": {}
+    },
+    {
+      "category": "unit",
+      "name": "phalanx",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Menidas",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "Aretes",
+      "attributes": {}
+    },
+    {
+      "category": "unit",
+      "name": "Prodromoi",
+      "attributes": {}
+    },
+    {
+      "category": "people",
+      "name": "hypaspists",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Callisthenes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Simmias",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Hephaestion",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Persepolis",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "bow",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Gettysburg.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Lepanto.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Lepanto",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Pope",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Pius V",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Gulf of Patras",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Lepanto",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Naupactus",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Messina",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Sicily",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "galley",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "galleass",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Republic of Venice",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Spanish Empire",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Republic of Genoa",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Papal States",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Grand Duchy of Tuscany",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Duchy of Savoy",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Knights of Malta",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John of Austria",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Philip II of Spain",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marcantonio Colonna",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sebastiano Venier",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Agostino Barbarigo",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Gianandrea Doria",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "M\u00fcezzinzade Ali Pasha",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Mahomet Sirocco",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Occhiali",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "trireme",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Ottoman Empire",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Suleiman the Magnificent",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Selim II",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Famagusta",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Cyprus",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Nicosia",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "commander",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Lala Kara Mustafa Pasha",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marco Antonio Bragadin",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Kingdom of Naples",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Kingdom of Sicily",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Sardinia",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Urbino",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Mediterranean Sea",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Barbary Coast",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "Doge of Venice",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Italian territories",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "sailor",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "oarsmen",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Calabria",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Alexandria",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "admiral",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Kapudan-i Derya",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Mehmed \u015euluk",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ulu\u00e7 Ali",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "janissaries",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Adriatic",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Gulf of Corinth",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Sami",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Cephalonia",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Val d'Alessandria",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "Real",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "Fortuna de Napoli",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Northern end",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marco Querini",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Antonio da Canale",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Paolo Giordano I Orsini",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Pietro Giustiniani",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Diego Fern\u00e1ndez de Medrano",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Marquis of Santa Cruz",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "\u00c1lvaro de Baz\u00e1n",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "Sultana",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Don",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "arquebusier",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "musketeer",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sultan",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sokollu Mehmed Pasha",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marcantonio Barbaro",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Dalmatian",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Friuli",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Porte",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "War of Cyprus",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Crete",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Cretan War",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Hafsid dynasty",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Franco-Ottoman alliance",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Fez",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Abdul Malik",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Morocco",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Straits of Gibraltar",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Greece",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Oran",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Melilla",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Ceuta",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Andrea Doria",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Philip II of Spain",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Doge's Palace, Venice",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Andrea Vicentino",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Sala dello Scrutinio",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Tintoretto",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Titian",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Don Fernando",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Paolo Veronese",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Gallerie dell'Accademia, Venice",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Padua",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Wenceslas Cobergher",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "San Domenico Maggiore",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Saint Peter's Basilica",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Tommaso Dolabella",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Stanis\u0142aw Lubomirski",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Khotyn",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Dominicans of Pozna\u0144",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Wawel Castle",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Krak\u00f3w",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Juan Luna",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Spanish Senate",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Madrid",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Messina",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Andrea Calamech",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Italy",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Spain",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Juan Latino",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Jer\u00f3nimo Corte-Real",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Juan Rufo",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thomas Rodd",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "King James VI of Scotland",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "England",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Abraham van der Myl",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Du Bartas",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thomas Murray",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Abraham Holland",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "G. K. Chesterton",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Miguel de Cervantes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Emilio Salgari",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Damasco",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Corrado D'Errico",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Elizabeth Goudge",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Melvin Bragg",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Noel Malcolm",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Diarmaid MacCulloch",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Kate Fleet",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Rome",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "fustas",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Marathon.txt": [
+    {
+      "category": "town",
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "category": "time",
+      "name": "490 BC",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Plataea",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Datis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Artaphernes",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "King",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Darius I",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Persia",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Greece",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Eretria",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Ionia",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sardis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Herodotus",
+      "attributes": {}
+    },
+    {
+      "category": "deity",
+      "name": "Zeus",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sparta",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Lade",
+      "attributes": {}
+    },
+    {
+      "category": "sea",
+      "name": "Aegean",
+      "attributes": {}
+    },
+    {
+      "category": "island",
+      "name": "Cyclades",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Euboea",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Attica",
+      "attributes": {}
+    },
+    {
+      "category": "military_rank",
+      "name": "general",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Miltiades",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Asia",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Xerxes I",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Naxos",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aristagoras",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cleomenes I",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Hippias",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Peisistratus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Isagoras",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cleisthenes",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Asia Minor",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "triremes",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Propontis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Mardonius",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Macedonia",
+      "attributes": {}
+    },
+    {
+      "category": "vehicle",
+      "name": "fleet",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "bay",
+      "attributes": {
+        "near": "Marathon"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Pheidippides",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Philippides",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Cape Sounion",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "hoplites",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Callimachus",
+      "attributes": {}
+    },
+    {
+      "category": "military_rank",
+      "name": "War-Archon",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "mount Agrieliki",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Themistocles",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aristides",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Leuctra",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "arrows",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aeschylus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cynaegirus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Stesilaos",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cornelius Nepos",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Pausanias",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Plutarch",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Justinus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Simonides",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sakae",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Lazenby",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Artemisium",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Diodorus Siculus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ephorus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ctesias of Cnidus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Xenophon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Agrae",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Theseus",
+      "attributes": {}
+    },
+    {
+      "category": "deity",
+      "name": "Pan",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Acropolis",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Olympics",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Stoa Poikile",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aelian",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Echetlaeus",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Erchius",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thersipus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Eucles",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Lucian of Samosata",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Michel Br\u00e9al",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Pierre de Coubertin",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Midway.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Naseby.txt": [
+    {
+      "category": "town",
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Northamptonshire",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thomas Fairfax",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Oliver Cromwell",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Charles I",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Prince",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Rupert",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Taunton",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Oxford",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Leicester",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "London",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "England",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Northern England",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Marston Moor",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Lostwithiel",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Newbury",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Essex",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Manchester",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "William Waller",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Henry Vane",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Philip Skippon",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Prince Rupert of the Rhine",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Maurice",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Chester",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Digby",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "West Country",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Goring",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Daventry",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Edward Rossiter",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Little Oxendon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "East Farndon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Market Harborough",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir Francis Ruce",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Clipston",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Sulby Hedges",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Astley",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir George Lisle",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Henry Bard",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir Bernard Astley",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Colonel Howard",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir Marmaduke Langdale",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sergeant-Major General",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Colonel Edward Harley",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lieutenant Colonel Thomas Pride",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "musket",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Colonel John Okey",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Henry Ireton",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "Carabine",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Northampton",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Long Hold Spinney",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Earl of Carnwath",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Marston Trussell",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Truro",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Cornwall",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Falmouth",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Jersey",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Hopton",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Sir Edward Hyde",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Capell",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Wales",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Ireland",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Leven",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Hereford",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John Birch",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy units",
+      "name": "regiment",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy units",
+      "name": "brigade",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "artillery",
+      "attributes": {}
+    },
+    {
+      "category": "item",
+      "name": "stores",
+      "attributes": {}
+    },
+    {
+      "category": "item",
+      "name": "baggage",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "cavalry",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy units",
+      "name": "companies",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "musketeers",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "dragoons",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "swords",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "pikemen",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Normandy.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Poltava.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Poltava",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Tsar Peter I",
+      "attributes": {
+        "title": "Tsar"
+      }
+    },
+    {
+      "category": "army",
+      "name": "Russian army",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Swedish army",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Carl Gustaf Rehnski\u00f6ld",
+      "attributes": {}
+    },
+    {
+      "category": "empire",
+      "name": "Swedish Empire",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Russia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "King Charles XII",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "country",
+      "name": "Polish-Lithuanian Commonwealth",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Denmark-Norway",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Tsardom of Russia",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Moscow",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ivan Mazepa",
+      "attributes": {
+        "title": "hetman"
+      }
+    },
+    {
+      "category": "organization",
+      "name": "Cossack Hetmanate Zaporizhian Host",
+      "attributes": {}
+    },
+    {
+      "category": "fort",
+      "name": "Poltava",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Vorskla",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Dnieper",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Ottoman Empire",
+      "attributes": {}
+    },
+    {
+      "category": "village",
+      "name": "Perevolochna",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Sweden",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Baltic region",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Ukraine",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "North Zealand",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Narva",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Augustus II",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Saxony-Poland",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Poland",
+      "attributes": {}
+    },
+    {
+      "category": "province",
+      "name": "Baltic provinces",
+      "attributes": {}
+    },
+    {
+      "category": "province",
+      "name": "Ingria",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "St. Petersburg",
+      "attributes": {}
+    },
+    {
+      "category": "province",
+      "name": "Saxony",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Vistula River",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Masuria",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Grodno",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "Don Cossacks",
+      "attributes": {}
+    },
+    {
+      "category": "rebellion",
+      "name": "Bulavin Rebellion",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Smorgon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Minsk",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ernst Detlof von Krassow",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "profession",
+      "name": "dragoons",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Boris Sheremetyev",
+      "attributes": {
+        "title": "Marshal"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Holowczyn",
+      "attributes": {}
+    },
+    {
+      "category": "province",
+      "name": "Courland",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Lewenhaupt",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "category": "town",
+      "name": "Mitau",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Livonia",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Ukraine",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Lesnaya",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Baturyn",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aleksandr Menshikov",
+      "attributes": {}
+    },
+    {
+      "category": "cannon",
+      "name": "cannons",
+      "attributes": {}
+    },
+    {
+      "category": "woods",
+      "name": "Yakovetski woods",
+      "attributes": {}
+    },
+    {
+      "category": "woods",
+      "name": "Budyschenski woods",
+      "attributes": {}
+    },
+    {
+      "category": "fort",
+      "name": "redoubts",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aleksandr Danilovich Menshikov",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Field Marshal Carl Gustav Rehnski\u00f6ld",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Axel Gyllenkrok",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Wolmar Anton von Schlippenbach",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Carl Piper",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Carl Gustaf Roos",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Hamilton",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Ivan Skoropadsky",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "three-pounder cannons",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Adolf Fredrik Bauer",
+      "attributes": {
+        "title": "Lieutenant General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Carl Gustaf Creutz",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "weapon",
+      "name": "muskets",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "pikemen",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Pushkaryovka",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Bendery",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Moldavia",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Ottoman Empire",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Siberia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Stackelberg",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Prince Maximilian Emanuel",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Russia",
+      "attributes": {}
+    },
+    {
+      "category": "organization",
+      "name": "Sandomierz Confederation",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Peter the Great",
+      "attributes": {
+        "title": "Peter"
+      }
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Salamis.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Greek city-states",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Themistocles",
+      "attributes": {}
+    },
+    {
+      "category": "empire",
+      "name": "Achaemenid Empire",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "King",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Xerxes",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Saronic Gulf",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Greece",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Artemisium",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Thermopylae",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Artemisium",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Phocis",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Boeotia",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Attica",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Euboea",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Isthmus of Corinth",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Peloponnese",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "general",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Asia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Mardonius",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Plataea",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Mycale",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Eretria",
+      "attributes": {}
+    },
+    {
+      "category": "empire",
+      "name": "Persian Empire",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Darius I",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "satrap",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Miletus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aristagoras",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Macedon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sparta",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Datis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Artaphernes",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Naxos",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Cycladic Islands",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Marathon",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Xerxes I",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Hellespont",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Mount Athos",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sardis",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "trireme",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Corinth",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Thessaly",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alexander I of Macedon",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Sarantaporo",
+      "attributes": {}
+    },
+    {
+      "category": "military unit",
+      "name": "hoplites",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Troezen",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Thespiae",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Queen",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Artemisia",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Halicarnassus",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Phalerum",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sicinnus",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Mount Aigaleo",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Aristides",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Aegina",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "nobleman",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Eurybiades",
+      "attributes": {}
+    },
+    {
+      "category": "military unit",
+      "name": "penteconters",
+      "attributes": {
+        "description": "fifty-oared galleys"
+      }
+    },
+    {
+      "category": "town",
+      "name": "Doriskos",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Caria",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "ram",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Megara",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Saint George's Islet",
+      "attributes": {
+        "alternate_name": "Ayios Georgis"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Cape Vavari",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Psyttaleia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ameinias of Pallene",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ariabignes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Socles",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Calynda",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Damasithymos",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Cilicia",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Cyprus",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Cimon",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Ambelaki-Kynosaurus",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Saratoga.txt": [
+    {
+      "category": "battle",
+      "name": "Battles of Saratoga",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John Burgoyne",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Canada",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Champlain Valley",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "New York City",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Lake Ontario",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Albany",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "category": "place",
+      "name": "New York",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William Howe",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Barry St. Leger",
+      "attributes": {
+        "title": "Brigadier General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Saratoga",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Schuylerville",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Edmund Morgan",
+      "attributes": {
+        "title": "historian"
+      }
+    },
+    {
+      "category": "place",
+      "name": "New England",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Horatio Gates",
+      "attributes": {
+        "title": "General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Continental Army",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Freeman's Farm",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Bemis Heights",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "de Valliere cannon",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Benedict Arnold",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Henry Clinton",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "fort",
+      "name": "Forts Clinton",
+      "attributes": {}
+    },
+    {
+      "category": "fort",
+      "name": "Fort Montgomery",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Hudson River",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Kingston",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Thirteen Colonies",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Mohawk River",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Montreal",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Philip Schuyler",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "fort",
+      "name": "Fort Ticonderoga",
+      "attributes": {}
+    },
+    {
+      "category": "fort",
+      "name": "Fort Edward",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Bennington",
+      "attributes": {}
+    },
+    {
+      "category": "fort",
+      "name": "Fort Stanwix",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Philadelphia",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Baron Riedesel",
+      "attributes": {
+        "title": "Baron",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Quebec",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Stillwater",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Jane McCrea",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George Washington",
+      "attributes": {
+        "title": "General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Benjamin Lincoln",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Israel Putnam",
+      "attributes": {},
+      "affiliation": "American"
+    },
+    {
+      "category": "person",
+      "name": "Daniel Morgan",
+      "attributes": {
+        "title": "Colonel",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Provisional Rifle Corps",
+      "attributes": {}
+    },
+    {
+      "category": "military_unit",
+      "name": "Morgan's Riflemen",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Bemis Heights",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Tadeusz Ko\u015bciuszko",
+      "attributes": {
+        "title": "engineer",
+        "affiliation": "Polish"
+      }
+    },
+    {
+      "category": "person",
+      "name": "James Inglis Hamilton",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Simon Fraser",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Henry Dearborn",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James Wilkinson",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Phillips",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Roger Lamb",
+      "attributes": {
+        "profession": "British soldier"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Ebenezer Learned",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "John Luzader",
+      "attributes": {
+        "title": "park historian"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Saratoga National Historical Park",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "James Kirby Martin",
+      "attributes": {
+        "title": "biographer"
+      }
+    },
+    {
+      "category": "fort",
+      "name": "Fort Montgomery",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "George Clinton",
+      "attributes": {
+        "title": "Governor",
+        "affiliation": "New York"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John Brown",
+      "attributes": {
+        "title": "Colonel",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Lake George",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Abraham Ten Broeck",
+      "attributes": {
+        "title": "Brigadier General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "weapon",
+      "name": "bayonet",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Acland",
+      "attributes": {
+        "title": "Major",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Timothy Murphy",
+      "attributes": {
+        "profession": "Morgan's men"
+      }
+    },
+    {
+      "category": "redoubt",
+      "name": "Breymann's redoubt",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Armstrong",
+      "attributes": {
+        "title": "Major",
+        "affiliation": "American"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Heinrich von Breymann",
+      "attributes": {
+        "title": "Hessian",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Lord Balcarres",
+      "attributes": {
+        "title": "Lord",
+        "affiliation": "British"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John Watts de Peyster",
+      "attributes": {
+        "title": "General",
+        "affiliation": "Civil War"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Dean R. Snow",
+      "attributes": {
+        "title": "archeologist"
+      }
+    },
+    {
+      "category": "military_unit",
+      "name": "Army National Guard units",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "USS Saratoga",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "King Louis XVI",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Camden",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Stalingrad.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Thermopylae.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Thermopylae",
+      "attributes": {}
+    },
+    {
+      "category": "empire",
+      "name": "Achaemenid Persian Empire",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Xerxes I",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Sparta",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Leonidas I",
+      "attributes": {}
+    },
+    {
+      "category": "war",
+      "name": "Greco-Persian Wars",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Artemisium",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Darius I",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Marathon",
+      "attributes": {}
+    },
+    {
+      "category": "politician",
+      "name": "Themistocles",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "category": "strait",
+      "name": "Straits of Artemisium",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Ephialtes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Spartans",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thespians",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Thebans",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "helots",
+      "attributes": {}
+    },
+    {
+      "category": "island",
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Boeotia",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Salamis",
+      "attributes": {}
+    },
+    {
+      "category": "continent",
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "category": "continent",
+      "name": "Asia",
+      "attributes": {}
+    },
+    {
+      "category": "military commander",
+      "name": "Mardonius",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Plataea",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Herodotus",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Diodorus Siculus",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Ephorus",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Plutarch",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Ctesias of Cnidus",
+      "attributes": {}
+    },
+    {
+      "category": "author",
+      "name": "Aeschylus",
+      "attributes": {}
+    },
+    {
+      "category": "monument",
+      "name": "Serpent Column",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Hippodrome of Constantinople",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "George B. Grundy",
+      "attributes": {}
+    },
+    {
+      "category": "historian",
+      "name": "Liddell Hart",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "city-states of Athens",
+      "attributes": {}
+    },
+    {
+      "category": "empire",
+      "name": "Persian Empire",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "category": "kingdom",
+      "name": "Macedon",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Sparta",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Eretria",
+      "attributes": {}
+    },
+    {
+      "category": "city-state",
+      "name": "Naxos",
+      "attributes": {}
+    },
+    {
+      "category": "island",
+      "name": "Cycladic Islands",
+      "attributes": {}
+    },
+    {
+      "category": "province",
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "category": "strait",
+      "name": "Hellespont",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "Echeidorus River",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alexander I of Macedon",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Thessaly",
+      "attributes": {}
+    },
+    {
+      "category": "pass",
+      "name": "Sarantoporo Pass",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Boeotia",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Attica",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Peloponnesus",
+      "attributes": {}
+    },
+    {
+      "category": "isthmus",
+      "name": "Isthmus of Corinth",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Troezen",
+      "attributes": {}
+    },
+    {
+      "category": "region",
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "category": "festival",
+      "name": "Carneia",
+      "attributes": {}
+    },
+    {
+      "category": "games",
+      "name": "Olympic Games",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Trachis",
+      "attributes": {}
+    },
+    {
+      "category": "gulf",
+      "name": "Malian Gulf",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Peloponnesus",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Locrians",
+      "attributes": {}
+    },
+    {
+      "category": "oracle",
+      "name": "Oracle at Delphi",
+      "attributes": {}
+    },
+    {
+      "category": "place",
+      "name": "city of Trachis",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Immortals",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Alpenus",
+      "attributes": {}
+    },
+    {
+      "category": "mountain",
+      "name": "Mt. Anopaea",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Thebes",
+      "attributes": {}
+    },
+    {
+      "category": "general",
+      "name": "Demophilus",
+      "attributes": {}
+    },
+    {
+      "category": "mountain",
+      "name": "Kolonos Hill",
+      "attributes": {}
+    },
+    {
+      "category": "gulf",
+      "name": "Saronic Gulf",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Thespiae",
+      "attributes": {}
+    },
+    {
+      "category": "general",
+      "name": "Tigranes",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Alexander the Great",
+      "attributes": {}
+    },
+    {
+      "category": "city",
+      "name": "Persepolis",
+      "attributes": {}
+    },
+    {
+      "category": "shepherd",
+      "name": "Local shepherd",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "arrow",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "spear",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "shield",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "sword",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "army",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "fleet",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "ambassador",
+      "attributes": {}
+    },
+    {
+      "category": "profession",
+      "name": "spy",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "kings",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "force",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "soldiers",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Vale of Tempe",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "triremes",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "city of Plataea",
+      "attributes": {}
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_the_Bulge.txt": [],
+  "reference\\wikipedia\\battles\\Battle_of_Trafalgar.txt": [
+    {
+      "category": "ship",
+      "name": "HMS Victory",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Lord Nelson",
+      "attributes": {
+        "title": "Lord"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Sant\u00edsima Trinidad",
+      "attributes": {
+        "type": "warship"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Pierre-Charles Villeneuve",
+      "attributes": {
+        "title": "French Admiral"
+      }
+    },
+    {
+      "category": "place",
+      "name": "C\u00e1diz",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Spain",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Atlantic Ocean",
+      "attributes": {
+        "type": "ocean"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Cape Trafalgar",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Bucentaure",
+      "attributes": {
+        "type": "flagship"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Federico Gravina",
+      "attributes": {
+        "title": "Admiral"
+      }
+    },
+    {
+      "category": "country",
+      "name": "Britain",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Brest",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Toulon",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Ferrol",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Euryalus",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Blackwood",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Queen",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Canopus",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Spencer",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Zealous",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Tigre",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Endymion",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Gibraltar",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Thomas Louis",
+      "attributes": {
+        "title": "Rear-Admiral Sir"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Superb",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Richard Goodwin Keats",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Prince of Wales",
+      "attributes": {
+        "type": "flagship"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Boulogne",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "category": "place",
+      "name": "English Channel",
+      "attributes": {
+        "type": "channel"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Allemand",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Thomas Masterman Hardy",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Pr\u00edncipe de Asturias",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Santa Ana",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "place",
+      "name": "England",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Royal Sovereign",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Fougueux",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Indomptable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Justo",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Leandro",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Alava",
+      "attributes": {
+        "title": "Admiral"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Belleisle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Aigle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Neptune",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "H\u00e9ros",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Redoutable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Temeraire",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Conqueror",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Lucas",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Leviathan",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Alg\u00e9siras",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Berwick",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Intr\u00e9pide",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Swiftsure",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Argonauta",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Bahama",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Monarca",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Neptuno",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Agust\u00edn",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Ildefonso",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Juan Nepomuceno",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "William Beatty",
+      "attributes": {
+        "title": "Surgeon"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Alexander Scott",
+      "attributes": {
+        "title": "Chaplain"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Formidable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Dumanoir Le Pelley",
+      "attributes": {
+        "title": "Rear-Admiral"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Scipion",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Duguay-Trouin",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Mont Blanc",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Toulon",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Thomas Louis",
+      "attributes": {
+        "title": "Rear-Admiral"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Cape St. Vincent",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Bay of Biscay",
+      "attributes": {
+        "type": "bay"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Rochefort",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Richard Strachan",
+      "attributes": {
+        "title": "Sir"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Cape Ortegal",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Julien Cosmao",
+      "attributes": {
+        "title": "Commodore"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Esca\u00f1o",
+      "attributes": {
+        "title": "Vice-Admiral"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Enrique MacDonell",
+      "attributes": {
+        "title": "Commodore"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Pluton",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Hermione",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Rayo",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "San Francisco de Asis",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Rota",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Fort Santa Catalina",
+      "attributes": {
+        "type": "fort"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Sanl\u00facar",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Santa Mar\u00eda",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Defiance",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Donegal",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Pulteney Malcolm",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "country",
+      "name": "Austria",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Victory",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Rosia Bay",
+      "attributes": {
+        "type": "bay"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Trafalgar Cemetery",
+      "attributes": {
+        "type": "cemetery"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Charles Adair",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Lewis Buckle Reeve",
+      "attributes": {
+        "title": "Lieutenant"
+      }
+    },
+    {
+      "category": "person",
+      "name": "Edward VII",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Portsmouth",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Endurance",
+      "attributes": {
+        "type": "patrol ship"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Charles de Gaulle",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Illustrious",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Invincible",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Ocean",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Principe de Asturias",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "Saipan",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "category": "person",
+      "name": "John Lapenoti\u00e8re",
+      "attributes": {
+        "title": "Lieutenant"
+      }
+    },
+    {
+      "category": "ship",
+      "name": "HMS Pickle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "category": "place",
+      "name": "Falmouth",
+      "attributes": {
+        "type": "city"
+      }
+    }
+  ],
+  "reference\\wikipedia\\battles\\Battle_of_Waterloo.txt": [
+    {
+      "category": "battle",
+      "name": "Battle of Waterloo",
+      "attributes": {}
+    },
+    {
+      "category": "date",
+      "name": "Sunday 18 June 1815",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Waterloo",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "United Kingdom of the Netherlands",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Belgium",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Napoleon I",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "French Imperial Army",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "Seventh Coalition",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "United Kingdom",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Netherlands",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Hanover",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Brunswick",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Nassau",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "field marshal",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Arthur Wellesley",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Duke of Wellington",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Anglo-allied army",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "corps",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Prussian army",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Field Marshal Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Wavre",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Mont Saint-Jean",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "La Belle Alliance",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Prussia",
+      "attributes": {}
+    },
+    {
+      "category": "date",
+      "name": "March 1815",
+      "attributes": {}
+    },
+    {
+      "category": "event",
+      "name": "Hundred Days",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Ligny",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Battle of Quatre Bras",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Brussels",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "Wavre",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Paris",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Borodino",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Braine-l'Alleud",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Lasne",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Mons",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Ostend",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Charleroi",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marshal Ney",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marshal Grouchy",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Prince of Orange",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Nivelles",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Genappe",
+      "attributes": {}
+    },
+    {
+      "category": "river",
+      "name": "River Dyle",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Gebhard Leberecht von Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Arm\u00e9e du Nord",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "artilleries",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "guns",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Emperor",
+      "attributes": {}
+    },
+    {
+      "category": "military hierarchy unit",
+      "name": "King's German Legion",
+      "attributes": {
+        "abbreviation": "KGL"
+      }
+    },
+    {
+      "category": "battle",
+      "name": "War of 1812",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Duke of York",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Earl of Uxbridge",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Landwehr",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Reserve regiments",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Legions",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Freikorps volunteer formations",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "General Staff",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "B\u00fclow",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Zieten",
+      "attributes": {}
+    },
+    {
+      "category": "road",
+      "name": "Brussels road",
+      "attributes": {}
+    },
+    {
+      "category": "road",
+      "name": "Ohain road",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Smohain",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "Hougoumont",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "Papelotte",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "La Haye Sainte",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "95th Rifles",
+      "attributes": {}
+    },
+    {
+      "category": "corps",
+      "name": "I Corps",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "La Belle Alliance",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "Rossomme farm",
+      "attributes": {}
+    },
+    {
+      "category": "army",
+      "name": "Imperial Guard",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Marshal Soult",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "Le Caillou",
+      "attributes": {}
+    },
+    {
+      "category": "building",
+      "name": "King of Spain inn",
+      "attributes": {}
+    },
+    {
+      "category": "title",
+      "name": "Lord Hill",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Lasne-Chapelle-Saint-Lambert",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "G\u00e9rard",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Quiot",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Grenier",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "sabres",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Sir John Elley",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "Walter Scott",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "Cuirasses",
+      "attributes": {}
+    },
+    {
+      "category": "weapon",
+      "name": "Colours",
+      "attributes": {}
+    },
+    {
+      "category": "battle",
+      "name": "Crimean War",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "General Antoine-Henri, Baron Jomini",
+      "attributes": {}
+    },
+    {
+      "category": "person",
+      "name": "General B\u00fclow",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Longwy",
+      "attributes": {}
+    },
+    {
+      "category": "ship",
+      "name": "HMS Bellerophon",
+      "attributes": {}
+    },
+    {
+      "category": "date",
+      "name": "1821",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Issy",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Saint Helena",
+      "attributes": {}
+    },
+    {
+      "category": "place name",
+      "name": "North America",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "category": "monument",
+      "name": "Lion's Mound",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Nivelles",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Genappe",
+      "attributes": {}
+    },
+    {
+      "category": "graveyard",
+      "name": "Saint Martin's Church",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Ways",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Scotland",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Wales",
+      "attributes": {}
+    },
+    {
+      "category": "country",
+      "name": "Hanover",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Osnabr\u00fcck",
+      "attributes": {}
+    },
+    {
+      "category": "town",
+      "name": "Liverpool",
+      "attributes": {}
+    }
+  ]
+}
