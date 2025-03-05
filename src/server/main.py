@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from src.auth.auth import authenticate_user
 from src.models.user import User
 from src.server.chat import router as chat_router
+from src.server.game import router as game_router
 
 app = FastAPI(title="Tabletop RPG Prototype Server")
 
@@ -42,3 +43,4 @@ def read_root(request: Request):
 
 # Include the chat WebSocket router with prefix /chat
 app.include_router(chat_router, prefix="/chat")
+app.include_router(game_router, prefix="/api")

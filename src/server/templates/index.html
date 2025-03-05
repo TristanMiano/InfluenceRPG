@@ -2,110 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RPG Chat Interface</title>
+  <title>RPG Game Lobby & Chat</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
-    #login-form, #chat-interface { max-width: 500px; margin: auto; }
+    .container { max-width: 600px; margin: auto; }
     #chat-box { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; }
-    #chat-input { width: 80%; }
-    #send-button { width: 18%; }
+    input[type="text"], input[type="password"] { width: 100%; padding: 8px; margin: 4px 0; }
+    button { padding: 8px 12px; margin-top: 10px; }
     .message { margin-bottom: 10px; }
     .timestamp { color: #777; font-size: 0.8em; }
+    #lobby { margin-top: 20px; }
+    #game-list { margin-top: 10px; border: 1px solid #ccc; padding: 5px; max-height: 150px; overflow-y: auto; }
   </style>
 </head>
 <body>
+<div class="container">
+  <!-- Login Section -->
+  <div id="login-form">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" />
+    <label for="password">Password:</label>
+    <input type="password" id="password" />
+    <button id="login-button">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
 
-<div id="login-form">
-  <h2>Login</h2>
-  <label for="username">Username:</label>
-  <input type="text" id="username" /><br/><br/>
-  <label for="password">Password:</label>
-  <input type="password" id="password" /><br/><br/>
-  <button id="login-button">Login</button>
-  <p id="login-error" style="color:red;"></p>
+  <!-- Game Lobby Section -->
+  <div id="lobby-interface" style="display:none;">
+    <h2>Game Lobby</h2>
+    <p>Welcome, <span id="user-display"></span>!</p>
+    <label for="character-id">Character ID (or Name):</label>
+    <input type="text" id="character-id" placeholder="Enter your character ID" />
+
+    <h3>Create New Game</h3>
+    <label for="new-game-name">Game Name:</label>
+    <input type="text" id="new-game-name" placeholder="Enter game name" />
+    <button id="create-game-button">Create Game</button>
+    <p id="create-game-error" style="color:red;"></p>
+
+    <h3>Or Join Existing Game</h3>
+    <button id="refresh-games-button">Refresh Game List</button>
+    <div id="game-list"></div>
+    <label for="join-game-id">Game ID to Join:</label>
+    <input type="text" id="join-game-id" placeholder="Enter game ID" />
+    <button id="join-game-button">Join Game</button>
+    <p id="join-game-error" style="color:red;"></p>
+  </div>
+
+  <!-- Chat Interface Section -->
+  <div id="chat-interface" style="display:none;">
+    <h2>Game Chat</h2>
+    <p>Game ID: <span id="current-game-id"></span></p>
+    <div id="chat-box"></div>
+    <input type="text" id="chat-input" placeholder="Type your message here..." />
+    <button id="send-button">Send</button>
+    <p id="status"></p>
+  </div>
 </div>
 
-<div id="chat-interface" style="display:none;">
-  <h2>Chat Room</h2>
-  <div id="chat-box"></div>
-  <br/>
-  <input type="text" id="chat-input" placeholder="Type your message here..." />
-  <button id="send-button">Send</button>
-  <p id="status"></p>
-</div>
-
-<script>
-  let ws;
-  let username = "";
-
-  document.getElementById("login-button").addEventListener("click", async function() {
-    username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;
-    
-    if (!username || !password) {
-      document.getElementById("login-error").innerText = "Please enter both username and password.";
-      return;
-    }
-    
-    // Send a POST request to the /login endpoint
-    const response = await fetch("/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
-    
-    if (response.ok) {
-      const data = await response.json();
-      console.log("Login successful:", data);
-      // Hide login form and show chat interface
-      document.getElementById("login-form").style.display = "none";
-      document.getElementById("chat-interface").style.display = "block";
-      startChat();
-    } else {
-      const error = await response.json();
-      document.getElementById("login-error").innerText = error.detail || "Login failed";
-    }
-  });
-
-  function startChat() {
-    // Open WebSocket connection with the username as a query parameter
-    ws = new WebSocket(`ws://${window.location.host}/chat/ws/chat?username=${encodeURIComponent(username)}`);
-    
-    ws.onopen = function() {
-      document.getElementById("status").innerText = "Connected to chat.";
-    };
-    
-    ws.onmessage = function(event) {
-      const msg = JSON.parse(event.data);
-      const chatBox = document.getElementById("chat-box");
-      const messageDiv = document.createElement("div");
-      messageDiv.classList.add("message");
-      messageDiv.innerHTML = `<strong>${msg.sender}:</strong> ${msg.message} <span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
-      chatBox.appendChild(messageDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    };
-    
-    ws.onclose = function() {
-      document.getElementById("status").innerText = "Disconnected from chat.";
-    };
-  }
-
-  document.getElementById("send-button").addEventListener("click", function() {
-    const input = document.getElementById("chat-input");
-    const message = input.value.trim();
-    if (message && ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(message);
-      input.value = "";
-    }
-  });
-
-  // Allow sending message on Enter key press
-  document.getElementById("chat-input").addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-      document.getElementById("send-button").click();
-    }
-  });
-</script>
+<script src="/static/js/app.js"></script>
 
 </body>
 </html>
