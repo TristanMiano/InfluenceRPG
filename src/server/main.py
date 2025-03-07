@@ -2,13 +2,22 @@
 from fastapi import FastAPI, HTTPException, status, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from src.auth.auth import authenticate_user
 from src.models.user import User
 from src.server.chat import router as chat_router
 from src.server.game import router as game_router
+from src.server.character import router as character_router
 
-app = FastAPI(title="Tabletop RPG Prototype Server")
+app = FastAPI(title="Influence RPG Prototype Server")
+
+app.mount("/static", StaticFiles(directory="src/server/static"), name="static")
+
+from src.server.game_chat import router as game_chat_router
+
+# Include the game chat router without a prefix so that the paths remain unchanged.
+app.include_router(game_chat_router)
 
 templates = Jinja2Templates(directory="src/server/templates")
 
@@ -44,3 +53,4 @@ def read_root(request: Request):
 # Include the chat WebSocket router with prefix /chat
 app.include_router(chat_router, prefix="/chat")
 app.include_router(game_router, prefix="/api")
+app.include_router(character_router)

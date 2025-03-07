@@ -1,0 +1,4999 @@
+{
+  "person": [
+    {
+      "name": "Abdul Malik",
+      "attributes": {}
+    },
+    {
+      "name": "Abner Doubleday",
+      "attributes": {}
+    },
+    {
+      "name": "Abraham Holland",
+      "attributes": {}
+    },
+    {
+      "name": "Abraham Ten Broeck",
+      "attributes": {
+        "title": "Brigadier General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Abraham van der Myl",
+      "attributes": {}
+    },
+    {
+      "name": "Abram Dury\u00e9e",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Acland",
+      "attributes": {
+        "title": "Major",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Adolf Fredrik Bauer",
+      "attributes": {
+        "title": "Lieutenant General"
+      }
+    },
+    {
+      "name": "Aelian",
+      "attributes": {}
+    },
+    {
+      "name": "Aeschylus",
+      "attributes": {}
+    },
+    {
+      "name": "Agostino Barbarigo",
+      "attributes": {}
+    },
+    {
+      "name": "Alava",
+      "attributes": {
+        "title": "Admiral"
+      }
+    },
+    {
+      "name": "Aleksandr Danilovich Menshikov",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "name": "Aleksandr Menshikov",
+      "attributes": {}
+    },
+    {
+      "name": "Alexander Gardner",
+      "attributes": {
+        "title": "Photographers"
+      }
+    },
+    {
+      "name": "Alexander I of Macedon",
+      "attributes": {}
+    },
+    {
+      "name": "Alexander Lawton",
+      "attributes": {}
+    },
+    {
+      "name": "Alexander R. Lawton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Alexander Scott",
+      "attributes": {
+        "title": "Chaplain"
+      }
+    },
+    {
+      "name": "Alexander the Great",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "Alfred Pleasonton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Allemand",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Alpheus Williams",
+      "attributes": {}
+    },
+    {
+      "name": "Ambrose Powell (A.P.) Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Ameinias of Pallene",
+      "attributes": {}
+    },
+    {
+      "name": "Andrea Calamech",
+      "attributes": {}
+    },
+    {
+      "name": "Andrea Doria",
+      "attributes": {}
+    },
+    {
+      "name": "Andrea Vicentino",
+      "attributes": {}
+    },
+    {
+      "name": "Antonio da Canale",
+      "attributes": {}
+    },
+    {
+      "name": "Ariabignes",
+      "attributes": {}
+    },
+    {
+      "name": "Aristagoras",
+      "attributes": {}
+    },
+    {
+      "name": "Aristides",
+      "attributes": {}
+    },
+    {
+      "name": "Armstrong",
+      "attributes": {
+        "title": "Major",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Arrian",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "Artaphernes",
+      "attributes": {}
+    },
+    {
+      "name": "Artemisia",
+      "attributes": {}
+    },
+    {
+      "name": "Arthur Wellesley",
+      "attributes": {}
+    },
+    {
+      "name": "Augustus II",
+      "attributes": {}
+    },
+    {
+      "name": "Aurel Stein",
+      "attributes": {
+        "profession": "archeologist"
+      }
+    },
+    {
+      "name": "Axel Gyllenkrok",
+      "attributes": {}
+    },
+    {
+      "name": "Baron Riedesel",
+      "attributes": {
+        "title": "Baron",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Barry St. Leger",
+      "attributes": {
+        "title": "Brigadier General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Barsentes",
+      "attributes": {}
+    },
+    {
+      "name": "Benedict Arnold",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Benjamin Lincoln",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Bessus",
+      "attributes": {}
+    },
+    {
+      "name": "Blackwood",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "name": "Boris Sheremetyev",
+      "attributes": {
+        "title": "Marshal"
+      }
+    },
+    {
+      "name": "Braxton Bragg",
+      "attributes": {}
+    },
+    {
+      "name": "Brig. Gens. David R. Jones",
+      "attributes": {
+        "title": "Brig. Gens."
+      }
+    },
+    {
+      "name": "B\u00fclow",
+      "attributes": {}
+    },
+    {
+      "name": "Callimachus",
+      "attributes": {}
+    },
+    {
+      "name": "Callisthenes",
+      "attributes": {}
+    },
+    {
+      "name": "Carl Gustaf Creutz",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Carl Gustaf Rehnski\u00f6ld",
+      "attributes": {}
+    },
+    {
+      "name": "Carl Gustaf Roos",
+      "attributes": {}
+    },
+    {
+      "name": "Carl Piper",
+      "attributes": {}
+    },
+    {
+      "name": "characters",
+      "attributes": {}
+    },
+    {
+      "name": "Charles Adair",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Charles C. Tew",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Charles I",
+      "attributes": {}
+    },
+    {
+      "name": "Cimon",
+      "attributes": {}
+    },
+    {
+      "name": "Clara Barton",
+      "attributes": {}
+    },
+    {
+      "name": "Cleisthenes",
+      "attributes": {}
+    },
+    {
+      "name": "Cleomenes I",
+      "attributes": {}
+    },
+    {
+      "name": "Col. Van H. Manning",
+      "attributes": {
+        "title": "Col."
+      }
+    },
+    {
+      "name": "Colquitt",
+      "attributes": {}
+    },
+    {
+      "name": "Cornelius Nepos",
+      "attributes": {}
+    },
+    {
+      "name": "Corrado D'Errico",
+      "attributes": {}
+    },
+    {
+      "name": "Ctesias of Cnidus",
+      "attributes": {}
+    },
+    {
+      "name": "Curtius Rufus",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "Cynaegirus",
+      "attributes": {}
+    },
+    {
+      "name": "Cyrus the Younger",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "D. Scott Hartwig",
+      "attributes": {
+        "title": "historian"
+      }
+    },
+    {
+      "name": "D.H. Hill",
+      "attributes": {}
+    },
+    {
+      "name": "Damasithymos",
+      "attributes": {}
+    },
+    {
+      "name": "Daniel Harvey (D.H.) Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Daniel Morgan",
+      "attributes": {
+        "title": "Colonel",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Darius I",
+      "attributes": {}
+    },
+    {
+      "name": "Darius III",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "Datis",
+      "attributes": {}
+    },
+    {
+      "name": "David Rumph Jones",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Dean R. Snow",
+      "attributes": {
+        "title": "archeologist"
+      }
+    },
+    {
+      "name": "Delos B. Sackett",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Diarmaid MacCulloch",
+      "attributes": {}
+    },
+    {
+      "name": "Diego Fern\u00e1ndez de Medrano",
+      "attributes": {}
+    },
+    {
+      "name": "Diodorus Siculus",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "Don Fernando",
+      "attributes": {}
+    },
+    {
+      "name": "Drypetis",
+      "attributes": {}
+    },
+    {
+      "name": "Du Bartas",
+      "attributes": {}
+    },
+    {
+      "name": "Dumanoir Le Pelley",
+      "attributes": {
+        "title": "Rear-Admiral"
+      }
+    },
+    {
+      "name": "Dwight Morris",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Earl of Carnwath",
+      "attributes": {}
+    },
+    {
+      "name": "Ebenezer Learned",
+      "attributes": {}
+    },
+    {
+      "name": "Echetlaeus",
+      "attributes": {}
+    },
+    {
+      "name": "Edmund Kirby Smith",
+      "attributes": {}
+    },
+    {
+      "name": "Edmund Morgan",
+      "attributes": {
+        "title": "historian"
+      }
+    },
+    {
+      "name": "Edward Ferrero",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Edward Rossiter",
+      "attributes": {}
+    },
+    {
+      "name": "Edward VII",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "Edwin Vose Sumner",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Elizabeth Goudge",
+      "attributes": {}
+    },
+    {
+      "name": "Emilio Salgari",
+      "attributes": {}
+    },
+    {
+      "name": "Emperor",
+      "attributes": {}
+    },
+    {
+      "name": "Enrique MacDonell",
+      "attributes": {
+        "title": "Commodore"
+      }
+    },
+    {
+      "name": "Ephialtes",
+      "attributes": {}
+    },
+    {
+      "name": "Ephorus",
+      "attributes": {}
+    },
+    {
+      "name": "Ernst Detlof von Krassow",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Esca\u00f1o",
+      "attributes": {
+        "title": "Vice-Admiral"
+      }
+    },
+    {
+      "name": "Essex",
+      "attributes": {}
+    },
+    {
+      "name": "Eucles",
+      "attributes": {}
+    },
+    {
+      "name": "Eurybiades",
+      "attributes": {}
+    },
+    {
+      "name": "Father William Corby",
+      "attributes": {
+        "title": "regimental chaplain"
+      }
+    },
+    {
+      "name": "Federico Gravina",
+      "attributes": {
+        "title": "Admiral"
+      }
+    },
+    {
+      "name": "Field Marshal Carl Gustav Rehnski\u00f6ld",
+      "attributes": {}
+    },
+    {
+      "name": "Fitz John Porter",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Francis C. Barlow",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "G. K. Chesterton",
+      "attributes": {}
+    },
+    {
+      "name": "Gebhard Leberecht von Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "name": "General Antoine-Henri, Baron Jomini",
+      "attributes": {}
+    },
+    {
+      "name": "General B\u00fclow",
+      "attributes": {}
+    },
+    {
+      "name": "General Robert E. Lee",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "name": "General Staff",
+      "attributes": {}
+    },
+    {
+      "name": "George B. Anderson",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "George Clinton",
+      "attributes": {
+        "title": "Governor",
+        "affiliation": "New York"
+      }
+    },
+    {
+      "name": "George Crook",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "George L. Hartsuff",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "George Meade",
+      "attributes": {}
+    },
+    {
+      "name": "George Sears Greene",
+      "attributes": {}
+    },
+    {
+      "name": "George Sykes",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "George T. Anderson",
+      "attributes": {}
+    },
+    {
+      "name": "George Washington",
+      "attributes": {
+        "title": "General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Gianandrea Doria",
+      "attributes": {}
+    },
+    {
+      "name": "Grenier",
+      "attributes": {}
+    },
+    {
+      "name": "G\u00e9rard",
+      "attributes": {}
+    },
+    {
+      "name": "Hamilton",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Harrison Fairchild",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Harry Hays",
+      "attributes": {}
+    },
+    {
+      "name": "Heinrich von Breymann",
+      "attributes": {
+        "title": "Hessian",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "helots",
+      "attributes": {}
+    },
+    {
+      "name": "Henry Bard",
+      "attributes": {}
+    },
+    {
+      "name": "Henry Clinton",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Henry Dearborn",
+      "attributes": {}
+    },
+    {
+      "name": "Henry Ireton",
+      "attributes": {}
+    },
+    {
+      "name": "Henry Vane",
+      "attributes": {}
+    },
+    {
+      "name": "Henry W. Halleck",
+      "attributes": {
+        "title": "General-in-Chief"
+      }
+    },
+    {
+      "name": "Henry W. Kingsbury",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Hephaestion",
+      "attributes": {}
+    },
+    {
+      "name": "Herodotus",
+      "attributes": {}
+    },
+    {
+      "name": "Hippias",
+      "attributes": {}
+    },
+    {
+      "name": "Horatio Gates",
+      "attributes": {
+        "title": "General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Immortals",
+      "attributes": {}
+    },
+    {
+      "name": "Isaac Rodman",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Isagoras",
+      "attributes": {}
+    },
+    {
+      "name": "Israel B. Richardson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Israel Putnam",
+      "attributes": {}
+    },
+    {
+      "name": "Ivan Mazepa",
+      "attributes": {
+        "title": "hetman"
+      }
+    },
+    {
+      "name": "Ivan Skoropadsky",
+      "attributes": {}
+    },
+    {
+      "name": "J. E. B. Stuart",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Jacob D. Cox",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "James F. Gibson",
+      "attributes": {
+        "title": "Photographers"
+      }
+    },
+    {
+      "name": "James Inglis Hamilton",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "James Kirby Martin",
+      "attributes": {
+        "title": "biographer"
+      }
+    },
+    {
+      "name": "James Longstreet",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "James M. McPherson",
+      "attributes": {
+        "title": "American historian"
+      }
+    },
+    {
+      "name": "James N. Lightfoot",
+      "attributes": {
+        "title": "Lt. Colonel"
+      }
+    },
+    {
+      "name": "James Ricketts",
+      "attributes": {}
+    },
+    {
+      "name": "James Walker",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "James Wilkinson",
+      "attributes": {}
+    },
+    {
+      "name": "Jane McCrea",
+      "attributes": {}
+    },
+    {
+      "name": "Jeb Stuart",
+      "attributes": {}
+    },
+    {
+      "name": "Jer\u00f3nimo Corte-Real",
+      "attributes": {}
+    },
+    {
+      "name": "Jesse Reno",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "John B. Gordon",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "John Bell Hood",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "John Birch",
+      "attributes": {}
+    },
+    {
+      "name": "John Brown",
+      "attributes": {
+        "title": "Colonel",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "John Burgoyne",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "John C. Caldwell",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "John G. Walker",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "John Gibbon",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "John Lapenoti\u00e8re",
+      "attributes": {
+        "title": "Lieutenant"
+      }
+    },
+    {
+      "name": "John Luzader",
+      "attributes": {
+        "title": "park historian"
+      }
+    },
+    {
+      "name": "John of Austria",
+      "attributes": {}
+    },
+    {
+      "name": "John R. Jones",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "John Watts de Peyster",
+      "attributes": {
+        "title": "General",
+        "affiliation": "Civil War"
+      }
+    },
+    {
+      "name": "Jona Lendering",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "Joseph K. F. Mansfield",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Juan Latino",
+      "attributes": {}
+    },
+    {
+      "name": "Juan Luna",
+      "attributes": {}
+    },
+    {
+      "name": "Juan Rufo",
+      "attributes": {}
+    },
+    {
+      "name": "Jubal Early",
+      "attributes": {}
+    },
+    {
+      "name": "Julien Cosmao",
+      "attributes": {
+        "title": "Commodore"
+      }
+    },
+    {
+      "name": "Justin",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "Justinus",
+      "attributes": {}
+    },
+    {
+      "name": "Kapudan-i Derya",
+      "attributes": {}
+    },
+    {
+      "name": "Kate Fleet",
+      "attributes": {}
+    },
+    {
+      "name": "King Charles XII",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "King James VI of Scotland",
+      "attributes": {}
+    },
+    {
+      "name": "King Louis XVI",
+      "attributes": {
+        "title": "King"
+      }
+    },
+    {
+      "name": "kings",
+      "attributes": {}
+    },
+    {
+      "name": "Lafayette McLaws",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Lala Kara Mustafa Pasha",
+      "attributes": {}
+    },
+    {
+      "name": "Lawrence O. Branch",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Lazenby",
+      "attributes": {}
+    },
+    {
+      "name": "Leonidas I",
+      "attributes": {}
+    },
+    {
+      "name": "Leven",
+      "attributes": {}
+    },
+    {
+      "name": "Lewenhaupt",
+      "attributes": {
+        "title": "General"
+      }
+    },
+    {
+      "name": "Lewis Buckle Reeve",
+      "attributes": {
+        "title": "Lieutenant"
+      }
+    },
+    {
+      "name": "Lord Balcarres",
+      "attributes": {
+        "title": "Lord",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Lord Nelson",
+      "attributes": {
+        "title": "Lord"
+      }
+    },
+    {
+      "name": "Lucas",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Lucian of Samosata",
+      "attributes": {}
+    },
+    {
+      "name": "M. V. Armstrong",
+      "attributes": {
+        "title": "Historian"
+      }
+    },
+    {
+      "name": "Mahomet Sirocco",
+      "attributes": {}
+    },
+    {
+      "name": "Maj. Rufus Dawes",
+      "attributes": {
+        "title": "Maj."
+      }
+    },
+    {
+      "name": "Major General A. P. Hill",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Major General Ambrose Burnside",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Major General George B. McClellan",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Major General Joseph Hooker",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Manchester",
+      "attributes": {}
+    },
+    {
+      "name": "Marcantonio Barbaro",
+      "attributes": {}
+    },
+    {
+      "name": "Marcantonio Colonna",
+      "attributes": {}
+    },
+    {
+      "name": "Marcellus Douglass",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Marco Antonio Bragadin",
+      "attributes": {}
+    },
+    {
+      "name": "Marco Querini",
+      "attributes": {}
+    },
+    {
+      "name": "Mardonius",
+      "attributes": {}
+    },
+    {
+      "name": "Marshal Grouchy",
+      "attributes": {}
+    },
+    {
+      "name": "Marshal Ney",
+      "attributes": {}
+    },
+    {
+      "name": "Marshal Soult",
+      "attributes": {}
+    },
+    {
+      "name": "Maurice",
+      "attributes": {}
+    },
+    {
+      "name": "Max Weber",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Maxcy Gregg",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Mazaces",
+      "attributes": {}
+    },
+    {
+      "name": "McRae",
+      "attributes": {}
+    },
+    {
+      "name": "Mehmed \u015euluk",
+      "attributes": {}
+    },
+    {
+      "name": "Melvin Bragg",
+      "attributes": {}
+    },
+    {
+      "name": "Menidas",
+      "attributes": {}
+    },
+    {
+      "name": "Michel Br\u00e9al",
+      "attributes": {}
+    },
+    {
+      "name": "Miguel de Cervantes",
+      "attributes": {}
+    },
+    {
+      "name": "Miltiades",
+      "attributes": {}
+    },
+    {
+      "name": "M\u00fcezzinzade Ali Pasha",
+      "attributes": {}
+    },
+    {
+      "name": "Napoleon I",
+      "attributes": {}
+    },
+    {
+      "name": "Nathan Kimball",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Nelson",
+      "attributes": {}
+    },
+    {
+      "name": "Nelson Miles",
+      "attributes": {
+        "title": "Lieutenant Colonel"
+      }
+    },
+    {
+      "name": "Noel Malcolm",
+      "attributes": {}
+    },
+    {
+      "name": "Occhiali",
+      "attributes": {}
+    },
+    {
+      "name": "Oliver Cromwell",
+      "attributes": {}
+    },
+    {
+      "name": "Paolo Giordano I Orsini",
+      "attributes": {}
+    },
+    {
+      "name": "Paolo Veronese",
+      "attributes": {}
+    },
+    {
+      "name": "Parmenion",
+      "attributes": {}
+    },
+    {
+      "name": "Pausanias",
+      "attributes": {}
+    },
+    {
+      "name": "Peisistratus",
+      "attributes": {}
+    },
+    {
+      "name": "Peter the Great",
+      "attributes": {
+        "title": "Peter"
+      }
+    },
+    {
+      "name": "Pheidippides",
+      "attributes": {}
+    },
+    {
+      "name": "Philip II of Spain",
+      "attributes": {}
+    },
+    {
+      "name": "Philip Schuyler",
+      "attributes": {
+        "title": "Major General",
+        "affiliation": "American"
+      }
+    },
+    {
+      "name": "Philip Skippon",
+      "attributes": {}
+    },
+    {
+      "name": "Philippides",
+      "attributes": {}
+    },
+    {
+      "name": "Phillips",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Pierre de Coubertin",
+      "attributes": {}
+    },
+    {
+      "name": "Pierre-Charles Villeneuve",
+      "attributes": {
+        "title": "French Admiral"
+      }
+    },
+    {
+      "name": "Pietro Giustiniani",
+      "attributes": {}
+    },
+    {
+      "name": "Pius V",
+      "attributes": {}
+    },
+    {
+      "name": "Plutarch",
+      "attributes": {
+        "profession": "Historian"
+      }
+    },
+    {
+      "name": "President Abraham Lincoln",
+      "attributes": {
+        "title": "President"
+      }
+    },
+    {
+      "name": "President Jefferson Davis",
+      "attributes": {
+        "title": "President"
+      }
+    },
+    {
+      "name": "Prince Maximilian Emanuel",
+      "attributes": {}
+    },
+    {
+      "name": "Prince of Orange",
+      "attributes": {}
+    },
+    {
+      "name": "Pulteney Malcolm",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Quiot",
+      "attributes": {}
+    },
+    {
+      "name": "Richard Goodwin Keats",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Richard H. Anderson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Richard Strachan",
+      "attributes": {
+        "title": "Sir"
+      }
+    },
+    {
+      "name": "Robert Rodes",
+      "attributes": {}
+    },
+    {
+      "name": "Robert Toombs",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Roger Lamb",
+      "attributes": {
+        "profession": "British soldier"
+      }
+    },
+    {
+      "name": "Rupert",
+      "attributes": {}
+    },
+    {
+      "name": "Rush Hawkins",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Sakae",
+      "attributes": {}
+    },
+    {
+      "name": "Samuel Sturgis",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Sebastiano Venier",
+      "attributes": {}
+    },
+    {
+      "name": "Selim II",
+      "attributes": {}
+    },
+    {
+      "name": "Sicinnus",
+      "attributes": {}
+    },
+    {
+      "name": "Simmias",
+      "attributes": {}
+    },
+    {
+      "name": "Simon Fraser",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "Simonides",
+      "attributes": {}
+    },
+    {
+      "name": "Sir John Elley",
+      "attributes": {}
+    },
+    {
+      "name": "Sir Thomas Slade",
+      "attributes": {}
+    },
+    {
+      "name": "Sisygambis",
+      "attributes": {}
+    },
+    {
+      "name": "Socles",
+      "attributes": {}
+    },
+    {
+      "name": "Sokollu Mehmed Pasha",
+      "attributes": {}
+    },
+    {
+      "name": "soldiers",
+      "attributes": {}
+    },
+    {
+      "name": "Spartans",
+      "attributes": {}
+    },
+    {
+      "name": "Stackelberg",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Stanis\u0142aw Lubomirski",
+      "attributes": {}
+    },
+    {
+      "name": "Starke",
+      "attributes": {}
+    },
+    {
+      "name": "Stateira II",
+      "attributes": {}
+    },
+    {
+      "name": "Stephen D. Lee",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "Stesilaos",
+      "attributes": {}
+    },
+    {
+      "name": "Suleiman the Magnificent",
+      "attributes": {}
+    },
+    {
+      "name": "Tadeusz Ko\u015bciuszko",
+      "attributes": {
+        "title": "engineer",
+        "affiliation": "Polish"
+      }
+    },
+    {
+      "name": "Thebans",
+      "attributes": {}
+    },
+    {
+      "name": "Themistocles",
+      "attributes": {}
+    },
+    {
+      "name": "Thersipus",
+      "attributes": {}
+    },
+    {
+      "name": "Theseus",
+      "attributes": {}
+    },
+    {
+      "name": "Thespians",
+      "attributes": {}
+    },
+    {
+      "name": "Thomas F. Meagher",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "Thomas Fairfax",
+      "attributes": {}
+    },
+    {
+      "name": "Thomas J. Stonewall Jackson",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Thomas Louis",
+      "attributes": {
+        "title": "Rear-Admiral Sir"
+      }
+    },
+    {
+      "name": "Thomas Masterman Hardy",
+      "attributes": {
+        "title": "Captain"
+      }
+    },
+    {
+      "name": "Thomas Murray",
+      "attributes": {}
+    },
+    {
+      "name": "Thomas Rodd",
+      "attributes": {}
+    },
+    {
+      "name": "Timothy Murphy",
+      "attributes": {
+        "profession": "Morgan's men"
+      }
+    },
+    {
+      "name": "Tintoretto",
+      "attributes": {}
+    },
+    {
+      "name": "Titian",
+      "attributes": {}
+    },
+    {
+      "name": "Tsar Peter I",
+      "attributes": {
+        "title": "Tsar"
+      }
+    },
+    {
+      "name": "Ulu\u00e7 Ali",
+      "attributes": {}
+    },
+    {
+      "name": "Walter Scott",
+      "attributes": {}
+    },
+    {
+      "name": "William A. Christian",
+      "attributes": {
+        "title": "Colonel"
+      }
+    },
+    {
+      "name": "William B. Franklin",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "William Beatty",
+      "attributes": {
+        "title": "Surgeon"
+      }
+    },
+    {
+      "name": "William E. Starke",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "William H. French",
+      "attributes": {}
+    },
+    {
+      "name": "William H. Seward",
+      "attributes": {
+        "title": "Secretary of State"
+      }
+    },
+    {
+      "name": "William Howe",
+      "attributes": {
+        "title": "General",
+        "affiliation": "British"
+      }
+    },
+    {
+      "name": "William Nelson Pendleton",
+      "attributes": {
+        "title": "Brigadier General"
+      }
+    },
+    {
+      "name": "William Waller",
+      "attributes": {}
+    },
+    {
+      "name": "Winfield S. Hancock",
+      "attributes": {}
+    },
+    {
+      "name": "Wolmar Anton von Schlippenbach",
+      "attributes": {
+        "title": "Major General"
+      }
+    },
+    {
+      "name": "Xenophon",
+      "attributes": {}
+    },
+    {
+      "name": "Xerxes",
+      "attributes": {}
+    },
+    {
+      "name": "Xerxes I",
+      "attributes": {}
+    },
+    {
+      "name": "Zieten",
+      "attributes": {}
+    },
+    {
+      "name": "\u00c1lvaro de Baz\u00e1n",
+      "attributes": {}
+    }
+  ],
+  "ship": [
+    {
+      "name": "Aigle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Alg\u00e9siras",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Argonauta",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Bahama",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Belleisle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Berwick",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Bucentaure",
+      "attributes": {
+        "type": "flagship"
+      }
+    },
+    {
+      "name": "Canopus",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Charles de Gaulle",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "Conqueror",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Duguay-Trouin",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "elephants",
+      "attributes": {}
+    },
+    {
+      "name": "Formidable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Fortuna de Napoli",
+      "attributes": {}
+    },
+    {
+      "name": "Fougueux",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "fustas",
+      "attributes": {}
+    },
+    {
+      "name": "galleass",
+      "attributes": {}
+    },
+    {
+      "name": "galley",
+      "attributes": {}
+    },
+    {
+      "name": "Hermione",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "name": "HMS Bellerophon",
+      "attributes": {}
+    },
+    {
+      "name": "HMS Defiance",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "HMS Donegal",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "HMS Endurance",
+      "attributes": {
+        "type": "patrol ship"
+      }
+    },
+    {
+      "name": "HMS Endymion",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "name": "HMS Euryalus",
+      "attributes": {
+        "type": "frigate"
+      }
+    },
+    {
+      "name": "HMS Pickle",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "HMS Queen",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "HMS Superb",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "HMS Victory",
+      "attributes": {}
+    },
+    {
+      "name": "H\u00e9ros",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Illustrious",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "Indomptable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Intr\u00e9pide",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Invincible",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "Leviathan",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Monarca",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Mont Blanc",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "name": "Neptune",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Neptuno",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Ocean",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "Pluton",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Prince of Wales",
+      "attributes": {
+        "type": "flagship"
+      }
+    },
+    {
+      "name": "Principe de Asturias",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "Pr\u00edncipe de Asturias",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "ram",
+      "attributes": {}
+    },
+    {
+      "name": "Rayo",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Real",
+      "attributes": {}
+    },
+    {
+      "name": "Redoutable",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Royal Sovereign",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Saipan",
+      "attributes": {
+        "type": "aircraft carrier"
+      }
+    },
+    {
+      "name": "San Agust\u00edn",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "San Francisco de Asis",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "San Ildefonso",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "San Juan Nepomuceno",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "San Justo",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "San Leandro",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Santa Ana",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Sant\u00edsima Trinidad",
+      "attributes": {
+        "type": "warship"
+      }
+    },
+    {
+      "name": "Scipion",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Spencer",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Sultana",
+      "attributes": {}
+    },
+    {
+      "name": "Swiftsure",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Temeraire",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "Tigre",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    },
+    {
+      "name": "trireme",
+      "attributes": {}
+    },
+    {
+      "name": "triremes",
+      "attributes": {}
+    },
+    {
+      "name": "USS Saratoga",
+      "attributes": {}
+    },
+    {
+      "name": "Zealous",
+      "attributes": {
+        "type": "ship of the line"
+      }
+    }
+  ],
+  "military_rank": [
+    {
+      "name": "Admiral",
+      "attributes": {}
+    },
+    {
+      "name": "general",
+      "attributes": {}
+    },
+    {
+      "name": "War-Archon",
+      "attributes": {}
+    }
+  ],
+  "place": [
+    {
+      "name": "Adriatic",
+      "attributes": {}
+    },
+    {
+      "name": "Aegina",
+      "attributes": {}
+    },
+    {
+      "name": "Albany",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "name": "Alexandria",
+      "attributes": {}
+    },
+    {
+      "name": "Ambelaki-Kynosaurus",
+      "attributes": {}
+    },
+    {
+      "name": "Antietam Creek",
+      "attributes": {}
+    },
+    {
+      "name": "Artemisium",
+      "attributes": {}
+    },
+    {
+      "name": "Asia",
+      "attributes": {}
+    },
+    {
+      "name": "Asia Minor",
+      "attributes": {}
+    },
+    {
+      "name": "Atlantic Ocean",
+      "attributes": {
+        "type": "ocean"
+      }
+    },
+    {
+      "name": "Attica",
+      "attributes": {}
+    },
+    {
+      "name": "Barbary Coast",
+      "attributes": {}
+    },
+    {
+      "name": "bay",
+      "attributes": {
+        "near": "Marathon"
+      }
+    },
+    {
+      "name": "Bay of Biscay",
+      "attributes": {
+        "type": "bay"
+      }
+    },
+    {
+      "name": "Bemis Heights",
+      "attributes": {}
+    },
+    {
+      "name": "Bloody Lane",
+      "attributes": {}
+    },
+    {
+      "name": "Boeotia",
+      "attributes": {}
+    },
+    {
+      "name": "Boteler's Ford",
+      "attributes": {}
+    },
+    {
+      "name": "Boulogne",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "name": "Brest",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Burnside Bridge",
+      "attributes": {}
+    },
+    {
+      "name": "Calabria",
+      "attributes": {}
+    },
+    {
+      "name": "Canada",
+      "attributes": {}
+    },
+    {
+      "name": "Cape Ortegal",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "name": "Cape St. Vincent",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "name": "Cape Trafalgar",
+      "attributes": {
+        "type": "cape"
+      }
+    },
+    {
+      "name": "Cape Vavari",
+      "attributes": {}
+    },
+    {
+      "name": "Cephalonia",
+      "attributes": {}
+    },
+    {
+      "name": "Ceuta",
+      "attributes": {}
+    },
+    {
+      "name": "Champlain Valley",
+      "attributes": {}
+    },
+    {
+      "name": "city of Trachis",
+      "attributes": {}
+    },
+    {
+      "name": "city-states of Athens",
+      "attributes": {}
+    },
+    {
+      "name": "Corinth",
+      "attributes": {}
+    },
+    {
+      "name": "Crete",
+      "attributes": {}
+    },
+    {
+      "name": "Cycladic Islands",
+      "attributes": {}
+    },
+    {
+      "name": "Cyprus",
+      "attributes": {}
+    },
+    {
+      "name": "C\u00e1diz",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "name": "Dalmatian",
+      "attributes": {}
+    },
+    {
+      "name": "Damasco",
+      "attributes": {}
+    },
+    {
+      "name": "Doge's Palace, Venice",
+      "attributes": {}
+    },
+    {
+      "name": "Dominicans of Pozna\u0144",
+      "attributes": {}
+    },
+    {
+      "name": "Duchy of Savoy",
+      "attributes": {}
+    },
+    {
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "name": "England",
+      "attributes": {}
+    },
+    {
+      "name": "English Channel",
+      "attributes": {
+        "type": "channel"
+      }
+    },
+    {
+      "name": "Euboea",
+      "attributes": {}
+    },
+    {
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "name": "Falmouth",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Famagusta",
+      "attributes": {}
+    },
+    {
+      "name": "Ferrol",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Fez",
+      "attributes": {}
+    },
+    {
+      "name": "Fort Santa Catalina",
+      "attributes": {
+        "type": "fort"
+      }
+    },
+    {
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "name": "Franco-Ottoman alliance",
+      "attributes": {}
+    },
+    {
+      "name": "Friuli",
+      "attributes": {}
+    },
+    {
+      "name": "Gallerie dell'Accademia, Venice",
+      "attributes": {}
+    },
+    {
+      "name": "Gibraltar",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Grand Duchy of Tuscany",
+      "attributes": {}
+    },
+    {
+      "name": "Greece",
+      "attributes": {}
+    },
+    {
+      "name": "Gulf of Corinth",
+      "attributes": {}
+    },
+    {
+      "name": "Gulf of Patras",
+      "attributes": {}
+    },
+    {
+      "name": "Hafsid dynasty",
+      "attributes": {}
+    },
+    {
+      "name": "Hellespont",
+      "attributes": {}
+    },
+    {
+      "name": "Hippodrome of Constantinople",
+      "attributes": {}
+    },
+    {
+      "name": "Hudson River",
+      "attributes": {}
+    },
+    {
+      "name": "Isthmus of Corinth",
+      "attributes": {}
+    },
+    {
+      "name": "Italian territories",
+      "attributes": {}
+    },
+    {
+      "name": "Italy",
+      "attributes": {}
+    },
+    {
+      "name": "Kingdom of Naples",
+      "attributes": {}
+    },
+    {
+      "name": "Kingdom of Sicily",
+      "attributes": {}
+    },
+    {
+      "name": "Kingston",
+      "attributes": {}
+    },
+    {
+      "name": "Knights of Malta",
+      "attributes": {}
+    },
+    {
+      "name": "Krak\u00f3w",
+      "attributes": {}
+    },
+    {
+      "name": "Lake George",
+      "attributes": {}
+    },
+    {
+      "name": "Lake Ontario",
+      "attributes": {}
+    },
+    {
+      "name": "Lepanto",
+      "attributes": {}
+    },
+    {
+      "name": "Macedonia",
+      "attributes": {}
+    },
+    {
+      "name": "Madrid",
+      "attributes": {}
+    },
+    {
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "name": "Maryland",
+      "attributes": {}
+    },
+    {
+      "name": "Mediterranean Sea",
+      "attributes": {}
+    },
+    {
+      "name": "Melilla",
+      "attributes": {}
+    },
+    {
+      "name": "Messina",
+      "attributes": {}
+    },
+    {
+      "name": "Miller's Cornfield",
+      "attributes": {}
+    },
+    {
+      "name": "Mohawk River",
+      "attributes": {}
+    },
+    {
+      "name": "Montreal",
+      "attributes": {}
+    },
+    {
+      "name": "Morocco",
+      "attributes": {}
+    },
+    {
+      "name": "mount Agrieliki",
+      "attributes": {}
+    },
+    {
+      "name": "Mount Aigaleo",
+      "attributes": {}
+    },
+    {
+      "name": "Mount Athos",
+      "attributes": {}
+    },
+    {
+      "name": "Naupactus",
+      "attributes": {}
+    },
+    {
+      "name": "New England",
+      "attributes": {}
+    },
+    {
+      "name": "New York",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "name": "New York City",
+      "attributes": {}
+    },
+    {
+      "name": "Nicosia",
+      "attributes": {}
+    },
+    {
+      "name": "North Woods",
+      "attributes": {}
+    },
+    {
+      "name": "North Zealand",
+      "attributes": {}
+    },
+    {
+      "name": "Northern end",
+      "attributes": {}
+    },
+    {
+      "name": "Oran",
+      "attributes": {}
+    },
+    {
+      "name": "Ottoman Empire",
+      "attributes": {}
+    },
+    {
+      "name": "Padua",
+      "attributes": {}
+    },
+    {
+      "name": "Papal States",
+      "attributes": {}
+    },
+    {
+      "name": "Peloponnese",
+      "attributes": {}
+    },
+    {
+      "name": "Pennsylvania Reserves",
+      "attributes": {}
+    },
+    {
+      "name": "Phalerum",
+      "attributes": {}
+    },
+    {
+      "name": "Philadelphia",
+      "attributes": {}
+    },
+    {
+      "name": "Philip Pry house",
+      "attributes": {}
+    },
+    {
+      "name": "Phocis",
+      "attributes": {}
+    },
+    {
+      "name": "Porte",
+      "attributes": {}
+    },
+    {
+      "name": "Portsmouth",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Psyttaleia",
+      "attributes": {}
+    },
+    {
+      "name": "Quebec",
+      "attributes": {}
+    },
+    {
+      "name": "Republic of Genoa",
+      "attributes": {}
+    },
+    {
+      "name": "Republic of Venice",
+      "attributes": {}
+    },
+    {
+      "name": "Rochefort",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "name": "Rome",
+      "attributes": {}
+    },
+    {
+      "name": "Rosia Bay",
+      "attributes": {
+        "type": "bay"
+      }
+    },
+    {
+      "name": "Rota",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "name": "Saint George's Islet",
+      "attributes": {
+        "alternate_name": "Ayios Georgis"
+      }
+    },
+    {
+      "name": "Saint Peter's Basilica",
+      "attributes": {}
+    },
+    {
+      "name": "Sala dello Scrutinio",
+      "attributes": {}
+    },
+    {
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "name": "Sami",
+      "attributes": {}
+    },
+    {
+      "name": "San Domenico Maggiore",
+      "attributes": {}
+    },
+    {
+      "name": "Sanl\u00facar",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "name": "Santa Mar\u00eda",
+      "attributes": {
+        "type": "port"
+      }
+    },
+    {
+      "name": "Saratoga",
+      "attributes": {
+        "type": "town"
+      }
+    },
+    {
+      "name": "Saratoga National Historical Park",
+      "attributes": {}
+    },
+    {
+      "name": "Sardinia",
+      "attributes": {}
+    },
+    {
+      "name": "Saronic Gulf",
+      "attributes": {}
+    },
+    {
+      "name": "Schuylerville",
+      "attributes": {}
+    },
+    {
+      "name": "Sicily",
+      "attributes": {}
+    },
+    {
+      "name": "Spain",
+      "attributes": {}
+    },
+    {
+      "name": "Spanish Empire",
+      "attributes": {}
+    },
+    {
+      "name": "Spanish Senate",
+      "attributes": {}
+    },
+    {
+      "name": "Spotsylvania's Bloody Angle",
+      "attributes": {}
+    },
+    {
+      "name": "Stillwater",
+      "attributes": {}
+    },
+    {
+      "name": "Straits of Gibraltar",
+      "attributes": {}
+    },
+    {
+      "name": "Sunken Road",
+      "attributes": {}
+    },
+    {
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "name": "Thessaly",
+      "attributes": {}
+    },
+    {
+      "name": "Thirteen Colonies",
+      "attributes": {}
+    },
+    {
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "name": "Tommaso Dolabella",
+      "attributes": {}
+    },
+    {
+      "name": "Toulon",
+      "attributes": {
+        "type": "city"
+      }
+    },
+    {
+      "name": "Trafalgar",
+      "attributes": {}
+    },
+    {
+      "name": "Trafalgar Cemetery",
+      "attributes": {
+        "type": "cemetery"
+      }
+    },
+    {
+      "name": "Urbino",
+      "attributes": {}
+    },
+    {
+      "name": "Val d'Alessandria",
+      "attributes": {}
+    },
+    {
+      "name": "Wawel Castle",
+      "attributes": {}
+    },
+    {
+      "name": "Wenceslas Cobergher",
+      "attributes": {}
+    },
+    {
+      "name": "West Woods",
+      "attributes": {}
+    }
+  ],
+  "profession": [
+    {
+      "name": "ambassador",
+      "attributes": {}
+    },
+    {
+      "name": "Builder",
+      "attributes": {}
+    },
+    {
+      "name": "Designer",
+      "attributes": {}
+    },
+    {
+      "name": "Doge of Venice",
+      "attributes": {}
+    },
+    {
+      "name": "dragoons",
+      "attributes": {}
+    },
+    {
+      "name": "janissaries",
+      "attributes": {}
+    },
+    {
+      "name": "marines",
+      "attributes": {}
+    },
+    {
+      "name": "oarsmen",
+      "attributes": {}
+    },
+    {
+      "name": "officers",
+      "attributes": {}
+    },
+    {
+      "name": "sailor",
+      "attributes": {}
+    },
+    {
+      "name": "sailors",
+      "attributes": {}
+    },
+    {
+      "name": "spy",
+      "attributes": {}
+    }
+  ],
+  "weapon": [
+    {
+      "name": "95th Rifles",
+      "attributes": {}
+    },
+    {
+      "name": "arquebusier",
+      "attributes": {}
+    },
+    {
+      "name": "arrow",
+      "attributes": {}
+    },
+    {
+      "name": "arrows",
+      "attributes": {}
+    },
+    {
+      "name": "artilleries",
+      "attributes": {}
+    },
+    {
+      "name": "artillery",
+      "attributes": {}
+    },
+    {
+      "name": "Battery B, 4th U.S. Artillery",
+      "attributes": {}
+    },
+    {
+      "name": "bayonet",
+      "attributes": {}
+    },
+    {
+      "name": "bow",
+      "attributes": {}
+    },
+    {
+      "name": "cannons",
+      "attributes": {}
+    },
+    {
+      "name": "Carabine",
+      "attributes": {}
+    },
+    {
+      "name": "cavalry",
+      "attributes": {}
+    },
+    {
+      "name": "chariots",
+      "attributes": {}
+    },
+    {
+      "name": "Colours",
+      "attributes": {}
+    },
+    {
+      "name": "Cuirasses",
+      "attributes": {}
+    },
+    {
+      "name": "de Valliere cannon",
+      "attributes": {}
+    },
+    {
+      "name": "dragoons",
+      "attributes": {}
+    },
+    {
+      "name": "guns",
+      "attributes": {}
+    },
+    {
+      "name": "musket",
+      "attributes": {}
+    },
+    {
+      "name": "musketeer",
+      "attributes": {}
+    },
+    {
+      "name": "musketeers",
+      "attributes": {}
+    },
+    {
+      "name": "muskets",
+      "attributes": {}
+    },
+    {
+      "name": "Parrott rifles",
+      "attributes": {}
+    },
+    {
+      "name": "pikemen",
+      "attributes": {}
+    },
+    {
+      "name": "sabres",
+      "attributes": {}
+    },
+    {
+      "name": "sarissa",
+      "attributes": {}
+    },
+    {
+      "name": "scythed chariots",
+      "attributes": {}
+    },
+    {
+      "name": "shield",
+      "attributes": {}
+    },
+    {
+      "name": "spear",
+      "attributes": {}
+    },
+    {
+      "name": "sword",
+      "attributes": {}
+    },
+    {
+      "name": "swords",
+      "attributes": {}
+    },
+    {
+      "name": "three-pounder cannons",
+      "attributes": {}
+    },
+    {
+      "name": "trireme",
+      "attributes": {}
+    }
+  ],
+  "place name": [
+    {
+      "name": "Agincourt",
+      "attributes": {}
+    },
+    {
+      "name": "Antietam",
+      "attributes": {}
+    },
+    {
+      "name": "Armenia",
+      "attributes": {}
+    },
+    {
+      "name": "Asia Minor",
+      "attributes": {}
+    },
+    {
+      "name": "Austerlitz",
+      "attributes": {}
+    },
+    {
+      "name": "Bactria",
+      "attributes": {}
+    },
+    {
+      "name": "Blenheim",
+      "attributes": {}
+    },
+    {
+      "name": "Britain",
+      "attributes": {}
+    },
+    {
+      "name": "Brussels",
+      "attributes": {}
+    },
+    {
+      "name": "Bulge",
+      "attributes": {}
+    },
+    {
+      "name": "Cannae",
+      "attributes": {}
+    },
+    {
+      "name": "Cornwall",
+      "attributes": {}
+    },
+    {
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "name": "England",
+      "attributes": {}
+    },
+    {
+      "name": "Euphrates",
+      "attributes": {}
+    },
+    {
+      "name": "Europe",
+      "attributes": {}
+    },
+    {
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "name": "Gand\u0101ra",
+      "attributes": {}
+    },
+    {
+      "name": "Gaugamela",
+      "attributes": {}
+    },
+    {
+      "name": "Gettysburg",
+      "attributes": {}
+    },
+    {
+      "name": "Hastings",
+      "attributes": {}
+    },
+    {
+      "name": "Iraq",
+      "attributes": {}
+    },
+    {
+      "name": "Iraqi Kurdistan",
+      "attributes": {}
+    },
+    {
+      "name": "Ireland",
+      "attributes": {}
+    },
+    {
+      "name": "Jebel Maqlub",
+      "attributes": {}
+    },
+    {
+      "name": "Karamlesh",
+      "attributes": {}
+    },
+    {
+      "name": "La Belle Alliance",
+      "attributes": {}
+    },
+    {
+      "name": "Lepanto",
+      "attributes": {}
+    },
+    {
+      "name": "Levant",
+      "attributes": {}
+    },
+    {
+      "name": "Long Hold Spinney",
+      "attributes": {}
+    },
+    {
+      "name": "Macedon",
+      "attributes": {}
+    },
+    {
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "name": "Mesopotamia",
+      "attributes": {}
+    },
+    {
+      "name": "Midway",
+      "attributes": {}
+    },
+    {
+      "name": "Mont Saint-Jean",
+      "attributes": {}
+    },
+    {
+      "name": "Mount Alfaf",
+      "attributes": {}
+    },
+    {
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "name": "Nineveh Plains",
+      "attributes": {}
+    },
+    {
+      "name": "Normandy",
+      "attributes": {}
+    },
+    {
+      "name": "North America",
+      "attributes": {}
+    },
+    {
+      "name": "Northamptonshire",
+      "attributes": {}
+    },
+    {
+      "name": "Northern England",
+      "attributes": {}
+    },
+    {
+      "name": "Poltava",
+      "attributes": {}
+    },
+    {
+      "name": "Prussia",
+      "attributes": {}
+    },
+    {
+      "name": "Qaraqosh",
+      "attributes": {}
+    },
+    {
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "name": "Saratoga",
+      "attributes": {}
+    },
+    {
+      "name": "Stalingrad",
+      "attributes": {}
+    },
+    {
+      "name": "Sulby Hedges",
+      "attributes": {}
+    },
+    {
+      "name": "Syria",
+      "attributes": {}
+    },
+    {
+      "name": "Tel Gomel",
+      "attributes": {}
+    },
+    {
+      "name": "Tell Aswad",
+      "attributes": {}
+    },
+    {
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "name": "Trafalgar",
+      "attributes": {}
+    },
+    {
+      "name": "Turkey",
+      "attributes": {}
+    },
+    {
+      "name": "Vale of Tempe",
+      "attributes": {}
+    },
+    {
+      "name": "Wales",
+      "attributes": {}
+    },
+    {
+      "name": "Wardak",
+      "attributes": {}
+    },
+    {
+      "name": "Waterloo",
+      "attributes": {}
+    },
+    {
+      "name": "Wavre",
+      "attributes": {}
+    },
+    {
+      "name": "West Country",
+      "attributes": {}
+    },
+    {
+      "name": "Yorktown",
+      "attributes": {}
+    },
+    {
+      "name": "Zama",
+      "attributes": {}
+    }
+  ],
+  "battle": [
+    {
+      "name": "Battle of Antietam",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Artemisium",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Bemis Heights",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Bennington",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Camden",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Freeman's Farm",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Holowczyn",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Khotyn",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Lepanto",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Lesnaya",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Ligny",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Marathon",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Mycale",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Narva",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Plataea",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Poltava",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Quatre Bras",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Salamis",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Sharpsburg",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of South Mountain",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Thermopylae",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Waterloo",
+      "attributes": {}
+    },
+    {
+      "name": "Battle of Wavre",
+      "attributes": {}
+    },
+    {
+      "name": "Battles of Saratoga",
+      "attributes": {}
+    },
+    {
+      "name": "Cretan War",
+      "attributes": {}
+    },
+    {
+      "name": "Crimean War",
+      "attributes": {}
+    },
+    {
+      "name": "Gettysburg",
+      "attributes": {}
+    },
+    {
+      "name": "Second Bull Run",
+      "attributes": {}
+    },
+    {
+      "name": "Shiloh",
+      "attributes": {}
+    },
+    {
+      "name": "War of 1812",
+      "attributes": {}
+    },
+    {
+      "name": "War of Cyprus",
+      "attributes": {}
+    }
+  ],
+  "military_unit": [
+    {
+      "name": "12th Massachusetts Infantry",
+      "attributes": {}
+    },
+    {
+      "name": "27th Indiana Volunteer Infantry",
+      "attributes": {}
+    },
+    {
+      "name": "6th Wisconsin Regiment",
+      "attributes": {}
+    },
+    {
+      "name": "Alabama Brigade",
+      "attributes": {}
+    },
+    {
+      "name": "Army National Guard units",
+      "attributes": {}
+    },
+    {
+      "name": "Army of Northern Virginia",
+      "attributes": {}
+    },
+    {
+      "name": "Army of the Potomac",
+      "attributes": {}
+    },
+    {
+      "name": "Army of Virginia",
+      "attributes": {}
+    },
+    {
+      "name": "Cameron Highlanders",
+      "attributes": {}
+    },
+    {
+      "name": "Cavalry Division",
+      "attributes": {}
+    },
+    {
+      "name": "Continental Army",
+      "attributes": {}
+    },
+    {
+      "name": "corps",
+      "attributes": {}
+    },
+    {
+      "name": "Cpl. Barton W. Mitchell",
+      "attributes": {
+        "title": "Cpl."
+      }
+    },
+    {
+      "name": "division",
+      "attributes": {}
+    },
+    {
+      "name": "First Sergeant John M. Bloss",
+      "attributes": {
+        "title": "First Sergeant"
+      }
+    },
+    {
+      "name": "hoplites",
+      "attributes": {}
+    },
+    {
+      "name": "I Corps",
+      "attributes": {}
+    },
+    {
+      "name": "II Corps",
+      "attributes": {}
+    },
+    {
+      "name": "Irish Brigade",
+      "attributes": {}
+    },
+    {
+      "name": "Iron Brigade",
+      "attributes": {}
+    },
+    {
+      "name": "IV Corps",
+      "attributes": {}
+    },
+    {
+      "name": "IX Corps",
+      "attributes": {}
+    },
+    {
+      "name": "Louisiana Tiger Brigade",
+      "attributes": {}
+    },
+    {
+      "name": "Morgan's Riflemen",
+      "attributes": {}
+    },
+    {
+      "name": "Provisional Rifle Corps",
+      "attributes": {}
+    },
+    {
+      "name": "regiments",
+      "attributes": {}
+    },
+    {
+      "name": "V Corps",
+      "attributes": {}
+    },
+    {
+      "name": "VI Corps",
+      "attributes": {}
+    },
+    {
+      "name": "XII Corps",
+      "attributes": {}
+    }
+  ],
+  "town": [
+    {
+      "name": "Acropolis",
+      "attributes": {}
+    },
+    {
+      "name": "Agrae",
+      "attributes": {}
+    },
+    {
+      "name": "Alpenus",
+      "attributes": {}
+    },
+    {
+      "name": "Arbela",
+      "attributes": {}
+    },
+    {
+      "name": "Artemisium",
+      "attributes": {}
+    },
+    {
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "name": "Babylon",
+      "attributes": {}
+    },
+    {
+      "name": "Baltimore",
+      "attributes": {}
+    },
+    {
+      "name": "Baturyn",
+      "attributes": {}
+    },
+    {
+      "name": "Bendery",
+      "attributes": {}
+    },
+    {
+      "name": "Boonsboro",
+      "attributes": {}
+    },
+    {
+      "name": "Borodino",
+      "attributes": {}
+    },
+    {
+      "name": "Braine-l'Alleud",
+      "attributes": {}
+    },
+    {
+      "name": "Calynda",
+      "attributes": {}
+    },
+    {
+      "name": "Cape Sounion",
+      "attributes": {}
+    },
+    {
+      "name": "Caria",
+      "attributes": {}
+    },
+    {
+      "name": "Charleroi",
+      "attributes": {}
+    },
+    {
+      "name": "Chester",
+      "attributes": {}
+    },
+    {
+      "name": "Cilicia",
+      "attributes": {}
+    },
+    {
+      "name": "city of Plataea",
+      "attributes": {}
+    },
+    {
+      "name": "Clipston",
+      "attributes": {}
+    },
+    {
+      "name": "Cold Harbor",
+      "attributes": {}
+    },
+    {
+      "name": "Cunaxa",
+      "attributes": {}
+    },
+    {
+      "name": "Cyprus",
+      "attributes": {}
+    },
+    {
+      "name": "Daventry",
+      "attributes": {}
+    },
+    {
+      "name": "Doriskos",
+      "attributes": {}
+    },
+    {
+      "name": "East Farndon",
+      "attributes": {}
+    },
+    {
+      "name": "Erbil",
+      "attributes": {}
+    },
+    {
+      "name": "Erchius",
+      "attributes": {}
+    },
+    {
+      "name": "Eretria",
+      "attributes": {}
+    },
+    {
+      "name": "Falmouth",
+      "attributes": {}
+    },
+    {
+      "name": "Fredericksburg",
+      "attributes": {}
+    },
+    {
+      "name": "Gaugamela",
+      "attributes": {}
+    },
+    {
+      "name": "Gaza",
+      "attributes": {}
+    },
+    {
+      "name": "Genappe",
+      "attributes": {}
+    },
+    {
+      "name": "Grodno",
+      "attributes": {}
+    },
+    {
+      "name": "Hagerstown",
+      "attributes": {}
+    },
+    {
+      "name": "Halicarnassus",
+      "attributes": {}
+    },
+    {
+      "name": "Harpers Ferry",
+      "attributes": {}
+    },
+    {
+      "name": "Hereford",
+      "attributes": {}
+    },
+    {
+      "name": "Ionia",
+      "attributes": {}
+    },
+    {
+      "name": "Issus",
+      "attributes": {}
+    },
+    {
+      "name": "Issy",
+      "attributes": {}
+    },
+    {
+      "name": "Jersey",
+      "attributes": {}
+    },
+    {
+      "name": "Kentucky",
+      "attributes": {}
+    },
+    {
+      "name": "Lade",
+      "attributes": {}
+    },
+    {
+      "name": "Lasne",
+      "attributes": {}
+    },
+    {
+      "name": "Lasne-Chapelle-Saint-Lambert",
+      "attributes": {}
+    },
+    {
+      "name": "Leicester",
+      "attributes": {}
+    },
+    {
+      "name": "Leuctra",
+      "attributes": {}
+    },
+    {
+      "name": "Little Oxendon",
+      "attributes": {}
+    },
+    {
+      "name": "Liverpool",
+      "attributes": {}
+    },
+    {
+      "name": "London",
+      "attributes": {}
+    },
+    {
+      "name": "Longwy",
+      "attributes": {}
+    },
+    {
+      "name": "Lostwithiel",
+      "attributes": {}
+    },
+    {
+      "name": "Macedon",
+      "attributes": {}
+    },
+    {
+      "name": "Marathon",
+      "attributes": {}
+    },
+    {
+      "name": "Market Harborough",
+      "attributes": {}
+    },
+    {
+      "name": "Marston Moor",
+      "attributes": {}
+    },
+    {
+      "name": "Marston Trussell",
+      "attributes": {}
+    },
+    {
+      "name": "Megara",
+      "attributes": {}
+    },
+    {
+      "name": "Miletus",
+      "attributes": {}
+    },
+    {
+      "name": "Minsk",
+      "attributes": {}
+    },
+    {
+      "name": "Mississippi",
+      "attributes": {}
+    },
+    {
+      "name": "Mitau",
+      "attributes": {}
+    },
+    {
+      "name": "Mons",
+      "attributes": {}
+    },
+    {
+      "name": "Moscow",
+      "attributes": {}
+    },
+    {
+      "name": "Mosul",
+      "attributes": {}
+    },
+    {
+      "name": "Naseby",
+      "attributes": {}
+    },
+    {
+      "name": "Naxos",
+      "attributes": {}
+    },
+    {
+      "name": "Newbury",
+      "attributes": {}
+    },
+    {
+      "name": "Nivelles",
+      "attributes": {}
+    },
+    {
+      "name": "Northampton",
+      "attributes": {}
+    },
+    {
+      "name": "Olympics",
+      "attributes": {}
+    },
+    {
+      "name": "Osnabr\u00fcck",
+      "attributes": {}
+    },
+    {
+      "name": "Ostend",
+      "attributes": {}
+    },
+    {
+      "name": "Oxford",
+      "attributes": {}
+    },
+    {
+      "name": "Paris",
+      "attributes": {}
+    },
+    {
+      "name": "Persepolis",
+      "attributes": {}
+    },
+    {
+      "name": "Plataea",
+      "attributes": {}
+    },
+    {
+      "name": "Propontis",
+      "attributes": {}
+    },
+    {
+      "name": "Pushkaryovka",
+      "attributes": {}
+    },
+    {
+      "name": "Saint Helena",
+      "attributes": {}
+    },
+    {
+      "name": "Salamis",
+      "attributes": {}
+    },
+    {
+      "name": "Sarantaporo",
+      "attributes": {}
+    },
+    {
+      "name": "Sardis",
+      "attributes": {}
+    },
+    {
+      "name": "Sharpsburg",
+      "attributes": {}
+    },
+    {
+      "name": "Shepherdstown",
+      "attributes": {}
+    },
+    {
+      "name": "Siberia",
+      "attributes": {}
+    },
+    {
+      "name": "Smohain",
+      "attributes": {}
+    },
+    {
+      "name": "Smorgon",
+      "attributes": {}
+    },
+    {
+      "name": "Sparta",
+      "attributes": {}
+    },
+    {
+      "name": "St. Petersburg",
+      "attributes": {}
+    },
+    {
+      "name": "Stoa Poikile",
+      "attributes": {}
+    },
+    {
+      "name": "Taunton",
+      "attributes": {}
+    },
+    {
+      "name": "Thapsacus",
+      "attributes": {}
+    },
+    {
+      "name": "Thebes",
+      "attributes": {}
+    },
+    {
+      "name": "Thermopylae",
+      "attributes": {}
+    },
+    {
+      "name": "Thespiae",
+      "attributes": {}
+    },
+    {
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "name": "Trachis",
+      "attributes": {}
+    },
+    {
+      "name": "Troezen",
+      "attributes": {}
+    },
+    {
+      "name": "Truro",
+      "attributes": {}
+    },
+    {
+      "name": "Tyre",
+      "attributes": {}
+    },
+    {
+      "name": "Vicksburg",
+      "attributes": {}
+    },
+    {
+      "name": "Ways",
+      "attributes": {}
+    },
+    {
+      "name": "West Virginia",
+      "attributes": {}
+    },
+    {
+      "name": "Williamsport",
+      "attributes": {}
+    }
+  ],
+  "building": [
+    {
+      "name": "Dunker Church",
+      "attributes": {}
+    },
+    {
+      "name": "East Woods",
+      "attributes": {}
+    },
+    {
+      "name": "Hougoumont",
+      "attributes": {}
+    },
+    {
+      "name": "King of Spain inn",
+      "attributes": {}
+    },
+    {
+      "name": "La Belle Alliance",
+      "attributes": {}
+    },
+    {
+      "name": "La Haye Sainte",
+      "attributes": {}
+    },
+    {
+      "name": "Le Caillou",
+      "attributes": {}
+    },
+    {
+      "name": "Papelotte",
+      "attributes": {}
+    },
+    {
+      "name": "Rossomme farm",
+      "attributes": {}
+    },
+    {
+      "name": "Washington, D.C.",
+      "attributes": {}
+    },
+    {
+      "name": "West Woods",
+      "attributes": {}
+    }
+  ],
+  "bridge": [
+    {
+      "name": "Rohrbach's Bridge",
+      "attributes": {}
+    },
+    {
+      "name": "stone bridge",
+      "attributes": {}
+    }
+  ],
+  "river": [
+    {
+      "name": "Antietam Creek",
+      "attributes": {}
+    },
+    {
+      "name": "Bumodus",
+      "attributes": {}
+    },
+    {
+      "name": "Dnieper",
+      "attributes": {}
+    },
+    {
+      "name": "Echeidorus River",
+      "attributes": {}
+    },
+    {
+      "name": "Halys",
+      "attributes": {}
+    },
+    {
+      "name": "Potomac River",
+      "attributes": {}
+    },
+    {
+      "name": "River Dyle",
+      "attributes": {}
+    },
+    {
+      "name": "Tigris",
+      "attributes": {}
+    },
+    {
+      "name": "Vistula River",
+      "attributes": {}
+    },
+    {
+      "name": "Vorskla",
+      "attributes": {}
+    }
+  ],
+  "item": [
+    {
+      "name": "baggage",
+      "attributes": {}
+    },
+    {
+      "name": "cigars",
+      "attributes": {}
+    },
+    {
+      "name": "Emancipation Proclamation",
+      "attributes": {}
+    },
+    {
+      "name": "silver",
+      "attributes": {}
+    },
+    {
+      "name": "stores",
+      "attributes": {}
+    }
+  ],
+  "country": [
+    {
+      "name": "Austria",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "name": "Belgium",
+      "attributes": {}
+    },
+    {
+      "name": "Britain",
+      "attributes": {
+        "type": "country"
+      }
+    },
+    {
+      "name": "British",
+      "attributes": {}
+    },
+    {
+      "name": "Brunswick",
+      "attributes": {}
+    },
+    {
+      "name": "Denmark-Norway",
+      "attributes": {}
+    },
+    {
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "name": "France",
+      "attributes": {}
+    },
+    {
+      "name": "French",
+      "attributes": {}
+    },
+    {
+      "name": "Greece",
+      "attributes": {}
+    },
+    {
+      "name": "Hanover",
+      "attributes": {}
+    },
+    {
+      "name": "Nassau",
+      "attributes": {}
+    },
+    {
+      "name": "Netherlands",
+      "attributes": {}
+    },
+    {
+      "name": "Persia",
+      "attributes": {}
+    },
+    {
+      "name": "Polish-Lithuanian Commonwealth",
+      "attributes": {}
+    },
+    {
+      "name": "Russia",
+      "attributes": {}
+    },
+    {
+      "name": "Saxony-Poland",
+      "attributes": {}
+    },
+    {
+      "name": "Scotland",
+      "attributes": {}
+    },
+    {
+      "name": "Sweden",
+      "attributes": {}
+    },
+    {
+      "name": "Tsardom of Russia",
+      "attributes": {}
+    },
+    {
+      "name": "Ukraine",
+      "attributes": {}
+    },
+    {
+      "name": "United Kingdom",
+      "attributes": {}
+    },
+    {
+      "name": "United Kingdom of the Netherlands",
+      "attributes": {}
+    },
+    {
+      "name": "Wales",
+      "attributes": {}
+    }
+  ],
+  "government": [
+    {
+      "name": "Confederacy",
+      "attributes": {}
+    }
+  ],
+  "state": [
+    {
+      "name": "Kentucky",
+      "attributes": {}
+    },
+    {
+      "name": "Maryland",
+      "attributes": {}
+    },
+    {
+      "name": "North Carolina",
+      "attributes": {}
+    },
+    {
+      "name": "Virginia",
+      "attributes": {}
+    }
+  ],
+  "order": [
+    {
+      "name": "Special Order 191",
+      "attributes": {}
+    }
+  ],
+  "historian": [
+    {
+      "name": "Ctesias of Cnidus",
+      "attributes": {}
+    },
+    {
+      "name": "Diodorus Siculus",
+      "attributes": {}
+    },
+    {
+      "name": "Ephorus",
+      "attributes": {}
+    },
+    {
+      "name": "George B. Grundy",
+      "attributes": {}
+    },
+    {
+      "name": "Herodotus",
+      "attributes": {}
+    },
+    {
+      "name": "Joseph T. Glatthaar",
+      "attributes": {}
+    },
+    {
+      "name": "Liddell Hart",
+      "attributes": {}
+    },
+    {
+      "name": "Plutarch",
+      "attributes": {}
+    }
+  ],
+  "road": [
+    {
+      "name": "Brussels road",
+      "attributes": {}
+    },
+    {
+      "name": "Hagerstown Pike",
+      "attributes": {}
+    },
+    {
+      "name": "Hagerstown Turnpike",
+      "attributes": {}
+    },
+    {
+      "name": "Ohain road",
+      "attributes": {}
+    }
+  ],
+  "farm": [
+    {
+      "name": "John Otto",
+      "attributes": {}
+    },
+    {
+      "name": "Mumma Farm",
+      "attributes": {}
+    },
+    {
+      "name": "Nicodemus Farm",
+      "attributes": {}
+    },
+    {
+      "name": "Wilson farm",
+      "attributes": {}
+    }
+  ],
+  "sharpshooter": [
+    {
+      "name": "sharpshooter",
+      "attributes": {}
+    }
+  ],
+  "organization": [
+    {
+      "name": "American Battlefield Trust",
+      "attributes": {}
+    },
+    {
+      "name": "American Red Cross",
+      "attributes": {}
+    },
+    {
+      "name": "Antietam National Battlefield",
+      "attributes": {}
+    },
+    {
+      "name": "Cossack Hetmanate Zaporizhian Host",
+      "attributes": {}
+    },
+    {
+      "name": "Don Cossacks",
+      "attributes": {}
+    },
+    {
+      "name": "Hellenic League",
+      "attributes": {}
+    },
+    {
+      "name": "League of Corinth",
+      "attributes": {}
+    },
+    {
+      "name": "Sandomierz Confederation",
+      "attributes": {}
+    }
+  ],
+  "city": [
+    {
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "name": "Atlanta",
+      "attributes": {}
+    },
+    {
+      "name": "Boeotia",
+      "attributes": {}
+    },
+    {
+      "name": "Locrians",
+      "attributes": {}
+    },
+    {
+      "name": "Peloponnesus",
+      "attributes": {}
+    },
+    {
+      "name": "Persepolis",
+      "attributes": {}
+    },
+    {
+      "name": "Thespiae",
+      "attributes": {}
+    },
+    {
+      "name": "Thessaly",
+      "attributes": {}
+    },
+    {
+      "name": "Troezen",
+      "attributes": {}
+    }
+  ],
+  "empire": [
+    {
+      "name": "Achaemenid Empire",
+      "attributes": {}
+    },
+    {
+      "name": "Achaemenid Persian Empire",
+      "attributes": {}
+    },
+    {
+      "name": "Persian Empire",
+      "attributes": {}
+    },
+    {
+      "name": "Swedish Empire",
+      "attributes": {}
+    }
+  ],
+  "title": [
+    {
+      "name": "admiral",
+      "attributes": {}
+    },
+    {
+      "name": "Colonel Edward Harley",
+      "attributes": {}
+    },
+    {
+      "name": "Colonel Howard",
+      "attributes": {}
+    },
+    {
+      "name": "Colonel John Okey",
+      "attributes": {}
+    },
+    {
+      "name": "commander",
+      "attributes": {}
+    },
+    {
+      "name": "Don",
+      "attributes": {}
+    },
+    {
+      "name": "Duke of Wellington",
+      "attributes": {}
+    },
+    {
+      "name": "Duke of York",
+      "attributes": {}
+    },
+    {
+      "name": "Earl of Uxbridge",
+      "attributes": {}
+    },
+    {
+      "name": "field marshal",
+      "attributes": {}
+    },
+    {
+      "name": "Field Marshal Bl\u00fccher",
+      "attributes": {}
+    },
+    {
+      "name": "general",
+      "attributes": {}
+    },
+    {
+      "name": "King",
+      "attributes": {}
+    },
+    {
+      "name": "Lieutenant Colonel Thomas Pride",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Astley",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Capell",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Digby",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Goring",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Hill",
+      "attributes": {}
+    },
+    {
+      "name": "Lord Hopton",
+      "attributes": {}
+    },
+    {
+      "name": "Marquis of Santa Cruz",
+      "attributes": {}
+    },
+    {
+      "name": "nobleman",
+      "attributes": {}
+    },
+    {
+      "name": "Pope",
+      "attributes": {}
+    },
+    {
+      "name": "Prince",
+      "attributes": {}
+    },
+    {
+      "name": "Prince Rupert of the Rhine",
+      "attributes": {}
+    },
+    {
+      "name": "Queen",
+      "attributes": {}
+    },
+    {
+      "name": "satrap",
+      "attributes": {}
+    },
+    {
+      "name": "Sergeant-Major General",
+      "attributes": {}
+    },
+    {
+      "name": "Sir",
+      "attributes": {}
+    },
+    {
+      "name": "Sir Bernard Astley",
+      "attributes": {}
+    },
+    {
+      "name": "Sir Edward Hyde",
+      "attributes": {}
+    },
+    {
+      "name": "Sir Francis Ruce",
+      "attributes": {}
+    },
+    {
+      "name": "Sir George Lisle",
+      "attributes": {}
+    },
+    {
+      "name": "Sir Marmaduke Langdale",
+      "attributes": {}
+    },
+    {
+      "name": "Sultan",
+      "attributes": {}
+    }
+  ],
+  "people": [
+    {
+      "name": "Achaean",
+      "attributes": {}
+    },
+    {
+      "name": "Agrianes",
+      "attributes": {}
+    },
+    {
+      "name": "Amardi",
+      "attributes": {}
+    },
+    {
+      "name": "Arachosian",
+      "attributes": {}
+    },
+    {
+      "name": "Aretes",
+      "attributes": {}
+    },
+    {
+      "name": "Armenian",
+      "attributes": {}
+    },
+    {
+      "name": "Cadusian",
+      "attributes": {}
+    },
+    {
+      "name": "Cappadocian",
+      "attributes": {}
+    },
+    {
+      "name": "Carian",
+      "attributes": {}
+    },
+    {
+      "name": "Caucasian Albanian",
+      "attributes": {}
+    },
+    {
+      "name": "Companion",
+      "attributes": {}
+    },
+    {
+      "name": "Cretan",
+      "attributes": {}
+    },
+    {
+      "name": "Dahae",
+      "attributes": {}
+    },
+    {
+      "name": "hypaspists",
+      "attributes": {}
+    },
+    {
+      "name": "Hyrcanian",
+      "attributes": {}
+    },
+    {
+      "name": "Immortals",
+      "attributes": {}
+    },
+    {
+      "name": "Mardian",
+      "attributes": {}
+    },
+    {
+      "name": "Median",
+      "attributes": {}
+    },
+    {
+      "name": "Mesopotamian",
+      "attributes": {}
+    },
+    {
+      "name": "Paeonian",
+      "attributes": {}
+    },
+    {
+      "name": "Paionian",
+      "attributes": {}
+    },
+    {
+      "name": "Parthian",
+      "attributes": {}
+    },
+    {
+      "name": "Phillip",
+      "attributes": {}
+    },
+    {
+      "name": "Sacesinian",
+      "attributes": {}
+    },
+    {
+      "name": "Sacian",
+      "attributes": {}
+    },
+    {
+      "name": "Scythians",
+      "attributes": {}
+    },
+    {
+      "name": "Susian",
+      "attributes": {}
+    },
+    {
+      "name": "Syrian",
+      "attributes": {}
+    },
+    {
+      "name": "Tapurian",
+      "attributes": {}
+    },
+    {
+      "name": "Thessalians",
+      "attributes": {}
+    },
+    {
+      "name": "Thracian",
+      "attributes": {}
+    }
+  ],
+  "unit": [
+    {
+      "name": "cavalry",
+      "attributes": {}
+    },
+    {
+      "name": "phalanx",
+      "attributes": {}
+    },
+    {
+      "name": "Prodromoi",
+      "attributes": {}
+    }
+  ],
+  "time": [
+    {
+      "name": "490 BC",
+      "attributes": {}
+    }
+  ],
+  "deity": [
+    {
+      "name": "Pan",
+      "attributes": {}
+    },
+    {
+      "name": "Zeus",
+      "attributes": {}
+    }
+  ],
+  "sea": [
+    {
+      "name": "Aegean",
+      "attributes": {}
+    }
+  ],
+  "island": [
+    {
+      "name": "Cyclades",
+      "attributes": {}
+    },
+    {
+      "name": "Cycladic Islands",
+      "attributes": {}
+    },
+    {
+      "name": "Salamis",
+      "attributes": {}
+    }
+  ],
+  "vehicle": [
+    {
+      "name": "fleet",
+      "attributes": {}
+    }
+  ],
+  "military hierarchy units": [
+    {
+      "name": "brigade",
+      "attributes": {}
+    },
+    {
+      "name": "companies",
+      "attributes": {}
+    },
+    {
+      "name": "regiment",
+      "attributes": {}
+    }
+  ],
+  "army": [
+    {
+      "name": "Anglo-allied army",
+      "attributes": {}
+    },
+    {
+      "name": "Arm\u00e9e du Nord",
+      "attributes": {}
+    },
+    {
+      "name": "Freikorps volunteer formations",
+      "attributes": {}
+    },
+    {
+      "name": "French Imperial Army",
+      "attributes": {}
+    },
+    {
+      "name": "Imperial Guard",
+      "attributes": {}
+    },
+    {
+      "name": "Landwehr",
+      "attributes": {}
+    },
+    {
+      "name": "Legions",
+      "attributes": {}
+    },
+    {
+      "name": "Prussian army",
+      "attributes": {}
+    },
+    {
+      "name": "Reserve regiments",
+      "attributes": {}
+    },
+    {
+      "name": "Russian army",
+      "attributes": {}
+    },
+    {
+      "name": "Swedish army",
+      "attributes": {}
+    }
+  ],
+  "fort": [
+    {
+      "name": "Fort Edward",
+      "attributes": {}
+    },
+    {
+      "name": "Fort Montgomery",
+      "attributes": {}
+    },
+    {
+      "name": "Fort Stanwix",
+      "attributes": {}
+    },
+    {
+      "name": "Fort Ticonderoga",
+      "attributes": {}
+    },
+    {
+      "name": "Forts Clinton",
+      "attributes": {}
+    },
+    {
+      "name": "Poltava",
+      "attributes": {}
+    },
+    {
+      "name": "redoubts",
+      "attributes": {}
+    }
+  ],
+  "village": [
+    {
+      "name": "Perevolochna",
+      "attributes": {}
+    }
+  ],
+  "region": [
+    {
+      "name": "Attica",
+      "attributes": {}
+    },
+    {
+      "name": "Baltic region",
+      "attributes": {}
+    },
+    {
+      "name": "Livonia",
+      "attributes": {}
+    },
+    {
+      "name": "Masuria",
+      "attributes": {}
+    },
+    {
+      "name": "Moldavia",
+      "attributes": {}
+    },
+    {
+      "name": "Peloponnesus",
+      "attributes": {}
+    },
+    {
+      "name": "Poland",
+      "attributes": {}
+    },
+    {
+      "name": "Thrace",
+      "attributes": {}
+    },
+    {
+      "name": "Ukraine",
+      "attributes": {}
+    }
+  ],
+  "province": [
+    {
+      "name": "Baltic provinces",
+      "attributes": {}
+    },
+    {
+      "name": "Courland",
+      "attributes": {}
+    },
+    {
+      "name": "Egypt",
+      "attributes": {}
+    },
+    {
+      "name": "Ingria",
+      "attributes": {}
+    },
+    {
+      "name": "Saxony",
+      "attributes": {}
+    }
+  ],
+  "rebellion": [
+    {
+      "name": "Bulavin Rebellion",
+      "attributes": {}
+    }
+  ],
+  "cannon": [
+    {
+      "name": "cannons",
+      "attributes": {}
+    }
+  ],
+  "woods": [
+    {
+      "name": "Budyschenski woods",
+      "attributes": {}
+    },
+    {
+      "name": "Yakovetski woods",
+      "attributes": {}
+    }
+  ],
+  "city-state": [
+    {
+      "name": "Athens",
+      "attributes": {}
+    },
+    {
+      "name": "Eretria",
+      "attributes": {}
+    },
+    {
+      "name": "Greek city-states",
+      "attributes": {}
+    },
+    {
+      "name": "Naxos",
+      "attributes": {}
+    },
+    {
+      "name": "Sparta",
+      "attributes": {}
+    }
+  ],
+  "military unit": [
+    {
+      "name": "hoplites",
+      "attributes": {}
+    },
+    {
+      "name": "penteconters",
+      "attributes": {
+        "description": "fifty-oared galleys"
+      }
+    }
+  ],
+  "redoubt": [
+    {
+      "name": "Breymann's redoubt",
+      "attributes": {}
+    }
+  ],
+  "war": [
+    {
+      "name": "Greco-Persian Wars",
+      "attributes": {}
+    }
+  ],
+  "politician": [
+    {
+      "name": "Themistocles",
+      "attributes": {}
+    }
+  ],
+  "strait": [
+    {
+      "name": "Hellespont",
+      "attributes": {}
+    },
+    {
+      "name": "Straits of Artemisium",
+      "attributes": {}
+    }
+  ],
+  "continent": [
+    {
+      "name": "Asia",
+      "attributes": {}
+    },
+    {
+      "name": "Europe",
+      "attributes": {}
+    }
+  ],
+  "military commander": [
+    {
+      "name": "Mardonius",
+      "attributes": {}
+    }
+  ],
+  "author": [
+    {
+      "name": "Aeschylus",
+      "attributes": {}
+    }
+  ],
+  "monument": [
+    {
+      "name": "Lion's Mound",
+      "attributes": {}
+    },
+    {
+      "name": "Serpent Column",
+      "attributes": {}
+    }
+  ],
+  "kingdom": [
+    {
+      "name": "Macedon",
+      "attributes": {}
+    }
+  ],
+  "pass": [
+    {
+      "name": "Sarantoporo Pass",
+      "attributes": {}
+    }
+  ],
+  "isthmus": [
+    {
+      "name": "Isthmus of Corinth",
+      "attributes": {}
+    }
+  ],
+  "festival": [
+    {
+      "name": "Carneia",
+      "attributes": {}
+    }
+  ],
+  "games": [
+    {
+      "name": "Olympic Games",
+      "attributes": {}
+    }
+  ],
+  "gulf": [
+    {
+      "name": "Malian Gulf",
+      "attributes": {}
+    },
+    {
+      "name": "Saronic Gulf",
+      "attributes": {}
+    }
+  ],
+  "oracle": [
+    {
+      "name": "Oracle at Delphi",
+      "attributes": {}
+    }
+  ],
+  "mountain": [
+    {
+      "name": "Kolonos Hill",
+      "attributes": {}
+    },
+    {
+      "name": "Mt. Anopaea",
+      "attributes": {}
+    }
+  ],
+  "general": [
+    {
+      "name": "Demophilus",
+      "attributes": {}
+    },
+    {
+      "name": "Tigranes",
+      "attributes": {}
+    }
+  ],
+  "shepherd": [
+    {
+      "name": "Local shepherd",
+      "attributes": {}
+    }
+  ],
+  "military hierarchy unit": [
+    {
+      "name": "army",
+      "attributes": {}
+    },
+    {
+      "name": "corps",
+      "attributes": {}
+    },
+    {
+      "name": "fleet",
+      "attributes": {}
+    },
+    {
+      "name": "force",
+      "attributes": {}
+    },
+    {
+      "name": "King's German Legion",
+      "attributes": {
+        "abbreviation": "KGL"
+      }
+    },
+    {
+      "name": "Seventh Coalition",
+      "attributes": {}
+    }
+  ],
+  "date": [
+    {
+      "name": "1821",
+      "attributes": {}
+    },
+    {
+      "name": "March 1815",
+      "attributes": {}
+    },
+    {
+      "name": "Sunday 18 June 1815",
+      "attributes": {}
+    }
+  ],
+  "event": [
+    {
+      "name": "Hundred Days",
+      "attributes": {}
+    }
+  ],
+  "corps": [
+    {
+      "name": "I Corps",
+      "attributes": {}
+    }
+  ],
+  "graveyard": [
+    {
+      "name": "Saint Martin's Church",
+      "attributes": {}
+    }
+  ]
+}

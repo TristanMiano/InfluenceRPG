@@ -1,2 +1,6 @@
+fastapi
 google
+pydantic
+requests
+src
 tiktoken
