@@ -1,3 +1,4 @@
+// src/server/static/js/app.js
 document.addEventListener("DOMContentLoaded", () => {
   let ws;
   let username = "";
@@ -184,55 +185,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Chat functionality
   function startChat() {
-	  const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-	  ws = new WebSocket(`${wsProtocol}//${window.location.host}/ws/game/${currentGameId}/chat?character_id=${encodeURIComponent(characterId)}`);
-	  
-	  ws.onopen = function() {
-		console.log("WebSocket connection opened.");
-		document.getElementById("status").innerText = "Connected to game chat.";
-	  };
-	  
-	  ws.onmessage = function(event) {
-		console.log("Received message:", event.data);
-		const msg = JSON.parse(event.data);
-		const chatBox = document.getElementById("chat-box");
-		const messageDiv = document.createElement("div");
-		messageDiv.classList.add("message");
-		messageDiv.innerHTML = `<strong>${msg.character_id}:</strong> ${msg.message} <span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
-		chatBox.appendChild(messageDiv);
-		chatBox.scrollTop = chatBox.scrollHeight;
-	  };
-	  
-	  ws.onclose = function() {
-		console.log("WebSocket connection closed.");
-		document.getElementById("status").innerText = "Disconnected from game chat.";
-	  };
-	  
-	  ws.onerror = function(error) {
-		console.error("WebSocket error:", error);
-	  };
-	}
-	
+    const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+    // Pass both username and character_id as query parameters.
+    ws = new WebSocket(`${wsProtocol}//${window.location.host}/ws/game/${currentGameId}/chat?username=${encodeURIComponent(username)}&character_id=${encodeURIComponent(characterId)}`);
+    
+    ws.onopen = function() {
+      console.log("WebSocket connection opened.");
+      document.getElementById("status").innerText = "Connected to game chat.";
+    };
+    
+    ws.onmessage = function(event) {
+      console.log("Received message:", event.data);
+      const msg = JSON.parse(event.data);
+      const chatBox = document.getElementById("chat-box");
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.innerHTML = `<strong>${msg.sender}:</strong> ${msg.message} <span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    };
+    
+    ws.onclose = function() {
+      console.log("WebSocket connection closed.");
+      document.getElementById("status").innerText = "Disconnected from game chat.";
+    };
+    
+    ws.onerror = function(error) {
+      console.error("WebSocket error:", error);
+    };
+  }
+  
   document.getElementById("send-button").addEventListener("click", function() {
-  console.log("Send button event handler triggered.");
-  const input = document.getElementById("chat-input");
-  const message = input.value.trim();
-  if (!message) {
-    console.warn("Message is empty.");
-    return;
-  }
-  if (!ws) {
-    console.warn("WebSocket object not defined.");
-    return;
-  }
-  if (ws.readyState !== WebSocket.OPEN) {
-    console.warn("WebSocket not open. Current readyState:", ws.readyState);
-    return;
-  }
-  console.log("Sending message:", message);
-  ws.send(message);
-  input.value = "";
-});
+    console.log("Send button event handler triggered.");
+    const input = document.getElementById("chat-input");
+    const message = input.value.trim();
+    if (!message) {
+      console.warn("Message is empty.");
+      return;
+    }
+    if (!ws) {
+      console.warn("WebSocket object not defined.");
+      return;
+    }
+    if (ws.readyState !== WebSocket.OPEN) {
+      console.warn("WebSocket not open. Current readyState:", ws.readyState);
+      return;
+    }
+    console.log("Sending message:", message);
+    ws.send(message);
+    input.value = "";
+  });
 
   // Function to load user characters into the dropdown
   async function loadUserCharacters() {
