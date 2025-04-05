@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: influence_rpg
+Version: 0.1.0
+Summary: A tabletop RPG of Influence & Strategic Command
+Author: Tristan Miano
+Requires-Dist: fastapi
+Requires-Dist: psycopg2-binary
+Requires-Dist: pydantic
+Requires-Dist: requests
+Requires-Dist: tiktoken
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
