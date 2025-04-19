@@ -1,8 +1,0 @@
-fastapi
-google
-psycopg2
-pydantic
-requests
-setuptools
-src
-tiktoken

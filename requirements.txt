@@ -1,0 +1,9 @@
+fastapi
+google
+psycopg2
+pydantic
+pytest
+requests
+setuptools
+src
+tiktoken

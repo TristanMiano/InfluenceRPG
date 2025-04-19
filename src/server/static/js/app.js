@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create new game button listener
   document.getElementById("create-game-button").addEventListener("click", async function() {
     const gameName = document.getElementById("new-game-name").value.trim();
+	const initialDetails = document.getElementById("initial-details").value.trim();
     if (!gameName) {
       document.getElementById("create-game-error").innerText = "Please enter a game name.";
       return;
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const response = await fetch("/api/game/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: gameName })
+      body: JSON.stringify({ name: gameName, initial_details: initialDetails })
     });
     
     if (response.ok) {

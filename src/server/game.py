@@ -2,12 +2,14 @@
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 from typing import List
-from src.db import game_db  # Import our new DB module
+from src.db import game_db
+from src.game.initial_prompt import generate_initial_scene
 
 router = APIRouter()
 
 class GameCreateRequest(BaseModel):
     name: str
+    initial_details: str
 
 class GameCreateResponse(BaseModel):
     id: str
@@ -24,6 +26,7 @@ class GameJoinRequest(BaseModel):
 def create_game_endpoint(game_req: GameCreateRequest):
     try:
         new_game = game_db.create_game(game_req.name)
+        opening_scene = generate_initial_scene(game_req.initial_details)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     return new_game
