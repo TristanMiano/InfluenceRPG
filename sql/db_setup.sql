@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS document_embeddings (
   id          SERIAL PRIMARY KEY,
   file_path   TEXT        NOT NULL,       -- e.g. 'reference/chap1.txt'
   content     TEXT        NOT NULL,       -- full text to embed
-  embedding   VECTOR(1536) NOT NULL,      -- adjust dim to your model (e.g. 1536 for OpenAI ada)
+  embedding   VECTOR(384) NOT NULL,      -- adjust dim to your model (e.g. 1536 for OpenAI ada)
   metadata    JSONB       DEFAULT '{}' ,  -- e.g. {"source":"manual","tags":["rules"]}
   created_at  TIMESTAMPTZ DEFAULT NOW(),
   updated_at  TIMESTAMPTZ DEFAULT NOW()
