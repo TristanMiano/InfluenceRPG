@@ -65,3 +65,27 @@ CREATE TABLE IF NOT EXISTS chat_messages (
             REFERENCES games(id)
             ON DELETE CASCADE
 );
+
+-- You must build pgvector on your platform before running the following.
+
+-- Run as a superuser in your database:
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE IF NOT EXISTS document_embeddings (
+  id          SERIAL PRIMARY KEY,
+  file_path   TEXT        NOT NULL,       -- e.g. 'reference/chap1.txt'
+  content     TEXT        NOT NULL,       -- full text to embed
+  embedding   VECTOR(1536) NOT NULL,      -- adjust dim to your model (e.g. 1536 for OpenAI ada)
+  metadata    JSONB       DEFAULT '{}' ,  -- e.g. {"source":"manual","tags":["rules"]}
+  created_at  TIMESTAMPTZ DEFAULT NOW(),
+  updated_at  TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- IVFFlat is a good compromise of speed & accuracy; set lists ≈ √N 
+CREATE INDEX IF NOT EXISTS idx_document_embeddings_embedding
+  ON document_embeddings
+  USING ivfflat (embedding vector_cosine_ops)
+  WITH (lists = 100);
+
+-- After creating the index:
+VACUUM ANALYZE document_embeddings;
