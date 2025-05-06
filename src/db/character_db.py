@@ -59,3 +59,19 @@ def get_characters_by_owner(owner: str) -> list:
         raise e
     finally:
         conn.close()
+
+def get_character_by_id(char_id: str) -> dict:
+    """
+    Retrieve a character record by its ID.
+    Returns a dict with keys: id, owner, name, character_class.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, owner, name, character_class FROM characters WHERE id = %s",
+                (char_id,)
+            )
+            return cur.fetchone()
+    finally:
+        conn.close()
