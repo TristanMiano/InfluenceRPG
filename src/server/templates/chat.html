@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Chat - Influence RPG{% endblock %}
+
+{% block content %}
+  <h2>Game Chat</h2>
+  <p>Game ID: <span id="current-game-id"></span></p>
+
+  <div id="chat-box"></div>
+  <input type="text" id="chat-input" placeholder="Type your message here..." />
+  <button id="send-button">Send</button>
+  <p id="status"></p>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/chat.js"></script>
+{% endblock %}

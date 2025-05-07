@@ -1,0 +1,57 @@
+/* Global base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+
+/* Form elements */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+/* Chat box styles */
+#chat-box {
+  border: 1px solid #ccc;
+  height: 70vh;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.timestamp {
+  color: #777;
+  font-size: 0.8em;
+}
+
+/* Game list */
+#game-list {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+}

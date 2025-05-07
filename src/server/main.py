@@ -1,5 +1,4 @@
-# src/server/main.py
-from fastapi import FastAPI, HTTPException, status, Request, Form
+from fastapi import FastAPI, HTTPException, status, Request, Form, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -13,16 +12,19 @@ from src.server.character import router as character_router
 
 app = FastAPI(title="Influence RPG Prototype Server")
 
+# Serve static files
 app.mount("/static", StaticFiles(directory="src/server/static"), name="static")
-
-from src.server.game_chat import router as game_chat_router
-
-# Include the game chat router without a prefix so that the paths remain unchanged.
-app.include_router(game_chat_router)
 
 templates = Jinja2Templates(directory="src/server/templates")
 
-# Define login request and response models
+# Include routers
+from src.server.game_chat import router as game_chat_router
+app.include_router(game_chat_router)
+app.include_router(chat_router, prefix="/chat/ws")  # WebSocket chat
+app.include_router(game_router, prefix="/api")
+app.include_router(character_router)
+
+# Login models
 class LoginRequest(BaseModel):
     username: str
     password: str
@@ -32,25 +34,18 @@ class LoginResponse(BaseModel):
     role: str
     message: str
 
+@app.get("/", response_class=HTMLResponse)
+def read_login(request: Request):
+    # Render the login page
+    return templates.TemplateResponse("login.html", {"request": request})
+
 @app.post("/login", response_model=LoginResponse)
 def login(request_data: LoginRequest):
-    """
-    Endpoint for user login.
-    Verifies credentials and returns user information if valid.
-    """
     user = authenticate_user(request_data.username, request_data.password)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     return LoginResponse(username=user["username"], role=user["role"], message="Login successful")
 
-# Serve the chat interface
-@app.get("/", response_class=HTMLResponse)
-def read_root(request: Request):
-    """
-    Serves the chat interface page.
-    """
-    return templates.TemplateResponse("index.html", {"request": request})
-    
 @app.get("/create-account", response_class=HTMLResponse)
 def create_account_form(request: Request):
     return templates.TemplateResponse("create_account.html", {"request": request, "error": None})
@@ -98,7 +93,20 @@ async def create_account_submit(
     # On success, redirect back to login
     return RedirectResponse(url="/", status_code=302)
 
-# Include the chat WebSocket router with prefix /chat
-app.include_router(chat_router, prefix="/chat")
-app.include_router(game_router, prefix="/api")
-app.include_router(character_router)
+@app.get("/lobby", response_class=HTMLResponse)
+def read_lobby(request: Request, username: str = Query(...)):
+    # Render the lobby page
+    return templates.TemplateResponse(
+        "lobby.html", {"request": request, "username": username}
+    )
+
+@app.get("/chat", response_class=HTMLResponse)
+def read_chat(request: Request,
+              username: str = Query(...),
+              game_id: str = Query(...),
+              character_id: str = Query(...)):
+    # Render the chat page
+    return templates.TemplateResponse(
+        "chat.html",
+        {"request": request, "username": username, "game_id": game_id, "character_id": character_id}
+    )

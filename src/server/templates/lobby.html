@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Lobby - Influence RPG{% endblock %}
+
+{% block content %}
+  <h2>Game Lobby</h2>
+  <p>Welcome, <span id="user-display"></span>!</p>
+
+  <!-- Create Character -->
+  <section id="create-character-form">
+    <h3>Create New Character</h3>
+    <label for="character-name">Character Name:</label>
+    <input type="text" id="character-name" placeholder="Enter character name" />
+
+    <label for="character-class">Character Class:</label>
+    <input type="text" id="character-class" placeholder="Enter character class" value="default" />
+
+    <button id="create-character-button">Create Character</button>
+    <p id="create-character-error" class="error"></p>
+  </section>
+
+  <!-- Character Selection -->
+  <label for="character-select">Select Your Character:</label>
+  <select id="character-select"></select>
+
+  <!-- Create New Game -->
+  <h3>Create New Game</h3>
+  <label for="new-game-name">Game Name:</label>
+  <input type="text" id="new-game-name" placeholder="Enter game name" />
+  <label for="initial-details">Initial Setup Details:</label>
+  <textarea id="initial-details" placeholder="Setup details..." rows="4"></textarea>
+  <button id="create-game-button">Create Game</button>
+  <p id="create-game-error" class="error"></p>
+
+  <!-- Join Existing Game -->
+  <h3>Or Join Existing Game</h3>
+  <button id="refresh-games-button">Refresh Game List</button>
+  <div id="game-list"></div>
+
+  <label for="join-game-id">Game ID to Join:</label>
+  <input type="text" id="join-game-id" placeholder="Enter game ID" />
+  <button id="join-game-button">Join Game</button>
+  <p id="join-game-error" class="error"></p>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/lobby.js"></script>
+{% endblock %}
