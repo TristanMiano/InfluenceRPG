@@ -1,20 +1,28 @@
 {% extends "base.html" %}
 
+{% block css %}
+  <link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+
 {% block title %}Login - Influence RPG{% endblock %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form id="login-form">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" />
+  <div class="container">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
 
-    <button id="login-button">Login</button>
-    <p id="login-error" class="error"></p>
-    <p><a href="/create-account">Create an account</a></p>
-  </form>
+        <button id="login-button">Login</button>
+        <p id="login-error" class="error"></p>
+        <p><a href="/create-account">Create an account</a></p>
+      </form>
+    </div>
+  </div>
 {% endblock %}
 
 {% block scripts %}
