@@ -110,3 +110,13 @@ def read_chat(request: Request,
         "chat.html",
         {"request": request, "username": username, "game_id": game_id, "character_id": character_id}
     )
+
+@app.get("/character/new", response_class=HTMLResponse)
+def read_character_create(request: Request, username: str = Query(...)):
+    """
+    Render the standalone character‐creation form.
+    """
+    return templates.TemplateResponse(
+        "character_create.html",
+        {"request": request, "username": username}
+    )

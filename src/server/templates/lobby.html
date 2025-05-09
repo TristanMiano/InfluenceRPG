@@ -12,17 +12,10 @@
     <p>Welcome, <span id="user-display"></span>!</p>
 
     <!-- Create Character -->
-    <section id="create-character-form">
-      <h3>Create New Character</h3>
-      <label for="character-name">Character Name:</label>
-      <input type="text" id="character-name" placeholder="Enter character name" />
-
-      <label for="character-class">Character Class:</label>
-      <input type="text" id="character-class" placeholder="Enter character class" value="default" />
-
-      <button id="create-character-button">Create Character</button>
-      <p id="create-character-error" class="error"></p>
-    </section>
+    <section id="create-character-link">
+	  <h3>Create New Character</h3>
+	  <a href="/character/new?username={{username}}">Go to Character Creation →</a>
+	</section>
 
     <!-- Character Selection -->
     <label for="character-select">Select Your Character:</label>
@@ -56,5 +49,5 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="/static/js/lobby.js"></script>
+  <script src="/static/js/lobby.js?v=1.0"></script>
 {% endblock %}

@@ -22,12 +22,14 @@ CREATE TABLE IF NOT EXISTS characters (
     owner VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
     character_class VARCHAR(255) NOT NULL,
+    character_data JSONB NOT NULL DEFAULT '{}',  -- <— new column
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     CONSTRAINT fk_owner
         FOREIGN KEY(owner)
             REFERENCES users(username)
             ON DELETE CASCADE
 );
+
 
 -- Table for Games
 CREATE TABLE IF NOT EXISTS games (
