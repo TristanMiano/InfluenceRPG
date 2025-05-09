@@ -79,6 +79,11 @@ def create_initial_prompt(
         f"{initial_details}\n\n"
         "Based on the rules and the setup, generate an initial narrative scene to start the adventure."
     )
+    
+    # LOG IT:
+    #print("=== INITIAL GM PROMPT ===")
+    #print(prompt)
+    #print("=========================")
     return prompt
 
 

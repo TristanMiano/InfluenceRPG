@@ -86,6 +86,22 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
         "message": join_msg,
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }))
+    
+    # 5.1 Broadcast full character details so the GM knows their stats
+    try:
+        full_char = get_character_by_id(character_id) or {}
+        # Expecting your character table to have a `character_data` JSON column
+        char_data = full_char.get("character_data", {})
+        attrs_msg = f"{character_name}'s full profile: {json.dumps(char_data)}"
+        conversation_histories[game_id].append(f"System: {attrs_msg}")
+        await manager.broadcast(game_id, json.dumps({
+            "game_id":   game_id,
+            "sender":    "System",
+            "message":   attrs_msg,
+            "timestamp": datetime.utcnow().isoformat() + "Z"
+        }))
+    except Exception as e:
+        print(f"Error broadcasting character data: {e}")
 
     try:
         while True:

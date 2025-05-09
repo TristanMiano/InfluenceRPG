@@ -28,6 +28,9 @@ def create_game_endpoint(game_req: GameCreateRequest):
     try:
         new_game = game_db.create_game(game_req.name)
         opening_scene = generate_initial_scene(game_req.initial_details)
+        # Persist the opening scene under GM so it's in chat history
+        from src.db.game_db import save_chat_message
+        save_chat_message(new_game["id"], "GM", opening_scene)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     return new_game
