@@ -4,6 +4,7 @@ import json
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from uuid import uuid4
+from typing import Optional
 
 def get_db_config() -> dict:
     """
@@ -122,5 +123,40 @@ def list_chat_messages(game_id: str) -> list:
                 (game_id,)
             )
             return cur.fetchall()
+    finally:
+        conn.close()
+
+def get_character_for_user_in_game(game_id: str, owner: str) -> Optional[str]:
+    """
+    Return the character_id for the given owner if they have already joined this game.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT gp.character_id FROM game_players gp "
+                "JOIN characters c ON gp.character_id = c.id "
+                "WHERE gp.game_id = %s AND c.owner = %s",
+                (game_id, owner)
+            )
+            row = cur.fetchone()
+            return row[0] if row else None
+    finally:
+        conn.close()
+
+def is_character_in_active_game(character_id: str) -> bool:
+    """
+    Check if a character is already in a non-finished game (status waiting/active).
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT 1 FROM game_players gp "
+                "JOIN games g ON gp.game_id = g.id "
+                "WHERE gp.character_id = %s AND g.status IN ('waiting','active') LIMIT 1",
+                (character_id,)
+            )
+            return cur.fetchone() is not None
     finally:
         conn.close()

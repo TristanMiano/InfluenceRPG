@@ -3,7 +3,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
-from src.db import character_db
+from src.db import character_db, game_db
 
 router = APIRouter()
 
@@ -19,6 +19,10 @@ class CharacterResponse(BaseModel):
     name: str
     character_class: str
     character_data: Dict[str, Any]
+    
+class AvailableCharacter(BaseModel):
+    id:   str
+    name: str
 
 @router.post("/character/create", response_model=CharacterResponse)
 def create_character_endpoint(req: CharacterCreateRequest):
@@ -40,3 +44,23 @@ def list_characters(username: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Could not list characters: {e}")
     return chars
+
+@router.get("/character/list_available", response_model=List[AvailableCharacter])
+def list_available_characters(username: str):
+    """
+    Return only the characters owned by `username` that are
+    not already in another active (waiting/active) game.
+    """
+    try:
+        all_chars = character_db.get_characters_by_owner(username)
+        available = [
+            AvailableCharacter(id=c["id"], name=c["name"])
+            for c in all_chars
+            if not game_db.is_character_in_active_game(c["id"])
+        ]
+        return available
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error listing available characters: {e}"
+        )

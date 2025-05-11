@@ -104,8 +104,21 @@ def read_lobby(request: Request, username: str = Query(...)):
 def read_chat(request: Request,
               username: str = Query(...),
               game_id: str = Query(...),
-              character_id: str = Query(...)):
-    # Render the chat page
+              character_id: Optional[str] = Query(None)):
+    """
+    Render chat page or auto-redirect if character already tied to this game.
+    """
+    # If no character specified, find the user's joined character
+    if not character_id:
+        from src.db.game_db import get_character_for_user_in_game
+        char_id = get_character_for_user_in_game(game_id, username)
+        if char_id:
+            return RedirectResponse(
+                url=f"/chat?username={username}&game_id={game_id}&character_id={char_id}"
+            )
+        # No character bound: send back to lobby
+        return RedirectResponse(url=f"/lobby?username={username}")
+    # Render the chat page as usual
     return templates.TemplateResponse(
         "chat.html",
         {"request": request, "username": username, "game_id": game_id, "character_id": character_id}
