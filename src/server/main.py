@@ -120,3 +120,13 @@ def read_character_create(request: Request, username: str = Query(...)):
         "character_create.html",
         {"request": request, "username": username}
     )
+
+@app.get("/game/new", response_class=HTMLResponse)
+def read_game_create(request: Request, username: str = Query(...)):
+    """
+    Render the standalone game‐creation form.
+    """
+    return templates.TemplateResponse(
+        "game_creation.html",
+        {"request": request, "username": username}
+    )

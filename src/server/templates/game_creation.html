@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Create Game – Influence RPG{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/game_creation.css?v=1.0">
+{% endblock %}
+
+{% block content %}
+  <div class="game-create-container">
+    <h2>Create New Game</h2>
+    <input type="hidden" id="username" value="{{username}}" />
+
+    <label for="character-select">Select Your Character:</label>
+    <select id="character-select"></select>
+
+    <label for="new-game-name">Game Name:</label>
+    <input type="text" id="new-game-name" placeholder="Enter game name" />
+
+    <label for="initial-details">Initial Setup Details:</label>
+    <textarea id="initial-details" placeholder="Setup details..." rows="4"></textarea>
+
+    <button id="create-game-button">Create Game</button>
+    <p id="create-game-error" class="error"></p>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/game_creation.js?v=1.0"></script>
+{% endblock %}
