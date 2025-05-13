@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import FastAPI, HTTPException, status, Request, Form, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
@@ -9,6 +10,7 @@ from src.models.user import User
 from src.server.chat import router as chat_router
 from src.server.game import router as game_router
 from src.server.character import router as character_router
+from src.server.universe import router as universe_router
 
 app = FastAPI(title="Influence RPG Prototype Server")
 
@@ -23,6 +25,7 @@ app.include_router(game_chat_router)
 app.include_router(chat_router, prefix="/chat/ws")  # WebSocket chat
 app.include_router(game_router, prefix="/api")
 app.include_router(character_router)
+app.include_router(universe_router, prefix="/api")
 
 # Login models
 class LoginRequest(BaseModel):
@@ -135,11 +138,22 @@ def read_character_create(request: Request, username: str = Query(...)):
     )
 
 @app.get("/game/new", response_class=HTMLResponse)
-def read_game_create(request: Request, username: str = Query(...)):
+def read_game_create(
+    request: Request,
+    username: str = Query(...),
+    universe_id: str | None = Query(None),
+):
     """
-    Render the standalone game‐creation form.
+    Render the standalone game‐creation form, optionally pre‐selecting a universe.
     """
     return templates.TemplateResponse(
         "game_creation.html",
+        {"request": request, "username": username, "universe_id": universe_id}
+    )
+    
+@app.get("/universe/new", response_class=HTMLResponse)
+def read_universe_create(request: Request, username: str = Query(...)):
+    return templates.TemplateResponse(
+        "universe_create.html",
         {"request": request, "username": username}
     )

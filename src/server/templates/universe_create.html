@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Create Universe – Influence RPG{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/game_creation.css?v=1.0">
+{% endblock %}
+
+{% block content %}
+  <div class="game-create-container">
+    <h2>Create New Universe</h2>
+    <input type="hidden" id="username" value="{{username}}" />
+
+    <label for="universe-name">Universe Name:</label>
+    <input type="text" id="universe-name" placeholder="Enter universe name" />
+
+    <label for="universe-description">Description (optional):</label>
+    <textarea id="universe-description" rows="3" placeholder="Description..."></textarea>
+
+    <button id="create-universe-button">Create Universe</button>
+    <p id="universe-create-error" class="error"></p>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/universe_create.js?v=1.0"></script>
+{% endblock %}

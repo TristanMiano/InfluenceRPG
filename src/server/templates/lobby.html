@@ -11,17 +11,23 @@
     <h2>Game Lobby</h2>
     <p>Welcome, <span id="user-display"></span>!</p>
 
+    <!-- Create Universe -->
+    <section id="create-universe-link">
+      <h3>Create New Universe</h3>
+      <a href="/universe/new?username={{username}}" class="btn-link">Go to Universe Creation →</a>
+    </section>
+
     <!-- Create Character -->
     <section id="create-character-link">
-	  <h3>Create New Character</h3>
-	  <a href="/character/new?username={{username}}">Go to Character Creation →</a>
-	</section>
+      <h3>Create New Character</h3>
+      <a href="/character/new?username={{username}}">Go to Character Creation →</a>
+    </section>
 
     <!-- Character Selection -->
     <label for="character-select">Select Your Character:</label>
     <select id="character-select"></select>
 
-    <!-- Create New Game Link -->
+    <!-- Create New Game -->
     <section id="create-game-link" class="lobby-section">
       <h3>Create New Game</h3>
       <a href="/game/new?username={{username}}" class="btn-link">Go to Game Creation →</a>

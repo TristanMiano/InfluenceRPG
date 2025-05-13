@@ -1,8 +1,8 @@
 # src/server/game.py
 from fastapi import APIRouter, HTTPException, status, Query
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
-from src.db import game_db
+from src.db import universe_db, game_db
 from src.game.initial_prompt import generate_initial_scene
 from psycopg2.errors import UniqueViolation
 
@@ -11,7 +11,10 @@ router = APIRouter()
 class GameCreateRequest(BaseModel):
     name: str
     initial_details: str
-    character_id: str  # attach creator's character immediately
+    character_id: str
+    universe_id: Optional[str] = Field(
+        None, description="If set, new game will be joined into this universe"
+    )
 
 class GameCreateResponse(BaseModel):
     id: str
@@ -27,17 +30,28 @@ class GameJoinRequest(BaseModel):
 
 @router.post("/game/create", response_model=GameCreateResponse)
 def create_game_endpoint(game_req: GameCreateRequest):
-    # Prevent re-use of a character in another active game
+    # 1) Ensure character not in another active game
     if game_db.is_character_in_active_game(game_req.character_id):
         raise HTTPException(status_code=400, detail="Selected character is already in another game.")
     try:
-        # Create game and immediately join creator's character
+        # 2) Create the game
         new_game = game_db.create_game(game_req.name)
+
+        # 3) If universe specified, join it
+        if game_req.universe_id:
+            universe_db.add_game_to_universe(game_req.universe_id, new_game["id"])
+
+        # 4) Join creator’s character
         game_db.join_game(new_game["id"], game_req.character_id)
+
+        # 5) Generate opening scene, save to chat
         opening_scene = generate_initial_scene(game_req.initial_details)
         save_chat_message(new_game["id"], "GM", opening_scene)
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
     return new_game
 
 @router.get("/game/list", response_model=GameListResponse)
