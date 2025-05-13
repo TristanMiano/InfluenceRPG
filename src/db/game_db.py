@@ -160,3 +160,36 @@ def is_character_in_active_game(character_id: str) -> bool:
             return cur.fetchone() is not None
     finally:
         conn.close()
+
+def list_players_in_game(game_id: str) -> list[str]:
+    """
+    Return a list of character IDs currently joined to the given game.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT character_id FROM game_players WHERE game_id = %s",
+                (game_id,)
+            )
+            return [row[0] for row in cur.fetchall()]
+    finally:
+        conn.close()
+
+def update_game_status(game_id: str, status: str):
+    """
+    Update the status of a game (e.g. to 'merged').
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE games SET status = %s WHERE id = %s",
+                (status, game_id)
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()

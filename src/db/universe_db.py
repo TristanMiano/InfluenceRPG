@@ -66,3 +66,96 @@ def add_game_to_universe(universe_id: str, game_id: str):
         raise
     finally:
         conn.close()
+
+def list_universes_for_game(game_id: str) -> list[str]:
+    """
+    Return a list of universe IDs this game is joined to.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT universe_id FROM universe_games WHERE game_id = %s",
+                (game_id,)
+            )
+            return [row[0] for row in cur.fetchall()]
+    finally:
+        conn.close()
+
+def record_event(universe_id: str, game_id: str, event_type: str, event_payload: dict):
+    """
+    Insert a new event into the universe_events table.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO universe_events
+                  (universe_id, game_id, event_type, event_payload)
+                VALUES (%s, %s, %s, %s)
+                """,
+                (universe_id, game_id, event_type, json.dumps(event_payload))
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+def list_events(universe_id: str, limit: int = 50) -> list[dict]:
+    """
+    Retrieve recent events for a universe.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, game_id, event_type, event_payload, event_time "
+                "FROM universe_events "
+                "WHERE universe_id = %s "
+                "ORDER BY event_time DESC "
+                "LIMIT %s",
+                (universe_id, limit)
+            )
+            return cur.fetchall()
+    finally:
+        conn.close()
+
+def record_conflict(universe_id: str, conflict_info: dict):
+    """
+    Insert a detected conflict into conflict_detections.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO conflict_detections (universe_id, conflict_info) VALUES (%s, %s)",
+                (universe_id, json.dumps(conflict_info))
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+def record_merger(universe_id: str, from_instance_ids: list[str], into_instance_id: str):
+    """
+    Insert a merger record into the mergers table.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO mergers (universe_id, from_instance_ids, into_instance_id) "
+                "VALUES (%s, %s, %s)",
+                (universe_id, json.dumps(from_instance_ids), into_instance_id)
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()

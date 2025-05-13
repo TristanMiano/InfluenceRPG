@@ -3,11 +3,12 @@ import json
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict, List
 from datetime import datetime
-from src.db import game_db  
+from src.db import game_db, universe_db  
 from src.db.game_db import list_chat_messages, get_db_connection
 from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response, generate_completion
 from src.db.character_db import get_character_by_id   
+from src.game.conflict_detector import run_conflict_detector
 
 router = APIRouter()
 
@@ -160,6 +161,21 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         )
                         conn.commit()
                     conn.close()
+                    
+                    # --- record this summary as a universe‐event ---
+                    # find all universes this game belongs to
+                    universe_ids = universe_db.list_universes_for_game(game_id)
+                    for uni in universe_ids:
+                        universe_db.record_event(
+                            universe_id=uni,
+                            game_id=game_id,
+                            event_type="gm_summary",
+                            event_payload={"summary": summary_text}
+                        )
+
+                    # --- run conflict detection for this universe ---
+                    for uni in universe_ids:
+                        run_conflict_detector(uni)
 
                     # update in-memory context and broadcast
                     note = f"[Summary generated at {datetime.utcnow().isoformat()}]"
