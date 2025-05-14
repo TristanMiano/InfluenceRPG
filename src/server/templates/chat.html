@@ -5,7 +5,13 @@
 {% block content %}
   <h2>Game Chat</h2>
   <p>Game ID: <span id="current-game-id"></span></p>
-
+{% if universe_id %}
+  <p>Universe ID: <span id="universe-display">{{ universe_id }}</span></p>
+  <input type="hidden" id="universe-id" value="{{ universe_id }}" />
+  <div id="news-box"></div>
+{% else %}
+  <input type="hidden" id="universe-id" value="" />
+{% endif %}
   <div id="chat-box"></div>
   <input type="text" id="chat-input" placeholder="Type your message here..." />
   <button id="send-button">Send</button>

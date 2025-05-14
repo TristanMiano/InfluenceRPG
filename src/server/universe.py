@@ -1,8 +1,10 @@
 # src/server/universe.py
 
+from datetime import datetime
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import List
+from src.game.news_extractor import run_news_extractor
 from src.db import universe_db
 
 router = APIRouter()
@@ -15,6 +17,11 @@ class UniverseResponse(BaseModel):
     id: str
     name: str
     description: str
+    
+class NewsResponse(BaseModel):
+    id: int
+    summary: str
+    published_at: datetime
 
 @router.post("/universe/create", response_model=UniverseResponse)
 def create_universe_endpoint(req: UniverseCreateRequest):
@@ -30,3 +37,24 @@ def list_universes_endpoint():
         return universe_db.list_universes()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Could not list universes: {e}")
+
+@router.get("/universe/{universe_id}/news", response_model=List[NewsResponse])
+def list_universe_news(universe_id: str):
+    """
+    Fetch the most recent news bulletins for a universe.
+    """
+    try:
+        return universe_db.list_news(universe_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/universe/{universe_id}/news/publish")
+def publish_universe_news(universe_id: str):
+    """
+    On-demand run of the news extractor for a universe.
+    """
+    try:
+        summary = run_news_extractor(universe_id)
+        return {"status": "ok", "summary": summary}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

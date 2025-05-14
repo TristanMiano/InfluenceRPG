@@ -159,3 +159,39 @@ def record_merger(universe_id: str, from_instance_ids: list[str], into_instance_
         raise
     finally:
         conn.close()
+
+def list_news(universe_id: str, limit: int = 20) -> list[dict]:
+    """
+    Retrieve recent news items for a universe.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, summary, published_at FROM universe_news "
+                "WHERE universe_id = %s "
+                "ORDER BY published_at DESC "
+                "LIMIT %s",
+                (universe_id, limit)
+            )
+            return cur.fetchall()
+    finally:
+        conn.close()
+
+def record_news(universe_id: str, summary: str):
+    """
+    Insert a news summary into universe_news.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO universe_news (universe_id, summary) VALUES (%s, %s)",
+                (universe_id, summary)
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()

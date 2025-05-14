@@ -11,6 +11,9 @@ from src.server.chat import router as chat_router
 from src.server.game import router as game_router
 from src.server.character import router as character_router
 from src.server.universe import router as universe_router
+import asyncio
+from src.db import universe_db
+from src.game.news_extractor import run_news_extractor
 
 app = FastAPI(title="Influence RPG Prototype Server")
 
@@ -26,6 +29,23 @@ app.include_router(chat_router, prefix="/chat/ws")  # WebSocket chat
 app.include_router(game_router, prefix="/api")
 app.include_router(character_router)
 app.include_router(universe_router, prefix="/api")
+
+@app.on_event("startup")
+async def start_periodic_news_loop():
+    """
+    Every 30 minutes, run news extractor for all universes.
+    """
+    async def news_loop():
+        while True:
+            universes = universe_db.list_universes()
+            for uni in universes:
+                try:
+                    run_news_extractor(uni["id"])
+                except Exception as e:
+                    print("Error in scheduled news:", e)
+            await asyncio.sleep(30 * 60)  # 30 minutes
+
+    asyncio.create_task(news_loop())
 
 # Login models
 class LoginRequest(BaseModel):
@@ -107,7 +127,8 @@ def read_lobby(request: Request, username: str = Query(...)):
 def read_chat(request: Request,
               username: str = Query(...),
               game_id: str = Query(...),
-              character_id: Optional[str] = Query(None)):
+              character_id: Optional[str] = Query(None),
+              universe_id: Optional[str] = Query(None)):
     """
     Render chat page or auto-redirect if character already tied to this game.
     """
@@ -124,7 +145,7 @@ def read_chat(request: Request,
     # Render the chat page as usual
     return templates.TemplateResponse(
         "chat.html",
-        {"request": request, "username": username, "game_id": game_id, "character_id": character_id}
+        {"request": request, "username": username, "game_id": game_id, "character_id": character_id, "universe_id": universe_id or ""}
     )
 
 @app.get("/character/new", response_class=HTMLResponse)

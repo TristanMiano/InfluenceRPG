@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const username = params.get("username") || "";
   const gameId = params.get("game_id") || "";
   const characterId = params.get("character_id") || "";
+  const universeId = params.get("universe_id") || "";
 
   document.getElementById("current-game-id").innerText = gameId;
   startChat(username, gameId, characterId);
@@ -16,6 +17,12 @@ function startChat(username, gameId, characterId) {
 
   ws.onopen = () => {
     document.getElementById("status").innerText = "Connected to game chat.";
+	if (universeId) {
+	  // initial load
+	  loadNews();
+	  // refresh every minute
+	  setInterval(loadNews, 60 * 1000);
+	}
   };
 
   ws.onmessage = (event) => {
@@ -45,3 +52,22 @@ function startChat(username, gameId, characterId) {
     }
   });
 }
+
+async function loadNews() {
+  if (!universeId) return;
+  try {
+    const resp = await fetch(`/api/universe/${encodeURIComponent(universeId)}/news`);
+    if (!resp.ok) return;
+    const items = await resp.json();
+    const box = document.getElementById("news-box");
+    box.innerHTML = "";
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.innerHTML = `<em>[${new Date(item.published_at).toLocaleTimeString()}]</em> ${item.summary}`;
+      box.appendChild(div);
+    });
+  } catch (e) {
+    console.error("Error loading news:", e);
+  }
+}
+
