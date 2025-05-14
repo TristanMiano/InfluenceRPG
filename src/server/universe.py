@@ -22,6 +22,11 @@ class NewsResponse(BaseModel):
     id: int
     summary: str
     published_at: datetime
+    
+class ConflictResponse(BaseModel):
+    id: int
+    conflict_info: dict
+    detected_at: datetime
 
 @router.post("/universe/create", response_model=UniverseResponse)
 def create_universe_endpoint(req: UniverseCreateRequest):
@@ -56,5 +61,15 @@ def publish_universe_news(universe_id: str):
     try:
         summary = run_news_extractor(universe_id)
         return {"status": "ok", "summary": summary}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+        
+@router.get("/universe/{universe_id}/conflicts", response_model=List[ConflictResponse])
+def list_universe_conflicts(universe_id: str):
+    """
+    Fetch recent hard conflicts for a universe.
+    """
+    try:
+        return universe_db.list_conflicts(universe_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

@@ -20,6 +20,7 @@ function startChat(username, gameId, characterId) {
 	if (universeId) {
 	  // initial load
 	  loadNews();
+	  loadConflicts();
 	  // refresh every minute
 	  setInterval(loadNews, 60 * 1000);
 	}
@@ -71,3 +72,31 @@ async function loadNews() {
   }
 }
 
+async function loadConflicts() {
+  if (!universeId) return;
+  try {
+    const resp = await fetch(`/api/universe/${encodeURIComponent(universeId)}/conflicts`);
+    if (!resp.ok) return;
+    const items = await resp.json();
+    const box = document.getElementById("conflict-box");
+    box.innerHTML = "";
+    if (items.length === 0) {
+      box.innerHTML = "<em>No conflicts detected.</em>";
+      return;
+    }
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.classList.add("conflict-item");
+      const info = item.conflict_info;
+      // show description and involved games
+      div.innerHTML = `
+        <strong>${new Date(item.detected_at).toLocaleTimeString()}</strong><br/>
+        ${info.description || JSON.stringify(info)}<br/>
+        <em>Instances:</em> ${info.game_ids.join(", ")}
+      `;
+      box.appendChild(div);
+    });
+  } catch (e) {
+    console.error("Error loading conflicts:", e);
+  }
+}

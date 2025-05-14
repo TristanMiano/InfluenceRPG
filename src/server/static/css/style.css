@@ -63,3 +63,18 @@ button {
   height: 20vh;
   overflow-y: auto;
 }
+
+#conflict-box {
+  border: 1px solid #f66;
+  background: #fff5f5;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 15vh;
+  overflow-y: auto;
+}
+#conflict-box .conflict-item {
+  margin-bottom: 0.5em;
+  padding: 0.4em;
+  border-bottom: 1px dashed #f00;
+}
+

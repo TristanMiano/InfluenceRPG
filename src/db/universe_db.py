@@ -195,3 +195,27 @@ def record_news(universe_id: str, summary: str):
         raise
     finally:
         conn.close()
+        
+def list_conflicts(universe_id: str, limit: int = 20) -> list[dict]:
+    """
+    Retrieve recent detected conflicts for a universe.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, conflict_info, detected_at "
+                "FROM conflict_detections "
+                "WHERE universe_id = %s "
+                "ORDER BY detected_at DESC "
+                "LIMIT %s",
+                (universe_id, limit)
+            )
+            return [
+                {"id": row["id"], 
+                 "conflict_info": row["conflict_info"], 
+                 "detected_at": row["detected_at"]}
+                for row in cur.fetchall()
+            ]
+    finally:
+        conn.close()

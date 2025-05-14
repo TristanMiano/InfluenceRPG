@@ -12,6 +12,10 @@
 {% else %}
   <input type="hidden" id="universe-id" value="" />
 {% endif %}
+{% if universe_id %}
+  <h3>Universe Conflicts</h3>
+  <div id="conflict-box"></div>
+{% endif %}
   <div id="chat-box"></div>
   <input type="text" id="chat-input" placeholder="Type your message here..." />
   <button id="send-button">Send</button>
