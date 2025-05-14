@@ -115,8 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (boundCharId) {
       // Simply rejoin
-      window.location.href =
-        `/chat?username=${encodeURIComponent(username)}&game_id=${encodeURIComponent(selectedGameId)}&character_id=${encodeURIComponent(boundCharId)}`;
+      const uni = document.getElementById("universe-id")?.value || ""; // or wherever you store it
+		window.location.href =
+		  `/chat?username=${encodeURIComponent(username)}`
+		  + `&game_id=${encodeURIComponent(selectedGameId)}`
+		  + `&character_id=${encodeURIComponent(boundCharId)}`
+		  + `&universe_id=${encodeURIComponent(uni)}`;
       return;
     }
 
@@ -142,8 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (resp.ok) {
-        window.location.href =
-          `/chat?username=${encodeURIComponent(username)}&game_id=${encodeURIComponent(selectedGameId)}&character_id=${encodeURIComponent(characterId)}`;
+        const uni = document.getElementById("universe-id")?.value || ""; // or wherever you store it
+		window.location.href =
+		  `/chat?username=${encodeURIComponent(username)}`
+		  + `&game_id=${encodeURIComponent(selectedGameId)}`
+		  + `&character_id=${encodeURIComponent(boundCharId)}`
+		  + `&universe_id=${encodeURIComponent(uni)}`;
       } else {
         const err = await resp.json();
         errorElem.innerText = err.detail || "Could not join game.";

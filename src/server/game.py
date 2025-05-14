@@ -3,6 +3,8 @@ from fastapi import APIRouter, HTTPException, status, Query
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from src.db import universe_db, game_db
+from src.db.universe_db import get_universe
+from src.db.character_db import get_character_by_id
 from src.game.initial_prompt import generate_initial_scene
 from psycopg2.errors import UniqueViolation
 
@@ -45,8 +47,28 @@ def create_game_endpoint(game_req: GameCreateRequest):
         game_db.join_game(new_game["id"], game_req.character_id)
 
         # 5) Generate opening scene, save to chat
-        opening_scene = generate_initial_scene(game_req.initial_details)
-        save_chat_message(new_game["id"], "GM", opening_scene)
+        # 1) Look up starting player's character name
+        char = get_character_by_id(game_req.character_id)
+        player_name = char["name"] if char else "Unknown"
+
+        # 2) If universe_id provided, fetch its details
+        uni_name = None
+        uni_desc = None
+        if game_req.universe_id:
+            uni = get_universe(game_req.universe_id)
+            if uni:
+                uni_name = uni["name"]
+                uni_desc = uni["description"]
+
+        # 3) Generate the opening scene with full metadata
+        opening_scene = generate_initial_scene(
+            initial_details=game_req.initial_details,
+            game_name=new_game["name"],
+            universe_name=uni_name,
+            universe_description=uni_desc,
+            starting_player=player_name
+        )
+        game_db.save_chat_message(new_game["id"], "GM", opening_scene)
     except HTTPException:
         raise
     except Exception as e:

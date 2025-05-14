@@ -23,6 +23,7 @@ function startChat(username, gameId, characterId) {
 	  loadConflicts();
 	  // refresh every minute
 	  setInterval(loadNews, 60 * 1000);
+	  setInterval(loadConflicts, 60 * 1000);
 	}
   };
 

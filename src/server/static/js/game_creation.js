@@ -109,7 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await resp.json();
         const gameId = data.id;
         window.location.href =
-          `/chat?username=${encodeURIComponent(username)}&game_id=${encodeURIComponent(gameId)}&character_id=${encodeURIComponent(characterId)}`;
+		  `/chat?username=${encodeURIComponent(username)}`
+		  + `&game_id=${encodeURIComponent(gameId)}`
+		  + `&character_id=${encodeURIComponent(characterId)}`
+		  + `&universe_id=${encodeURIComponent(universeSelect.value)}`;
       } else {
         const err = await resp.json();
         errorElem.innerText = err.detail || "Game creation failed.";

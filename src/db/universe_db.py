@@ -219,3 +219,18 @@ def list_conflicts(universe_id: str, limit: int = 20) -> list[dict]:
             ]
     finally:
         conn.close()
+
+def get_universe(universe_id: str) -> dict | None:
+    """
+    Retrieve a universe record (id, name, description) by its ID.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, name, description, created_at FROM universes WHERE id = %s",
+                (universe_id,)
+            )
+            return cur.fetchone()
+    finally:
+        conn.close()
