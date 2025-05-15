@@ -3,6 +3,7 @@
 let selectedGameId = null;
 let boundCharId = null;
 let username = null;
+let universeId = null;
 
 // Fetch any character already tied to this game (if any)
 async function getBoundCharacter(gameId) {
@@ -97,6 +98,7 @@ async function refreshGames() {
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   username = params.get("username") || "";
+  universeId = params.get("universe_id") || "";
 
   document.getElementById("user-display").innerText = username;
   loadAvailableCharacters();
@@ -113,14 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Rejoin existing
     if (boundCharId) {
-      // Simply rejoin
-      const uni = document.getElementById("universe-id")?.value || ""; // or wherever you store it
-		window.location.href =
-		  `/chat?username=${encodeURIComponent(username)}`
-		  + `&game_id=${encodeURIComponent(selectedGameId)}`
-		  + `&character_id=${encodeURIComponent(boundCharId)}`
-		  + `&universe_id=${encodeURIComponent(uni)}`;
+      let url = `/chat?username=${encodeURIComponent(username)}`
+              + `&game_id=${encodeURIComponent(selectedGameId)}`
+              + `&character_id=${encodeURIComponent(boundCharId)}`;
+      if (universeId) url += `&universe_id=${encodeURIComponent(universeId)}`;
+      window.location.href = url;
       return;
     }
 
@@ -146,12 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (resp.ok) {
-        const uni = document.getElementById("universe-id")?.value || ""; // or wherever you store it
-		window.location.href =
-		  `/chat?username=${encodeURIComponent(username)}`
-		  + `&game_id=${encodeURIComponent(selectedGameId)}`
-		  + `&character_id=${encodeURIComponent(boundCharId)}`
-		  + `&universe_id=${encodeURIComponent(uni)}`;
+        let url = `/chat?username=${encodeURIComponent(username)}`
+                + `&game_id=${encodeURIComponent(selectedGameId)}`
+                + `&character_id=${encodeURIComponent(characterId)}`;
+        if (universeId) url += `&universe_id=${encodeURIComponent(universeId)}`;
+        window.location.href = url;
       } else {
         const err = await resp.json();
         errorElem.innerText = err.detail || "Could not join game.";

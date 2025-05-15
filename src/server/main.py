@@ -123,30 +123,58 @@ def read_lobby(request: Request, username: str = Query(...)):
         "lobby.html", {"request": request, "username": username}
     )
 
+from src.db.universe_db import list_universes_for_game  # add this import
+
 @app.get("/chat", response_class=HTMLResponse)
-def read_chat(request: Request,
-              username: str = Query(...),
-              game_id: str = Query(...),
-              character_id: Optional[str] = Query(None),
-              universe_id: Optional[str] = Query(None)):
+def read_chat(
+    request: Request,
+    username: str = Query(...),
+    game_id: str = Query(...),
+    character_id: Optional[str] = Query(None),
+    universe_id: Optional[str] = Query(None),
+):
     """
     Render chat page or auto-redirect if character already tied to this game.
+    If no universe_id is passed, look it up from the DB.
     """
-    # If no character specified, find the user's joined character
+    # 1) If no character specified, redirect to the full URL
     if not character_id:
         from src.db.game_db import get_character_for_user_in_game
         char_id = get_character_for_user_in_game(game_id, username)
         if char_id:
-            return RedirectResponse(
-                url=f"/chat?username={username}&game_id={game_id}&character_id={char_id}"
+            # Rebuild /chat URL, preserving universe_id if it was there
+            redirect_url = (
+                f"/chat?username={username}"
+                f"&game_id={game_id}"
+                f"&character_id={char_id}"
             )
-        # No character bound: send back to lobby
+            if universe_id:
+                redirect_url += f"&universe_id={universe_id}"
+            return RedirectResponse(url=redirect_url)
         return RedirectResponse(url=f"/lobby?username={username}")
-    # Render the chat page as usual
+
+    # 2) If we still don’t have a universe_id, fetch it from the DB
+    if not universe_id:
+        try:
+            ulist = list_universes_for_game(game_id)
+            if ulist:
+                universe_id = ulist[0]
+        except Exception:
+            universe_id = None
+
+    # 3) Render the chat page, passing the (possibly looked-up) universe_id
     return templates.TemplateResponse(
         "chat.html",
-        {"request": request, "username": username, "game_id": game_id, "character_id": character_id, "universe_id": universe_id or ""}
+        {
+            "request": request,
+            "username": username,
+            "game_id": game_id,
+            "character_id": character_id,
+            "universe_id": universe_id or "",
+        },
     )
+
+
 
 @app.get("/character/new", response_class=HTMLResponse)
 def read_character_create(request: Request, username: str = Query(...)):
