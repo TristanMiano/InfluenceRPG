@@ -37,7 +37,10 @@ def start_server():
     module_path = "src.server.main:app"
     cmd = [
         "python", "-m", "uvicorn", module_path,
-        "--reload", "--host", "127.0.0.1", "--port", "8000"
+        "--reload",
+        "--reload-dir", "src/server/static",
+        "--reload-dir", "src/server/templates",
+        "--host", "127.0.0.1", "--port", "8000"
     ]
     
     try:

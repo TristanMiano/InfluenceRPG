@@ -134,43 +134,46 @@ def read_chat(
     universe_id: Optional[str] = Query(None),
 ):
     """
-    Render chat page or auto-redirect if character already tied to this game.
-    If no universe_id is passed, look it up from the DB.
+    Ensure both character_id and universe_id live in the URL.
+    If either is missing, look it up and redirect accordingly.
     """
-    # 1) If no character specified, redirect to the full URL
+    # 1) If no character, find it and redirect
     if not character_id:
         from src.db.game_db import get_character_for_user_in_game
         char_id = get_character_for_user_in_game(game_id, username)
         if char_id:
-            # Rebuild /chat URL, preserving universe_id if it was there
-            redirect_url = (
-                f"/chat?username={username}"
-                f"&game_id={game_id}"
-                f"&character_id={char_id}"
-            )
+            url = f"/chat?username={username}&game_id={game_id}&character_id={char_id}"
             if universe_id:
-                redirect_url += f"&universe_id={universe_id}"
-            return RedirectResponse(url=redirect_url)
-        return RedirectResponse(url=f"/lobby?username={username}")
+                url += f"&universe_id={universe_id}"
+            return RedirectResponse(url)
+        return RedirectResponse(f"/lobby?username={username}")
 
-    # 2) If we still don’t have a universe_id, fetch it from the DB
+    # 2) If no universe_id, fetch it and redirect
     if not universe_id:
+        from src.db.universe_db import list_universes_for_game
         try:
-            ulist = list_universes_for_game(game_id)
-            if ulist:
-                universe_id = ulist[0]
-        except Exception:
-            universe_id = None
+            uni_list = list_universes_for_game(game_id)
+            if uni_list:
+                fetched = uni_list[0]
+                url = (
+                    f"/chat?username={username}"
+                    f"&game_id={game_id}"
+                    f"&character_id={character_id}"
+                    f"&universe_id={fetched}"
+                )
+                return RedirectResponse(url)
+        except:
+            pass  # if lookup fails, fall through to rendering without universe box
 
-    # 3) Render the chat page, passing the (possibly looked-up) universe_id
+    # 3) Finally, render with a guaranteed universe_id in the template context
     return templates.TemplateResponse(
         "chat.html",
         {
             "request": request,
-            "username": username,
-            "game_id": game_id,
-            "character_id": character_id,
-            "universe_id": universe_id or "",
+            "username":       username,
+            "game_id":        game_id,
+            "character_id":   character_id,
+            "universe_id":    universe_id or "",
         },
     )
 
