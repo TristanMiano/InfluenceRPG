@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 from typing import Optional
 from fastapi import FastAPI, HTTPException, status, Request, Form, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
@@ -14,13 +16,48 @@ from src.server.universe import router as universe_router
 import asyncio
 from src.db import universe_db
 from src.game.news_extractor import run_news_extractor
+from starlette.staticfiles import StaticFiles as _StaticFiles
 
 app = FastAPI(title="Influence RPG Prototype Server")
 
-# Serve static files
-app.mount("/static", StaticFiles(directory="src/server/static"), name="static")
+# serve fingerprinted files with long-term caching
+app.mount(
+    "/static",
+    _StaticFiles(directory="dist/static", html=False),
+    name="static",
+)
 
 templates = Jinja2Templates(directory="src/server/templates")
+
+# load once at startup
+_manifest = json.loads(Path("dist/static/.vite/manifest.json").read_text())
+
+def asset_path(name: str) -> str:
+    """
+    Look up the manifest entry under:
+      1) the bare name, e.g. "style.css"
+      2) "css/style.css"
+      3) "js/style.css"
+    and return its .file (the hashed filename).
+    """
+    # try bare
+    entry = _manifest.get(name)
+    # try sub‐dirs
+    if entry is None:
+        for subdir in ("js", "css"):
+            key = f"{subdir}/{name}"
+            entry = _manifest.get(key)
+            if entry:
+                break
+
+    if not entry:
+        raise KeyError(f"Asset not found in manifest: {name}")
+
+    # if entry is a dict, return its 'file'; if for some reason it's a string, return it
+    return entry["file"] if isinstance(entry, dict) else entry
+
+# expose to Jinja
+templates.env.globals["asset_path"] = asset_path
 
 # Include routers
 from src.server.game_chat import router as game_chat_router

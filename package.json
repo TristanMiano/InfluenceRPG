@@ -1,0 +1,27 @@
+{
+  "name": "influencerpg",
+  "version": "1.0.0",
+  "description": "This project aims to create a revolutionary tabletop role-playing game (RPG) that fuses detailed character-driven narrative with expansive strategic simulation. Unlike traditional RPGs that focus solely on adventuring, our game places players in the roles of high-status figures—such as military leaders, political masterminds, corporate magnates, and cultural icons—who wield influence over vast social, economic, and military domains. Players will experience both the intricate personal development typical of RPGs and the large-scale decision-making found in strategy games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TristanMiano/InfluenceRPG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TristanMiano/InfluenceRPG/issues"
+  },
+  "homepage": "https://github.com/TristanMiano/InfluenceRPG#readme",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "scripts": {
+    "build:static": "vite build",
+    "watch:static": "vite build --watch"
+  }
+}

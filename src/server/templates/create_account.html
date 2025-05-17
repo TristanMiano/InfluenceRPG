@@ -19,5 +19,5 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="/static/js/create_account.js?v=1.0"></script>
+  <script type="module" src="{{ url_for('static', path=asset_path('create_account.js')) }}"></script>
 {% endblock %}

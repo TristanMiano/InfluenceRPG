@@ -3,7 +3,7 @@
 {% block title %}Create Game – Influence RPG{% endblock %}
 
 {% block css %}
-  <link rel="stylesheet" href="/static/css/game_creation.css?v=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', path=asset_path('game_creation.css')) }}">
 {% endblock %}
 
 {% block content %}
@@ -32,5 +32,5 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="/static/js/game_creation.js?v=1.0"></script>
+  <script type="module" src="{{ url_for('static', path=asset_path('game_creation.js')) }}"></script>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}Lobby - Influence RPG{% endblock %}
 
 {% block css %}
-  <link rel="stylesheet" href="/static/css/lobby.css">
+  <link rel="stylesheet" href="{{ url_for('static', path=asset_path('lobby.css')) }}">
 {% endblock %}
 
 {% block content %}
@@ -48,5 +48,5 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="/static/js/lobby.js?v=1.0"></script>
+  <script type="module" src="{{ url_for('static', path=asset_path('lobby.js')) }}"></script>
 {% endblock %}

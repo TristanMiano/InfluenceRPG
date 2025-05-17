@@ -5,5 +5,7 @@ pydantic
 pytest
 requests
 setuptools
-src
+sentence_transformers
 tiktoken
+python-multipart
+uvicorn[standard]
