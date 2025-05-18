@@ -25,10 +25,9 @@ def get_db_connection():
         password=cfg.get("DB_PASSWORD", "postgres")
     )
 
-def create_character(owner: str, name: str, character_class: str, character_data: dict) -> dict:
+def create_character(owner: str, universe_id: str, name: str, character_data: dict) -> dict:
     """
-    Insert a new character record (with JSON data) into the database
-    and return it as a dictionary.
+    Insert a new character tied to a universe.
     """
     char_id = str(uuid4())
     conn = get_db_connection()
@@ -37,17 +36,17 @@ def create_character(owner: str, name: str, character_class: str, character_data
             cur.execute(
                 """
                 INSERT INTO characters
-                  (id, owner, name, character_class, character_data)
+                  (id, owner, universe_id, name, character_data)
                 VALUES (%s, %s, %s, %s, %s)
                 """,
-                (char_id, owner, name, character_class, json.dumps(character_data))
+                (char_id, owner, universe_id, name, json.dumps(character_data))
             )
             conn.commit()
         return {
             "id": char_id,
             "owner": owner,
+            "universe_id": universe_id,
             "name": name,
-            "character_class": character_class,
             "character_data": character_data
         }
     except Exception:
@@ -56,16 +55,30 @@ def create_character(owner: str, name: str, character_class: str, character_data
     finally:
         conn.close()
 
-def get_characters_by_owner(owner: str) -> list[dict]:
-    """
-    Retrieve all character records (including JSON data) for a given owner.
-    """
+# 2. New helper to check for existing
+def get_character_by_owner_and_universe(owner: str, universe_id: str) -> dict | None:
     conn = get_db_connection()
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(
                 """
-                SELECT id, owner, name, character_class, character_data
+                SELECT id, owner, universe_id, name, character_data
+                  FROM characters
+                 WHERE owner = %s AND universe_id = %s
+                """,
+                (owner, universe_id)
+            )
+            return cur.fetchone()
+    finally:
+        conn.close()
+
+def get_characters_by_owner(owner: str) -> list[dict]:
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT id, owner, universe_id, name, character_data
                   FROM characters
                  WHERE owner = %s
                 """,
@@ -76,15 +89,12 @@ def get_characters_by_owner(owner: str) -> list[dict]:
         conn.close()
 
 def get_character_by_id(char_id: str) -> dict | None:
-    """
-    Retrieve a character record (with JSON data) by its ID.
-    """
     conn = get_db_connection()
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(
                 """
-                SELECT id, owner, name, character_class, character_data
+                SELECT id, owner, universe_id, name, character_data
                   FROM characters
                  WHERE id = %s
                 """,

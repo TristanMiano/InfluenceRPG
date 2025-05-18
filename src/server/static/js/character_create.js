@@ -1,11 +1,24 @@
+async function loadUniverses() {
+  const resp = await fetch("/api/universe/list");
+  if (!resp.ok) return;
+  const universes = await resp.json();
+  const select = document.getElementById("universe-select");
+  universes.forEach(u => {
+    const opt = document.createElement("option");
+    opt.value = u.id;
+    opt.innerText = u.name;
+    select.appendChild(opt);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  loadUniverses();
   const form = document.getElementById("char-create-form");
   form.addEventListener("submit", async e => {
     e.preventDefault();
 
     const username = document.getElementById("username").value;
     const name = document.getElementById("name").value.trim();
-    const character_class = document.getElementById("character_class").value;
 
     // Gather attributes into an object
     const character_data = {};
@@ -14,7 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
         character_data[attr] = parseInt(document.getElementById(attr).value, 10);
       });
 
-    const payload = { username, name, character_class, character_data };
+    const universeId = document.getElementById("universe-select").value;
+	const payload = {
+	  username,
+	  universe_id: universeId,    // ← include here
+	  name,
+	  character_data
+	};
 
     try {
       const resp = await fetch("/character/create", {

@@ -21,13 +21,17 @@ CREATE TABLE IF NOT EXISTS characters (
     id UUID PRIMARY KEY,
     owner VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    character_class VARCHAR(255) NOT NULL,
-    character_data JSONB NOT NULL DEFAULT '{}',  -- <— new column
+    character_data JSONB NOT NULL DEFAULT '{}', 
+	universe_id UUID NOT NULL
+	  CONSTRAINT fk_character_universe
+		REFERENCES universes(id)
+		ON DELETE CASCADE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    CONSTRAINT fk_owner
-        FOREIGN KEY(owner)
-            REFERENCES users(username)
-            ON DELETE CASCADE
+	UNIQUE (owner, universe_id),
+	CONSTRAINT fk_owner
+	  FOREIGN KEY(owner)
+		REFERENCES users(username)
+		ON DELETE CASCADE
 );
 
 

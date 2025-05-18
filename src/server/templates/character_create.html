@@ -11,20 +11,14 @@
 	  <h2>Create New Character</h2>
 	  <form id="char-create-form">
 		<input type="hidden" id="username" value="{{username}}" />
+		
+		<label for="universe-select">Universe:</label>
+		<select id="universe-select">
+		  <option value="">— Select universe —</option>
+		</select>
 
 		<label for="name">Name</label>
 		<input type="text" id="name" required />
-
-		<label for="character_class">Class</label>
-		<select id="character_class">
-		  <option>Military Leader</option>
-		  <option>Political Leader</option>
-		  <option>Religious Leader</option>
-		  <option>Criminal Overlord</option>
-		  <option>Corporate Magnate</option>
-		  <option>Innovator</option>
-		  <option>Cultural Icon</option>
-		</select>
 
 		<h3>Core Attributes</h3>
 		{% for attr in ["Stature","Charisma","Tactics","Gravitas","Resolve","Ingenuity"] %}
