@@ -23,33 +23,56 @@ def get_db_connection():
         password=cfg.get("DB_PASSWORD", "postgres")
     )
 
-def create_universe(name: str, description: str = "") -> dict:
-    """Insert a new universe record."""
+# Change create_universe signature and SQL:
+def create_universe(name: str, description: str = "", ruleset_id: str | None = None) -> dict:
+    """Insert a new universe record, tied to a ruleset."""
     uni_id = str(uuid4())
     conn = get_db_connection()
     try:
         with conn.cursor() as cur:
             cur.execute(
-                "INSERT INTO universes (id, name, description) VALUES (%s, %s, %s)",
-                (uni_id, name, description)
+                """
+                INSERT INTO universes
+                  (id, name, description, ruleset_id)
+                VALUES (%s, %s, %s, %s)
+                """,
+                (uni_id, name, description, ruleset_id)
             )
             conn.commit()
-        return {"id": uni_id, "name": name, "description": description}
+        return {"id": uni_id, "name": name, "description": description, "ruleset_id": ruleset_id}
     except Exception:
         conn.rollback()
         raise
     finally:
         conn.close()
 
+# Update list_universes to select ruleset_id:
 def list_universes() -> list[dict]:
-    """Return all universes."""
     conn = get_db_connection()
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute("SELECT id, name, description, created_at FROM universes ORDER BY name")
+            cur.execute(
+                "SELECT id, name, description, ruleset_id, created_at "
+                "FROM universes ORDER BY name"
+            )
             return cur.fetchall()
     finally:
         conn.close()
+
+# Update get_universe to return ruleset_id too:
+def get_universe(universe_id: str) -> dict | None:
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, name, description, ruleset_id, created_at "
+                "FROM universes WHERE id = %s",
+                (universe_id,)
+            )
+            return cur.fetchone()
+    finally:
+        conn.close()
+
 
 def add_game_to_universe(universe_id: str, game_id: str):
     """Link an existing game into a universe."""
@@ -217,20 +240,5 @@ def list_conflicts(universe_id: str, limit: int = 20) -> list[dict]:
                  "detected_at": row["detected_at"]}
                 for row in cur.fetchall()
             ]
-    finally:
-        conn.close()
-
-def get_universe(universe_id: str) -> dict | None:
-    """
-    Retrieve a universe record (id, name, description) by its ID.
-    """
-    conn = get_db_connection()
-    try:
-        with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute(
-                "SELECT id, name, description, created_at FROM universes WHERE id = %s",
-                (universe_id,)
-            )
-            return cur.fetchone()
     finally:
         conn.close()

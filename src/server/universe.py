@@ -12,11 +12,13 @@ router = APIRouter()
 class UniverseCreateRequest(BaseModel):
     name: str = Field(..., description="Unique universe name")
     description: str = Field("", description="Optional description")
+    ruleset_id: str = Field(..., description="ID of the ruleset to use")
 
 class UniverseResponse(BaseModel):
     id: str
     name: str
     description: str
+    ruleset_id: str
     
 class NewsResponse(BaseModel):
     id: int
@@ -31,7 +33,7 @@ class ConflictResponse(BaseModel):
 @router.post("/universe/create", response_model=UniverseResponse)
 def create_universe_endpoint(req: UniverseCreateRequest):
     try:
-        uni = universe_db.create_universe(req.name, req.description)
+        uni = universe_db.create_universe(req.name, req.description, req.ruleset_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Could not create universe: {e}")
     return uni
