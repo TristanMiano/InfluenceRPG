@@ -2,11 +2,17 @@
 -- Game Universe: shared‐world event & news support
 -- ================================================
 
+-- Universes gets run AFTER db_setup.sql and rulesets.sql
+
 -- 1. Universes table
 CREATE TABLE IF NOT EXISTS universes (
     id          UUID        PRIMARY KEY,
     name        VARCHAR(255) NOT NULL UNIQUE,
     description TEXT,
+	ruleset_id UUID NOT NULL
+	CONSTRAINT fk_universe_ruleset
+      REFERENCES rulesets(id)
+      ON DELETE RESTRICT,
     created_at  TIMESTAMPTZ DEFAULT NOW()
 );
 

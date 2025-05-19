@@ -1,6 +1,7 @@
 fastapi
 google
 psycopg2
+psycopg2-binary
 pydantic
 pytest
 requests
@@ -9,3 +10,4 @@ sentence_transformers
 tiktoken
 python-multipart
 uvicorn[standard]
+pdfminer.six
