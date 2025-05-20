@@ -1,5 +1,6 @@
 fastapi
 google
+google-genai
 psycopg2
 psycopg2-binary
 pydantic

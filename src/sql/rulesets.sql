@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS rulesets (
   name         VARCHAR(255) NOT NULL UNIQUE,
   description  TEXT,
   full_text    TEXT      NOT NULL,       -- raw, PDF-extracted text
+  summary TEXT,
   created_at   TIMESTAMPTZ DEFAULT NOW()
 );
 

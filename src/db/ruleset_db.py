@@ -91,3 +91,31 @@ def list_chunks(ruleset_id: str) -> List[dict]:
             return cur.fetchall()
     finally:
         conn.close()
+
+def get_summary(ruleset_id: str) -> Optional[str]:
+    """
+    Return the cached summary for this ruleset, or None if not yet generated.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT summary FROM rulesets WHERE id = %s", (ruleset_id,))
+            row = cur.fetchone()
+            return row[0] if row else None
+    finally:
+        conn.close()
+
+def set_summary(ruleset_id: str, summary: str):
+    """
+    Cache the provided summary in the DB so we only generate once.
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE rulesets SET summary = %s WHERE id = %s",
+                (summary, ruleset_id)
+            )
+            conn.commit()
+    finally:
+        conn.close()

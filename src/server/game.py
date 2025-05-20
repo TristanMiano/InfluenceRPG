@@ -51,22 +51,25 @@ def create_game_endpoint(game_req: GameCreateRequest):
         char = get_character_by_id(game_req.character_id)
         player_name = char["name"] if char else "Unknown"
 
-        # 2) If universe_id provided, fetch its details
+        # After you fetch uni (with get_universe), uni will now include ruleset_id
         uni_name = None
         uni_desc = None
+        ruleset_id = None
         if game_req.universe_id:
             uni = get_universe(game_req.universe_id)
             if uni:
-                uni_name = uni["name"]
-                uni_desc = uni["description"]
+                uni_name     = uni["name"]
+                uni_desc     = uni["description"]
+                ruleset_id   = uni.get("ruleset_id")
 
-        # 3) Generate the opening scene with full metadata
+        # Then:
         opening_scene = generate_initial_scene(
             initial_details=game_req.initial_details,
             game_name=new_game["name"],
             universe_name=uni_name,
             universe_description=uni_desc,
-            starting_player=player_name
+            starting_player=player_name,
+            ruleset_id=ruleset_id          # ← pass it here
         )
         game_db.save_chat_message(new_game["id"], "GM", opening_scene)
     except HTTPException:
