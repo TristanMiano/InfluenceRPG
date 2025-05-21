@@ -46,7 +46,7 @@ def get_ruleset(rs_id: str) -> Optional[dict]:
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(
-                "SELECT id, name, description, full_text, created_at FROM rulesets WHERE id = %s",
+                "SELECT id, name, description, full_text, summary, created_at FROM rulesets WHERE id = %s",
                 (rs_id,)
             )
             return cur.fetchone()

@@ -14,6 +14,7 @@ from src.server.game import router as game_router
 from src.server.character import router as character_router
 from src.server.universe import router as universe_router
 from src.server.ruleset import router as ruleset_router
+from src.server.character_wizard import router as character_wizard_router
 import asyncio
 from src.db import universe_db
 from src.game.news_extractor import run_news_extractor
@@ -68,6 +69,7 @@ app.include_router(game_router, prefix="/api")
 app.include_router(character_router)
 app.include_router(universe_router, prefix="/api")
 app.include_router(ruleset_router)
+app.include_router(character_wizard_router)
 
 @app.on_event("startup")
 async def start_periodic_news_loop():

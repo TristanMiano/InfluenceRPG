@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -7,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
+  plugins: [react()],
   // Serve files out of your static folder
   root: resolve(__dirname, 'src/server/static'),
 
@@ -23,7 +25,7 @@ export default defineConfig({
       input: {
         // JavaScript entries
         'chat': resolve(__dirname, 'src/server/static/js/chat.js'),
-        'character_create': resolve(__dirname, 'src/server/static/js/character_create.js'),
+        'character_wizard': resolve(__dirname, 'src/server/static/js/character_wizard.jsx'),
         'create_account': resolve(__dirname, 'src/server/static/js/create_account.js'),
         'game_creation': resolve(__dirname, 'src/server/static/js/game_creation.js'),
         'lobby': resolve(__dirname, 'src/server/static/js/lobby.js'),

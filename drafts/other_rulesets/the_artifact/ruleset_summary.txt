@@ -1,0 +1,113 @@
+**Core Mechanics**
+
+* Uses 1d6, 1d10 (0=10), 1d100 (percentile via two d10s) rolls.
+* XdY notation: roll X dice of Y sides.
+
+**Attributes & Generation**
+
+* Eleven attributes: Str, Con, Ref, Agi, Dex, Bty, Cha, Int, IQ, Psy, HP.
+* Fraction columns: Full, 1/2, 1/4, 1/8 (rounded up each halving).
+* Standard gen: 1d6×10 per attr; Assign: 10d6×10 assign; Ace: 3d6+1d10×10 assign, others=30; bonus table if 10/20.
+* HP from Con table + Str modifier:
+Hit Points
+Con -> HP
+1-25 = 5
+26-50 = 10
+51-75 = 15
+76-100 = 20
+Str HP
+1-25 = +2
+26-50 = +5
+51-75 = +10
+76-100 = +15
+* Carrying: max lift = Str×3.6 kg; carry = Str×2.
+
+**Dice Resolution & Fractional Success**
+
+* Roll 1d100 ≤ column → successes: Full=1, ½=2, ¼=3, ⅛=4.
+* Spend successes in order Full→⅛ for effects, extra actions, bursts, armor avoidance, hit location shifts.
+
+**Initiative & Actions**
+
+* Initiative: roll vs Ref; sort by fraction (⅛→¼→½→Full→Fail).
+* Actions: 1 per turn + extra per passed fractions + extras (Ambidex, animals).
+* Reserve actions or help: can save for others or intervene.
+
+**Skill Checks**
+
+* If untrained: roll vs attribute columns.
+* Trained: roll vs attribute Full + skill value.
+* Skills ≥30 add +5 to ½,¼,⅛; ≥60 add +10; ≥90 add +15.
+
+**Advantages & Impairments**
+
+* After base roll, roll for each Impairment (GM) subtracts 1 success if % roll ≤ value.
+* Player rolls for each Advantage adds 1 success if ≤ value.
+* Optional d10 rule when multiples of 10.
+
+**Combat & Damage**
+
+* To hit: 1 success (Full) for single action; bursts use extra successes (1 per 5 ROF).
+* Defensive roll: spend actions to roll and remove attacker successes.
+* Hit location: roll 1d100 mapping to body zones; critical effects by location.
+* Damage: subtract armor (AR); extra successes reduce AR by fractions of weapon damage.
+* Stress: Physical (Str/Con/Ref), Functional (Agi/Dex/Cha/Bty), Mental (Int/IQ/Psy). Stress adds to rolls; exceeding attr blocks rolls.
+* Injury modifiers: Wounded/HP thresholds impose attr penalties.
+* Healing: Con roll per 6 days; medics speed via skill and reduce stress.
+
+**Movement & Hazards**
+
+* Walk: 14 m/turn; run: 50 m base + frac×(Str/5) meters; endurance via Con/Sprinting rolls.
+* Jump: base + build bonus + frac×Str (cm).
+* Climb/Swim: frac successes grant additional turns before Physical Stress.
+* Encumbrance: rolls and penalties when load >Str or >Str×2.
+* Hazards (environment, traps, survival): use Challenge Points (CP) reduced by frac successes; random tables.
+
+**Stress & Recovery**
+
+* Types: Physical, Functional, Mental.
+* Rest/sleep: Con rolls relieve IP points: full→1, ½→2, ¼→3, ⅛→4.
+* Exhaustion/collapse on doubling stress; mental breakdown tables if Mental≥Psy.
+
+**Social & Mental Combat**
+
+* Social conflicts use Cha/Int + related skills; defender rolls IQ/Psy to reduce frac successes.
+* Stress inflicted = successes → Mental Stress.
+* Principles/Priorities grant immunities or advantages.
+
+**Skills & Focus**
+
+* Each attribute lists skills; values noted as +X.
+* Focus skill: every +30 grants a focus ability +5 to ½,¼,⅛.
+
+**Equipment & Items**
+
+* Weapons use WS skills; frac successes shift hit location, avoid armor, extra bursts.
+* Grenades: frac successes extend range/precision.
+* Tech gear: Computer ops, Defeat Security, programming, ECM/ECCM, sensors, radio, signal triangulation.
+* Construction, repair, medical, survival tools give % advantages.
+* Armor/force fields: AR & HP per zone; fields regen per round.
+* Shields: active generators with HP.
+
+**Vehicles & Mechs**
+
+* Stats: AR, HP, BP, Piloting Mod, Speed, crew/passengers.
+* Collisions: formulas using speed/mass; passenger damage ratios.
+* Evasive: Pilot rolls reduce attacker successes.
+* Sensors/ECM/ECCM: frac successes for locks or countermeasures.
+* Critical hits: roll percent ≤ crit chance per zone → system damage via table; spending success chooses outcome.
+* Modifications: use CP tech challenges; transforms on success/failure, CP costs for upgrades/repairs.
+
+**Experience & Advancement**
+
+* Exp awards: in-character, cooperation, nonviolence, intellect, bravery, humor, heroism.
+* Skill adv: spend 1 XP; gain per IQ & current skill level table.
+* Attr adv: spend 3–5 XP; gain per current attr level.
+
+**NPC & Monster Stats**
+
+* Generated via 1d6×10 + modifiers.
+* Actions, damage, defenses per frac columns.
+* Special abilities/traps use familiar frac and attribute rolls.
+
+*End of Summary*
