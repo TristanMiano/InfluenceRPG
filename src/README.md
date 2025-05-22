@@ -1,106 +1,119 @@
-# Influence RPG Server (src)
+# Source Directory (src) README
 
-This subdirectory contains the server-side code for the Influence RPG prototype. It is responsible for: user authentication, account management, game and character persistence, real-time chat (players and AI Game Master), and serving the front-end templates and static assets.
-
----
-
-## 1. Overview
-
-* **Framework:** FastAPI, with Jinja2 templates for server-side rendering and WebSocket support for live chat.
-* **Database:** PostgreSQL accessed via psycopg2. All persistence logic lives in `src/db/` modules.
-* **Authentication & Accounts:** Simple username/password flow, with hashed credentials managed in the `users` table.
-* **Game Logic:** Creates and lists games, allows characters to join, and orchestrates chat between players and the AI GM.
-* **LLM Integration:** A “/ws/game/{game\_id}/chat” WebSocket route supports both player messages and `/gm` triggers for narrative updates from a Gemini (or simulated) model.
-* **Templates & Static Assets:** Jinja2 templates in `src/server/templates/` extend a common `base.html`. CSS and JS are modularized under `static/css/` and `static/js/`.
+This document describes the architecture, technology stack, and high‑level flow of the `src/` directory for the Influence RPG prototype server.
 
 ---
 
-## 2. High-Level Architecture
+## 1. Architecture Overview
 
-```plaintext
-Client Browser
-   │
-   ├─ HTTP ←→ FastAPI (Routes + Templates)
-   │                ├─ / (login.html)
-   │                ├─ /create-account
-   │                ├─ /lobby
-   │                ├─ /chat
-   │                ├─ /api/game/... (REST API)
-   │                └─ /character/... (REST API)
-   │
-   ├─ WebSocket (Game Chat)
-   │         └─ /ws/game/{game_id}/chat
-   │
-   └─ Static Files (CSS/JS)
-             └─ /static/
+The `src/` directory is organized into logical layers:
 
-PostgreSQL ← psycopg2 ← src/db/*.py
+1. **API Layer** (`src/server`)
 
-LLM Client ← src/llm/*.py
+   * Implements HTTP and WebSocket endpoints via **FastAPI**.
+   * Handles authentication, game creation/joining, universe management, ruleset CRUD, character wizards, and real‑time chat.
+   * Serves static assets (JS/CSS) compiled by **Vite** with long‑term caching.
+
+2. **Domain & Game Logic** (`src/game`)
+
+   * **Conflict Detector**: Uses LLM to detect overlapping game events and triggers mergers.
+   * **Merger**: Automates merging of game instances in the same universe.
+   * **News Extractor**: Summarizes recent events into in‑universe bulletins via LLM.
+
+3. **Data Access Layer** (`src/db`)
+
+   * Database modules for **PostgreSQL** (via `psycopg2` + `RealDictCursor`): users, characters, games, chat, universes, rulesets, embeddings, and history.
+   * Enforces constraints (e.g., one character per universe, one instance per game).
+   * Integrates **pgvector** extension for RAG and similarity search.
+
+4. **LLM Integration** (`src/llm`)
+
+   * Generic client (`llm_client.py`) loads config and communicates with Google Gemini (or simulates responses).
+   * Domain‑specific wrappers: `gm_llm` for narrative, `initial_prompt` for opening scenes, summarization fallbacks.
+
+5. **Data Models** (`src/models`)
+
+   * Pydantic schemas for Characters, Games, Users.
+
+6. **Utilities & Scripts** (`src/utils`)
+
+   * Account creation, PDF ruleset import, chunking & embedding, summarization scripts, security (password hashing).
+
+7. **Tests** (`src/test`)
+
+   * Basic FastAPI endpoint tests using `pytest` and `TestClient`.
+
+---
+
+## 2. Technology Stack
+
+* **Python 3.13**
+* **FastAPI** (API & WebSockets)
+* **Uvicorn/ASGI** server
+* **PostgreSQL** with **psycopg2-binary**
+* **pgvector** for embedding storage & similarity search
+* **Pydantic** for request/response validation
+* **Sentence Transformers** (`all-MiniLM-L6-v2`) for embeddings
+* **Google Gemini API** (optional) for LLM completions
+* **Vite** + **JSX/React** for character wizard
+* **Jinja2** for server‑side HTML templates
+
+---
+
+## 3. High‑Level Flow
+
+1. **Startup**: Load manifest, mount static files, schedule periodic news extraction every 30 min.
+2. **Authentication**: `/login` and account creation endpoints use hashed passwords.
+3. **Character Creation**: Wizard flow (`/api/character/wizard`) iteratively collects data via LLM.
+4. **Game Lifecycle**:
+
+   * **Create**: `/api/game/create` checks for active characters, persists game, seeds with an AI‑generated opening scene.
+   * **Join**: `/api/game/{id}/join`, enforces one‑character‑per‑game, persists join.
+   * **Chat**: Real‑time WebSocket at `/ws/game/{id}/chat` broadcasts messages, persists them, and handles `/gm` commands for summaries, history, and ad‑hoc narrative generation.
+5. **Universe Management**:
+
+   * Create universes tied to rulesets.
+   * List news and conflicts via REST; frontend polls every 30 s.
+6. **Conflict & Merger**: After summaries or scheduled loop, detect conflicts and merge instances.
+
+---
+
+## 4. Configuration
+
+1. **Database**: `config/db_config.json` (host, port, name, user, password).
+2. **LLM**: `config/llm_config.json` (API key, default model).
+
+---
+
+## 5. Getting Started (src/ only)
+
+```bash
+# 1. Install Python dependencies
+pip install -r requirements.txt   # includes fastapi, psycopg2-binary, pydantic, sentence-transformers, tiktoken, requests
+
+# 2. Configure DB & LLM
+cp config/db_config.example.json config/db_config.json
+cp config/llm_config.example.json config/llm_config.json
+# edit credentials and keys
+
+# 3. Run database migrations/setup
+psql -U postgres -d influence_rpg -f src/sql/db_setup.sql
+psql -U postgres -d influence_rpg -f src/sql/rulesets.sql
+psql -U postgres -d influence_rpg -f src/sql/universes_setup.sql
+
+# 4. Start the server
+uvicorn src.server.main:app --reload
 ```
 
 ---
 
-## 3. Code Modules
+## 6. Contribution & Testing
 
-### 3.1 `src/server/main.py`
-
-* Mounts static files and templates
-* Defines core HTTP routes:
-
-  * **`/`**: Login page (GET), authentication (POST `/login`)
-  * **`/create-account`**: Account creation form (GET/POST)
-  * **`/lobby`**: Lobby UI (GET)
-  * **`/chat`**: Chat UI (GET)
-* Includes routers:
-
-  * **Game REST API:** `src/server/game.py`
-  * **Character REST API:** `src/server/character.py`
-  * **Chat WebSocket:** `src/server/game_chat.py` and `src/server/chat.py`
-
-### 3.2 `src/db/`
-
-* **`character_db.py`** and **`game_db.py`**: CRUD operations for users, characters, games, and chat messages.
-
-### 3.3 `src/auth/`
-
-* **`auth.py`**: DB connection and `authenticate_user()` logic.
-* **`create_account.py`**: CLI script to bootstrap new accounts.
-
-### 3.4 `src/llm/`
-
-* **`llm_client.py`**: Generic wrapper for Gemini or simulated LLM calls.
-* **`gm_llm.py`**: Constructs and sends narrative prompts to the LLM for `/gm` triggers.
-
-### 3.5 `src/server/templates/`
-
-* **`base.html`**: Common page structure.
-* **`login.html`, `create_account.html`, `lobby.html`, `chat.html`**: Extend `base.html`.
-
-### 3.6 `src/server/static/`
-
-* **CSS:** `style.css` for shared styles.
-* **JS:** Modular scripts (`login.js`, `create_account.js`, `lobby.js`, `chat.js`) for page logic.
+* Add new endpoints under `src/server`.
+* Implement new game logic in `src/game`.
+* DB changes: update SQL in `src/sql/`.
+* Run tests: `pytest src/test`.
 
 ---
 
-## 4. Development Workflow
-
-1. **Environment**: Ensure PostgreSQL is running and `config/db_config.json` is configured.
-2. **Install dependencies**: `pip install -r requirements_autogenerated.txt`
-3. **Database migrations**: (Add in future) Use your preferred migration tool.
-4. **Run server**: `python server_control.py start` (or `uvicorn src.server.main:app --reload`).
-5. **Develop & Test**: Use built-in FastAPI test client in `src/test/` for login endpoints.
-
----
-
-## 5. Next Steps
-
-* Add database migrations (Alembic/SQLAlchemy).
-* Improve error handling and validation (Pydantic schemas).
-* Write integration tests for WebSocket chat and GM triggers.
-* Dockerize the server for containerized deployments.
-
----
-
-*This document should serve as a jumping-off point for new developers to understand and navigate the server codebase.*
+*This README describes only the `src/` subdirectory. For overall project info, refer to the root `README.md`.*
