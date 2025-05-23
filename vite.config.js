@@ -28,7 +28,7 @@ export default defineConfig({
         'character_wizard': resolve(__dirname, 'src/server/static/js/character_wizard.jsx'),
         'create_account': resolve(__dirname, 'src/server/static/js/create_account.js'),
         'game_creation': resolve(__dirname, 'src/server/static/js/game_creation.js'),
-        'lobby': resolve(__dirname, 'src/server/static/js/lobby.js'),
+        'lobby': resolve(__dirname, 'src/server/static/js/lobby.jsx'),
         'login': resolve(__dirname, 'src/server/static/js/login.js'),
         'universe_create': resolve(__dirname, 'src/server/static/js/universe_create.js'),
 

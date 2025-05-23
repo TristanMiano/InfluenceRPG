@@ -1,9 +1,10 @@
-// src/server/static/js/lobby.js
+// src/server/static/js/lobby.jsx
 
 let selectedGameId = null;
 let boundCharId = null;
 let username = null;
 let universeId = null;
+let availableChars = [];
 
 // Fetch any character already tied to this game (if any)
 async function getBoundCharacter(gameId) {
@@ -30,6 +31,7 @@ async function loadAvailableCharacters() {
     );
     if (!resp.ok) throw new Error();
     const chars = await resp.json();
+    availableChars = chars;
     if (chars.length === 0) {
       const opt = document.createElement("option");
       opt.value = "";
@@ -47,6 +49,7 @@ async function loadAvailableCharacters() {
     const opt = document.createElement("option");
     opt.value = "";
     opt.innerText = "Error loading characters";
+    availableChars = [];
     select.appendChild(opt);
   }
 }
@@ -60,10 +63,33 @@ async function refreshGames() {
     if (!resp.ok) throw new Error();
     const { games } = await resp.json();
 
-    games.forEach(game => {
+    for (const game of games) {
+      // figure out your relation to this game
+      const joinedId = await getBoundCharacter(game.id);
+
+      // decide which badges to show
+      const badges = [];
+      if (joinedId) {
+        badges.push({ text: "Joined",      cls: "status-joined" });
+      } else if (availableChars.length === 0) {
+        badges.push({ text: "No characters", cls: "status-none" });
+      } else if (game.status === "waiting") {
+        badges.push({ text: "Joinable",    cls: "status-joinable" });
+      } else if (game.status === "active") {
+        badges.push({ text: "Active",      cls: "status-active" });
+      } else {
+        badges.push({ text: game.status.charAt(0).toUpperCase() + game.status.slice(1), cls: `status-${game.status}` });
+        badges.push({ text: "Closed",      cls: "status-closed" });
+      }
+
+      // build the line
       const div = document.createElement("div");
-      div.innerText = `ID: ${game.id}, Name: ${game.name}, Status: ${game.status}`;
       div.style.cursor = "pointer";
+      let html = `ID: ${game.id}, Name: ${game.name}`;
+      badges.forEach(b => {
+        html += ` <span class="status-badge ${b.cls}">${b.text}</span>`;
+      });
+      div.innerHTML = html;
 
       div.addEventListener("mouseover", () => div.style.backgroundColor = "#f0f0f0");
       div.addEventListener("mouseout", () => div.style.backgroundColor = "");
@@ -73,36 +99,35 @@ async function refreshGames() {
         boundCharId = await getBoundCharacter(game.id);
 
         const charSelect = document.getElementById("character-select");
-        const errorElem = document.getElementById("join-game-error");
-        const joinBtn = document.getElementById("join-game-button");
+        const errorElem  = document.getElementById("join-game-error");
+        const joinBtn    = document.getElementById("join-game-button");
 
         // Update UI based on whether user has already joined
         if (boundCharId) {
           charSelect.style.display = "none";
-          errorElem.innerText = "You’re already in this game — click below to rejoin.";
-          joinBtn.textContent = "Rejoin Game";
+          errorElem.innerText    = "You’re already in this game — click below to rejoin.";
+          joinBtn.textContent    = "Rejoin Game";
         } else {
           charSelect.style.display = "";
-          errorElem.innerText = "";
-          joinBtn.textContent = "Join Game";
+          errorElem.innerText    = "";
+          joinBtn.textContent    = "Join Game";
         }
       });
 
       listDiv.appendChild(div);
-    });
+    }
   } catch (err) {
     console.error("Error fetching game list:", err);
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  username = params.get("username") || "";
-  universeId = params.get("universe_id") || "";
+  const params     = new URLSearchParams(window.location.search);
+  username         = params.get("username")    || "";
+  universeId       = params.get("universe_id") || "";
 
   document.getElementById("user-display").innerText = username;
-  loadAvailableCharacters();
-  refreshGames();
+  loadAvailableCharacters().then(() => refreshGames());
 
   document.getElementById("refresh-games-button").addEventListener("click", refreshGames);
 
@@ -137,12 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const resp = await fetch(
         `/api/game/${encodeURIComponent(selectedGameId)}/join`,
         {
-          method: "POST",
+          method:  "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            character_id: characterId,
-            username: username
-          })
+          body:    JSON.stringify({ character_id: characterId, username })
         }
       );
 
@@ -153,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (universeId) url += `&universe_id=${encodeURIComponent(universeId)}`;
         window.location.href = url;
       } else {
-        const err = await resp.json();
-        errorElem.innerText = err.detail || "Could not join game.";
+        const errData = await resp.json();
+        errorElem.innerText = errData.detail || "Could not join game.";
       }
     } catch (err) {
       console.error("Join game error:", err);

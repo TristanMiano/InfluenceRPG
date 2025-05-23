@@ -57,3 +57,35 @@
 .lobby-container #game-list div:hover {
   background: #f0f0f0;
 }
+
+/* status badges */
+.status-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-left: 0.5em;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+/* joinable (you can click “Join Game”) */
+.status-joinable { background-color: #28a745; }
+
+/* you’ve already joined this game */
+.status-joined   { background-color: #007bff; }
+
+/* you have no free characters to join this one */
+.status-none     { background-color: #6c757d; }
+
+/* game is merged or finished—chat is closed */
+.status-closed   { background-color: #dc3545; }
+
+/* reflect backend “merged” flag */
+.status-merged   { background-color: #fd7e14; }
+
+/* reflect backend “waiting” flag */
+.status-waiting  { background-color: #17a2b8; }
+
+/* reflect backend “active” flag */
+.status-active   { background-color: #20c997; }
