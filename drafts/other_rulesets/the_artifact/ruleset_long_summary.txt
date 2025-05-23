@@ -1,0 +1,3148 @@
+Event Resolution: Details are omitted. It appears to be a core mechanic.
+
+Bursts of Actions: Details are omitted. It appears to be a core mechanic.
+
+Defensive Rolls: Details are omitted. It appears to be a core mechanic.
+
+Impairments: Details are omitted. It appears to be a core mechanic.
+
+Advantages: Details are omitted. It appears to be a core mechanic.
+
+Special Actions: Details are omitted. It appears to be a core mechanic.
+
+Dynamics: Details are omitted. It appears to be a core mechanic.
+
+Movement: Details are omitted. It appears to be a core mechanic.
+
+Encumbrance: Details are omitted. It appears to be a core mechanic.
+
+Missile Movement: Details are omitted. It appears to be a core mechanic.
+
+Stress: Details are omitted. It appears to be a core mechanic.
+
+Extra Effort: Details are omitted. It appears to be a core mechanic.
+
+The Death of A Hero: Details are omitted. It appears to be a core mechanic.
+
+Simplified Stress For NPCs: Details are omitted. It appears to be a core mechanic.
+
+Exhaustion: Details are omitted. It appears to be a core mechanic.
+
+Mental Break Down: Details are omitted. It appears to be a core mechanic.
+
+Damage: Details are omitted. It appears to be a core mechanic.
+
+Hit Location: Details are omitted. It appears to be a core mechanic.
+
+Avoiding Armor: Details are omitted. It appears to be a core mechanic.
+
+Stuns and Incapacitation: Details are omitted. It appears to be a core mechanic.
+
+Healing: Details are omitted. It appears to be a core mechanic.
+
+Force Fields: Details are omitted. It appears to be a core mechanic.
+
+Material Damage: Details are omitted. It appears to be a core mechanic.
+
+Unarmed Combat: Details are omitted. It appears to be a core mechanic.
+
+Avoiding Death: Details are omitted. It appears to be a core mechanic.
+
+Mental Combat: Details are omitted. It appears to be a core mechanic.
+
+Vehicle Rules: Details are omitted. It appears to be a core mechanic.
+
+Vehicle Critical Hits: Details are omitted. It appears to be a core mechanic.
+
+Generic Vehicle Critical Hits: Details are omitted. It appears to be a core mechanic.
+
+Infantry Combat: Details are omitted. It appears to be a core mechanic.
+
+Infantry Initiative and Actions: Details are omitted. It appears to be a core mechanic.
+
+Infantry Damage: Details are omitted. It appears to be a core mechanic.
+
+Infantry Defensive Actions: Details are omitted. It appears to be a core mechanic.
+
+Infantry Stress: Details are omitted. It appears to be a core mechanic.
+
+Skills: Details are omitted. It appears to be a core mechanic.
+
+Skills With Requirements: Details are omitted. It appears to be a core mechanic.
+
+Focus Skills: Details are omitted. It appears to be a core mechanic.
+
+The game uses dice: 1d6s, 1d10s, and 1d100s.
+
+*   **Dice Notation:** The notation "XdY" represents rolling X dice with Y sides each. For example, 3d6 means rolling 3 six-sided dice.
+
+*   **Die 10 (1D10):** A ten-sided die where the zero (0) is counted as ten.
+
+*   **Die 100 (1D100 or Percentile die):** Two d10 of different colors can be rolled to create a d100. One die represents the tens place, and the other represents the ones place.
+
+```text
+Dice are an important part of this game and different types of dice are needed to play. Die is the singular form of Dice.
+To determine success or failure.
+
+Rolling 1D100:
+Roll two ten-sided dice, each yielding a number between one and ten. One die is the tens and the other is the ones. The darker die is the tens and the lighter die is the ones. So if 1D100 is rolled and the dice give a 5 on the dark die and a 3 on the light die the result is 53. A roll of 00 is not zero but one hundred, the highest possible roll. This method will yield any number between one and one hundred, therefore qualifying as a 1D100.
+```
+
+- **Attribute Generation (Standard Method):** Roll 1d6 for each attribute (except HP), multiply by 10 (1d6 x 10). Record in the "Full" column.
+- **Attribute Generation (Assign Method):** Roll 10d6 and assign each roll to an attribute, multiplying by 10.
+- **Attribute Generation (Ace Method):** Roll 3d6 and 1d10, multiply each result by 10, and assign to attributes of choice. Remaining 6 attributes are set to 30. If the 1d10 x 10 results in a 10 or 20, roll twice on bonus table one.
+- **Hit Points Calculation:** Based on Constitution and Strength.
+
+| Constitution | Hit Points |
+|---|---|
+| 1-25 | 5 |
+| 26-50 | 10 |
+| 51-75 | 15 |
+| 76-100 | 20 |
+
+| Strength | Hit Points Modifier |
+|---|---|
+| 1-25 | +2 |
+| 26-50 | +5 |
+| 51-75 | +10 |
+| 76-100 | +15 |
+
+- **Fraction Column Calculation:**
+    - 1/2 column: Full value / 2, round up.
+    - 1/4 column: 1/2 column value / 2, round up.
+    - 1/8 column: 1/4 column value / 2, round up.
+
+```
+NONE
+```
+
+*   **Attributes:** Eleven attributes are recorded, and their values are halved repeatedly (1/2, 1/4, 1/8). The 1/2 column is the attribute value rounded up to the nearest whole number. The 1/4 column is half of the 1/2 column value rounded up. The 1/8 column is half of the 1/4 column value rounded up.
+*   **Skills:** Skill values are recorded, and each skill is associated with an attribute to be added.
+*   **Max Lifting Mass:** Calculated by multiplying the character's strength attribute by 3.6 (result is in kilograms).
+*   **Carrying Mass:** Calculated by multiplying the character's strength attribute by 2.
+
+*   **Standard Skills:** Read/Write (1 Language) +50, Mathematics +30, Pilot Automobile +40, Radio +10, First Aid +10, Computer Operation +10
+*   **Foot Soldier Skills:** Ambush +10, Camouflage +5, Detect Ambush +5, Explosives +15, HTH Combat +15, Melee Combat +20, Navigation Land +10, Weapon Repair +5, WS Grenade +20, WS Pistol +25, WS Gun +30, plus 10 skills at +10
+*   **Foot Soldier Attribute Bonuses:** Str +5, Con +5
+*   **Scout Skills:** Ambush +10, Botany +25, Camouflage +5, Detect Ambush +5, Foraging +15, Hide +20, HTH Combat +15, Hunting +15, Mapping +5, Navigation Land +10, Pick Locks +10, Pilot Motorcycle +8, Sniper +15, Stealth +15, Navigation Subterranean +5, Surveillance +15, Tracking +10, Weapon Repair +5, WS Knife +20, WS Gun +30, plus 5 skills at +8
+*   **Scout Attribute Bonuses:** Agi +5, Int +12
+
+Skills:
+*   Artillery Operation +20
+*   ECM +5
+*   Explosives +15
+*   HTH Combat +5/+10
+*   Melee Combat +5/+10
+*   Navigation Land +10
+*   Pilot Tank +30
+*   Pilot E-suit +30
+*   Sensors +15/+20
+*   Weapon Repair +5/+30
+*   WS Grenade +15/+10
+*   WS Gun +10/+5
+*   WS Pistol +15/+20
+*   Acids +10
+*   Architectural +10
+*   Artillery Repair +15
+*   Camouflage +35
+*   Construction Bunker +10
+*   Construction Mantrap +15
+*   Construction Road +20
+*   Construction Shelter +20
+*   Construction Vehicle Trap +15
+*   Electronics Engineering +10
+*   Explosives Disposal +15
+*   Mapping +5
+*   Military Intelligence +15
+*   Repair Electronics +25
+*   Repair Machinery +25
+*   Structural Recognition +10
+*   Welding +15
+*   Plus X skills at +Y
+
+Attribute Bonuses:
+*   Str +X
+*   Con +X
+*   Dex +X
+
+Skills: Anthropology +30, Archeology +25, Architectural +10, Biology +25, Botany +25, Chemistry +25, Electronics Engineering +20, H T H Combat +5, Mathematics +20, Mechanical Engineering +20, Physics +40, Psychology +20, Sociology +20, Theology +10, WS Pistol +5, plus 5 skills at +10.
+
+Attribute Bonuses: Int +5, IQ +20
+
+Skills: Biology +25, Botany +20, First Aid +30, General Medicine +30, Immunization +15, Surgery +20, WS Pistol +5, plus 10 skills at +10.
+
+Attribute Bonuses: IQ +5, Dex +5
+
+Skills: Concealed Object +30, Persuasion +20, HTH Martial Arts +30, Kelrath Culture +30, Politics +10, Propaganda +40, Speak Kelrath +30, WS Kelrath Weapo
+
+Skills:
+Drug Recognition +30, Drug Resistance +15, HTH Combat +25, Law enforcement +25, Martial Arts +30, WS Gun +25, WS Pistol +30
+Code Cracking +5, Computer Operation +10 Computer Programming +15, Defeat Security +15, ECCM +15, ECM +20, Electronics Repair+10, Explosives +5, HTH Combat +10, Jamming +15, 3 Languages +30, Melee Combat +5, Navigation Land +10, Radio +10, Scrambler + 30, Sensors +30, Signal Triangulation +25, Weapon Repair +8
+Standard Skills: Computer Operation +10, First Aid +10, Mathematics +35, Pilot Automobile +20, Radio +10,Read/Write (2 Earth languages) +50
+Attribute Bonuses
+Psy +10
+Str +10
+Cha +10
+ns +10
+skills at +10
+
+Skills are represented as Skill Name + Value (e.g., Ambush +10).
+Attribute Bonuses are granted during character generation (e.g., Dex +5).
+Weapon Skills (WS) are represented as WS Weapon Type + Value (e.g., WS Gun +10).
+Starting Rank is listed for each character type (e.g., Starting Rank: Warrant Officer).
+
+Skills: Artillery Operation +20, ECM +10, Explosives +15, HTH Combat +10, Melee Combat +10, Navigation Land +10, Pilot E-Suit +35, Sensors +20, Weapon Repair +5, WS Grenade +15, WS Gun +10, WS Pistol +20, plus 8 skills at +10
+
+Attribute Bonuses
+Str +5
+Con +5
+Dex +10
+
+Skills: Code Cracking +5, Computer Operation +10 Computer Programming +15, Defeat Security +15, ECCM +15, ECM +20, Electronics +10, Explosives +5, HTH Combat +10, Jamming +15, 3 Languages +30, Melee Combat +5, Navigation Land +10, Radio +10, Scrambler + 30, Sensors +30, Signal Triangulation +25, Weapon Repair +8, WS Grenade +15, WS Gun +10, WS Pistol +15, plus 5 skills at +5
+
+Attribute Bonuses
+Dex +5
+
+Attribute Bonuses
+Str +3
+Con +3
+IQ +5
+Dex +5
+
+Skills: Acids +10, Architectural +10, Artillery Repair +15, Construction Bunker +10, Construction Mantrap +15, Construction Road +20, Construction Shelter +20, Construction Vehicle Trap +15, Electronics Engineering +10, Explosives +15, Explosives Disposal +15, HTH Combat +5, Mapping +5, Military Intelligence +15, Navigation Land +10, Repair Electronics +25, Repair Machinery +25, Structural Recognition +10, Weapon Repair +30, Welding +15, WS Grenade +10, WS Gun +5, WS Pistol +10, Camouflage +35, plus 5 skills at +5
+
+Skills: Anthropology +30, Archeology +20, Architectural +10, Biology +25, Botany +20, Chemistry +25, Electronics Engineering +20, H T H Combat +5, Mathematics +20, Mechanical Engineering +20, Physics +40, Psychology +20, Sociology +20, Theology +10, WS Pistol +5, plus 5 skills at +10
+Attribute Bonuses
+Int +5
+IQ +20
+Skills: Biology +25, Botany +20, First Aid +30, General Medicine +30, Immunization +15, Surgery +20, WS Pistol +5, plus 10 skills at +10
+Attribute Bonuses
+Dex +5
+IQ +5
+Skills: Agriculture +10, Construction Shelter +10, First Aid +5, Hunting +15, Speak Scimrahn +5, Tailoring +10, WS Skill Knife +5, 10 skills at +10 plus 10 skills at +5
+
+```
+Standard Skills: Drug Resistance +30, Foraging +10, Navigation Subterranean +5, Read/Write Scimrahn +5
+
+Scout/Guide Skills: Camouflage +20, Detect Ambush +10, Foraging +15, Hide +2
+```
+
+Skills:
+Navigation +20, Man Trap Construction +20, Pick Locks +15, Propaganda +5, Scimrahn Sign Language +50, Speak Chezbah +15, Stealth +25, Navigation Subterranean +30, Surveillance +25, WS Knife +30, plus 5 skills at +5.
+Agriculture +25, Artillery Operation +20, Botany +25, ECM +10, Explosives +15, Hide +15, HTH Combat +20, Melee Combat +20, Navigation Land +10, Pilot A-G +20, Sensors +20, Sprinting +20, Stealth +15, Weapon Repair +5, WS Grenade +20, WS Gun +20, WS Pistol +20, plus 8 skills at +10
+Artillery Operation +20, ECM +10, Explosives +10, HTH Combat +10, Navigation Land +10, Pilot AG +45, Sensors +20, Weapon Repair +5, WS Gun +10, WS Pistol +30, plus 8 skills at +10
+Artillery Repair +25, Camouflage +5, Construction Bunker +10, Construction Road +20, Construction Shelter +20, Electronics Engineering +20, Foraging +15, HTH Combat +5, Hunting +10, Navigation Land +10, Repair Electronics +35, Repair Machinery +35, Scimrahn Sign Language +10, Navigation Subterranean +20, Weapon Repair +40, Welding +25, WS Gun +5, WS Pistol +10, plus 5 skills at +5
+
+Attribute Bonuses:
+Dex +10, Agi +10
+Str +5, Con +5
+Cha +10, Dex +5
+Cha +10, Dex +5
+Str +3, Con +3, IQ +5, Dex +5
+
+Skills:
+*   Bartering +20
+*   Command +20
+*   HTH Combat +10
+*   Navigation Subterranean +30
+*   Pilot AG +45
+*   Sensors +20
+*   Weapon Repair +5
+*   WS Gun +10
+*   WS Pistol +30
+
+Skills:
+*   Artillery Operation +10
+*   Camouflage +25
+*   ECM +10
+*   Explosives +10
+*   Foraging +15
+*   Hide +20
+*   HTH Combat +10
+*   Navigation Land +10
+*   Pilot AG +25
+*   Sensors +10
+*   Stealth +20
+*   Navigation Subterranean +10
+*   Weapon Repair +5
+*   WS Gun +10
+
+Attribute Bonuses:
+*   Str +10
+*   Dex +10
+
+Skills: Construction Shelter +10, Foraging +20, Hunting +10, Martial Arts +10, Navigation Land +10, Navigation Subterranean +5, Speak Scimrahn +5, Tailoring +10, WS Gun +10, WS Pistol +10, WS Skill Knife +5, 10 skills at +10
+
+Attribute Bonuses
+Con +3
+IQ +5
+Int +10
+
+Skills: Ambush +20, Camouflage +5, Detect Ambush +10, Explosives +15, HTH Combat +35, Melee Combat +15, Sniper +10, Weapon Repair +5, WS Grenade +15, WS Gun +20, WS Pistol +25, plus 5 skills at +10
+
+Attribute Bonuses
+Str +15
+Con +10
+
+Skills: Archeology +20, Biology +25, Botany +20, Chemistry +25, Mathematics +20, Physics +40, Psychology +20, Sociology +20, Anthropology +30, Theology +10,
+
+Architectural +10, Electronics Engineering +20, Mechanical Engineering +20, WS Pistol +5, HTH Combat +5, plus 5 skills at +10
+
+Attribute Bonuses
+Int +5
+IQ +20
+
+*   **Scimrahn Rank Challenge:** A newcomer to a Scimrahn tribe can challenge their assigned rank. This challenge involves tests that demonstrate the newcomer's skill. Passing the tests results in a rank that matches the demonstrated skill. Failing the tests results in flogging for insubordination.
+
+- PSY roll for Mental Stress to avoid seizure (incapacitated for 1D10 turns).
+- CON roll during exertion, or take 1 Physical Stress per turn until exertion stops for 2D10 turns. An inhaler will stop the attack and relieve 5 Physical Stress.
+- Bad eyesight (Myopic): -10 to distance vision unless the character wears glasses.
+- Stutters: 20% Impairment to all language skills, -5 Cha
+- Trick Knee, must make AGI roll when jumping or running or takes 3 Physical Stress
+
+- Klutzy characters must roll vs. DEX to avoid dropping things if rushed.
+- Absent-minded characters must roll vs. I.Q. or spend two turns trying to remember pertinent information.
+- Characters with a Bad Back must make a CON roll when lifting, or take 5 Physical Stress and 1 Functional Stress.
+- Hard of hearing: -5 INT and impairment to all Language rolls unless wearing a hearing aid.
+- Dyslexic: -20 to all Navigation skills.
+
+*   **Skill Checks:** Many entries grant bonuses to specific skills (e.g., +10 Repair Machinery).
+*   **Attribute Rolls:** Con rolls are mentioned in relation to disease resistance (+20 to Con rolls vs. disease). AGI rolls are required for jumping or running with a Trick Knee. DEX rolls are used when rushed to avoid dropping things if Klutzy. IQ rolls are used when absent minded to remember pertinent information. Con roll required for Lifting if you have a Bad Back.
+*   **Impairments:** Certain conditions impose impairments (e.g., 20% Impairment to Language rolls if Hard of hearing).
+*   **Actions:** Ambidextrousness can grant +1 Action.
+*   **Stress:** Physical Stress and Functional Stress are mentioned in the context of a Bad Back limitation.
+
+*   **Epileptic:** When the character gets any Mental Stress, they must make a PSY roll or have a seizure (incapacitated for 1D10 turns).
+*   **Asthma:** Must make a CON roll during any exertion. 1 Physical Stress per turn until the character stops all exertion for 2D10 turns. An inhaler will stop the attack and relieve 5 Physical Stress.
+*   **Bad eyesight (Myopic):** -10 to distance vision unless the character wears glasses.
+*   **Prominent facial scar:** -5 Bty
+*   **Afraid of others disapproval:** Takes double stress in Social Conflicts
+*   **Stutters:** 20% Impairment to all language skills, -5 Cha
+*   **Age Modifiers:**
+    *   12-15 years: +5 REF, -5 STR
+    *   16-18 years: +5 REF
+    *   19-21 years: +5 STR, RANK +1
+    *   22-25 years: 2 Skills, +5 RANK +1
+    *   26-30 years: 2 Skills, +10 RANK +1
+    *   31+ years: 4 Skills, +10 STR, -5 Con, -5 RANK +2
+*   **Party (wo)man:** 1 Addiction, +10 Drug Resistance
+
+*   **Skill Checks:** Many entries grant bonuses to specific skills (e.g., "+20 to Play Scimrahn Instruments," "+10 Repair Machinery"). These imply skill checks are used. Some entries require rolls against attributes like AGI, Con, or IQ under specific conditions.
+*   **Attribute Rolls:** There are references to making attribute rolls (e.g., "AGI roll when jumping or running," "Con roll when Lifting").
+*   **Ambidexterity:** "Ambidextrous both, can use both hands equally well +1 attack, no modifier for firing wrong handed."
+*   **Limitations:** "Trick Knee, must make AGI roll when jumping or running or takes 3 Physical Stress"
+*   **Limitations:** "Klutzy, tends to drop things if rushed. Roll vs. DEX."
+*   **Limitations:** "Absent Minded, Take a roll vs. I.Q. or must spend two turns trying to remember pertinent information."
+*   **Limitations:** "Bad Back, must make Con roll when Lifting or takes 5 Physical Stress and 1"
+
+- Functional Stress:
+  - Nervous Twitch: Gives you away when you're lying.
+  - Missing Front Teeth: -5 to BTY
+  - Epileptic: When the character gets any Mental Stress must make a PSY roll or have a seizure. (incapacitated for 1D10 turns)
+  - Asthma: Must make a CON roll during any exertion. 1 Physical Stress per turn until the character does stops all exertion for 2D10 turns An inhaler will stop the attack and relieve 5 Physical Stress.
+  - Bad eyesight (Myopic): -10 to distance vision unless the character wears glasses.
+  - Slow witted: -5 IQ
+  - Prominent facial scar: -5 BTY
+  - Totally Deaf!: -10 to INT. but an extra +10 to one attribute of player's choice.
+  - Bald, character is lacking hair atop their head: -5 BTY
+  - Stutters, 20% Impairment to all language skills: -5 Cha
+  - Missing fingers: 1d6 to DEX
+
+- Age Modifiers:
+  - 18-21 years: +5 STR
+  - Stutters, 20% Impairment to all language skills
+
+- Boxing champion: +5 STR, +5 CON, +20 HTH Combat
+- Strong immune system: +20 to Con rolls vs. disease.
+- Very large: +20 STR +10 Con +2 HP
+- Ambidextrous both: +1 attack, no modifier for firing wrong handed.
+- Epileptic: PSY roll or have a seizure (incapacitated for 1D10 turns) when gets Mental Stress.
+- Asthma: CON roll during any exertion. 1 Physical Stress per turn until exertion stops for 2D10 turns. Inhaler stops attack and relieves 5 Physical Stress.
+- Bad eyesight: -10 to distance vision unless wears glasses.
+- Prominent facial scar: -5 Cha
+- Stutters: 20% Impairment to all language skills, -5 Cha
+- Trick Knee, must make AGI roll when
+
+- **AGI roll:** Required when jumping or running with the "Trick Knee" affliction. Failure results in 3 Physical Stress.
+- **Navigation rolls:** Characters with Dyslexia suffer a -20 penalty.
+- **Language rolls:** Characters Hard of hearing. -5 INT 20% Impairment to all Language rolls unless character wears a hearing aid.
+- **DEX roll:** Required with the "Klutzy" affliction when rushed to avoid dropping things.
+- **I.Q. roll:** Required with the "Absent Minded" affliction or character must spend two turns trying to remember pertinent information.
+- **Con roll:** Required with the "Bad Back" affliction when lifting. Failure results in -10 Con -5 STR -5 AGI for 1D10 hours.
+- **BTY:** -5 to BTY when missing front teeth.
+
+Damage: 10K 8K
+
+Med
+4K
+
+L
+2K
+
+Ex
+1K
+
+Blast Range: D
+
+Effect: Continuous, until repaired.
+
+```
+The Artifact uses a system of rules to guide gameplay.
+
+The Artifact uses the Fraction Column system. This system has been designed to be consistent throughout so that players can learn a handful of basic concepts and then expand on those concepts as they go.
+```
+
+Attributes:
+- Ten main attributes: Physical, Functional, and Mental.
+Physical:
+- Constitution: Toughness and energy reserves. Resists fatigue, disease, stuns, and stress. Deciding factor in Hit Points.
+- Strength: Muscle power. Influences moving heavy objects and exerting brute force. A character can lift off the ground 3.6 x their strength in Kilograms.
+- Reflex: Reaction time. Used when rushed or pressed for time.
+Functional:
+- Agility: Physical accuracy. Athletic ability, firing a gun, acrobatics.
+- Dexterity:
+- Beauty:
+- Charisma: Ability to be pleasant and persuasive. Ability to give orders or persuade NPCs, to speak forcefully, and to stir emotion in listeners.
+
+*   **Event Resolution:** Used when a character attempts a task that isn't simple. It tests the character's ability against the difficulty of the task. Tasks that a normal person of the character's age can easily do don't require testing.
+*   **Hit Points:** A measure of health, determined by Constitution and Strength attributes. The document provides tables that define how the player should derive their character's Hit Points from Strength and Constitution.
+
+*   **Event Resolution:** Used when a character has a reasonable chance of failure.
+
+*   **Fraction Columns:** Attributes have four fraction column results: Full, Half, Quarter, and Eighth (Full, 1/2, 1/4, and 1/8). A player rolls 1d100 and compares the result to these columns. If the roll is equal to or lower than the number in a column, the character has passed that column. Eighth is the best result, followed by Quarter, Half, and then Full.
+
+*   **Play Order:** Determined by rolling for initiative. A combat round lasts 10 seconds.
+
+*   **Initiative:** Players roll against their character's Reflex attribute. Characters that fail are grouped together. The order is Eighth, then Quarter, then Half, then Full, and then Failed rolls. Ties act at the same time. Extra Effort can be used to boost initiative.
+
+*   **Actions:** Each event resolution roll requires an Action. Characters start with one Action per turn and gain additional Actions based on fractional successes from their initiative roll (one Action per passed fraction column). Some effects, such as Ambidextrous, and some animals, add extra actions.
+
+*   **Untrained Ability:** When attempting a task without a specific skill, roll 1d100 and compare the result to the character's attribute fraction columns.
+
+*   **Skill Checks:** Characters can attempt tasks using skills combined with attributes. If a character lacks a specific skill, they can attempt the action using only an attribute roll.
+*   **Untrained Skills:** Some skills can be used untrained (skill level +0), while others cannot.
+*   **Adding Skill Value:** When using a skill, its value is added to the attribute's "Full" column.
+*   **Dice Rolling:** Roll 1d100. Results under fraction column values grant bonuses.
+*   **Fraction Column Bonuses:** Skills with a value of 30 or greater add +5 to Half, Quarter, and Eighth fraction columns. Skills of 60+ add +10, and 90+ add +15.
+*   **Fractional Successes:**
+    *   Full Column: 1 success.
+    *   Half Column: 2 successes.
+    *   Quarter Column: 3 successes.
+    *   Eighth Column: 4 successes.
+*   **Spending Successes:** Players state the order in which they spend successes, starting with Full and ending with Eighth.
+*   **Challenging Skills:** In character vs character situations, the defender tries to reduce the attacker's successes, removing the smallest fraction successes first.
+*   **Role Play Advantage:** Acting out what your character is doing grants a 20% Advantage roll.
+
+- **Bursts of Actions:** Some weapons have a Rate of Fire (ROF) greater than 1. When using such a weapon, a fractional success result allows spending successes, each success corresponding to a fraction of the ROF impacting the target.
+
+- **Defensive Rolls:** A character can use an Action to make a defensive roll when attacked, even if it's not their turn. The defensive roll reduces the attacker's fractional successes. If all fractional successes are removed, the attack is unsuccessful. A successful defensive roll protects against all attacks that turn. Players can use different defensive skills as many times as they have actions once it is their turn.
+
+- **Running:** Running can be used as a defensive roll. The number of fraction columns the Sprinting skill roll is passed by applies to reducing all attacks made on that character for the turn.
+
+- **Impairments and Advantages**: The GM rolls for Impairments and the player rolls for Advantages.
+
+*   **Skill Checks:** Players perform skill checks, the results of which are measured in Fractional Successes.
+*   **Impairments:**
+    *   Impairments are conditions that hinder a character's actions.
+    *   Each impairment has a percentage value.
+    *   For each impairment, the GM rolls 1d100.
+    *   If the die roll is *lower* than the impairment percentage, one Fractional Success is *subtracted*.
+    *   Impairments are rolled for separately; their values are not combined.
+*   **Advantages:**
+    *   Advantages are conditions that help a character's actions.
+    *   Each advantage has a percentage value.
+    *   The player rolls 1d100.
+    *   If the die roll is *lower* than the advantage percentage, one Fractional Success is *added*.
+*   **Optional Rule (Impairments):**
+    *   If all impairment percentages are multiples of 10, roll 1d10 instead of 1d100 (representing the tens place).
+    *   A result *lower* than the impairment percentage subtracts a Fractional Success.
+    *   A roll of 0 on the d10 is considered lower than 10%.
+    *   Multiple impairments at the same percentage can be rolled for simultaneously using multiple d10s.
+*   **Roll Outcomes:** Impairments can cause a roll to fail and an Advantage can cause a failed roll to pass.
+
+*   **Skill Checks:** Players roll against a percentage based on their skill. Failing the initial skill check does not guarantee failure if advantages are present.
+*   **Fractional Successes:** Rolls lower than a given percentage (often from advantages or impairments) contribute fractional successes.
+*   **Advantages:** Advantages provide a percentage chance for a fractional success.
+*   **Advantage Rolls:** Advantage rolls do not cost additional actions, but the original skill check does.
+*   **Optional Advantage Rule:** If all advantages are in increments of 10, roll 1d10 representing the tens place. A result lower than the advantage percentage means a fractional success is added. Multiple advantages at the same percentage can be rolled for simultaneously using multiple d10s.
+*   **Reserving Actions:** A player may reserve an action until later in a round, after another player's turn, to be used.
+*   **Helping Another Character:** Multiple characters can roll under their relevant skill to help another character. The roll with the most fractional successes represents the group's effort.
+*   **Intervention:** A character can reserve an action to protect another character who is attacked. This can involve knocking the other character out of harm's way (Strength roll to reduce attacker's fractional successes) or blocking an attack (Parry skill roll with a 40% advantage).
+
+**Overfire:**
+
+*   A character must use an action for every time a weapon is Overfired, after using up initial actions up to the weapon's safe Rate of Fire (ROF).
+*   Plasma weapons require a successful Weapon Repair or Artillery Repair roll to disable safety systems before they can be Overfired.
+*   Roll a 1D100 each time a gun Overfires. If the roll is equal to or under the listed percentage, roll on the failure table.
+
+    *   Projectile Guns: 10%
+    *   Projectile Artillery: 25%
+    *   Plasma Guns: 20%
+    *   Plasma Artillery: 30%
+*   Overfire Failure Table:
+
+    *   1-60: Gun jams, repair roll required.
+    *   61-90: Barrel melts, must be replaced.
+    *   91-100: Barrel explodes, character or vehicle takes 1D6 x the PB (Penetration Bonus) damage of the weapon.
+
+**Mobbing Actions:**
+
+*   If one force outnumbers another at least five to one, they count as a mob.
+*   A mob can make a single Strength based attack. Damage equals the sum of all Strength scores in the mob, divided by 100.
+*   If a mob spends an entire turn in contact with an armored object without any other action, they can make a single attack that turn that has an armor piercing effect.
+*   The MobΓÇÖs average IQ attribute is rolled against. Fractional successes can be used to avoid armor in a single attack, including Strength based attacks.
+
+**Dynamics (Range):**
+
+*   Numbers are in meters, "K" means thousands (kilometers).
+*   Percentage values are Advantage and Impairments when using that range bracket.
+*   Human vision has a range class of D; Intuition rolls are modified by distance.
+    *   Objects over 500 meters away have a 20% Impairment to notice.
+    *   Objects over 1 kilometer away have a 40% Impairment to notice.
+    *   Objects over 5 kilometers away have a 90% Impairment to notice.
+
+*   **Range Classes:** Used for ranged weapons and sensors, indicating distance and effectiveness drop-off. Range classes are lettered A-E, with distance brackets (PB, Shrt, Med, L, Ex) and associated distances in meters (e.g., A: PB=1m, Shrt=5m, Med=15m, L=30m, Ex=150m).
+
+*   **Blast Range Classes:** Area effects have blast range classes using the same range brackets as normal range classes.
+
+*   **Running:**
+
+    *   Baseline speed: 50 meters per turn.
+    *   Additional distance: For each fractional success on a Strength attribute or Sprinting skill check, the character can run Strength/5 meters more per turn.
+    *   Endurance: Roll against Constitution attribute or Running skill check. For each fractional success, the character can run for one turn before taking a Physical Stress point. Failure results in immediately taking a Physical Stress point.
+
+*   **Walking:**
+
+    *   Base speed: 14 meters per turn.
+    *   Endurance: Roll against Constitution. For each fractional success, the character can walk 5 kilometers without taking a Physical Stress point.
+
+*   **Jumping:**
+
+    *   Horizontal Jump: Distance is determined by Strength attribute and build (Light, Med, Heavy).
+    *   Base distance is added based on build (+100cm for Light, +60cm for Med, +30cm for Heavy).
+    *   Additional distance: For every fractional success, the character can jump a number of centimeters equal to their Strength attribute.
+
+*   **Wounds:**
+    *   If a character loses half their hit points, their movement speed is halved.
+*   **Armor and Area Effects:**
+    *   If a character wearing armor is caught in an area effect, all of their armor's hit locations take damage, but the character only takes normal damage if their armor is destroyed.
+
+*   **Jumping:**
+    *   Base Jump: Determined by Build (Light, Med, Heavy) with values of +50 cm, +25 cm and +10 cm respectively.
+    *   Total Jump: Base Jump + (Strength / 2) in centimeters.
+*   **Climbing:**
+    *   Climbing speed: Strength \* 5 centimeters per combat turn (10 seconds) for each Fractional Success.
+    *   Climbing skill check: Roll against the Climbing skill. For every fractional success, climb for one turn before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+*   **Swimming:**
+    *   Swimming speed: Strength / 10 meters per turn.
+    *   Additional speed: +1 meter per turn for every fractional success.
+    *   Endurance Swimming skill check: Roll against the Endurance Swimming skill. For every fractional success, swim for one turn before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+*   **Encumbrance:**
+    *   Lifting: No Strength roll needed for masses <= Strength in Kilograms.
+    *   Lifting skill check: Weight Lifting roll required for masses > Strength in Kilograms. Failure results in 1 Physical Stress.
+    *   Maximum Lift: Strength \* 3.6 Kilograms.
+    *   Carrying skill check: Constitution roll required for carrying masses > Strength in Kilograms.
+    *   Movement penalty: Carrying masses > (Strength \* 2) results in half speed.
+    *   Carrying skill check: Roll against the Carrying skill. For every fractional success, carry the load for ten minutes before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+*   **Missile Movement:**
+    *   Speed: 1250 km/h or 5 km per turn.
+    *   Time to Target: 1 turn for every 5 kilometers of distance.
+    *   Countermeasures: Missiles can be shot down or dodged each turn in flight.
+    *   Course Correction: Attacker can make another artillery operation roll the next turn.
+*   **Wielding Mass:**
+    *   One-Handed Limit: Strength / 10
+    *   Two-Handed Limit: (Strength / 10) \* 2
+
+*   **Carrying Capacity:** Wielding a weapon increases the character's effective wielding mass. If the wielding mass exceeds the character's carrying capacity, the player rolls a Carrying skill check. On a successful roll, the character can carry the load for 1 minute per fractional success before taking a Physical Stress point. A failed roll results in one Physical Stress point immediately.
+*   **Stress:** There are three types of stress: Physical, Functional, and Mental.
+    *   Physical stress affects Strength, Constitution, and Reflex.
+    *   Functional stress affects Agility, Dexterity, Charisma, and Beauty.
+    *   Mental stress affects Intuition, IQ, and Psyche.
+*   **Stress Points:** Stress points are added to the dice roll value for the associated attributes.
+    *   Physical stress adds to rolls for Strength, Constitution, and Reflex.
+    *   Functional stress adds to rolls for Agility, Dexterity, Charisma, and Beauty.
+    *   Mental stress adds to rolls for Intuition, IQ, and Psyche.
+*   **Stress and Attribute Rolls:** If a character's stress of any type is higher than one of the attributes it affects, the character is effectively unable to pass a roll with that attribute. Skills may partially offset this.
+*   **Stress from Equipment:** Stress effects from equipment are rated in stress points per hour. For fractional stress points per hour (e.g., 1 in 6), roll a die (e.g., 1d6). On a roll of 1, the character gains a stress point.
+
+- **Food:** Characters need 2.5 meals a day. Not eating enough causes 1 physical stress per day. Scimrahn only needs 1.5 meals per day. For each 0.5 meal over 2.5, relieve 1 physical stress. For each 0.5 meal over 3 (2.5 for Scimrahn), make a Constitution roll or be unable to eat more.
+- **Extra Effort:** Before or after an important roll, a character can reduce their roll result by 5 per stress point taken, applying the stress to the attribute related to the roll after it is completed.
+- **Sleep:** Each hour of sleep relieves one point of each kind of stress. After, the player rolls for the character's Constitution. For each fractional success, one more point of each kind of stress is relieved.
+- **Resting:** Resting involves a Constitution roll. A Full result relieves 1 point of Physical and Functional Stress. A 1/2 result relieves 2 points, a 1/4 result relieves 3 points, and a 1/8 result relieves 4 points of each.
+- **Death of a Hero:** When a PC dies, other characters take stress points (any type, any number), pooled to form a starting experience point bonus for the new character. The GM may limit this bonus.
+- **Simplified Stress for NPCs:** For non-vital NPCs or large groups, the GM may use a single generic Stress value.
+
+*   **Stress:** Characters have Physical stress (equal to Constitution), Functional stress (equal to Agility), and Mental stress (equal to Psyche).
+*   **Exhaustion:** Exceeding Physical or Functional stress results in exhaustion, requiring rest.
+*   **Constitution Roll:** Exhausted characters must make a Constitution roll each turn or collapse (can use extra effort).
+*   **Stress Damage:** If Physical or Functional stress doubles the attribute, the character takes 1 damage per additional stress point.
+*   **Mental Breakdown:** Exceeding Mental stress leads to mental breakdown.
+*   **Suicidal Tendencies:** Character must make a Psyche roll each day or become suicidal. A suicidal character must make a Psyche roll when alone; failure results in a suicide attempt unless someone intervenes.
+*   **Disorders Table:** If Mental stress doubles the Psyche attribute, roll 1d100 on the Disorders table (Psychosomatic Disease, Neuroses, Psychosis).
+*   **Disease Tables:** If Psychosomatic Disease is rolled on the Disorders table, roll 1d100 on the psychosomatic disease table. If Neuroses is rolled on the Disorders table, roll 1d100 on the Neurosis table. If Psychosis is rolled on the Disorders table, roll 1d100 on the Psychosis table.
+*   **Headache:** 20% Impairment to IQ, Int, and Psy rolls. Untreated for 1d6 weeks turns into a disabling migraine (-40% Impairment to all rolls)
+*   **Acid Indigestion:** 20% Impairment to Con, Str, and Ref. Untreated for 1d10 weeks causes -1 Hit Point per month (ignore normal healing).
+*   **High Blood Pressure:** If left untreated for 1d10 months, the character may have a heart attack (Con roll, 2d10 damage if failed).
+*   **Diarrhea:** 20% Impairment to Con, Str and Ref. May lead to cirrhosis of the intestine after 1d10 months. (-1 Hit point per month ignore normal healing)
+*   **Anorexia:** 3 Physical Stress per day. -1 Hit Point per month (ignore normal healing).
+*   **Nervous Rash:** 20% Impairment to Con rolls. Can lead to scaring and permanent damage to the skin after 1d10 weeks. (-10 from Bty)
+*   **Sleeplessness:** Cannot relive stress with sleep.
+*   **Anxiety:** 4 mental stress per day.
+
+- **Conversion Disorder:** When stress points are inflicted, roll 1D10:
+    - 1-2: Blindness (50% impairment to Int)
+    - 3-4: Deafness (40% impairment to Int)
+    - 5-6: Paralysis (80% impairment to Agi)
+    - 7-8: Mute (60% impairment to Cha and Language skills)
+    - 9-10: Touch (40% impairment to Dex and Agi)
+- **Obsessive Compulsion:** Character becomes locked in a behavior until they can pass a Psyche check.
+- **Phobic:** Character takes a stress point for each turn exposed to the stimulus and must make a Psy roll or must flee the stimulus.
+- **Bi-Polar:** Roll 1D10 every day:
+    - 1-5: Manic (40% Advantage to Ref)
+    - 6-10: Depressed (Impairment for Ref, Int, IQ, and Psy)
+- **M.P.D:** Each time the character is subjected to one stress point, the current personality drops back into his sub-conscience and a new one emerges. If more than one stress point is induced the change of personalities is so disorientating, that the M.P.D. is incapacitated for 1d6x10 minutes. Roll a die ten to determine the number of personalities. Each personality has its own mental attributes (IQ, Int, Cha, Psy).
+- **Psychosis:** The GM may apply the impairment level to tasks that would apply to the specific Psychosis. Roll 1d10:
+    - 1-3: Mild (30% Impairment)
+    - 4-6: Disabling (60% Impairment)
+    - 7-10: Life threatening (90% Impairment)
+- **Schizophrenia:** Roll 1d10:
+    - 1-3: Simple (Impairments usually apply to Reflex and IQ rolls)
+    - 4-7: Disorganized (Impairments most often apply to Intuition, IQ and Psyche rolls)
+    - 8-10: Paranoid (Impairments most often apply to Charisma and Psyche rolls)
+- **Catatonic:** Impairments apply to Agility, Reflex, Strength and Dexterity rolls.
+
+```
+Hit Points (HP): Represents the amount of damage a person or object can take. When HP is reduced to zero (0), the person dies or the object is destroyed.
+
+Armor Rating (AR): Represents the resistance to damage of armored materials. The AR remains constant until the Hit Points of the object are reduced to zero. Fractional Successes can be spent to reduce the effect of armor.
+
+Hit Location:
+Head
+R Shoulder
+L Shoulder
+Body
+R Arm
+Leg
+
+Damage: When a person or object is damaged, their Hit Points are reduced.
+```
+
+```
+Hit location AR: Determines where damage is applied. The body is divided into eight areas affecting damage and stress. Head hits do double damage; arm and leg hits do half damage.
+
+Armor: Absorbs damage up to its rating. Exceeding the rating still reduces total damage by the armor value.
+
+Modifiers:
+*   Wounded (half HP): -20 to all attributes
+*   Wounded (1 HP): -5 Str, -5 Agi
+*   1 drink alcohol: -5 Ref, -5 IQ, -5 INT
+*   \>5 Days without food: -1 HP/day (or -40 to all attributes)
+*   Darkness: -40
+*   Low light: -20
+*   Subdued light: -10
+*   Called shot: -15
+*   Firing wrong handed: -20
+*   Moving target: -20
+*   Fast moving target: -40
+*   Small Target: -10
+*   Large Target: +10
+*   Aimed shot: +15, -2 Attacks
+*   Target under soft cover: -10
+*   Target under hard cover: -25
+
+Damage Types: Physical, Mental, Functional, Quarter.
+```
+
+-10: Target under soft cover
+-10: Line of sight obstructed
++15: Aimed shot (-2 Attacks)
++10: Large Target
+-10: Small Target
+-40: Fast moving target
+-20: Moving target
+Foot hits do only a quarter normal damage.
+When a character attacks the hit location chart is rolled on.
+-10: Line of sight obstructed
++15: Aimed shot (-2 Attacks)
++10: Large Target
+-10: Small Target
+-40: Fast moving target
+-20: Moving target
+All stress effects from damage add up.
+Aimed shot incurs -2 Attacks.
+
+Here's a summary of the core game mechanics extracted from the text:
+
+**Skill Advancement:**
+
+*   The rate at which a character raises skills is dependent on their Intelligence Quotient (I.Q.).
+*   Find the character's I.Q. on a chart, along with their current skill level.
+*   This information provides a ratio of skill points gained per experience point expended.
+*   One Experience point raises skill level based on I.Q. and Current Skill Level.
+
+**Experience Points:**
+
+*   Experience points are awarded for:
+    *   Avoiding unnecessary violence (+1).
+    *   Using their head (+2).
+    *   Co-operating (+1).
+    *   Good humor (+1).
+    *   Bravery or heroism (+2).
+    *   Being good or noble (+1).
+
+**Movement:**
+
+*   Movement is measured in meters per turn and kilometers per hour (km/h).
+*   Speeds provided: 10, 20, 30, 40, 50, 60 Km/h
+
+**Combat/Damage:**
+
+*   **Hand-to-Hand Damage:** Damage is based on character Strength (Str+).
+    *   10-40: 1 point
+    *   41-60: 2 points
+    *   61-80: 3 points
+    *   81-100: 4 points
+    *   101-120: 5 points
+*   **Hit Location:** Determined by rolling 1D100 (one 100-sided die).
+    *   0-2: Foot
+    *   41-47: Left Arm
+    *   55-74: Body
+    *   89-100: Head
+
+**Ranks:**
+* Advancement is required at specific experience point ranges.
+* Private: 3-7 Exp.
+* Corporal: 8-20 Exp.
+* Sergeant: 21-50 Exp.
+* Staff: 51-100 Exp.
+
+*   **Hand-to-Hand Damage (HTH):** Damage is calculated based on points ranging from 1 to 7, potentially involving Strength ("Str+").
+
+    *   1 point: 10-40
+    *   2 points: 41-60
+    *   3 points: 61-80
+    *   4 points: 81-100
+    *   5 points: 101-120
+    *   6 points: 121-130
+    *   7 points: 131-140
+*   **Critical Hits:**
+
+    *   Head: Damage x2
+    *   Shoulder: -1 HP/min to bloodloss
+    *   Arm: 1/2 Damage Str-15 Dex-20
+    *   Hand: 1/4 Damage Str-5 Dex-20
+    *   Groin: Incapacitation 1d10 turns, -1 HP/turn to bloodloss
+    *   Leg: 1/2 Damage Str-20 Agi-10
+    *   Foot: 1/4 Damage Str-10 Agi-10
+*   **Range Classes:**  Used for weapons and sensors. Longer ranges have negative modifiers.
+    *   Range: Shrt Med Long Ex PB
+*   **Attack Resolution:** A fractional success indicates a hit.
+*   **Impairment:** 20% Imp, 40% Imp, 90% Imp.
+
+- **Dice Rolls:** 1d10
+- **Range Classes:** Used in weapons and sensors. Longer ranges have negative modifiers due to increasing difficulty.
+- **Hit Location:** Fractional successes after the first allow moving a hit to a different location.
+- **Armor:** Fractional successes after the first allow avoiding armor, reducing the Armor Rating (AR) by one half the weapon's damage.
+- **Bursts:** Each fractional success after the first allows hitting one more time for every five attacks.
+- **Damage:** Certain hit locations (Foot, Leg) receive reduced damage and inflict penalties to Strength and Agility.
+- **Bloodloss:** Some attacks may cause bloodloss, resulting in HP loss per turn.
+
+```
+HTH: Hand-to-hand combat.
+
+Combat Resolution:
+
+Damage is calculated based on a range (e.g., 141-150), resulting in a point value (e.g., 8 points).
+
+Damage may be modified by "Str+".
+
+Attribute Checks:
+
+Attribute Advancement:
+Attribute advancement is not dependent on I.Q. only the current attribute level applies. A minimum of 3 experience points must be expended.
+```
+
+```
+Skill Advancement:
+
+The rate a character raises a skill depends on their I.Q.
+Find the character's I.Q. and current skill level on the chart to determine the ratio of skill points raised per experience point (Exp) spent.
+
+Attribute Advancement:
+
+Attribute advancement is not dependent on I.Q., only the current attribute level.
+A minimum of 5 Exp must be spent to raise an attribute.
+```
+
+```text
+*   **Attribute Advancement:**
+
+    *   A minimum of 5 Exp must be spent to raise an attribute.
+    *   Attribute advancement is not dependent on I.Q., only the current attribute level.
+    *   Attribute Level: 10-30, 31-60, 61-99
+    *   Advancement Cost:
+        *   5 Exp +5
+        *   +3
+        *   +1
+*   **Hit Locations:**
+    *   Head: Damage x2, 10 Physical
+    *   Body: Standard Damage, 10 Mental
+    *   Shoulder: Standard Damage, 10 Physical
+    *   Arm: 5 Functional Damage, 5 Physical
+    *   Hand: Half Damage, 3 Functional
+    *   Groin: 5 Physical
+    *   Leg: 10 Functional Quarter Damage, 15 Physical
+    *   Foot: Half Damage
+*   **Targeting Specific Hit Locations:**
+    *   When a character attacks, it's assumed to be aimed at the center mass.
+    *   By spending a fraction success, the attacker can move one hit location.
+    *   Possible Location Changes (spending a fraction success):
+        *   Head to Body
+        *   Body to Head, Shoulder, or Groin
+        *   Shoulder to Body or Arm
+        *   Arm to Shoulder or Hand
+        *   Hand to Arm
+        *   Groin to Body or Leg
+        *   Leg to Groin or Foot
+        *   Foot to Leg
+*   **Avoiding Armor:**
+    *   A player may spend a fraction success on avoiding armor.
+    *   For each success spent, the Armor Rating (AR) is reduced:
+        *   1 success: AR reduced by one half the damage of the weapon (rounded down).
+        *   2 successes: AR reduced by the full damage of the weapon.
+        *   3 successes: AR reduced by one and a half times the weapon damage (maximum).
+    *   The first success must be spent to hit the target.
+```
+
+*   **Combat Resolution:**
+    *   Attacker rolls to hit. Success determines if the attack hits, and potentially other effects like avoiding armor.
+    *   Hit location is determined randomly.
+    *   Damage is calculated based on the weapon and range.
+    *   Armor reduces damage. The first points of damage ignore armor equal to half damage.
+    *   Remaining damage is reduced by the armor rating (AR).
+*   **Stress and Stun:**
+    *   Taking damage applies a stress effect.
+    *   A Constitution roll is made after taking damage.
+    *   If the Constitution roll fails, the character is stunned, reducing their Actions by 2 for the next turn.
+*   **Incapacitation:**
+    *   If a character loses more than half their HP and fails a Constitution roll, they are incapacitated.
+    *   Incapacitated characters cannot take actions for 2d10 turns.
+*   **Healing:**
+    *   Characters can attempt to heal every six days by making a Constitution roll.
+    *   Each fractional success heals one HP.
+    *   Quality care (successful medicine skill roll) reduces Physical stress and the time between healing rolls.
+*   **Force Fields:**
+    *   Force fields have hit points.
+    *   Attacks deplete force field hit points before damaging what they protect.
+    *   Force fields regenerate hit points fully at the beginning of each round, unless the shield generator is critically damaged.
+    *   Force fields cover one fire arc per active shield.
+
+*   **Healing:** A medic rolls a "Full" column to allow a patient to roll against their Constitution after five days of healing. The patient rolls their "Full" column and heals one point.
+*   **Ion Cascade Shields:** Touching a force field causes damage equal to the field's hit points divided by 100.
+*   **Avoiding Shields:** Fractional successes can be used to avoid shields. One fractional success cuts the shield's strength in half. A second fractional success circumvents the shield entirely.
+*   **Material Damage:** Armor Rating (AR) and Hit Points (HP) are defined for various materials, measured per centimeter (cm). Examples: hex walls (AR 10, HP 10/cm), light plastics (AR 2, HP 1/cm), plastics (AR 1, HP 2/cm), industrial plastics (AR 4, HP 4/cm), super hard plastics (AR 5, HP 5/cm), dirt/earthworks (AR 0, HP 5/cm), brick/stone (AR 3, HP 1/cm), iron (AR 7, HP 10/cm), mild steel (AR 8, HP 10/cm), hardened steel (AR 15, HP 12/cm), armor alloys (AR 30, HP 15/cm).
+*   **Unarmed Combat:**
+    *   To hit, a character rolls against their Agility attribute plus any applicable skills (HTH Combat, Martial Arts, Street Fighting).
+    *   Damage: A character inflicts physical stress equal to their Strength attribute divided by five for each fractional success rolled under in the Agility roll. Every ten points of Physical stress inflicts one point of damage.
+*   **Avoiding Death:**
+    *   The player rolls 1D10.
+    *   The rolled number determines how far down the attribute list (CON to PSY) to count. That attribute is permanently reduced by a value determined by a 1D6x5 roll.
+    *   If any attribute hits zero, the character dies.
+    *   Even if saved, the character is incapacitated until a successful surgery roll is made.
+
+- Social Conflict occurs when a character tries to change how another character thinks or feels.
+- Attributes used are Beauty, Charisma, IQ, and Psyche. Skills include Bartering, Bluffing, Command, Intimidation, Persuasion, Politics, Propaganda, Resist Intimidation, Seduction, and Sociology.
+- The influencing character rolls against IQ (fact-based) or Charisma (value-based), adding applicable skills to the roll and summing Fraction Successes.
+- The defending character can reduce Fraction Successes by rolling against IQ. The fraction column passed is the amount of reduction.
+- The defending character can also roll against Psyche and skills like Resist Intimidation.
+- Each roll requires an Action. IQ and Psyche defense rolls can be made on separate turns.
+- Each remaining Fraction Success inflicts one Mental Stress point.
+- Stalling an argument inflicts 5 Mental Stress points, plus additional Mental Stress per hour of seeing the opposing person. Each subsequent stall increases the hourly Mental Stress.
+
+Surrender:
+
+A losing character admits defeat and complies with the other character's influence. The losing character relieves half the stress they accumulated, while the winner relieves all stress built up in the argument.
+
+Aggression:
+
+A losing character whose stress exceeds their IQ or Psyche may react with physical aggression.
+
+Principles:
+
+If an idea goes against a character's nature, the player may declare the character immune to arguments by explaining the principle at stake. This principle must be core to the character and recorded on the character sheet. Violating this principle later results in 50 Mental Stress points, as determined by the GM.
+
+Priorities:
+
+Priorities are important to the character, but not as strongly as principles. A player may declare that a priority of the character's effects the social conflict and gets a 40% Advantage to the skill that they use to attack or defend in the conflict when this subject is at stake. A character can have up to three priorities. Taking stress while using a priority results in twice the normal amount of stress.
+
+Beauty:
+
+The beauty attribute can be rolled for, and the Fraction Successes are used to reduce the other characterΓÇÖs Psyche defense.
+
+- Skill checks: Roll for a skill (e.g., Persuasion) and associated attribute (e.g., Charisma).
+- Social conflict: Characters can use social conflict skills to draw attention. Failure to defend results in stress unless the character surrenders.
+- NPC handling: GM decides NPC response to stress in social conflict, considering consequences. NPCs may surrender or resist based on the situation.
+- Mental combat: Priests and Kelecs use IQ or Charisma for the first roll and can boost fractional successes with a Psyche roll. The defender uses IQ or Charisma to defend first and adds a second roll of Psyche to defend against the attackerΓÇÖs will.
+
+*   **Challenge Points (CP):** Environments have CP, representing the effort to overcome them.
+
+*   **CP Reduction:** Players roll against skills/attributes to reduce CP. Each character reduces CP individually to zero to complete the challenge. Characters can share up to half of their Fractional Successes with another character.
+
+*   **Surmounting Attribute:** Each turn roll against the surmounting attribute and compare the result to the chart to see how many CP are reduced.
+
+*   **Hazards:** Environments present randomly generated hazards. The GM chooses hazards or rolls for them.
+
+*   **Dehydration Hazard:** Every survival round, characters face dehydration. Defend by drinking 1/2 liter of water. Failure results in 2 Physical Stress per turn. Stress accumulates until recovery. Physical Stress exceeding Con results in 1 point of damage per round.
+
+*   **Exertion Hazard:** Every survival round, characters face exertion. While walking, they take 2 Physical Stress unless they drink another 1/2 liter of water or make a successful Con roll. Stress accumulates until recovery. Physical Stress exceeding Con results in 1 point of damage per round.
+
+*   **Random Hazards:** GM rolls 1D100 on a table to determine random hazards:
+
+    *   **Blowing Wind:** Characters without wind protection take 1D6 Physical Stress.
+
+    *   **Mental Stress:** The boredom is getting to the characters, they take 2 Mental Stress points and must make a successful Psyche roll or they cannot travel.
+
+*   **Stress:** Physical Stress is accumulated due to environmental factors and exertion. Exceeding the character's Con score while climbing leads to a potential fall if another Strength roll is failed.
+*   **Dice Rolls:**
+    *   Roll 2D6 and add to remaining CP (Context: lost direction).
+    *   Roll 1D100 for random hazards during survival rounds.
+    *   Damage from falling rocks is 1D6.
+*   **Skill Checks/Attribute Tests:**
+    *   Agility roll required to recover from loose rock or exertion hazard. Failure results in 2 Physical Stress.
+    *   Strength roll required to climb. Failed Strength rolls during climbing lead to exertion hazard.
+    *   Strength roll to move up or down with 1d6 10% Impairments (due to stretch between holds or wet rock/moss).
+*   **Hazards:**
+    *   **Exertion:** 2 Physical Stress for every failed Strength roll while climbing.
+    *   **Loose Rock:** Agility roll to avoid 2 Physical Stress. All other characters take 1d6 damage from falling rocks.
+    *   **Overhang:** Agility roll or 2 Physical Stress.
+    *   **Stretch between holds:** Strength roll with 1d6 10% Impairments.
+    *   **Wet Rock/Moss:** Strength roll with 1d6 10% Impairments.
+*   **CP Rate:** CP rate is halved (round down) for Dunes hazard.
+
+NONE
+
+*   **Str rolls:** When climbing the waterfall, all Strength rolls must be made with 1d6, with a 20% Impairment.
+*   **Surmounting Attribute:** Constitution
+*   **Exertion Hazard:** For every failed Constitution roll while moving through undergrowth, the characters get 2 Physical Stress. Stress accumulates until the characters can recover.
+*   **Random Hazard:** Every survival round, the GM rolls 1d100 to determine a random hazard.
+    *   **Insect Bites:** If bitten, characters may get 1 Mental Stress per bite. There is a 5% chance the insects carry disease.
+        *   Characters roll against Reflex to avoid or swat the bugs.
+            *   On a failed roll, 2d10 insects bite the character.
+            *   On a full success roll, 1d10 insects bite the character.
+            *   For a 1/2 column, the character gets 1d6 bites.
+            *   For 1/4 and 1/8 rolls, the character gets no bites.
+            *   If Physical Stress exceeds Con, death may occur.
+    *   **Confusion:** The lead character must make a Land Navigation skill roll or the party is thrown off course. Add 2d6 to the remaining CP of the obstacle.
+    *   **Rain:** Characters get 2 Mental Stress, 1 Functional Stress and 1 Physical stress.
+*   **Machete:** Using a Machete doubles the CP that can be reduced per roll.
+*   **Poisonous Insect Bites:** 1 Mental and 1 Physical stress per bite.
+
+- **Surmount Method:** Slogging through mud and mire, mapping out safer paths, travel by boat.
+- **Surmounting Attribute:** Constitution, IQ (for mapping).
+- **Exertion Hazard:** For every failed survival roll, characters face an exertion hazard, resulting in 2 Physical Stress. CDF penalties accumulate until recovery.
+- **Exposure:** Using Con as a Surmount attribute results in 2 Physical Stress due to wet clothing. Exposure to contaminated water may lead to disease (See: Rules-Infectious Disease).
+- **Random Hazard:** Roll 1D100.
+
+**Random Hazard Table:**
+    - **Insect Bites:**
+        - Roll against Reflex to avoid or swat bugs.
+        - Failed roll: 2d10 insect bites, causing 1 Mental Stress per bite (5% chance of disease).
+        - Full success: 1d10 insect bites.
+        - 1/2 success: 1d6 bites.
+        - 1/4 and 1/8 success: No bites.
+        - Protective clothing negates bites.
+    - **Poisonous Insect Bites:**
+        - 1 Mental and 1 Physical Stress per bite (5% chance of disease). If Physical Stress from bites exceeds Con, it can cause illness or death.
+        - Roll against Reflex to avoid or swat bugs.
+        - Failed roll: 2d10 insect bites.
+        - Full success: 1d10 insect bites.
+        - 1/2 success: 1d6 bites.
+        - 1/4 and 1/8 success: No bites.
+        - Protective clothing negates bites.
+    - **Animal Encounter:** GMΓÇÖs choice of animal.
+    - **Confusion:** Lead character makes a Land Navigation skill roll. Failure adds 2d6 to the remaining CP of the obstacle.
+    - **Animal path:** All characters reduce twice the CP this survival round.
+    - **Rain:** Characters get 2 Mental Stress, 1 Functional Stress and 1 Physical Stress.
+
+- **Surmount Method:** Squeezing, climbing, swimming.
+    - **Surmounting Attribute:** Constitution. Difficulty levels: Full (1 CP), 1/2 (2 CP), 1/4 (3 CP), 1/8 (4 CP).
+    - **Surmounting Attribute (Climbing):** Strength. Difficulty levels: Full (1 CP). CP 1 per 10 meters. 1/8 (2 CP), 1/4 (1 CP), 1/2 (1 CP)
+- **Boat Weakness:** 30% chance. Using a boat doubles the CP that can be reduced per roll when using IQ as the Surmount Attribute.
+- **Land Vehicles Defense:** Moving a land vehicle through dense undergrowth requires 10 x the number of CP.
+- **Random Hazard:** GM rolls 1D100 for every survival round.
+    - 1-25: Tight Passage
+    - 26-40: Loose Rock
+    - 41-60: Dome Pit
+    - 61-70: Vertical Climb
+    - 71-80: Confusion
+    - 81-90: Tunnel Splits
+    - 91-95: Tunnel Ends
+    - 96-100: Underground River
+
+**Hazard Details:**
+
+-   **Tight Passage:** Psyche roll required.
+-   **Exertion:** Failed Constitution roll results in 2 Physical Stress.
+-   **Loose Rock:** Failed Agility roll results in 2 Physical Stress.
+-   **Dome Pit:** Shaft is 1D6 meters wide. 25% chance passage is too short to jump.
+-   **Vertical Climb:** Shaft height is 1D10x2 meters. Use Rock Wall obstacle stats.
+-   **Confusion:** Navigation Subterranean skill roll required. Failure adds 2d6 to Challenge Points of the obstacle.
+-   **Underground River:** 50% chance of 2D10 meters of underwater swimming. Constitution roll required every turn underwater.
+-   **Tunnel Splits:** Navigation Subterranean skill roll required.
+
+- **Surmounting Attribute:** Constitution (for hiking).
+- **Surmounting Attribute:** Strength (for climbing).
+- **Exertion:** For every failed Strength roll the characters face an exertion hazard, leading to 2 Physical Stress. If Stress exceeds the characterΓÇÖs Con, the character must be rescued off the mountain or fall 1d10 meters if they fail another Str roll.
+- **Random Hazards (0-300 meters):** GM rolls 1D100 on a table each survival round.
+- **Random Hazards (301-1500 meters):** GM rolls 1D100 on a table each survival round.
+- **Loose Rock:** Characters must make an Agility roll. If failed they get 2 Physical Stress.
+- **Vertical Climb:** 1D10x2 meters.
+- **Stream:** 50% chance to cross the river 2D10 meters or travel another 1D10 x 50 meters to get around the stream.
+
+- **Rock Fall:** Characters defend by dodging or protecting themselves or take 1d6 damage.
+- **Roll 1D100:** Used to determine mountain events.
+- **Vertical Climb:** Climb for 1D10x2 meters. Use Rock Wall obstacle stats.
+- **Storm:** Characters take 3 Physical Stress and 2 Functional Stress per hour unless sheltered. Storm lasts 2d10 hours.
+- **Stream:** 50% chance to cross the river (2D6 meters) or travel another 1D10 x 50 meters.
+- **Random Hazards (1501+ meters):** GM rolls on a table for every survival round.
+- **Glacier:** Without ice axes and crampons, characters get 2 Physical Stress. 60% chance of crevasse. Jumping requires STR roll. 20% chance crevasse is invisible; detect with INT roll using a pole/ice axe. Characters tied together require Reflex roll to stop falls. Fallers take 3d10 damage and must climb out (with ice axe/crampons) or be pulled out by rope.
+- **Altitude Sickness:** Random character affected. Symptoms: 5 Mental Stress (headache), 4 Physical Stress (lethargy/nausea). Untreated, causes 1d10 damage every 5 survival turns/12 hours.
+- **Storm:** Characters take 3 Physical Stress and 2 Functional Stress per hour unless sheltered. Storm lasts 2d10 hours.
+- **Vertical Climb:** Climb for 1D10x2 meters. Use Rock Wall obstacle stats.
+
+```text
+*   **Avalanche:** If an avalanche is triggered, all characters take 2d6 points of damage and there is an 80% chance they will be buried and must be found and then dug out by another character. All INT rolls to find a buried character with a 60% Impairment.
+
+*   **Finding Huts:** The GM may have characters make INT rolls to notice huts if they are not on a regular trail.
+
+*   **Finding Safehouses:**
+    *   New Safehouse (1-50 years): 10 CP
+    *   Older Safehouse (51-100 years): 20 CP
+    *   Very old Safehouse (101-300 years): 40 CP
+    *   Ancient Safehouse (301-800 years): 60 CP
+
+*   **Confusion Hazard:** For every failed Intuition roll the characters face a confusion hazard and get 1 Mental stress point.
+
+*   **Random Hazards:** For every survival round, roll 1D100 on the following table:
+    *   1-25: Hidden door
+    *   26-40: Maze
+    *   41-60: Hound trap
+    *   61-70: Pit trap
+    *   71-80: Demolished
+    *   81-90: Decoy entrance
+    *   91-95: AI Trap
+    *   96-100: Unique
+
+*   **Hidden Door:** Characters must make an Intuition roll with 2 50% Impairments to find the door. A characterΓÇÖs Scimrahn En skill may be used to add fractional successes to the roll.
+
+*   **Maze:** Characters must make a Constitution roll or they take 2 Physical stress.
+```
+
+*   **Hound Trap:**
+    *   AR 50, 200 HP.
+    *   Waits 3 turns (30 seconds).
+    *   Deals 5d10 damage per turn for 5 turns.
+    *   Intuition roll with 2 60% Impairments to spot before triggered. Scimrahn En skill adds fractional successes to the roll.
+    *   Successful Scimrahn En skill roll disables the trap for 10 turns.
+    *   Dexterity check to disable the trap and release the occupant from the inside.
+*   **Pit Trap:**
+    *   Falling into the pit deals 3d10 damage.
+    *   Intuition roll with 2 60% Impairments to spot before falling. Scimrahn En skill adds fractional successes to the roll.
+*   **Demolished Tunnel:**
+    *   Clearing requires a 1d10 Challenge point task.
+    *   Surmounting attribute is Strength.
+    *   Failed Strength roll incurs 2 Physical stress.
+    *   Tools (hammers, pry bars, rope) give a 30% Advantage to the rolls.
+*   **AI Trap:**
+    *   AI's Agility and Reflex attributes are 1d6x10.
+    *   AI has a 40% Advantage to hit.
+    *   AR and BP are standard; HP are around half their normal amount.
+    *   Successful Scimrahn En skill roll disables the trap for 10 turns.
+
+*   **Trap Design:** The GM designs traps that are decipherable by interpreting a string of 3 to 5 ideas given in En.
+
+*   **Scout Weakness:** There's a 30% chance a safehouse has a Scimrahn scout who knows some or all of the safehouse.
+
+*   **Inner Poord Defense:** After 1D10 CP (presumably Challenge Points or similar) are surmounted, characters find a minor chamber with supplies and weapons.
+
+*   **Foraging Weakness:** Characters get a 30% Advantage to their Foraging skill near safehouses (40% chance).
+
+*   **Hunting Weakness:** Characters get a 30% Advantage to their Hunting skill near safehouses (40% chance).
+
+- Tech challenges are assigned a number of Challenge Points (CP). For a game-long challenge, assign 6-10 CP per technical character; for an end-of-game challenge, assign 3-5 CP per technical character.
+- To diagnose the problem, characters roll against their skills.
+- Fractional successes of the skill roll become the target number.
+- If a player describes how a skill applies to the challenge, add 3 to the target number.
+- The GM rolls 1d10 out of view. If the roll is equal to or lower than the target number, the skill can be used to defeat the challenge.
+- A roll of 1 means the skill reduces Challenge Points at double the normal rate.
+- A roll of 10 means it is a red herring. It looks like it will work but will actually set the characters back by adding 3 CP to the challenge if a fix is rolled for.
+
+- Characters roll against a skill to reduce Challenge Points (CP).
+- The number of CP reduced is equal to the fraction of successes on the roll.
+- Every roll (successful or not) to fix the problem transforms the challenge.
+- Successful rolls trigger the "Successful Transform" table (roll 1d6).
+- Rolls other than probe rolls that fail to remove CP trigger the "Failure Transform" table (roll 1d10).
+- Failure Transform table:
+    -Result 4 & 5: Injured characters take 1d10 damage if they fail a Reflex saving roll. Characters gain a 1% Advantage on the roll for every minute the turn took in-game.
+    -Result 7: An NPC takes 2d10 damage if they fail a Reflex roll.
+
+- **Fix Attempts:** Attempting to fix something requires a roll. The Game Master (GM) decides how long these attempts take. The frequency of rolls depends on the game's pacing (e.g., one roll per hour in survival situations).
+
+- **Primary Skill Challenges:** Some challenges have a primary skill that works at the beginning without a skill probe test. If a transform says it won't work, other skills are tested with a skill probe until an effective skill is found. Only one roll with the other skill is needed before the primary skill is effective again.
+
+- **Radio Transmission:** Each fractional success on a radio transmission roll allows the transmission to overcome an obstacle, such as a hex wall or an electrically charged atmosphere.
+
+*   **Computer Operation Roll:** Used to detect software probes on the network. Success reveals the location of the probes.
+
+*   **Computer Programming Roll:** Required to send messages across the network. One roll is needed for every 1000 km of distance to the destination computer. A successful roll allows communication for five minutes, after which another roll is required. Also used to check for Chezbah Priest activity along the message path.
+
+*   **Chezbah Priest Detection:** Before a Computer Programming roll, the GM rolls 1D100 for every 1000 km. On a roll of 15 or lower in Chezbah territory, or 5 or lower in Kelrath/open territory, a Chezbah Priest is present. Players may use a Navigation Subterranean roll to determine if the message travels through Chezbah territory.
+
+*   **Computer Security (Barrier Points):** Software and encrypted signals have Barrier Points, representing the time/effort required to bypass security.
+
+*   **Defeat Security Skill:** Can be used to reduce Barrier Points. Reducing Barrier Points to zero grants full computer access.
+
+*   **Hacking:** Hacking a computer is a Primary Skill Tech Challenge using the Defeat Security skill.
+
+- **Hacking:**
+    - Skills are used to hack systems.
+    - For each Fractional Success on a skill roll, subtract 1 from the system's Barrier Points (BP).
+    - Each turn of hacking takes 15 minutes.
+    - Roll 1d6 on a successful transform table.
+    - Roll 1d10 on a failure transform table.
+
+- **Computer Programming:**
+    - Can be used to restore BP to a system.
+    - In a 15-minute turn, each fractional success restores a computer's Barrier Points by 1.
+
+- **Code Cracking:**
+    - A character can roll under their code cracking skill once every 15 minutes.
+    - Each Fractional Success reduces the Barrier Points of a code by one.
+    - After 15 minutes, the result of the roll is checked against the appropriate transform table.
+    - Roll 1d6 on a successful transform table.
+
+- **Dice Rolls:**
+    - d6 is used for various results on success and failure tables.
+    - 2d10 are rolled to determine communicators bricked.
+- **Skill Checks:**
+    - Computer Operation skill roll is required in certain situations.
+- **Challenge Points:**
+    - Scrambling a signal is a Primary Skill Tech Challenge.
+    - For every 10 communicators needing a new encryption scheme, the task has a Challenge Point rating of one.
+    - Fractional Success reduces Challenge Points by one.
+- **Failure Transform:**
+    - Roll 1d6 for results on failure.
+- **Successful Transform:**
+    - Roll 1d6 for results on success.
+- **Vehicle Rules:**
+    - Vehicles follow the same rules as in personal combat, with special rules for size and maneuverability.
+    - Damage cannot be higher than the lowest Hit Points of the vehicles. Damage is applied to both vehicles.
+
+*   **Vehicle Collisions:**
+    *   **Head On:** `Damage = (Speed_Vehicle1 + Speed_Vehicle2) * (Mass_Vehicle1 + Mass_Vehicle2) / 5000`. Damage cannot exceed the lowest Hit Points of either vehicle. Damage is applied to both vehicles.
+    *   **Sideswipe:** `Damage = Mass_Smaller_Vehicle / 100`.
+    *   **Hit From Behind:** `Damage = ABS(Speed_Vehicle1 - Speed_Vehicle2) * (Mass_Vehicle1 + Mass_Vehicle2) / 5000`. Damage cannot exceed the lowest Hit Points of either vehicle. Damage is applied to both vehicles.
+*   **Passenger Damage:**
+    *   Unrestrained: 1 damage point per 10 damage the vehicle takes.
+    *   Restrained: 1 damage point per 100 damage the vehicle takes.
+*   **Evasive Maneuvers:**
+    *   Roll against Pilot skill (vehicle must be moving at least 90 Km/h).
+    *   For each fractional column passed, reduce one fractional success of an attacker by one.
+*   **Fuel Efficiency:**
+    *   Roll against Piloting skill.
+    *   For each Fractional Success, the vehicle can travel 5% further.
+*   **Sensors:**
+    *   Fractional success grants a general sense of the area.
+    *   Fractional success can lock on to a target and identify it (one target per fractional success).
+    *   Targeting information from sensor lock can be used with the Artillery Operation skill.
+*   **Sensor Range Modifier:**
+    | Range Bracket | Sensor Modifier |
+    | :------------ | :-------------- |
+    | PB            | 20% Imp         |
+    | Short         | 20% Adv         |
+    | Med           | 40% Imp         |
+    | Long          | 90% Imp         |
+*   **Running Quiet:**
+    *   Roll against Pilot skill to be harder to detect on sensors.
+    *   For each fraction column passed, reduce one fractional success.
+
+- ECM skill reduces fractional successes of Artillery Operation by the number of fraction columns passed.
+- Successful ECM roll causes sensors to lose lock on a vehicle.
+- ECCM fractional successes add to Artillery Operation successes to offset ECM reduction.
+- When a vehicle takes damage to Hit Points, the attacker rolls for a critical hit, first determining the fire arc the vehicle was hit from.
+- For each Fractional Success used, the attacker can choose the result of each step in determining a critical hit.
+
+```text
+Generic Vehicle Critical Hits:
+
+Vehicles with no specific hit locations listed have a critical percentage of 40%.
+
+1.  Roll for the critical percentage (40%) to see if a system has been damaged.
+2.  Roll on a chart to see what system was damaged.
+3.  If a system is damaged, follow the description of the critical hitΓÇÖs effect.
+
+Vehicle Critical Hits (General):
+
+Step 2: Critical Percentage
+
+1.  Roll 1d100.
+2.  If the die value is equal to or lower than the critical percentage of the hit location, a system is damaged; proceed to step 3.
+3.  If the die value is higher than the critical percentage, only Hit Point damage is done.
+4.  Spending a Fractional Success allows bypassing this step and moving to step 3.
+
+Step 3: System Damage
+
+1.  Roll against the table under the hit location to see which system is affected.
+2.  Follow the effect listed for the system.
+3.  Spending a Fractional Success allows choosing the system that is damaged.
+
+Drive Hit:
+
+*   Roll 1d10. Speed cut in half.
+
+Passengers Hit:
+
+*   Roll 1d10. Loss of passengers equal to damage/100.
+
+Systems:
+
+*   Roll 1d10. Loss of one of the following systems. If the vehicle does not have the system rolled for, roll again.
+    *   1-2 ECMs
+    *   3-4 Sensors
+    *   5-6 Shields
+    *   7-8 Communication
+    *   9-10 Weapon
+
+Control:
+
+*   Roll 1d10. The vehicle gets a 20% Impairment to the pilot for every 50 points of damage done by the attack.
+
+Fuel:
+
+*   Roll 1d10. Cut the fuel capacity of the vehicle in half.
+
+Infectious Disease:
+
+Determining Disease Infection:
+
+Step 1: Exposure Check
+
+*   Check if the character ate uncooked food, drank untreated water, was wounded without sterilization, or was exposed to another infectious character.
+*   There is a 10% chance of another cause. Roll 1d100. If the roll is lower than 10, the character was exposed.
+```
+
+- **Disease Origin:** Roll 1d10. 1-3: Earth origin. 4-10: Artifact origin.
+- **Disease Infectiousness:** If the disease is not from the character's native planet, the character gets a 40% Impairment to save vs. disease. Artifact native characters can have this reduced to 10% if they have been immunized by a character with the immunization skill. Roll 1d100 to determine the exact Impairment or Advantage:
+    - 1-15: 60% Impairment
+    - 16-30: 40% Impairment
+    - 31-45: 20% Impairment
+    - 46-60: No Impairment
+    - 61-70: 20% Advantage
+    - 71-80: 40% Advantage
+    - 81-90: 60% Advantage
+    - 91-100: 80% Advantage
+- **Immune System:** If the character has the "Strong Immune System" bonus, that is added to the player's Constitution. Roll vs. Con to see how well the characterΓÇÖs immune system deals with the disease. Roll for any Impairments or Advantages and adjust the number of Fractional Successes.
+- **Effect of the Disease:** Roll 1d10 to see how many stress points the disease causes per day.
+    - 1: 5
+    - 2: 10
+    - 3: 20
+    - 4-5: 30
+    - 6-7: 40
+    - 8: 50
+    - 9: 60
+    - 10: 70
+Each Fractional success the character got when rolling for Con, reduces the effect of the disease by 5 stress points.
+- **Stress Type:** Roll 1d10 to determine the type of stress.
+    - 1-3: 10 Physical
+    - 4-6: 10 Functional
+    - 7-10: 10 Mental
+Assign up to ten of the total stress caused per roll. Stop rolling once there are no more stress points to assign.
+- **Constitution Roll:** The Player rolls vs. Con plus or minus immunity Impairments and Advantages that were determined above once every 3 days. If the roll is successful, the character recovers and reduces the daily stress by five for each Fractional Success. Only once the player has reduced the daily stress to zero (0) the disease is cured. If the character is incapable of passing this Constitution roll because of accumulated stress they take 1 point of damage from their Hit Points.
+- **Treatment:** If the character is being treated by a character with the General Medicine skill, the daily stress and disease infectiousness Impairment percentages are halved. General medicine must be rolled every 3 days.
+
+*   **Fame Points:** Act like a Charisma Advantage among allies. The number of fame points is the chance strangers will recognize the character. One Fame Point equals a 1 percent chance a person will recognize their name and heard stories.
+    *   Add to Charisma skills for allied characters.
+    *   Act as an impairment for Charisma skills for enemies.
+    *   If Fame Points are used to enhance a Charisma roll and the roll fails, the character loses a fame point.
+
+*   **Gaining Fame Points through Storytelling:** When the characters get back to a base or a tribe from an adventure, they have a chance to tell about it. Players should identify the things they did that will gain them fame. Only one PC can tell the story for the group. Using this skill in a new community gives the PCs one fame point per fractional success. The player of the story teller gets to assign the points to the PCs in the group.
+    *   **Failure:** If the story teller fails their roll, the listeners will challenge the story. If the challenge is successfully answered, the character has one more chance to make a Charisma roll and gets 1 fame point if successful. If the challenge is failed, the character looses a fame point.
+
+*   **Word Spreads:** The GM may give the Characters fame points for impressive, heroic, or noble deeds that NPCs would have been able to notice. Unless an extreme situation this should be one Fame Point at a time.
+
+*   **Saving a Life:** Saving someoneΓÇÖs life will get the character a Fame Point once that person starts telling the story. Saving more than one person in a single game can only get up to four Fame Points. Saving children or innocents gets double the Fame Points and can go up to six points per game.
+
+*   **Capturing/Defeating a Famous Person:** If a Character defeats a famous person whether in combat or in a contest in their specialty for the first time gets the character three quarters (75%) of that personΓÇÖs fame. And drop that personΓÇÖs fame by half (50%). This defeat must be in that personΓÇÖs specialty or no fame is gained.
+
+*   **Crime Points:** Crime Points operate similarly to Fame Points but Crime Points can only be used to modify Intimidation and Command Skills.
+
+```text
+Experience
+
+Experience points are "spent" like money to "buy" higher skill levels and attributes. At the end of a game the GM awards experience according to the following criteria.
+
+*   Staying in character: 2 experience points.
+*   Cooperating with the GM: 2 experience points.
+*   Finding solutions using intellect: 1 experience point.
+*   Avoiding violence: 1 experience point.
+*   Acting good/noble: 1 experience point.
+*   Displaying bravery/heroic conduct: 2 experience points.
+*   Lightening the mood with humor: 1 experience point.
+
+Training
+
+For every 40 hours of training, a character gets one experience point, which must immediately go into the skill being trained in. The student cannot get a skill level higher than their trainer.
+
+Advancement
+
+Skill Advancement
+
+The rate that a character raises skill levels is dependent on the I.Q. attribute.
+
+*   IQ 10-24: +3 (1-25), +2 (26-50), +1 (51-100)
+*   IQ 25-40: +5 (1-25), +3 (26-50), +1 (51-100)
+*   IQ 41-75: +8 (1-25), +5 (26-50), +2 (51-100)
+*   IQ 76-90: +10 (1-25), +8 (26-50), +5 (51-100)
+*   IQ 91-100: +15 (1-25), +10 (26-50), +5 (51-100)
+
+Attribute Advancement
+
+Attribute advancement is not dependent on I.Q., only the current attribute level applies. A minimum of 3 experience points must be expended to raise an attribute.
+
+*   Attribute Level 1-30: +3
+*   Attribute Level 31-60: +2
+*   Attribute Level 61-100: +1
+
+Infantry Combat
+
+Ace squads add 10 to their Psyche and 10 to their Reflex.
+
+Veteran Squads add 20 to their Psyche and Reflex.
+```
+
+*   **Initiative:** Infantry groups roll against their Reflex to determine initiative. The result determines the order in which they act: Eighth, Quarter, Half, Full, then Failed. Ties act simultaneously. Fractional success on the initiative roll grants additional actions.
+
+*   **Actions:** Infantry groups receive one action per turn, plus bonus actions based on their initiative roll. These actions can be used for attack or defense.
+
+*   **Attacks:** Infantry groups do not roll to hit. Instead, weapons have a pre-set number of hits at each range. The player selects a weapon to use for each action, but each weapon can only be used once per turn.
+
+*   **Damage Calculation:**
+    1.  Select a weapon.
+    2.  Determine the range to the target.
+    3.  Consult the weapon's range class chart to find the damage at that range.
+    4.  Subtract the target's Armor Rating (AR) from the damage.
+    5.  Multiply the remaining damage by the number of Hits listed for the weapon. The result is the total damage done.
+
+*   **Attacks Mechanic:** Weapons have a maximum number of hits per turn. The number of hits cannot be exceeded even with bonuses. The second number is the number of times this attack can be used.
+
+*   **Squad and Larger Group Scaling:**
+    *   Standard squad size: 10 men.
+    *   Larger groups: Multiply the number in the unit (10) by a multiplier.
+    *   Adjustments: Multiply Hit Points (HP), the number of hits per weapon, and the number of HP required for a Stress Point by the same multiplier.
+
+- **Attacks:** A unit can make a specific number of attacks, and this number decreases each time an attack is used.
+- **Scout Assistance:** A player rolls against the scout's WS Gun skill plus their Agility to assist infantry fire. The result from a fraction column determines the bonus to the infantry's Hits.
+  - Fail: -5 Hits
+  - Full: +2 Hits
+  - 1/2: +4 Hits
+  - 1/4: +8 Hits
+  - 1/8: +16 Hits
+- **Communications Officer Assistance:** A player rolls against the comm officer's Signal Triangulation skill plus their IQ to assist mechanized infantry and rocket attacks. The result from a fraction column determines the bonus to the infantry's Hits.
+  - Fail: -2 Hits
+  - Full: +2 Hits
+  - 1/2: +3 Hits
+  - 1/4: +4 Hits
+  - 1/8: +5 Hits
+- **Individual vs. Infantry:** When a character gets a fraction column bonus, they may do 20% more damage. This damage bonus can be stacked for every fraction column bonus.
+- **Infantry Defensive Actions:** Defensive actions are represented as a ratio of attacks made vs. attacks defended against (e.g., 3 in 10). Multiple actions spent on defense add to the number of attacks defended (e.g., 3+3 in 10 = 6 in 10).
+- **Infantry Stress:** Squads take Stress Points in addition to damage. Stress adds to Psyche rolls. Whenever a squad takes a stress point, they roll against their Psy or panic.
+    - Every 20 HP damage taken by infantry = 1 stress point.
+    - Every 300 HP damage taken by mechanized infantry = 1 stress point.
+    - Ambush = 1 stress point
+    - Blocked retreat path = 1 stress point.
+
+- **Hit Protection (Duck and Cover):** Some actions like "Duck and Cover" provide a chance to negate hits. For example, "3 in 10" means for every 10 hits, 3 are negated. If "Duck and Cover" is performed twice, it could become "6 in 10," meaning 6 out of every 10 hits are negated.
+- **Individual vs. Infantry:** When a character attacks a squad that has used a defensive action, roll against the squadΓÇÖs Reflex attribute as a dodge roll. Make one roll per defensive action used.
+- **Large Force Stress:** A squad attacked by a force twice its size takes a stress point.
+- **Mechanized Infantry Stress:** A squad attacked by mechanized infantry takes a stress point.
+- **Command Skill Roll:** If a squad fails a Psy roll and a commanding officer can communicate with them, the officer can make a Command skill roll to break the squad's panic.
+- **Casualties:** HP listed for a squad is half the total HP of individual NPCs in the group. When the squad's HP reaches zero, survivors must be rescued.
+- **Rescuing Survivors:** If another unit moves to the location of a defeated squad, roll on a table to determine the number of Healthy, Wounded, and Incapacitated survivors.
+- **Healing:** Wounded characters require 20 days of bed rest and medical attention to heal. Incapacitated characters require a successful surgery skill check and 40 days of bed rest.
+- **Stress Reduction:** Rescuing wounded NPCs reduces stress points.
+
+Combat Resolution:
+
+*   **Damage and Hits:** Weapons inflict damage and hits, with values varying based on range and attack type. The text provides charts for various weapons at different ranges (PB, S, Med, L, Ex), indicating damage and hit values.
+
+*   **Attacks:** Weapons have a number of attacks, like "150 rounds 20 times", "30 blasts 33 times", "10 beams 500 times", etc. This suggests a limit or frequency of attacks for each weapon or attack type.
+
+*   **Range Classes:** Weapons have range classes (A, B, C, D), which likely affect their effectiveness at different distances.
+
+*   **Defense:** There is a "Duck and Cover" defensive action, which provides a chance to avoid attacks, indicated as a fraction (e.g., "3 in 10", "4 in 10"). This likely represents a probability or a die roll needed to succeed.
+
+*   **HTH Combat:** Hand-to-hand combat is indicated by the "HTH" range, with attacks like "Thud Stick" and "Bite" having their own damage and hit values.
+
+Other Mechanics:
+
+*   **Stats:** Units have stats like REF (Reflexes), PSY (Psychic), HP (Hit Points), and AR (Armor). These stats likely influence combat effectiveness and survivability.
+
+*   **Speed:** Units have a speed stat (e.g., "5 Km/h"), which likely affects movement and positioning.
+
+*   **Full/1/2/1/4/1/8:** These fractions combined with stats could mean degrees of "damage", "suppression" or "wounds".
+
+- **Attack Resolution:**
+    - Weapons have a range class (e.g., C, D) and number of attacks with usage limits.
+    - Damage values are specified for different ranges (PB, S, Med, L, Ex)
+    - Number of Hits per range.
+- **Defense:**
+    - "Duck and Cover" is defensive action.
+    - "Evasive Maneuvers" defensive actions with speed limitations.
+    - ECM as defensive action.
+- **Stats:**
+    - REF, PSY, HP, Speed, AR, Shields
+- **Mechanized Infantry:**
+    - Vehicles have Shields and HP. Shields take damage first, then HP.
+    - Unit HP is half of the individual vehicle HP. When unit HP is reduced to 0, survivors can be rescued.
+    - **Salvage Roll:** 1D10 determines the state of vehicles (Functional, Damaged, Immobile).
+        - **Functional:** May form a new unit if enough are grouped.
+        - **Damaged:** Requires repair (3d10 x 2 manhours), moves at half speed. Rescuing pilots reduces stress.
+        - **Immobile:** Requires repair (3d10 x 10 manhours). Rescuing pilots reduces stress.
+- **Regeneration:**
+    - Some units regenerate HP points per turn.
+- **Dice Rolling:**
+    - 1D10 is used for salvage rolls.
+    - 3d10 is used for repair hours.
+
+- **Attacks:** Weapons have a specified number of attacks (e.g., "300 blasts 6 times", "10 rounds 50 times", "10 beams unlimited times").
+- **Range Classes:** Weapons have a range class (B, D, E, C).
+- **Damage:** Weapons deal different amounts of damage based on range (PB, S, Med, L, Ex). Damage values are listed numerically.
+- **Hits:** Indicates the number of hits at different ranges.
+- **ECM (Electronic Countermeasures):** Provides a defensive probability (e.g., "Defensive: 4 in 10", "Defensive: 3 in 10", "Defensive: 5 in 10").
+- **Evasive Maneuvers:** Requires a minimum speed (e.g., "Must be moving 90 Km/h or more"). Provides a defensive probability (e.g., "Defensive: 6 in 10", "Defensive: 5 in 10").
+- **Stats:** REF (Reflexes), PSY (Psychic), HP (Hit Points), AR (Armor Rating), Speed, Shields. Numerical values are associated with each.
+- **Speed:** Speed is listed as Full, 1/2, 1/4 and 1/8.
+- **Reactive Armor:** Some units have reactive armor that adds to their HP against certain damage types.
+
+```
+Damage
+Standard 
+Damage
+
+Hits
+
+Defensive Action:
+
+in 10
+
+Hits
+
+Defensive Action:
+
+in 10
+```
+
+Rules
+
+Rules often act as the delivery system
+for rewards and costs. They define what
+characters can and canΓÇÖt do.
+
+The simplest way a rule acts as a
+reward or a cost is when an Advantage or an
+Impairment is applied to actions.
+
+```text
+NONE
+```
+
+```
+Armor Rating   250
+
+Hit Points 
+
+40,000
+
+Shields 10 active at 1000hp
+
+Med
+Damage 100 K 100 K 50 K
+
+PB
+
+S
+
+L
+30 K
+
+Ex
+8 K
+
+Blast Range Class: E
+
+Rate of Fire: 2
+```
+
+Roll 1d100
+Roll 1d100
+
+If a Scimrahn or an Earther is taken prisoner, then roll on the chart below for what fate awaits them.
+1-30 Sent to the Sulfur mines at the core
+31-60 Sent to the Iron mines in the Methane Wastes
+61-100 Made to manufacture anti Chezbah chemical weapons
+
+Here's a summary of the core game mechanics extracted from the provided text:
+
+**Kelrath NPC Generation:**
+
+*   CON: 1D6x10+10
+*   STR: 1D6x10+10
+*   REF: 1D6x10
+*   AGI: 1D6x10+5
+*   DEX: 1D6x10
+*   BTY: 1D6x10
+*   CHA: 1D6x10
+*   INT: 1D6x10
+*   IQ: 1D6x10
+*   PSY: 1D6x10
+
+**Kerdi Mechanics:**
+
+*   **Reflexes:** Kerdi has a base REF of 75.
+*   **Con Roll for Reflexes:** Each turn, a Kerdi must make a CON roll. Failure reduces REF to 20.
+*   **Energy Shield Recharge:** If the Kerdi's shields absorb 400 points of energy damage, its REF returns to 75 until it fails its CON roll.
+*   **Actions Per Turn:** Standard.
+
+**Damage:**
+
+*   Plasma Cannons: Damage values at PB, S, Med, L, and Ex ranges are 30, 30, 20, 15, and 10, respectively.
+*   Kelrath Weapons Range Class: C
+*   Plasma Payload: 10/Hour
+*   Rate of Fire: 4 (Heavy Plasma Gun)
+
+```
+Combat Resolution:
+
+Armor: Armor Rating (AR) reduces damage from attacks. Specific AR values are provided for different armor types (Kerdi, Gijoorn, Geetin), locations on the body (Head, Shoulder, Body, Arms, Hands, Groin, Legs, Feet), and weapon types (Energy weapons).
+
+Damage: Weapons inflict damage based on range categories (PB, S, Med, L, Ex).
+
+Special Abilities:
+
+Kerdi:
+Climb vertical surfaces and hang upside down on surfaces with an armor rating of ten or lower.
+ECM: Kerdi Shields act as an ECM range class E and they have ECM skill +30.
+Camouflage: The Force Field acts as a visual camouflage in darkness. They have a Camouflage skill of +30.
+
+Weapons:
+
+Plasma Guns (Kerdi):
+Damage: 100 (PB), 100 (S), 60 (Med), 50 (L), 30 (Ex)
+Range Class: C
+Plasma Payload: 2/Hour
+Rate of Fire: 2
+
+Lasers (Kerdi):
+Damage: 14 (PB), 14 (S), 7 (Med), 4 (L), 2 (Ex)
+Range Class: D
+Payload: Unlimited
+Rate of Fire: 4
+
+Laser Staff:
+Damage: 12 (PB), 11 (S), 5 (Med), 3 (L), 1 (Ex)
+Club Damage: 12 + Punch Damage
+Range Class: C
+Payload: 30
+Rate of Fire: 1
+
+Heavy Laser Staff:
+Damage: 45 (PB), 45 (S), 15 (Med), 10 (L), 5 (Ex)
+Club Damage: 20 + Punch Damage
+Range Class: C
+Payload: 20
+Rate of Fire: 1
+
+Particle Beam Weapon:
+Damage: 130 (PB), 100 (S), 30 (Med), 5 (L), 1 (Ex)
+Range Class: A
+Payload: 10
+Rate of Fire: 1
+
+Geetin Plasma Sphere:
+Damage: 20 (PB), 15 (S), 10 (Med), 5 (L), 1 (Ex)
+Range Class: C
+Payload: 3
+Rate of Fire: 1
+
+Gijoorn Plasma Sphere:
+Damage: 20 (PB), 18 (S), 12 (Med), 8 (L), 2 (Ex)
+Range Class: C
+Payload: 6
+Rate of Fire: 1
+
+Armor:
+
+Gijoorn Armor:
+Hit Location | Armor Rating | Hit Points
+Head | 5 | 9
+Shoulder | 3 | 9
+Body | 10 | 7
+Arms | 5 | 5
+Hands | 2 | 3
+Groin | 3 | 7
+Legs | 6 | 5
+Feet | 6 | 3
+
+Geetin Armor:
+Hit Location | Armor Rating | Hit Points
+Head | 8 | 4
+Shoulder | 5 | 3
+Body | 5 | 5
+Arms | 2 | 1
+Hands | 3 | 2
+Groin | 5 | 3
+Legs | 2 | 1
+Feet | 3 | 3
+
+Gijoorn Pilot Armor:
+Hit Location | Armor Rating | Hit Points
+Head | 5 | 9
+Shoulder | 3 | 5
+Body | 10 | 7
+Arms | 3 | 5
+Hands | - | -
+Groin | 3 | 5
+Legs | - | -
+Feet | 2 | 3
+```
+
+- **E-Suit Rall 4:**
+    - **Attack:** Cannons (Payload 20 each cannon, Rate of Fire 2, Cumulative effects).
+    - **Attack:** Strength 600, Punch Damage 60.
+    - **Defense:** Shields (3 active, 260 hp each), Armor Rating 80, Hit Points 750.
+    - **Piloting Modifier:** 20% Impairment.
+    - **Hit Locations:** Determined by 1d10 roll, with effects on Head, R Arm, L Arm, Body, R Leg, L Leg, Engine, Thrusters.
+- **Deliverance Anti-Grav Strike Ship:**
+    - **Attack:** 2 Particle Cannons (Damage: PB 5,000, S 4,400, Med 2,000, L 450, Ex 25; Range Class C; Rate of Fire 1/2; Fire Arc 2).
+    - **Attack:** 3 Laser Turrets (Damage: Med 1,500, S 1,400, L 700, Ex 250; Range Class D; Rate of Fire 1; Fire Arc 1-8).
+    - **Defense:** Armor Rating 100, Hit Points 8,000.
+    - **Piloting Modifier:** 20% Impairment.
+- **Critical Hits (E-Suit Rall 4 Example):**
+    - Roll 1d10 to determine location of critical hit.
+    - Each location (Head, Thrusters, Arm, Body, Leg, Engine) has a percentage chance of a critical effect occurring.
+    - Critical effects vary depending on the hit location (e.g., Fuel Explosion, Inoperable limbs, Destroyed systems).
+- **ECM/ECCM:** Advantage modifiers (20% in some cases) at specific ranges.
+
+- **Hit Location:** Determined by 1d10 roll.
+- **Critical Hits:** Determined by 1d10 roll. Fore has 5% chance, Aft and Deck has 10% and Port/Starboard has 20% chance of critical.
+- **Impairment:** Impairment to skills (e.g., Piloting, Sensor rolls) is expressed as a percentage.
+- **Advantage:** Sensors, ECM, ECCM grant an advantage expressed as a percentage.
+- **Shields:** Active shields have hit points.
+- **Damage:** Different arcs have different damage values (Med, PB, S, L, Ex).
+
+- **Armor Rating:** 150
+- **Hit Points:** 1,600,000
+- **Barrier Points:** 500
+
+**Weapons:**
+
+*   **Laser Turrets:**
+    *   Rate of Fire: 1
+    *   Fire Arc: 1-8
+    *   Damage: (PB) 1,500, (S) 1,400, (Med) 700, (L) 450, (Ex) 250
+    *   Range Class: D
+*   **Super Particle Cannon:**
+    *   Impairment: 90% to strike moving targets (fixed to the front)
+    *   Damage: (PB) 80,000, (S) 40,000, (Med) 20,000, (L) 9,000, (Ex) 900
+    *   Range Class: E
+    *   Rate of fire: 1/2
+    *   Fire Arc: 2
+
+**ECCM:** 40% Advantage
+
+**Sensors:** 40% Advantage, Range Class E
+
+**Shields:** 8 active at 500 HP each
+
+**Piloting Modifier:** 80% Impairments
+
+**Critical Hits:** Roll 1d100
+
+*   **Fore (5% chance):**
+    *   1-7: 50 crew killed
+    *   8-10: Shield generator destroyed
+*   **Aft (10% chance):**
+    *   1-2: Thruster damage, top speed down 10%
+    *   3-4: 50 crew killed
+    *   5: Sensor damage 10% Imp to sensor skill rolls
+    *   6: Gyroscope systems damage 40% Imp to Piloting.
+    *   7: Communication systems destroyed
+    *   8-9: Computers damaged 20% Imp to pilot
+    *   10: Shield generator destroyed
+*   **Port/Starboard (20% chance):**
+    *   1-2: Gravity engine damaged speed down 10%
+    *   3-6: Maneuvering thrusters damaged 10% Imp to piloting
+    *   7-8: 50 Crew Killed
+    *   9-10: Shield generator destroyed
+*   **Belly (20% chance):**
+    *   1-4: Laser Destroyed
+    *   5: 50 crew killed
+    *   6: ECM Damage 10% Imp to skill
+    *   7: ECCM Damage 10% Imp to skill
+    *   8-9: Shield generator destroyed
+
+```
+*   **Chezbah Reaction to PCs:**
+    *   Roll 1d100.
+        *   01-26: Attack.
+        *   27-87: Attempt to convert.
+        *   88-100: Ignore.
+    *   Scimrahn (or parties with Scimrahn) have -15 to the roll. If the roll is below 26 after the modifier, the Chezbah attack.
+    *   Armed defense or attack results in the Chezbah returning fire and attempting to incapacitate and convert if possible.
+*   **Prisoners:**
+    *   If a Scimrahn or Earther is taken prisoner, roll 1d100.
+        *   01-30: Brainwashed to follow Loc (takes 2D10 days).
+        *   31-60: Given to Chezbah scientists for experimentation.
+        *   61-100: Used as a political bargaining chip.
+```
+
+```text
+NPC Stats
+
+Chezbah Pilot
+
+Full 1/2 1/4 1/8
+Con 25 13 7 4
+Str 25 13 7 4
+Ref 50 25 13 7
+Agi 50 25 13 7
+Dex 60 30 15 8
+Bty 30 15 8 4
+Cha 30 15 8 4
+Int 40 20 10 5
+IQ 40 20 10 5
+Psy 40 20 10 5
+HP 7
+
+Chezbah Hound
+
+Attributes
+
+Full 1/2 1/4 1/8
+Con 30 15 8 4
+Str 40 20 10 5
+Ref 60 30 15 8
+Agi 70 35 18 9
+Dex 10 5 3 2
+Bty 10 5 3 2
+Cha 20 10 5 3
+Int 40 20 10 5
+IQ 15 8 4 2
+Psy 50 25 13 13
+HP 10
+BP 14
+
+Actions Per Turn +2
+
+Damage Claws-15 Bite-20
+
+Defenses
+
+Armor (AR 5) Regeneration of five points a turn. Even after the robot has taken 20 points damage the robot will continue to regenerate.
+
+Special Abilities Hounds are able to leap 8 meters horizontally and 5 meters vertically.
+
+Chezbah Warriors
+
+Full 1/2 1/4 1/8
+Con 80 40 20 10
+Str 80 40 20 10
+Ref 50 25 13 7
+Agi 70 35 18 9
+Dex 65 33 17 9
+Bty 20 10 5 3
+Cha 40 20 10 5
+Int 40 20 10 5
+IQ 40 20 10 5
+Psy 40 20 10 5
+HP 15
+BP 19
+
+Chezbah Priest
+
+Full
+Con 30
+Str 30
+Ref 2
+```
+
+- **ZPE Generation:** Each turn, a priest's zero point power level doubles. A Psy roll is required each turn to prevent the power from discharging harmlessly.
+- **Electrical Discharge:** Can do 5 points of damage. Range of 10 meters.
+- **Force Field:** Can absorb 10 points of damage.
+- **Psy Roll Success:** Doubles stored power (damage or shield hit points). This can continue until the Psy roll fails.
+- **War Staff:** Stores up to 90 points of damage. Can release energy in three discharges of 30 points (range of 20 meters) or one burst if touching the target. Only a priest or Kalec can charge and discharge a War Staff.
+- **Loc's Robots Attributes:** Con 100, Str 400, Ref 60, Agi 60, Dex 20, Bty 15, Cha 70, Int 70, IQ 100, Psy 100, HP 200, BP 38.
+- **Loc's Robots Actions Per Turn:** +1
+- **Loc's Robots Damage:** Claws-50, Charging with Spikes-70 (only once per turn).
+- **Loc's Robots Defenses:** Armor (AR 250), Regeneration of 30 points a turn (even after taking 100 points damage beyond hit points).
+
+```text
+*   **Hound's Hand:**
+    *   Dexterity and Psyche decrease over time.
+        *   1 Month: -5 Dex, -5 Psy
+        *   2 Months: -10 Dex, +1 HTH Damage, -5 Psy
+        *   3 Months: +4 HTH Damage, -5 Psy
+        *   4 Months: +10 HTH Damage, -5 Psy
+    *   10% chance per hand to form the clawed hand at will (roll percentile die, 10 or lower means hand is unaffected until the character wants to form the claw).
+
+*   **The Blade:**
+    *   Dexterity is reduced to 3, but no lower.
+    *   Psyche decreases over time.
+        *   1 Month: -20 Dex, -5 Psy
+        *   2 Month: -40 Dex, +1 HTH Damage, -5 Psy
+        *   3 Months: +9 HTH Damage, -5 Psy
+        *   4 Months: +10 HTH Damage, -5 Psy
+        *   5 Months: +10 HTH Damage, Character develops electric discharge/force field, Agi roll to strike, -5 Psy
+    *   30% chance per arm for electric discharge and force field (roll percentile die, 30 or lower to create this).
+```
+
+- Fuel explosion chance: 30%.
+- Scourge with magnetic field: Must roll every turn under Psyche; failure indicates the magnetic field affects a random person in the area. Character's Psyche drops progressively.
+- Scourge (Blind Sight): Character's Psyche drops progressively.
+- The Wall Scourge: Dexterity can drop no lower than three (3), and Agility can drop no lower than five (5). After the changes are complete, raising dexterity costs four times the normal number of experience points. Remember to recalculate Hit Points with each Strength and Constitution increase. The character's Psyche also drops progressively.
+- PB Damage 30
+- S 30
+- Med 30
+- L 25
+- Ex 10
+- Blast Range Class: B
+- Rate of Fire: 1
+- Scourge must make a Psy roll to make a successful strike.
+
+*   **Attribute Modification:**
+    *   Months 1-8: Modifies IQ and PSY attributes, with specific bonuses and penalties depending on the month.
+    *   Months 3-6: Modifies Str, Con, HP, Dex, Agi, and armor rating.
+*   **Hit Points:**
+
+    *   +20 to HP at 5 Months
+    *   +40 to HP at 6 Months
+    *   +30 to HP at 7 Months
+*   **Regeneration:**
+    *   Scourge regenerate 5 points per turn after taking 50 points of damage.
+    *   Lost or damaged limbs regenerate in five months (affected by disease).
+*   **Mental Endurance (PSY) and Conversion:**
+    *   Nanobots replicate, lowering a victim's Psyche.
+    *   If Psyche reaches zero or below, the victim becomes a follower of Loc.
+    *   If Psyche remains above zero after a year, the Chezbah hunt the victim down.
+    *   Returning to Earth removes IQ bonuses but permanently scars Psyche; the disease continues for a year.
+*   **Command Discipline:**
+    *   Used to force responses from individuals.
+    *   Requires a Psyche roll to successfully command someone.
+    *   The subject can resist with a Psyche roll to reduce the aggressor's fractional successes.
+    *   Refusing a command inflicts 10 Mental Stress per fractional success.
+    *   Affects one person per action.
+*   **Group Command Discipline:**
+    *   Used against multiple targets (e.g., Warriors, Scourge).
+
+*   **Command:** A Psy roll is made. The subject resists with a Psyche roll to reduce fractional successes. Two targets are affected per fractional success. If the subject resists with at least a Full column result on their Psyche defense roll, they are unaffected. Refusing the command results in 10 Mental Stress per fractional success.
+
+*   **Confusion:** A Psy roll is made. The subject resists with a Psyche roll to reduce fractional successes. Each remaining fractional success incapacitates the victim for 1d6 turns. One person can be affected per Action used.
+
+*   **Discipline:** A Psy roll is made. Each fractional success inflicts 15 Mental Stress. The subject resists with a Psyche roll to reduce fractional successes. One person can be affected per Action used.
+
+*   **Mind Tear:** A Psy roll is made. Each fractional success results in a loss of 10 IQ points. The subject resists with a Psyche roll to reduce fractional successes. One person can be affected per Action used. IQ points are healed like hit points.
+
+*   **Overload:** A Psy roll is made. Each fractional success inflicts 1 point of damage and 10 Mental Stress. The subject resists with a Psyche roll to reduce fractional successes. One person can be affected per Action used.
+
+*   **Mind Hack:** A Psy roll is made to access another's mind. The hacker remains linked as long as the subject does not make a successful Psyche roll to force them out.
+
+```text
+*   **Psy Roll (Mind Hack):**
+    *   Attacker makes a Psy roll to break into the subjectΓÇÖs mind.
+    *   Defender makes a Psy roll to negate the attackerΓÇÖs fractional successes and sever the link.
+    *   One mind hack effect can be used for each fractional success left over.
+*   **PSY Attribute Check (Computer Access):**
+    *   Priest or Kelec rolls under their PSY attribute to break the security of a computer system.
+    *   In a ten-second combat turn, 2 barrier points can be reduced for each fractional success.
+
+*   **Chezbah Equipment Stats:** Listed for Plasma Pistol and High Energy Plasma Gun including: Damage, Range Class, Payload, Rate of Fire, and Mass.
+*   **Chezbah Warrior Armor Stats:** Listed for Hit Location (Head, Shoulder, Body, Arms, Hands, Groin, Legs, Feet), Armor Rating, Hit Points, Causes (Physical, Functional, Mental), and Mass. Also includes Encryption Strength for the built-in radio.
+*   **Chezbah Pilot Armor Stats:** Listed for Hit Location (Head, Shoulder, Body, Arms, Hands, Groin, Legs, Feet), Armor Rating, Hit Points, Causes (Physical, Functional, Mental), and Mass. Also includes Encryption Strength for the built-in radio.
+*   **Chezbah Vehicle Stats:**
+    *   Movement: Running Top Speed, Flight Top Speed, Environmental Class, Total fuel capacity, Fuel type, Secondary.
+    *   Armor Rating, Hit Points, Barrier Points, Crew, Passengers, Piloting Modifier.
+    *   Weapon Stats: Damage, Range Class, Rate of Fire, Fire Arcs for Lasers and Plasma Cannons.
+```
+
+*   **Advantage:** 20%, 40%
+*   **Hit Locations:** Determined by 1d10 roll. Different arcs define which location is hit on certain rolls.
+*   **Critical Hits:** Determined by 1d10 roll. Different locations have different % chance of critical.
+    *   Head (60% chance):
+        *   1-6: Sensor system destroyed (40% Impairment to sensor, ECM, and ECCM)
+        *   7-10: Balance (40% Impairment to piloting skill)
+    *   Arm (30% chance):
+        *   1-7: Linkages, Arm Inoperable
+        *   8-10: Shield generator destroyed
+    *   Body (30% chance):
+        *   1-4: Cockpit, pilot killed
+        *   5-6: Computer destroyed (80% Impairment to Piloting skill)
+        *   7-8: Lasers destroyed
+        *   9-10: Plasma cannon destroyed
+    *   Leg (30% chance):
+        *   1-8: Linkages, Leg inoperable Top speed down to 1/4
+        *   9-10: Shield generator destroyed
+    *   Engine (35% chance):
+        *   1-10: Engine damage, all systems at half power.
+    *   Thrusters (40% chance):
+        *   1-4: Fuel Explosion! 800 points 10m blast radius
+        *   5-10: Thruster damage, cut flight speed in half.
+    *   Front (20% chance):
+        *   1-2: Cockpit, pilot killed
+        *   3-6: Belly laser destroyed
+        *   7-8: Sensor system destroyed (40% Impairment to sensor, ECM, and ECCM)
+        *   9-10: Shield generator destroyed
+    *   Back (35% chance):
+        *   1-2: Fuel Explosion! 800 points 10m blast radius
+        *   3-7: Engine damage, all systems at half power.
+        *   8-10: Shield generator destroyed
+    *   Turret (40% chance):
+        *   1-5: Plasma Cannon Destroyed
+        *   6-10: Plasma Cannon Destroyed
+*   **Piloting Modifier:** 30% Impairment
+
+- **Hit Locations:** Determined by 1d10 roll and attack arc. Table provided maps arc to hit location (L Fin, R Fin, Front, Back, Head).
+
+- **Critical Hits:** Determined by 1d100 roll after hitting a location. Each location has a percentage chance of a critical hit occurring (Front: 10%, Back: 10%, Fin: 20%, Head: 5%, Leg: 30%). A table provided details of effects of critical hit.
+
+- **Piloting Modifier**: Represented as a percentage impairment, e.g., 80% Impairment. This affects piloting rolls.
+
+- **ECM/ECCM/Sensors:** Represented as a percentage advantage or impairment affecting rolls.
+
+- **Damage:** Weapons inflict different damage amounts at different ranges (PB, S, Med, L, Ex).
+
+- **Range Class:** Weapons have range classes (C, D, E).
+
+- **Rate of Fire:** Expressed as shots per turn, e.g., "1/2 per Cannon," "1 per Cannon," "1".
+
+- **Armor Rating:**  A value representing the vehicle's resistance to damage (e.g., 250).
+
+- **Shields:** Shields have hit points (hp) which can be damaged.
+
+*   **Arrival Time:** Heavy Cruiser assistance arrives in 1D6x20 minutes.
+*   **Weapon Damage:** Laser damage is dependent on the target size PB:200, S:200, Med:100, L:50, Ex:25.
+*   **Weapon Range:** Range Class D.
+*   **Rate of Fire:** Lasers fire at a rate of 1.
+*   **Fire Arc:** Lasers have specific fire arcs. T1-18 1-4+8 19-24 5-7
+*   **Hit Locations:** Hit locations determined by 1d10 roll, cross-referenced with attacking arc.
+*   **Critical Hits:** 1d100 roll determines the specific effect of a critical hit. Different locations have different critical hit tables and percentage chances of a critical. Examples:
+    *   Front: 10% chance. Results include laser destroyed, crew killed, shield generator destroyed, generator damage.
+    *   Back: 10% chance. Results include generator damage, grav engine damage, shield generator destroyed.
+    *   Fin: 20% chance. Results include fin damage, fin linkages damaged, piloting impairment.
+    *   Head: 5% chance. Results include laser destroyed, crew killed, sensor damage, gyroscope damage, communication systems destroyed, computer systems damaged, bridge destroyed.
+*   **Tanroc Fredar Attributes:** Attributes include Con, Str, Ref, Agi, Dex, Bty, Cha, Int, IQ, Psy, and HP, with values varying based on a fractional scale (1/4, 1/8, 1/2, Full).
+
+```
+Attacks +1
+Damage Claws-15 Spikes-25 Punch-30
+Defenses Armored Skin (AR 5)
+
+Every successful roll to strike means that the Tanroc Fredar gets to roll for a critical hit.
+
+Actions +2
+Damage: Bite 3, Arm claw 5, Leg Claw 8, Tail swipe 6
+Defenses: Scales give the Gunthar an armor rating of 4
+```
+
+*   **Intuition Roll:** Players get an Int roll to notice they are being watched by Seeters. The number of Fractional Successes determines the level of detail they perceive.
+
+*   **Psy Roll:** If the female Ekchok is killed, the swarm must make a Psy roll. Failure causes them to stop attacking.
+
+*   **Attack Rolls:** When attacking a flying Ekchok, there is a 40% Impairment to hit, unless using explosives or poison sprays.
+
+*   **Damage:**
+    *   Nicoe: Biting or scratching does 1 Physical stress.
+    *   Seeter: Bite 6, claw 3 (unspecified stress type)
+    *   Ekchok: Bite 1 (unspecified stress type), Sting - 3 Physical stress and 3 Functional stress.
+    *   Guns, knives, or fists, do only only one point of damage per attack to Ekchoks.
+
+*   **Defense:** Ekchoks have defenses of size and numbers. Only one Ekchok can be killed per attack, regardless of weapon damage (unless using explosives or poison sprays).
+
+*   **Saving Throw:** Nicoe cleaning the area give a 20% Advantage to save vs infection.
+
+```
+Attributes:
+
+*   Con (Constitution)
+*   Str (Strength)
+*   Ref (Reflexes)
+*   Agi (Agility)
+*   Dex (Dexterity)
+*   Bty (Beauty)
+*   Cha (Charisma)
+*   Int (Intelligence)
+*   IQ (Intelligence Quotient)
+*   Psy (Psique)
+*   HP (Hit Points)
+
+Actions: Standard, +1
+
+Damage Examples: Bite, Stomp, Head Butt, Tail Swipe, Leg Claw (with associated numerical values)
+
+Defenses: Armor Rating (provided by thick hide)
+```
+
+```
+Actions Standard
+Damage: Bite 10, Stomp 40, Head Butt 30, 
+Tail swipe 25
+Defenses: The Brugha's thick hide gives it 
+and armor rating of 15
+
+Actions Standard
+Damage: Bite 2, Kick 8, Head Butt 3, Tail 
+swipe 3
+
+Actions Standard
+Damage: Bite 2, Drop 25 (up to 35 Kg)
+
+Actions +1 
+Damage: Bite 25, claw 10
+Defenses: heavy hide AR 5
+
+Actions 0
+Defenses: None
+```
+
+Attributes (Roamah, Chig, White Spoor):
+*   Con (Roamah): 70 (Full), 35 (1/2), 18 (1/4), 9 (1/8)
+*   Str (Roamah): 95 (Full), 48 (1/2), 24 (1/4), 12 (1/8)
+*   Ref (Roamah): 30 (Full), 15 (1/2), 8 (1/4), 4 (1/8)
+*   Agi (Roamah): 80 (Full), 40 (1/2), 20 (1/4), 10 (1/8)
+*   Dex (Roamah): 3 (Full), 2 (1/2), 1 (1/4), 1 (1/8)
+*   Bty (Roamah): 55 (Full), 28 (1/2), 14 (1/4), 7 (1/8)
+*   Cha (Roamah): 45 (Full), 23 (1/2), 12 (1/4), 6 (1/8)
+*   Int (Roamah): 50 (Full), 25 (1/2), 13 (1/4), 7 (1/8)
+*   IQ (Roamah): 15 (Full), 8 (1/2), 4 (1/4), 2 (1/8)
+*   Psy (Roamah): 60 (Full), 30 (1/2), 15 (1/4), 8 (1/8)
+*   HP (Roamah): 60 (Full)
+*   Ref (Chig): 50 (Full), 25 (1/2), 13 (1/4), 7 (1/8)
+*   Agi (Chig): 60 (Full), 30 (1/2), 15 (1/4), 8 (1/8)
+*   Int (Chig): 20 (Full), 10 (1/2), 5 (1/4), 3 (1/8)
+*   HP (Chig): 1
+
+Combat/Damage:
+*   White Spoor discharge: Up to 6D10 points in damage.
+*   White Spoor damage: 1 point per hour to inorganic objects, 1 point per day to organic compounds.
+*   Chig Sting Damage: 20 Mental stress points, 15 Physical stress and 10 Functional stress.
+*   Chig Poison bite: 10% chance of respiratory failure and death
+
+Special Abilities
+* The White Spoor builds up an electrical charge on it's surface.
+* Chig Poison bite contains a neurotoxin that causes dizziness, cramping, labored breathing, and in rare cases (10% Chance), respiratory failure and death.
+
+The skill's value adds to the attribute's Full column.
+To attempt a skill, the skill value is added to the attribute's full column, that is the character's chance to be successful.
+Some skills require a prerequisite skill. The skill that requires a prerequisite skill cannot have a higher skill value than the prerequisite skill.
+Some skills cost more experience to advance. The number in parentheses is the multiplier for the experience cost.
+
+```
+Skills
+
+Skills  are  described  by attribute. The 
+attributes  are listed in alphabetical  order and 
+the skills under them are listed alphabetically.
+
+Many skills are relatively  easy to  learn 
+but  some  require  more  effort  to  gain.  These 
+skills  are given a  number  in parentheses like
+
+Example:  A player  wants their  character to 
+have  the  Surgery  skill.  They  cannot  perform 
+surgery  until  they  have  purchased  the  skill. 
+Surgery  has  a  (2)  next  to  the  skill  on  the 
+character sheet. Instead of spending one point 
+of  XP  to  purchase  the  skill,  they  must  spend 
+two.
+
+Skills that require a prerequisite skill cannot be used untrained.
+
+Example:  The  Surgery   skill  requires  the 
+prerequisite  skill  Biology.  If  Biology  is a +10 
+Surgery cannot be higher than +10.
+
+Focus Skills
+
+A  Focus Skill is  any skill that reaches 
++30 or more. For  every 30 points value a  skill 
+has it gets  another Focus, this means  a  skill  at 
++60  has two  focuses  and at  +90  it has three 
+focuses.
+
+Having a  Focus on a  skill  gives a +5 to 
+the  Half,  Quarter  and  Eighth   fraction 
+columns.
+
+Some skills  have  special abilities  that 
+a player  can  select when  they  have a focus on 
+that  skill.  These  are  effects  that  are  not 
+reflected  by  simply   raising  the  skillΓÇÖs   value. 
+
+The  player   records  the  new   ability  for  that 
+skill. The character  only  gets one focus ability 
+per 30 points of skill value.
+
+Example:  Angie  has  her  HTH  Combat  skill 
+raised to  +30. She now  gets a +5 to  her  Half, 
+Quarter  and  Eighth  columns when using  this 
+skill.  Her  player   also  gets  to  pick  a   focus 
+ability  and  they  choose  the  ability  Knockout. 
+Angie now has this ability  and cannot choose 
+another  until  her  HTH  Combat  skill  gets  to 
++60.
+```
+
+*   **Climbing Skill:** When climbing in combat, roll against the Climbing skill. For each fractional success, climb for one turn before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+
+*   **Running Skill:** When running, roll against the Running skill. For each fractional success, run for one turn before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+
+*   **Endurance Swimming Skill:** When swimming, roll against the Endurance Swimming skill. For each fractional success, swim for one turn before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+
+*   **Carrying Skill:** When carrying a heavy load, roll against the Carrying skill. For each fractional success, carry the load for ten minutes before taking 1 Physical Stress. Failure results in 1 Physical Stress immediately.
+
+*   **Sprinting Skill:**
+    *   A character can run 50 meters per turn as a baseline. For each fractional success on a Strength or Sprinting skill roll, they can run a number of meters equal to their Strength divided by 5 more meters per turn.
+    *   A character can roll against their sprinting skill to make themselves harder to hit with attacks if they are running away from the attacker. For each fractional column passed, they can reduce one fractional success of everyone attacking them by one that turn.
+
+*   **Swimming Skill:** A character can swim a number of meters per turn equal to their Strength divided by ten. For each fractional success, they can swim one more meter per turn.
+
+*   **Weight Lifting Skill:** If lifting a mass greater than their Strength attribute in Kilograms, the character must take a Weight Lifting roll. If the roll is failed, they take 1 Physical stress.
+
+*   **Dodge Skill:**
+    *   When attacked, a character can roll against their Dodge skill and reduce the number of fractional successes all the attackers get by the number of fraction columns they pass.
+    *   *Flip Dodge* (Focus ability): Requires 1 fractional success to use. On a successful dodge roll, negates any fractional successes spent on picking a hit location or avoiding armor.
+
+*   **Parry Blow:** By getting a fractional success, the object used to parry a hand to hand attack takes the damage from an attack. By getting a second fractional success either a ranged attack can be parried or the damage to the parryi
+
+*   **Fractional Successes:**
+    *   Used to reduce damage of attacks.
+        *   Third fractional success: Hand-to-hand damage reduced to quarter, ranged attack damage reduced by half.
+        *   Fourth fractional success: Ranged attack damage deflected and reduced to a quarter.
+    *   HTH Combat and Martial Arts: Each fractional success rolled under in an Agility roll inflicts Physical Stress equal to the character's Strength attribute divided by five.
+        *   Every ten points of Physical Stress inflicts one point of damage.
+    *   Fractional successes can be used to inflict five additional points of Physical Stress without doing extra damage.
+    *   Martial Arts fractional successes can be used to reduce an opponent's fractional successes in close combat.
+*   **HTH Combat:**
+    *   Physical stress inflicted is equal to Strength/5 for each fractional success.
+    *   10 Physical Stress = 1 Damage.
+*   **Martial Arts:**
+    *   Physical stress inflicted is equal to Strength/5 for each fractional success.
+    *   10 Physical Stress = 1 Damage.
+    *   Fractional Successes can be used to negate the opponent's fractional successes.
+*   **HTH Combat Focus Abilities:**
+    *   **Knockout:** Requires two fractional successes. Incapacitates for 1d6 turns. Helmet negates the effect.
+    *   **Pull Punch:** Inflicts stress instead of damage.
+    *   **Stunning Strike:** Absorbed by armor.
+*   **Martial Arts Focus Abilities:**
+    *   **Pin/Choke:** Requires two fractional successes. Pin allows double HTH damage until broken by a STR roll contest. Choke results in incapacitation for 1d6 turns.
+    *   **Counter:** If Martial Arts is used to reduce the opponent's fractional successes to zero, and the defender still has unused successes, they may be used to do damage.
+    *   **Throw:** Requires one fractional success. Target loses 2 actions next turn.
+*   **Sniper:**
+    *   Skill is rolled as normal and fractional successes are counted.
+
+*   **Stealth:** A successful Stealth skill roll allows a character to move without being automatically noticed if they stay out of direct line of sight. The fraction column passed on the roll reduces the fractional successes of characters looking for them.
+
+*   **Street Fighting:** A character can inflict physical stress on an opponent equal to their Strength attribute divided by five for each fractional success rolled under in the Agility roll. For every ten points of physical stress, the hit does one point of damage.
+    *   **Cheap Shot (Focus):** Requires a Bluffing or CHA roll to convince the opponent they are not hostile, then attack quickly, causing the opponent to lose 2 Actions. Opponents must be able to communicate for this focus to work.
+    *   **Vicious (Focus):** Forces all opponents to make a PSY roll to continue fighting due to the intimidating nature of the attack.
+
+*   **Weapon Skill (WS):** Requires a skill for each specific hand-held weapon to become proficient in using it.
+    *   For the first fractional success, the attack hits its target if it is a single action. If an attack is a burst, one in five of the attacks hit.
+    *   Each fractional success used after the first, a hit may be moved one hit location.
+    *   Each fractional success used after the first, a hit may avoid armor; the Armor Rating (AR) is reduced by one half the damage of the weapon.
+    *   For bursts, each fractional success used after the first may be used to hit one more time for every five attacks.
+
+*   **WS Grenade:**
+    *   If the skill roll is failed, the grenade detonates 2d10 meters from its target.
+    *   A grenade can be thrown one meter for every point of Strength.
+    *   For each fractional success spent, the grenade can be thrown ten more meters.
+    *   For each fractional success spent, the grenade can be thrown past an obstacle.
+
+*   **WS Kelrath Weapons:** Proficiency in using Kelrath weapons. See main WS entry for applying fractional successes.
+    *   Focus - Stream Riding: When a plasma weapon is discharged, it creates a magnetic stream that the plasma rides down. If a plasma weapon is fired with the opposite polarity a plasma blast can be channeled right back down the old stream back to the opponent that fired.
+
+- **WS Knife, Pistol, Gun, Rocket, Thud Stick:** These are weapon skills. Fractional successes can be applied (see main WS entry, unspecified).
+- **WS Thud Stick - Knockdown Focus:** Can knock an opponent less than 3m tall to the ground, causing them to lose 2 actions in their next turn.
+- **WS Thud Stick - Assisted Jump Focus:** Increases jump distance by one meter.
+- **Artillery Operation:** Used to fire vehicle/carriage-based weapons. Requires targeting information from a sensor lock (sensor skill roll) or coordinates from signal triangulation (signal triangulation skill roll).
+    - First fractional success: Attack hits if single action. If a burst, one in five attacks hit.
+    - Each fractional success after the first: Choose hit location in the fire arc. May avoid armor (AR reduced by half the weapon damage). For bursts, hit one more time for every five attacks. May avoid shields.
+- **Electromagnetic Counter Measures (ECM):** Reduces the attacker's fractional successes with Artillery Operation by the number of fraction columns passed with this skill. A fractional success can cause sensors to lose their lock on a vehicle.
+
+*   **Explosives:**
+    *   First fractional success: Explosive detonates as intended.
+    *   Each additional fractional success: Explosive does 10% more damage.
+
+*   **Explosives Disposal:** For each fractional column passed, reduce one fractional success of the person that set the explosive by one.
+
+*   **Pilot:**
+    *   Run Quietly: Roll against Pilot skill to reduce fractional successes of someone trying to lock on with sensors. For each fractional column passed, reduce one fractional success. Vehicle must move at half speed and not have shields up.
+    *   Evade Attacks: Roll against Pilot skill to make the vehicle harder to hit if moving at least 90 Km/h. For each fractional column passed, reduce one fractional success of someone attacking them by one.
+
+*   **Radio:** Each fractional success allows the transmission to overcome an obstacle like a single hex wall or an electrically charged atmosphere.
+
+*   **Surgery:** Requires 1 hour per HP lost. Each fractional success reduces this time by one hour. A failed roll means the person will die.
+
+```text
+Repair Electronics  - This skill can  be  used  in  technical 
+challenges where electronics may  be damaged. 
+
+Welding  - This skill  can  be  used  in  repair   and 
+construction   Tech   Challenges.
+
+Fractional  successes   with   Seduction   skill 
+may  be combined  with charisma based skills. 
+
+For  each  fractional success,  Bartering inflicts 1  Mental 
+Stress on  the character, pressuring 
+them   to  reduce  the  price.
+
+For  each  fractional success, Bluffing inflicts 1  Mental 
+Stress on  the character, pressuring 
+them   to  believe  the  story.
+
+Fractional successes with Style skill may  be combined 
+with  charisma  based skills.
+
+For  each  fractional success, Command inflicts 1  Mental 
+Stress is  inflicted on  the character, pressuring 
+them   to  follow  the  command.
+
+For  each  fractional success, Story Telling inflicts 1 Mental Stress is  inflicted on  the character, pressuring 
+them  to carry  out an action.
+
+Using  Story Telling skill in  a  new  community 
+gives  the  PCs  one  fame  point  per   fractional 
+success.
+
+A   Full   column   result  Drug Recognition allows  a 
+character  to  correctly   identify  a   drug   when 
+they examine it.
+
+Using   Drug Recognition skill allows   the  user   to 
+reduce  the  fractional   successes  of   someone 
+using the Hide  skill  or  Concealed  Object skill 
+when they are concealing drugs.
+
+The  fractional   successes  of  a ECCM 
+roll adds to their  Artillery Operation  successes 
+but  only   to  offset  the  reduction   caused  by 
+ECMs
+
+For  each  fractional success, Intimidation inflicts 1  Mental 
+Stress is  inflicted on  the character, pressuring 
+them   to  follow  the  command.
+```
+
+*   **Camouflage:** Each turn the character is camouflaging themselves they must roll for this skill. Any fraction columns passed reduce the fraction successes of everyone making an Intuition roll to notice them.
+*   **Concealed Object:** A character using this skill can hide an object 10 cm or less in itΓÇÖs dimensions for each fractional success. While a character is being searched the character hiding the object must get a fractional success for each 10 cm in an objectΓÇÖs largest dimension. The searcher rolls against this skill (or just INT) and any fraction column passed reduces the fractional successes.
+*   **Detect Ambush:** A character using this skill reduces the fractional successes of a character using the ambush skill by the fraction columns they pass.
+*   **Hide:** When using this skill the next turn the fraction column passed reduces the fractional successes of all characters looking for them. This skill can be re-rolled for a better result but each turn the player rolls, the character is not hidden. This skill can also be used by a player to find cover from attacks. This reduces the fraction successes of all incoming attacks but also reduces the fraction successes of attacks made by the character that is hiding.
+*   **Foraging:** A character foraging for one hour can find one half meal for every fractional success. Some environments may automatically reduce the number of fractional successes. Characters without the Foraging skill must take a Con or Psy roll to be able to eat the food.
+*   **Hunting:** A character hunting for five hours can find one half meal for every fractional success. Some environments may automatically reduce the number of fractional successes.
+
+- **Hunting:** Characters without the Hunting skill must take a Con or Psy roll to be able to eat hunted food.
+- **Melee:** In a close combat situation, when picking new targets, this skill can be used to accurately identify one person as an enemy or friend per Fractional Success.
+- **Surveillance:** One Fractional Success means that the character is able to track what patterns occur in the area as long as they observe the entire pattern. Two Fractional Successes mean the character is able to infer what patterns occur in an area by watching the start or the end of the pattern. Three Fractional Successes mean they can see the patterns at any stage and understand what the pattern is. Four Fractional Successes means the character not only can interpret patterns they can see, they can tell what the next step in the patterns that they have not seen.
+- **Tracking:** For each fractional success the character can follow the trail of something for one meter.
+- **Acids:** A Full result with this skill allows a character to correctly gauge how much acid is needed to fully degrade a stockpile.
+- **Ambush:** The ambushed characters loose 2 Actions for the first turn for every fractional success and go after their ambushers in the initiative order.
+
+*   **Construction Challenge Points:**
+    *   People housed: 1 Challenge Point per person
+    *   Light vehicle: 2 Challenge Points
+    *   Medium vehicle: 3 Challenge Points
+    *   Heavy vehicle: 5 Challenge Points
+    *   Super heavy vehicle: 10 Challenge Points
+    *   Field quality buildings: 1 day per Challenge Point
+    *   Commercial or residential buildings: 1 week per Challenge Point
+
+*   **Computer Programming:**
+    *   Restoring Barrier Points (BP): Fifteen minutes per fractional success restores 1 BP.
+    *   Programming automated functions: Time is one day of programming per skill point.
+
+*   **Construction Bunker:**
+    *   1 Challenge Point per 100 Hit Points
+    *   2 Challenge Points per 10 Armor Rating
+    *   Construction Time: One day per Challenge Point
+
+*   **Code Cracking:**
+    *   Roll under Code Cracking skill every fifteen minutes.
+    *   Each Fractional Success reduces the Barrier Points of a code by one.
+    *   After fifteen minutes, check roll against transform table, satisfy conditions, and roll again.
+
+- **INT roll:** Used to notice traps, affected by camouflage rolls.
+- **Skill Checks:** Skills are used in technical challenges. Success is measured in fractional successes.
+
+**Construction Skills:**
+    - **Construction Trap (Man-sized):**
+        - To determine how many turns the trap can hold someone: Roll for this skill for each hour of work; the number of fractional successes is how many turns the trap can hold a someone.
+        - To determine the damage the trap does: Roll for this skill for every hour of work; the number of fractional successes is how many points of damage the trap does.
+    - **Construction Road:** Used to make a surface durable and flat enough for vehicles to travel over.
+    - **Construction Shelter:**
+        - A shelter protects one person from one Physical Stress and one Functional Stress point per survival turn or one hour for each fractional success.
+        - The builder can roll once per hour.
+    - **Construction Vehicle Trap:**
+        - To determine how many turns the trap can keep a vehicle from moving: Roll for this skill for every five hours of work; the number of fractional successes is how many turns the trap can keep a vehicle from moving.
+        - To determine the damage the trap does: Roll for this skill for every hour of work; the number of fractional successes is how many points of damage the trap does.
+    - **Defeat Security:** A Tech Challenge that uses a computerΓÇÖs Barrier Points instead of the normal Challenge Points. Each fractional success reduces the Barrier Points of a computer by 1 in a fifteen-minute turn.
+
+- **First Aid:** First Aid reduces one point of Physical Stress or Functional Stress from wounds for every fractional success.
+
+*   **Medicine:** Reduces 5 stress points from disease or injury for each fractional success.
+*   **Herbal Medicine:** Reduces 2 stress points from disease or injury for each fractional success. Foraging skill can be used to collect enough medicine to reduce a stress point.
+*   **Immunization:** Immunizing a community is a Tech Challenge. For every 100 people, the task has 1 Challenge Point. Immunization takes one day per Challenge Point.
+*   **Jamming:** Reduces the fractional successes of characters using the Radio skill by the fraction columns passed.
+*   **Mathematics:** Can be used in technical challenges where characters need to perform calculations.
+*   **Mechanical Engineering:** Can be used in technical challenges where characters need to understand what a device does, or if a mechanical device is needed to perform a task.
+*   **Military Intelligence:** If the players are trying to remember specific information about military vehicles, equipment or personnel they roll against this skill. Players may request one stat on standard NPCs, vehicles or equipment per fractional success.
+*   **Sensors:** With a fractional success the character can get a general sense of the area theyΓÇÖre in. When this is done the character may get a reading that there are sensor contacts and generally where they are. A fractional success can also be used to lock on to a target and identify it. One target can be locked onto for each fractional success.
+
+*   **Fractional Success:** Used to reduce challenge points, inflict mental stress, relieve mental stress (through psychotherapy), understand basic meaning of a language, and modify hit bonuses.
+
+*   **Signal Triangulation:** Player rolls against skill. Fractional success determines bonus to infantry hits, as follows:
+    *   Fail: -2 Hits
+    *   Full: +2 Hits
+    *   1/2: +3 Hits
+    *   1/4: +4 Hits
+    *   1/8: +5 Hits
+    This bonus cannot exceed the number of times the weapon fires.
+
+    For individual characters:
+    *   Fail: 20% Imp
+    *   Full: 20% Adv
+    *   1/2: 30% Adv
+    *   1/4: 40% Adv
+    *   1/8: 50% Adv
+
+*   **Sociology:** When pressured in social conflict, a character can roll against their Sociology skill to reduce the number of fractional successes the attacker gets by the number of fraction columns they pass.
+
+```
+Drug Resistance: Negate one impairment caused by a drug for each fractional success.
+
+Resist Intimidation: Reduce the number of fractional successes the attacker gets by the number of fraction columns the defender passes with this skill.
+
+Resist Fatigue: For each fractional success, the character is able to ignore the effects of 5 Physical Stress or Functional Stress points of their choosing for their next action.
+
+Structural Recognition: For each Fractional Success, the character can identify one structural hazard. For each Fractional Success, the character can do 10% more damage to a structure using explosives.
+
+Meditation: Each fractional success relieves one Mental Stress point for each hour of meditation.
+
+Iron Will: For every fractional success, one point of Physical Stress is converted to Mental Stress.
+```
+
+- **Damage:** TF-2394 E-Suit has a damage rating of 25.
+- **Punch Damage:** 80.
+- **Shields:** 2 active shields at 200hp each.
+- **Armor Rating:** 30
+- **Hit Points:** 250
+- **Barrier Points:** 12
+- **Piloting Modifier:** 0
+- **ECM:** 20% Advantage
+- **ECCM:** 20% Advantage
+- **Sensors:** 40% Advantage
+
+- **Laser:** Damage 300
+- **Plasma Blaster:** Damage varies by range (S, Med, L, Ex)
+
+- **Hit Locations:** Determined by 1d10 roll. Results determine hit location (Head, R Arm, L Arm, Body, R Leg, L Leg).
+
+- **Critical Hits:** Determined by 1d10 roll based on hit location (Head, Arm, Leg, Engine, Body).
+    - Head: 60% chance of critical hit (1-6 Sensor system destroyed, 7-10 Gyroscope impairment).
+    - Arm: 30% chance of critical hit (1-7 Laser destroyed, 5-10 Linkages, arm inoperable).
+    - Leg: 30% chance of critical hit (1-6 Linkages, leg inoperable. 7-10 Terrain computer destroyed).
+    - Engine: 30% chance of critical hit (1-4 Fuel Explosion, 1-4 Engine damage).
+    - Body: 20% chance of critical hit (1-6 Cockpit, pilot killed, 7-8 Plasma Blaster Destroyed, 9-10 Computer Destroyed).
+
+Combat:
+*   Damage is dealt to different sizes (S, Med, L, Ex) of targets, and Point Blank (PB) range.
+
+*   Damage values are specified for each weapon against each size category.
+
+*   Blast Range may be a factor.
+
+*   Fire Arcs indicate the angle of attack.
+
+*   Rate of Fire dictates the number of attacks possible in a time period.
+
+*   Some weapons have a Payload statistic, which limits the number of attacks.
+
+*   Recoil: A Projectile Cannon can knock an E-suit down if a piloting roll is not made.
+
+Movement:
+
+*   Mounting certain weapons or armor reduces the E-Suit's top speed.
+
+*   Some weapons prevent flight.
+
+Thrusters:
+*   Thrusters may have a 40% chance of critical damage that can lead to a fuel explosion and/or thruster damage that reduces flight speed.
+
+```
+If an enemy E-Suit is destroyed, there is a 10% chance of each system being repairable. If the weapon can be repaired, a successful Repair Artillery skill roll will allow it to be added to one of these kits.
+All these add ons require a Tech Challenge with 5 CP.
+```
+
+*   **EM Foils Impairment:** 20% Impairment to Sensors when trying to detect an E-Suit with EM Foils.
+*   **Electric Engine Advantage:** 20% Advantage to ECM rolls.
+*   **External Fuel Pod:** Any fuel explosion critical hits also do three times the normal damage.
+*   **Rocket Booster Refilling:** Refilling the Rocket Booster requires a mechanical repair roll.
+
+*   **Piloting Modifier:** Given as a percentage impairment or advantage.
+*   **Speed Calculation:** `Top Flight Speed = 38,000,000 / Full Mass` (for some vehicles). Also has a "Piloting Impairment".
+*   **Damage:** Weapons inflict damage within specified ranges (PB, S, Med, L, Ex).
+*   **Range Class:** Weapons have a range class (e.g., C, D).
+*   **Rate of Fire:** Weapons have a rate of fire (attacks per action).
+*   **Fire Arcs:** Weapons have fire arcs.
+*   **Critical Hits:** Called shots have a chance of causing a critical hit (e.g., 60% chance).
+*   **Damage Area:** Some explosions cause damage within a specified area (e.g., Class A blast area).
+*   **Shields:** Shields have hit points, multiple can be active
+*   **Hit Location:** Damage location determined by rolling `1d10`
+
+*   **Critical Hits:** Determined by a 1d10 roll. Specific results depend on the hit location.
+    *   **Nose (80% chance of critical):**
+        *   1-6: Sensor system destroyed (40% Impairment to sensor, ECM + ECCMs).
+        *   7-10: Cockpit, pilot killed.
+    *   **Body (30% chance of critical):**
+        *   1-6: Shield generator destroyed.
+        *   7-8: Laser destroyed.
+        *   9-10: Computer destroyed (90% Impairment to piloting).
+    *   **Engine (35% chance of critical):**
+        *   1-4: Fuel Explosion! (800 points, 10m blast radius).
+        *   5-10: Engine damage, all systems at half power.
+    *   **AG Eng (30% chance of critical):**
+        *   1-4: Minor damage, slow descent to the ground. Delta inoperative!
+        *   5-10: Major damage, crash landing!
+    *   **Plasma (70% chance of critical):**
+        *   1-8: Cannon destroyed.
+        *   9-10: Ammo explosion! (200 points, 5m blast radius).
+*   **Scimrahn Freighter Critical Hits:**
+    *   **Body (20% chance of critical):**
+        *   1-2: Laser destroyed.
+        *   3-8: Cargo damaged.
+        *   9: Sensor system destroyed (40% Impairment to sensor, ECM + ECCMs).
+        *   10: Shield generator destroyed.
+    *   **Engine (35% chance of critical):**
+        *   1-4: Fuel Explosion! (800 points, 10m blast radius).
+        *   5-10: Engine damage, all systems at half power.
+    *   **Leg (30% chance of critical):**
+        *   1-4: Linkages, Leg inoperable, Top speed down 1/6.
+    *   **Cockpit (30% chance of critical):**
+        *   1-4: Computer destroyed (70% Impairment to piloting).
+        *   6-10: Pilot killed.
+*   **Sensor Detection Impairment:** 20% Impairment to detect Scimrahn Freighter vehicles with sensors due to their near silent leg propulsion.
+*   **Piloting Modifier:**
+    *   Scimrahn Freighter: 40% Impairment
+    *   Scimrahn Assault Transport: 20% Impairment
+*   **ECM:** 10% Advantage
+*   **Sensors:** 10% Advantage
+*   **Hit Locations:** Determined by a 1d10 roll.
+*   **Weaponry:**
+    *   2 Turrets of 2 Lasers
+        *   Damage 20
+        *   Rate of fire 1 each (4 total)
+        *   Fire Arcs T1-1,2,3 T2-1,3,4
+
+*Shields: 1 active at 100hp
+No. of shield generators 2 (Arcs 1+3)*
+
+```text
+*   **Damage:** Weapons deal damage in varying amounts depending on the range to the target: PB (Point Blank), S (Short), Med (Medium), L (Long), Ex (Extreme).
+
+*   **Range Class:** Weapons have a range class.
+
+*   **Rate of Fire:** Weapons have a rate of fire.
+
+*   **Fire Arcs:** Weapons have specific fire arcs.
+
+*   **Hit Locations:** Hit locations are determined by rolling 1d10. The result and the firing arc determine the hit location.
+
+*   **Critical Hits:** Critical hits are determined by a percentage chance based on the hit location (Front, Back, Wing, Troop Door). Specific results are given for each location upon a critical hit.
+
+*   **Repair Impairment:** Attempting to repair the S-15 E-suit suffers a 60% Impairment.
+
+*   **Sound Identification:** Computer can identify sounds with a 40% accuracy.
+
+*   **Piloting Modifier:** The S-15 E-suit provides a 40% Advantage to piloting.
+```
+
+- **Laser Blaster:** Damage 40, Rate of Fire 1. Critical hits 1d10
+- **Hit Locations:** Determined by 1d10 roll.
+- **Critical Hits:** Some hit locations have a % chance of critical. These are determined by 1d10.
+- **Skill checks:**  % Advantage or Impairment to skills such as Navigation Subterranean or piloting.
+- **Shields:**  HP values for shields and number of generators.
+
+**Specific Vehicle Mechanics:**
+
+*   **Scimrahn Vehicle:**
+    *   Armor Rating: 10
+    *   Hit Points: 230
+    *   Barrier Points: 12
+    *   Piloting Modifier: 10% Impairment
+
+*   **Walking Tent:**
+    *   ECM/Sensors: 10% Advantage
+
+*   **ASO Motorcycle:**
+NONE
+
+Core game mechanics from the text:
+
+**Vehicle Stats:**
+
+*   **Armor Rating:** Numerical value representing vehicle protection.
+*   **Hit Points:** Numerical value representing vehicle health.
+*   **Piloting Modifier:** Numerical bonus or penalty to piloting-related skill checks (Advantage/Disadvantage or Numerical).
+*   **Winch Strength:** Numerical value representing the winch's pulling power.
+*   **Top Speed:** Speed of the vehicle in Km/h.
+*   **Crew:** Number of crew required to operate the vehicle.
+*   **Passengers:** Number of passengers the vehicle can carry.
+*   **Cargo Capacity:** Weight of cargo the vehicle can carry, if any.
+
+**Combat Mechanics:**
+
+*   **Damage:** Numerical value of damage inflicted by a weapon or attack. Damage varies based on range (PB, S, Med, L, Ex).
+*   **Range Class:** Indicates the effective range of a weapon (D, E, C, B).
+*   **Payload:** Number of attacks available with the weapon.
+*   **Rate of Fire:** Number of attacks that can be made in a given time.
+*   **Fire Arcs:** Indicates the weapon's firing angle(s). Numbered arcs with diagrams.
+
+**Hit Locations:**
+
+*   **Hit Location Table:** 1d10 roll determines hit location on a vehicle, varying by Fire Arc. The tables link die results to specific locations (e.g., L Tread, R Tread, Front, Back, Turret, Nose, Body, Tail, Rotor).
+
+**Critical Hits:**
+
+*   **Critical Hit Table:** Each location has a percentage chance of a critical hit (Front 20%, Back 35%, Tread 60%, Turret 40%, Nose 80%, Body 60%).
+*   **Critical Hit Effects:** 1d10 roll on a location-specific table determines the effect of a critical hit (e.g., Cockpit, pilot killed; Shield generator destroyed; Ammo Explosion!; Fuel Explosion!; Engine damage; Tread damaged; Main cannon destroyed; Missile launcher destroyed; Sensor system destroyed).
+
+**Skills & Checks:**
+
+*   **Sensors:** Sensor systems provide a percentage advantage to checks.
+
+**Shields:**
+
+*   **Shield HP:** Shields can have a specified number of hit points (e.g., 2 active at 200hp).
+*   **Shield Generators:** Number of generators and the arcs they protect.
+
+**ECM/ECCM:**
+
+*   Numerical value indicating strength.
+*   Range Class: Indicates the effective range (C, B).
+
+*   **Combat Resolution:**
+
+    *   Damage is inflicted by weapons with specific damage values.
+    *   Blast Radius: Some weapons inflict area-of-effect damage within a specified radius.
+    *   Hit Points: Represent the vehicle's health.
+    *   Armor Rating: Provides a damage reduction or resistance.
+
+*   **Dice Rolls:**
+
+    *   1d10 is used for hit location determination in some cases.
+*   **Critical Hits:**
+
+    *   Critical hits can occur with a certain percentage chance (e.g., 80% chance of critical).
+    *   Critical hit effects vary and can include component damage, explosions, or impaired piloting.
+*   **Skill Checks:**
+
+    *   Piloting Modifier: Impairs piloting ability by a certain percentage.
+    *   ECM/ECCM: Provides a percentage advantage.
+*   **Range:** Weapons have different damage values based on the range to the target (PB, S, Med, L, Ex).
+*   **Fire Arcs:** Weapons can only target specific arcs around the vehicle.
+*   **Sensors:** Impairment to sensor systems can reduce ECM/ECCM effectiveness.
+
+Armor Rating: Numeric damage resistance.
+Hit Points: Vehicle health.
+Piloting Modifier: A modifier applied to piloting skill checks.
+
+Hit locations: determined by 1d10
+
+Critical Hits:
+Front: 20% chance
+1-2: Pilot hit
+3-4: Controls damaged, 20% Impairment to piloting
+5-10: Cargo damaged
+Engine: 35% chance
+1-4: Fuel Explosion! 500 points 10m blast radius
+5-10: Engine damage, all systems at half power
+
+Side: 30% chance
+1-4: propulsion veins hit half speed 40% Impairment to piloting
+5-10: Cargo damaged
+
+Repairing Vehicles: Repairing vehicles is handled as a Tech Challenge. Repair jobs are given a number of CP based on what needs repairs and how extensive the repairs will be.
+
+- **Repairing Armor:** Difficulty of 1 CP per 30 HP to be repaired.
+- **Repairing Weapons:** Difficulty of 1 CP per 50 points of damage at Point Blank range.
+- **Repairing Shield Generator:** Difficulty of 1 CP per 20 Hit Points.
+- **Repairing Engine:** Difficulty of 1 CP per 300 Kg of vehicle mass.
+- **Repairing Thruster:** Difficulty of 1 CP per 200 Kg of vehicle mass.
+- **Repairing Linkages:** Difficulty of 1 CP per 200 Kg of vehicle mass.
+- **Repairing Cockpit:** Difficulty of 1 CP per 400 Kg of vehicle mass.
+- **Repairing Computer:** Difficulty of 2d6 CP.
+- **Repairing Gyroscope:** Difficulty of 2d6 CP.
+- **Maintenance:** After every four to five refuelings, a machinery repair roll must be made. After eight to ten refuelings, the GM may roll 1d6 on a malfunction chart.
+- **Modifying Vehicles:** Tech Challenge using Repair and Engineering skills (other skills may be justified).
+
+- **Vehicle Upgrades:**
+    - Difficulty of upgrading vehicles depends on the manufacturer (Scimrahn, Earth, I-CA, Kelrath, Chezbah), granting Advantage or Impairment to the upgrade process.
+    - Upgraded parts grant Fractional Successes to the character doing the modifying. Cost: ┬Ñ30,000 per Fractional Success.
+    - Performance Goals define the number of Challenge Points (CP) the challenge will have.
+
+- **Performance Goals and CP Costs:**
+    - Reinforced Hull: 1 CP for every 30 HP added.
+    - Top Speed: 1 CP for each 1% speed boost.
+    - Increased Shield Strength: 2 CP for each 1% HP increase to all shields; 1 CP for each 1% HP increase to one shield.
+    - Increased Cargo Capacity: 1 CP for each 1% cargo capacity increase.
+    - Improving Controls: 1 CP for each 1% increase to piloting Advantage; 1 CP for each 1% decrease to piloting Impairment.
+    - Sensors and Countermeasure Improvements: 1 CP for each 1% increase to system Advantage.
+    - Armor Plating: 1 CP for every 10% AR improvement.
+    - Armored Hull Replacement (Carbon/Ceramic Composite): 1 CP for each 1% decrease to system Impairment.
+
+- **Vehicle Mass Categories:**
+    - Light: Less than 5,000 Kilograms Full Mass.
+    - Medium: Less than 10,000 Kilograms Full Mass.
+    - Heavy: Less than 50,000 Kilograms Full Mass.
+    - Super Heavy: Greater than 50,000 Kilograms Full Mass.
+
+- **Sensor, ECM, and ECCM Range Improvements**
+    - 10 CP for each Sensor Range Class improvement
+    - 20 CP for each ECM Range Class improvement
+    - 30 CP for each ECCM Range Class improvement
+
+- **Armor Ratings by Material and Vehicle Class:**
+    - **Carbon/Ceramic Composite:**
+        - Light: AR 10
+        - Medium: AR 30
+        - Heavy: AR 50
+    - **Steel:**
+        - Light: AR 10
+        - Medium: AR 40
+        - Heavy: AR 70
+    - **Chobam Armor:**
+        - Light: AR 20
+        - Medium: AR 50
+        - Heavy: AR 80
+
+- Adding or removing shields or weaponry requires overcoming a Challenge Point (CP) difficulty. When adding, characters must overcome the listed CP. When removing, the CP is halved for the difficulty, but characters gain improvements equal to the original CP value.
+- CP values for adding/removing shields and weaponry are based on the size of the vehicle and the size/power of the shield/weapon.
+- Shield sizes are defined by hit points: Light (<200), Medium (<400), Heavy (<600), Super Heavy (>600).
+- Weapon sizes are defined by damage at point-blank range: Light (<600), Medium (<1200), Heavy (<10,000), Super Heavy (>10,000). Missile/rocket launcher range also affects weapon size.
+- Vehicle Modification Transforms: When a character rolls to make a modification, roll 1d6 on the Successful Transform table if the roll succeeds, or the Failure Transform table if the roll fails.
+- Successful Transform table results are:
+  1. Decrease fuel capacity or top speed by 2%.
+  2. Reduce sensor ECM or ECCM performance by 2%. If the system has an Advantage to use it, reduced it by 2%. If the system has an Impairment to use it, increase it by 2%.
+  3. Decrease shield strength or fuel capacity by 2%.
+  4. Reduce piloting performance by 2%. If the vehicle has an Advantage to pilot, it is reduced by 2%. If the vehicle has an Impairment to pilot it, increase it by 2%.
+  5. Reduce Hit Points or Armor Rating of the vehicle by 2%.
+  6. The last modification attempted takes off double CP but The next attempt will require a character to get at least two Fractional Successes to reduce any Challenge Points. Tools may be used to get these two successes.
+
+*   **Failure Transform:** Roll 1d10. Results determine negative effects on a vehicle, such as reduced fuel capacity, sensor performance, damage to systems, injury to characters, or fire. Injury involves a Reflex saving roll to avoid 1d10 damage (or 2d10 to an NPC). Characters gain a 1% Advantage on the Reflex roll per minute the turn took.
+
+*   **Point Blank (PB):** Targets at point blank range get a 20% Advantage to hit.
+
+*   **Extreme Range (Ex):** Targets at extreme range suffer a 90% Impairment to hit.
+
+*   **Long Range (L):** Targets at long range suffer a 40% Impairment to hit.
+
+*   **Medium Range (Med):** Targets at medium range suffer a 20% Impairment to hit.
+
+*   **Short Range (S):** No modifier to hit a target at this range.
+
+*   **Damage:** Weapons inflict damage at point blank, short, medium, long, and extreme ranges.
+
+*   **Stress Effects:** Some stress effects are less than 1 point per hour and are resolved with dice rolls. A "1 in 6 per hour" stress effect requires rolling 1d6; a roll of 1 results in a stress point. A "1 in 10 per hour" stress effect requires rolling 1d10; a roll of 1 results in a stress point.
+
+```
+Constrictor Whip:
+*   Raking Damage: 2
+*   Constriction Damage: 20 points per turn
+*   Parry Retracted: 0
+*   Parry Extended: -1
+
+Scimrahn Armor:
+
+| Hit Location | Armor Rating | Hit Points |
+|---|---|---|
+| Head | 5 | 10 |
+| Shoulder | 5 | 10 |
+| Body | 15 | 8 |
+| Arms | 5 | 5 |
+| Hands | 1 | 3 |
+| Groin | 5 | 8 |
+| Legs | 8 | 5 |
+| Feet | 5 | 5 |
+|Causes|Physical: 3 per hour, Functional: 1 per hour, Mental: 2 per hour|
+
+Scimrahn Light Armor:
+
+| Hit Location | Armor Rating | Hit Points |
+|---|---|---|
+| Head | 5 | 10 |
+| Shoulder | 5 | 8 |
+| Body | 8 | 7 |
+| Arms | 1 | 1 |
+| Hands | - | - |
+| Groin | 5 | 7 |
+| Legs | 1 | 1 |
+| Feet | 5 | 5 |
+|Causes|Physical: 1 per hour, Functional: 1 in 6 per hour, Mental: 2 per hour|
+
+Scimrahn Pilot Armor:
+
+| Hit Location | Armor Rating | Hit Points |
+|---|---|---|
+| Head | 10 | 5 |
+| Shoulder | - | - |
+| Body | 8 | 15 |
+| Arms | 5 | 3 |
+| Hands | - | - |
+| Groin | - | - |
+| Legs | - | - |
+| Feet | 5 | 5 |
+|Causes|Physical: 1 in 6 per hour, Functional: 1 in 10 per hour, Mental: 2 per hour|
+
+Light Armor Vest:
+
+| Hit Location | Armor Rating | Hit Points |
+|---|---|---|
+| Body | 5 | 7 |
+|Causes|Physical: 1 in 6 per hour, Functional: 1 in 10 per hour|
+
+Round Shield (50 cm Diameter):
+*   Armor: 10
+*   Hit points : 15
+*   Parry 60% Advantage
+
+Large Shield (50 cm Wide x 120 cm Long):
+*   Armor: 10
+*   Hit points : 25
+*Parry 90% Advantage
+*Causes|Physical: 1 per hour, Functional: 2 per hour|
+
+Reflective Coating:
+*   Armor: +2 Vs. Lasers
+
+PB:
+*   Damage 80
+*   Range Class: B
+*   Payload: 5
+*   Rate of Fire: 1
+
+S:
+*   Damage 60
+
+Med:
+*   Damage 30
+
+L:
+*   Damage 20
+
+Ex:
+*   Damage 5
+```
+
+- **Disruption Cannon, Setting One:** Living creatures in range class B must roll vs. CON or take 40 Physical stress and 4 Mental stress. For each Fractional Success, reduce stress by 10 Physical and 1 Mental.
+- **Plasma Sprayer:** Damage values at varying ranges.
+- **Disruption Cannon, Setting Two:** Damages machines and electronics only. Force fields and armor are ignored.
+- **Disruption Cannon, Setting Three:** A directional harmonic shockwave. Force fields are ignored. Damage values at varying ranges.
+- **High Discharge Laser:** Damage values at varying ranges.
+- **Pulser:** Damage values at varying ranges. Chance of fuel explosion (30%) on vehicles that use liquid fuel. Force fields are an effective countermeasure.
+- **Sentry Grenades:** Damage values at varying ranges. The grenade will continue to discharge up to ten times.
+- **Meta Gun:** Damage values at varying ranges.
+
+- **Armor:** Provides protection, with different armor ratings for different hit locations (Head, Shoulder, Body, Arms, Hands, Groin, Legs, Feet). Each location also has hit points.
+- **Personal Force Field:** Has Hit Points (HP) that regenerate each turn. The battery lasts for 3 turns.
+- **Explosives:** Various explosives have different damage, blast range, and mass. Blast range is categorized into classes (A) with additional range depending on the amount used.
+- **Blood Filters:** Blood filters can be created using a Blood Filter Manufacturing Station. There is a 28% chance of matching a new pathogen with available enzymes. A chemistry skill roll is required to operate the station. A successful surgery skill is required to insert and remove the filter. An inserted filter counts as 4 fractional successes under the general medicine skill.
+- **Surgical Tools:** Provide a 20% advantage to Surgery skill.
+- **Medical Checkup Tools:** Provide a 20% advantage to General Medicine skill.
+
+*   **Skill Checks:**
+    *   First Aid: 40% Advantage with First Aid kit.
+    *   Surgery: 10%-20% Advantage with Sterilizing spray, Medium Steri-patches, Large Steri-patches, Sterilizing paint
+    *   General Medicine: 10%-30% Advantage with Sterilizing spray, Small Steri-patches, Medium Steri-patches, Large Steri-patches, Syringe with disposable needles, Sterilizing paint, Stethoscope
+    *   Immunization: 10% Advantage with Syringe with disposable needles.
+    *   Welding: 20% Advantage with Mini-Arc Welder
+
+*   **Infection Prevention:**
+    *   Sterilizing spray: 30% chance of preventing infection.
+
+*   **Weapon Mechanics:**
+    *   Survival knife
+        *   Damage: 12
+        *   Parry: 40% Impairment
+    *   Machete
+        *   Damage: 7
+        *   Parry: 20% Impairment
+    *   Axe
+        *   Damage: 12
+        *   Parry: 20% Impairment
+    *   Hammer
+        *   Damage: 5
+        *   Parry: 40% Impairment
+
+*   **Skills:** Certain items grant an advantage (specified as a percentage) to specific skills.
+    *   Repair, Construction, and Engineering skills: Advantage from tool kits.
+    *   Biology and Botany skills: Advantage from the Portable Smart-Microscope.
+    *   Electrical Repair and Electrical Engineering skills: Advantage from the Diagnostic Computer.
+    *   Climbing skill: Advantage from Grappling Hook + Spikes, Hammer/hatchet, and Suction Cups.
+    *   Physics Skill: Advantage from Hammer/hatchet.
+    *   Pick Locks skill: Advantage from Lockpick Set.
+
+*   **Spectrometer:** 20% Advantage to Physics and Chemistry skills.
+*   **Scimrahn Coveralls:** AR 1 HP 2
+*   **Sleeping Bag/ -40╦Ü Sleeping Bag/ 2 Man Tent/ Large Tent (20'x12'):** Provide protection from cold/wetness and wind based stress effects with specified Physical and Functional protection per hour.
+*   **ASO Uniform/ I-CA Uniform:** 20% Advantage to camouflage verses infrared and nightvision optics.
+*   **Scimrahn Hooded Cloak:** 1 Physical per hour, 1 Functional per hour, 20% Advantage to Conceal Object
+
+*   **Clothing Effects:** Specific clothing items provide advantages to skills like Conceal Object or Camouflage. Robes and cloaks offer protection against cold-based stress. Parkas provide significant protection against cold but hinder movement and vision, causing Physical, Functional, and Mental stress per hour.
+
+*   **Food Consumption:** Characters must consume at least five half meals per day to avoid taking a physical stress point. Each additional half meal over five relieves a point of physical stress.
+
+*   **Communication Devices:** PCTRSD (cellular phone sized communicator) has encryption strength of 54 BP.
+
+*   **Conceal Object:** Certain clothing items provide an advantage to Conceal Object (30% for robes, 60% for cloaks).
+
+- When deciphering recorded images from the sensor systems, a roll with 40% Impairment to the player's Intuition must be made.
+- Triangulating the position of a radio jammer signal grants a 20% Advantage to the triangulation skill.
+- The LRCTRSD has a Radio Skill Modifier: 60% Advantage.
+
+*   **Recording Impairment:** When doubling the recording time of the Heavy T/R/S/D, a player must roll, suffering a 40% Impairment to their Intuition to decipher the recorded images.
+*   **Radio Jammer Triangulation:** Anyone attempting to triangulate the position of the radio jammer signal from the Heavy T/R/S/D receives a 20% Advantage to their triangulation skill.
+*   **Laser Marker Targeting:** A player rolls against the scout's WS Gun skill plus their Agility to paint the target with the laser marker.
+    *   Fraction Column Result:
+        *   Fail: -5 Hits
+        *   Full: +2 Hits; If individual characters use the laser marker information, they get 20% Advantage
+        *   1/2: +4 Hits; If individual characters use the laser marker information, they get 30% Advantage
+        *   1/4: +8 Hits; If individual characters use the laser marker information, they get 40% Advantage
+        *   1/8: +16 Hits; If individual characters use the laser marker information, they get 50% Advantage
+
+*   Each unit that uses the ScoutΓÇÖs marker gets this bonus to hit as long as the number does not exceed the total number of times the weapon fires.
+
+- Infrared Scope: +0 at PB, +5 at Short, +15 at Medium, +20 at Long, and +10 at Extreme range.
+
+```
+Overhaul Time: Lead mechanic makes a repair machinery roll. Full column 30 hours, Half 20, hours Quarter 15 hours, Eighth 10 hours.
+```
+
+- Scanner activation: Press the green scan button until a tone sounds (1D6 turns).
+- Radioactive dye stress effects: Physical Stress: 15 points, Functional Stress: 10 points, Mental Stress: 5 points.
+- Pocket universe: If the user does not have stored oxygen, they must take a Con roll each turn to stay in the pocket universe. The cold causes 5 Physical stress and 5 Functional stress each turn unless the character wears sufficient thermal protection.
+- Dodging with dark stones in a pocket universe works like a regular dodge.
+
+- **Dark Stones:**
+    - **Absorbing Energy:** Dark Stones absorb energy from radiation, heat, or sound over time. It takes one day to absorb energy equivalent to 20 points of damage per tile. There is no upper limit to the amount of energy they can absorb.
+    - **Two Stones:** Provides Camouflage 30% Advantage, Stealth 30% Advantage, ECM 20% Advantage.
+    - **Four Stones:** Provides Camouflage 60% Advantage, Stealth 60% Advantage, ECM 40% Advantage.
+    - **Six or Even Number of Stones:** Creates a space-time distortion in a 1.43-meter radius, releasing neutron radiation.
+        - **Saving Throw:** Characters within the radius roll 1D100.
+            - On a roll of 1: The character survives.
+            - On a roll of 100: The character survives, but the Game Master can impose an effect.
+            - On any other number: The character dies.
+    - **Stored Energy Release:**
+        - Damage: 20 per day of absorption per tile.
+        - Range Class: B
+        - Payload: 1
+
+- **Sunglobe:**
+    - Makes the user very obvious (80% Advantage to INT).
+    - Targeting an object outside of the 50-meter radius is a 40% Impairment.
+
+- Targeting anything except the Sunglobe incurs a 60% Impairment.
+- Sonar Imager causes a 20% Impairment to INT to identify an object.
+
+*   **Flare Launcher:**
+    *   In dark areas, flares cause 40% Impairment to those relying on vision or infra-red sensors to target anything out of their ten-meter area.
+    *   Those outside the flare's radius gain a 20% Advantage to strike those within the radius.
+*   **Chig Sensor Array:**
+    *   Sensors: 40% Impairment
+
+Alcohol:
+*   Addictive: Failed PSY roll adds one box to drug addictions table. Successful roll adds no boxes. One box is erased every week.
+*   Addiction effect: -5 CHA, -5 IQ if not consumed every four hours.
+*   Dangers: Hangover if IQ drops to 5 or lower after effects wear off. Prolonged consumption (4D10 years) causes liver failure.
+
+Kekya:
+*   Addictive: Failed PSY roll adds two boxes to the drug addictions table. Successful roll adds one box. One box is erased every week.
+
+Pump:
+*   Addictive: Failed PSY roll adds three boxes to the drug addictions table. Successful roll adds one box. One box is erased every week.
+*   Addiction effect: Must take one tablet every hour or roll vs. PSY each day (failure means suicide attempt).
+*   Dangers: 2% chance of heart attack each use.
+
+Tojic:
+*liver will give out and the person will die. However, every six months the person looses 5 points of IQ permanently.
+
+```
+Tojic:
+
+*   Depressant: Converts 5 Mental and 3 Physical stress into 8 Functional stress.
+*   20% Impairment to Reflex.
+*   Duration: 15 Minutes.
+*   Wait before effect: 10 seconds.
+*   Addictive: Failed PSY roll = fill 2 boxes in the drug addictions table; successful roll = fill 1 box.
+*   Addiction Removal: 1 box erased every week.
+*   Addiction Effect: Must chew four grams every two hours or suffer Stress Points x2 and -5 IQ.
+
+Selinya:
+
+*   Stimulant: Masks 20 points of Physical, 10 points of Functional and 10 points of Mental stress for the duration. Character continues to take stress, but the full effect is delayed until the dose wears off.
+*   Duration: 4 Hours
+*   Wait before effect: 5 Minutes
+*   Addictive: Failed PSY roll = fill 1 box in the drug addictions table; successful roll = no boxes filled.
+
+Pelin:
+
+*   Hallucinogen: Converts 5 Mental stress into 5 functional stress.
+*   30% Impairment to IQ.
+*   70% Impairment to Intuition.
+*   Duration: 20 hours/8 hours sleep.
+*   Wait before effect: 15 seconds (1 turn).
+*   Addictive: Failed PSY roll = fill 5 boxes in the drug addictions table; successful roll = fill 1 box.
+*   Addiction Removal: 1 box erased every month.
+*   Addiction Effect: First week: cotton mouth and irritability (-10 CHA). After that: incapacitated by cramps, nausea, and dehydration; -1 HP per day due to dehydration for 1d10 days.
+*   Damage: 5 points damage/turn of skin contact.
+
+Zombie:
+
+*   Hallucinogen: Converts 10 Mental Stress into 10 Functional Stress.
+*   40% Impairment to IQ
+*   80% Impairment to Intuition.
+*   Duration: 1 week/8 hours sleep a night
+*   Wait before effect: 10 Seconds
+*   Addictive Factor Unknown: No one has ever been known to become addicted to Zombie.
+
+Massadgah:
+
+*   Neural inhibitor: Masks 40 points of Physical, 20 points of Functional stress for the duration of the dose. Character continues to take stress during the dose but is unaffected until the dose wears off. The character temporarily gets +2
+```
+
+```
+*   **Massadgah Addiction:**
+    *   Failed PSY roll: Fill two boxes in the drug addictions table.
+    *   Successful PSY roll: Fill one box in the drug addictions table.
+    *   One box is erased every week.
+    *   Addicted person must take one packet every four hours or suffers 1 Stress Point when touched or exposed to strong odors.
+    *   30% chance of -1 INT permanently.
+
+*   **Selinya Addiction:**
+    *   Addicted person must take one tablet every six hours or suffers -5 Ref.
+    *   25% chance of horrible nightmares.
+
+*   **Zombie Drug:**
+    *   Masks all pain and stress effects.
+    *   Character continues to take stress during the dose but is unaffected until the dose wears off.
+    *   Character temporarily gets +4 to their HP until the dose wears off.
+
+*   **Stimulant:**
+    *   90% Advantage to Constitution
+    *   90% Advantage to Strength
+
+*   Skills are based on attributes, such as Acids - I.Q., Ambush - I.Q., etc.
+```
+
+*   **Skill Checks:** Skills are associated with attributes (e.g., Explosives - Dex, First Aid - I.Q.).
+*   **Combat Resolution:**
+    *   HTH Combat uses Agility (Agi).
+    *   Melee Combat uses Intelligence (Int).
+    *   Weapon Skills (WS) use Agility (Agi).
+*   **Hit Locations:** Body parts (Head, Arm, Foot, Body, Hand, Groin) can be targeted.
+*   **Damage:**
+    *   Damage is associated with Strength (Str) in Hand-to-Hand (HTH) combat (Str+Damage).
+    *   Damage values exist.
+*   **Armor (AR):** Armor reduces damage.
+*   **HP (Hit Points):** Represents health.
+*   **Stress:** A separate damage type.
+*   **Experience:** Experience is awarded.
+*   **Range Classes:** Defined by PB, A, B, C, D, E.
+*   **PDF Modifiers:** Related to armor and possibly other effects.
+*   **Attribute Modifiers:** Food deprivation and alcohol consumption affect attributes.
+
+- Attributes are modified by d -10.
+- PDF modifyers are present.
+- Wounded 1 HP: -5 Str, -5 Agi
+- Wounded half HP: -20 all attributes
+- 1 drink alcohol: -5 Ref, -5 IQ, -5 INT
+- >5 Days without food: -1 HP/day
+- 5 Days without food: -40 all attributes
+- 1 Day without food: -10 all attributes
+- Hit location affects Armor.
+- Actions per turn: Standard.
+- General Modifiers:
+  - Firing wrong handed: -20
+  - Called shot: -15
+  - Darkness: -40
+  - Low light: -20
+  - Subdued light: -10
+  - Target under soft cover: -10
+  - Target under hard cover: -25
+  - Moving target: -20
+  - Fast moving target: -40
+- Damage types: Physical, Functional, Mental.
+- Damage is potentially doubled (x2) or halved.
+- Armor types exist.
+
+- **Roll 1D100:** Used in some mechanic (likely related to Hit Location)
+- **Hit Location:** Determined using dice rolls (89-100 is Head)
+- **Modifiers:** Various modifiers affect rolls or actions, including:
+    - Target under hard cover (-25 to -10)
+    - Target under soft cover (-10)
+    - Line of sight obstructed (-10)
+    - Subdued light (-20 to +15)
+    - Low light (-40 to +10)
+    - Darkness (-40)
+    - Large Target (+10)
+    - Small Target (-10)
+    - Fast moving target (-40)
+    - Moving target (-20)
+    - Called Shot (-15)
+    - Aimed shot (-2 Attacks)
+- **Damage:** Influenced by some factors.
+- **HP:** (Hit Points) represents a character's health.
+- **AR:** Mentioned in relation to damage and Hit Location.
+- **Experience:** GM awards experience (+1 or +2) for: Staying in character, co-operation, using their head, avoiding unnecessary violence, being good/noble, being an active participant, or being brave/heroic.
+
+```
+AR      HP
+Groin
+Exp.
+NCO 
+Movement
+Required
+Ranks
+Per Turn
+Km/h  Turn
+One Experience point raises . . .
+The rate that a character raises is strongly dependent on the I.Q. attribute. Find your character's I.Q. on the chart, and the skill level already possessed, this will give you the ratio of skill points raised by the experience points expended.
+```
+
+Skill Advancement:
+
+*   The rate at which a character raises a skill depends on their I.Q. and current skill level.
+*   To increase skill points, experience points are expended. The ratio of skill points gained to experience points spent depends on a table with I.Q. and current skill level.
+
+Attribute Advancement:
+
+*   Attribute advancement is not dependent on I.Q., only the current attribute level applies.
+*   A minimum of 3 experience points must be spent to raise an attribute.
+* A minimum of 5 experience points must be spent to raise an attribute.
+
+Skill Advancement Table:
+
+The following tables detail skill advancement, based on IQ and current skill level. Values represent the increase in skill points for 1 experience point spent.
+
+| I.Q.   | Skill Level 1-25 | Skill Level 26-50 | Skill Level 51-99 |
+| :----- | :--------------- | :---------------- | :---------------- |
+| 10-24  | +1               | +2                | +3                |
+| 25-40  | +1               | +3                | +5                |
+| 41-75  | +2               | +5                | +8                |
+| 76-90  | +5               | +8                | +10               |
+| 91-99  | +5               | +10               | +15               |
+
+Attribute Advancement Table:
+
+The following tables detail attribute advancement, based current attribute level. Values represent the increase in attribute points for 1 experience point spent.
+
+| Attribute Level | Point Increase |
+| :-------------- | :------------- |
+| 10-30  | +1    |
+| 31-60  | +3   |
+| 61-99  | 5 Exp +5     |
+
+```
+Attribute Advancement:
+
+*   A minimum of 5 Experience (Exp) must be spent to raise an attribute.
+*   Attribute advancement is not dependent on I.Q., only the current attribute level.
+* Attribute Level 10-30: +1
+* Attribute Level 31-60: +3
+* Attribute Level 61-99: 5 Exp +5
+* Attribute Level 76-90: 1Exp +8
+* Attribute Level 91-99: 1Exp +5
+
+Hand-to-Hand Damage:
+
+*   Damage is influenced by Strength (Str+).
+
+Hand to Hand Damage Table:
+
+*   Strength 10-40: 1 point Damage
+*   Strength 41-60: 2 points Damage
+*   Strength 61-80: 3 points Damage
+*   Strength 81-100: 4 points Damage
+*   Strength 101-120: 5 points Damage
+*   Strength 121-130: 6 points Damage
+*   Strength 131-140: 7 points Damage
+
+Critical Hits:
+
+*   Head: Damage x2
+*   Shoulder: -1 HP/min to bloodloss
+*   Arm: 1/2 Damage, Str-15, Dex-20
+*   Hand: 1/4 Damage, Str-5, Dex-20
+*   Groin: Incapacitation 1d10 turns, -1 HP/turn to bloodloss
+
+```
+
+*   **Damage:** Standard damage calculation.
+*   **Critical Hits:**
+    *   Head: Damage x2
+    *   Groin: Incapacitation 1d10 turns
+    *   Hand: 1/4 Damage (Str-5 Dex-20)
+    *   Arm: 1/2 Damage (Str-15 Dex-20)
+    *   Shoulder: -1 HP/min to bloodloss
+    *   Foot: 1/4 Damage (Str-10 Agi-10)
+    *   Leg: 1/2 Damage (Str-20 Agi-10), -1 HP/turn to bloodloss
+*   **Range Classes:** Affect weapon and sensor effectiveness. Longer ranges have negative modifiers.
+*   **Attack Resolution:**
+    *   Single Action: Attack hits on the first fractional success.
+    *   Burst: 1 in 5 attacks hit.
+    *   Additional fractional successes can move the hit location.
+
+* **Range Modifiers Table**:
+
+    | Range | Modifier |
+    |-------|----------|
+    | Short | +5 |
+    | Medium | +0 |
+    | Long | -20 |
+    | Extreme | -50 |
+    | PB | -10 |
+
+- **Action Based:** Indicates mechanics tied to available actions.
+- **Range:** Short, Medium, Long, and Extreme ranges affect gameplay.
+- **Armor Rating (AR):** AR reduces incoming damage. If a hit bypasses armor, it deals half the weapon's damage.
+- **Hit Points (HP):** Represent health or endurance. HP amounts are associated with Strength (Str) and Constitution (Con).
+- **Modifiers:** Numerical adjustments to rolls or stats, including -50, -20, -10, +0, and +5.
+- **Burst Attacks:** Additional hits after the first may be achieved for every five attacks.
+- **Damage Reduction:** Armor Rating (AR) reduces the amount of incoming damage.
+
+*   **I.Q. Attribute Bonus:**
+    *   10-24 I.Q.: +3
+    *   25-40 I.Q.: +5
+    *   41-75 I.Q.: +8
+    *   76-90 I.Q.: +10
+    *   91-99 I.Q.: +15
+
+*   **Attribute Level Rate:**
+    *   10-30: +2
+    *   26-50: +3
+    *   31-60: +5
+
+*   **Skill Advancement:**
+    *   3 Experience: +3
+    *   5 Experience: +5
+
+*   **Armor/Health:**
+    *   0-2: +1

@@ -1,0 +1,123 @@
+Here are all—and only—the excerpts from the ruleset that deal with creating a new character:
+
+---
+
+### 1. Attribute Generation
+
+* **The Attributes**
+  Constitution, Strength, Reflex, Agility, Dexterity, Beauty, Charisma, Intuition, I.Q., Psyche, Hit Points.
+
+* **Standard Method**
+  Roll 1d6 for each attribute (except HP), multiply by 10 (1d6 × 10). Record in the “Full” column.
+
+* **Assign Method**
+  Roll 10d6 and assign each roll to an attribute, multiplying by 10.
+
+* **Ace Method**
+  Roll 3d6 and 1d10, multiply each result by 10, and assign to attributes of choice. Remaining 6 attributes are set to 30. If the 1d10 × 10 results in a 10 or 20, roll twice on bonus table one.
+
+---
+
+### 2. Hit Points Calculation
+
+Based on Constitution and Strength:
+
+| Constitution | Hit Points |
+| -----------: | ---------: |
+|         1–25 |          5 |
+|        26–50 |         10 |
+|        51–75 |         15 |
+|       76–100 |         20 |
+
+| Strength | Hit Points Modifier |
+| -------: | ------------------: |
+|     1–25 |                  +2 |
+|    26–50 |                  +5 |
+|    51–75 |                 +10 |
+|   76–100 |                 +15 |
+
+---
+
+### 3. Attributes & Fraction Columns
+
+Eleven attributes are recorded, each with four “fraction columns”:
+
+* **Full**: As rolled/generated.
+* **½**: Full ÷ 2, round up.
+* **¼**: (½) ÷ 2, round up.
+* **⅛**: (¼) ÷ 2, round up.
+
+---
+
+### 4. Starting Skills & Attribute Bonuses
+
+#### Standard (All Characters)
+
+* **Skills:** Read/Write (1 Language) +50, Mathematics +30, Pilot Automobile +40, Radio +10, First Aid +10, Computer Operation +10
+
+---
+
+#### Foot Soldier
+
+* **Skills:** Ambush +10, Camouflage +5, Detect Ambush +5, Explosives +15, HTH Combat +15, Melee Combat +20, Navigation Land +10, Weapon Repair +5, WS Grenade +20, WS Pistol +25, WS Gun +30, plus 10 at +10
+* **Attribute Bonuses:** Str +5, Con +5
+
+---
+
+#### Scout
+
+* **Skills:** Ambush +10, Botany +25, Camouflage +5, Detect Ambush +5, Foraging +15, Hide +20, HTH Combat +15, Hunting +15, Mapping +5, Navigation Land +10, Pick Locks +10, Pilot Motorcycle +8, Sniper +15, Stealth +15, Navigation Subterranean +5, Surveillance +15, Tracking +10, Weapon Repair +5, WS Knife +20, WS Gun +30, plus 5 at +8
+* **Attribute Bonuses:** Agi +5, Int +12
+
+---
+
+#### Artillery/Engineer
+
+* **Skills:** Artillery Operation +20, ECM +5, Explosives +15, HTH Combat +5/+10, Melee Combat +5/+10, Navigation Land +10, Pilot Tank +30, Pilot E-suit +30, Sensors +15/+20, Weapon Repair +5/+30, WS Grenade +15/+10, WS Gun +10/+5, WS Pistol +15/+20, Acids +10, Architectural +10, Artillery Repair +15, Camouflage +35, Construction Bunker +10, Construction Mantrap +15, Construction Road +20, Construction Shelter +20, Construction Vehicle Trap +15, Electronics Engineering +10, Explosives Disposal +15, Mapping +5, Military Intelligence +15, Repair Electronics +25, Repair Machinery +25, Structural Recognition +10, Welding +15, plus X at +Y
+* **Attribute Bonuses:** Str +X, Con +X, Dex +X
+
+---
+
+#### Scientist
+
+* **Skills:** Anthropology +30, Archeology +25, Architectural +10, Biology +25, Botany +25, Chemistry +25, Electronics Engineering +20, HTH Combat +5, Mathematics +20, Mechanical Engineering +20, Physics +40, Psychology +20, Sociology +20, Theology +10, WS Pistol +5, plus 5 at +10
+* **Attribute Bonuses:** Int +5, IQ +20
+
+---
+
+#### Medic
+
+* **Skills:** Biology +25, Botany +20, First Aid +30, General Medicine +30, Immunization +15, Surgery +20, WS Pistol +5, plus 10 at +10
+* **Attribute Bonuses:** IQ +5, Dex +5
+
+---
+
+#### Spy / Infiltrator
+
+* **Skills:** Concealed Object +30, Persuasion +20, HTH Martial Arts +30, Kelrath Culture +30, Politics +10, Propaganda +40, Speak Kelrath +30, WS Kelrath Weapon … *(etc.)*
+* **Attribute Bonuses:** Dex +5, IQ +5
+
+---
+
+#### Hacker / Security Specialist
+
+* **Skills:** Code Cracking +5, Computer Operation +10, Computer Programming +15, Defeat Security +15, ECCM +15, ECM +20, Electronics Repair +10, Explosives +5, HTH Combat +10, Jamming +15, 3 Languages +30, Melee Combat +5, Navigation Land +10, Radio +10, Scrambler +30, Sensors +30, Signal Triangulation +25, Weapon Repair +8, WS Gun +?, WS Pistol +?…
+* **Attribute Bonuses:** Dex +5
+
+---
+
+#### (Other archetypes follow the same pattern: a block of “Skills: …” plus “Attribute Bonuses: …”)
+
+### 5. Choosing A Character Occupation
+
+ Player characters come from four different organizations: 
+ The ASO, the I-CA, the Scimrahn and Corporate Characters. 
+ Assume the user / player knows what these are or knows how to find that information already.
+
+### 6. Other attributes
+
+Gender, Age, Height, Nationality, Attitude, Hair and Eye Color can be chosen by the user / player or each can be generated randomly if the user wishes. 
+
+Experience is initially zero. "Fame Points" are initially zero. Savings (the amount of money the character has) also starts at zero.
+
+Rank and Pay are determined from the character's occupation.

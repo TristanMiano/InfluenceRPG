@@ -32,7 +32,7 @@ def character_wizard(req: WizardRequest):
     if not rs:
         raise HTTPException(status_code=404, detail="Ruleset not found")
 
-    ruleset_text = rs["summary"]
+    ruleset_text = rs["char_creation"]
 
     # 2) Build system prompt
     system_prompt = (

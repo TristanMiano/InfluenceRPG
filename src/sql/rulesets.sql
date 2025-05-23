@@ -5,6 +5,8 @@ CREATE TABLE IF NOT EXISTS rulesets (
   description  TEXT,
   full_text    TEXT      NOT NULL,       -- raw, PDF-extracted text
   summary TEXT,
+  long_summary TEXT,
+  char_creation TEXT,
   created_at   TIMESTAMPTZ DEFAULT NOW()
 );
 
