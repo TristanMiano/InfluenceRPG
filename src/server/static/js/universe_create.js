@@ -48,10 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (resp.ok) {
-        const data = await resp.json();
-        // redirect into game creation with universe prefilled
-        window.location.href = `/game/new?username=${encodeURIComponent(username)}&universe_id=${encodeURIComponent(data.id)}`;
-      } else {
+        // success → back to lobby
+        window.location.href = `/lobby?username=${encodeURIComponent(username)}`;
+	  } else {
         const err = await resp.json();
         errorElem.innerText = err.detail || "Universe creation failed.";
       }

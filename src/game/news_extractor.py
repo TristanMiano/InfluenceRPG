@@ -11,8 +11,23 @@ def run_news_extractor(universe_id: str, event_limit: int = 50) -> str:
     """
     # 1) Pull recent events
     events = universe_db.list_events(universe_id, limit=event_limit)
+    
+    # → if there are no events at all, nothing to do
+    if not events:
+        return ""
 
-    # 2) Build an LLM prompt
+    # 2) Have we already summarized up through the newest event?
+    #    Compare the max event_time vs. last published_at in universe_news
+    latest_event = max(e["event_time"] for e in events)
+    last_news = universe_db.list_news(universe_id, limit=1)
+    if last_news:
+        last_published = last_news[0]["published_at"]
+        if latest_event <= last_published:
+            # no new events since our last bulletin
+            print(f"[news_extractor] No new events since {last_published}, skipping.")
+            return ""
+
+    # 3) Build an LLM prompt
     prompt_lines = [
         "You are a news reporter in a shared gaming universe.",
         "Write a concise news bulletin summarizing these recent events:",
