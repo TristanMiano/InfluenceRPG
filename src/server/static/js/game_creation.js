@@ -61,42 +61,99 @@ async function loadUniverses(presetUniverse) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Read optional universe_id from URL
   const params = new URLSearchParams(window.location.search);
-  const presetUniverse = params.get("universe_id");
-
-  // Username from hidden input
   const username = document.getElementById("username").value;
   const universeSelect = document.getElementById("universe-select");
+  const charSelect     = document.getElementById("character-select");
 
-  // Populate character and universe selectors
   loadAvailableCharacters(username);
-  loadUniverses(presetUniverse);
+  loadUniverses(params.get("universe_id"));
 
-  document.getElementById("create-game-button").addEventListener("click", async () => {
+  const genBtn      = document.getElementById("generate-prompt-button");
+  const regenBtn    = document.getElementById("regenerate-button");
+  const createBtn   = document.getElementById("create-game-button");
+  const promptBox   = document.getElementById("prompt-container");
+  const promptField = document.getElementById("generated-prompt");
+  const genError    = document.getElementById("generate-error");
+  const createError = document.getElementById("create-error");
+
+  async function fetchGeneratedPrompt() {
+    genError.innerText = "";
+    const universeId = universeSelect.value;
+    const gameDesc   = document.getElementById("game-description").value.trim();
+    if (!universeId) {
+      genError.innerText = "Please select a universe.";
+      return null;
+    }
+    if (!gameDesc) {
+      genError.innerText = "Please enter a game description.";
+      return null;
+    }
+
+    try {
+      const resp = await fetch("/api/game/generate-setup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ universe_id: universeId, game_description: gameDesc })
+      });
+      if (!resp.ok) {
+        const err = await resp.json();
+        genError.innerText = err.detail || "Failed to generate prompt.";
+        return null;
+      }
+      const { generated_setup } = await resp.json();
+	  return generated_setup;
+    } catch (err) {
+      console.error(err);
+      genError.innerText = "Network error.";
+      return null;
+    }
+  }
+
+  genBtn.addEventListener("click", async () => {
+    const prompt = await fetchGeneratedPrompt();
+    if (prompt !== null) {
+      promptField.value = prompt;
+      promptBox.style.display = "block";
+      createBtn.style.display = "block";
+    }
+  });
+
+  regenBtn.addEventListener("click", async () => {
+    const prompt = await fetchGeneratedPrompt();
+    if (prompt !== null) {
+      promptField.value = prompt;
+    }
+  });
+
+  createBtn.addEventListener("click", async () => {
+    createError.innerText = "";
     const gameName = document.getElementById("new-game-name").value.trim();
-    const initialDetails = document.getElementById("initial-details").value.trim();
-    const characterId = document.getElementById("character-select").value;
-    const errorElem = document.getElementById("create-game-error");
-    errorElem.innerText = "";
+	const initialDetails = document.getElementById("game-description").value.trim();
+    const charId   = charSelect.value;
+    const universeId = universeSelect.value;
+    const setupPrompt = promptField.value.trim();
 
     if (!gameName) {
-      errorElem.innerText = "Please enter a game name.";
+      createError.innerText = "Please enter a game name.";
       return;
     }
-    if (!characterId) {
-      errorElem.innerText = "Please select a character.";
+    if (!charId) {
+      createError.innerText = "Please select a character.";
+      return;
+    }
+    if (!setupPrompt) {
+      createError.innerText = "No prompt to submit. Please generate first.";
       return;
     }
 
-    // Build payload
     const payload = {
       name: gameName,
-      initial_details: initialDetails,
-      character_id: characterId
+      character_id: charId,
+      universe_id: universeId,
+	  initial_details: initialDetails,
+      setup_prompt: setupPrompt
     };
-    const universeId = universeSelect.value;
-    if (universeId) payload.universe_id = universeId;
 
     try {
       const resp = await fetch("/api/game/create", {
@@ -104,22 +161,27 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
-
       if (resp.ok) {
         const data = await resp.json();
         const gameId = data.id;
         window.location.href =
-		  `/chat?username=${encodeURIComponent(username)}`
-		  + `&game_id=${encodeURIComponent(gameId)}`
-		  + `&character_id=${encodeURIComponent(characterId)}`
-		  + `&universe_id=${encodeURIComponent(universeSelect.value)}`;
+          `/chat?username=${encodeURIComponent(username)}` +
+          `&game_id=${encodeURIComponent(gameId)}` +
+          `&character_id=${encodeURIComponent(charId)}` +
+          `&universe_id=${encodeURIComponent(universeId)}`;
       } else {
-        const err = await resp.json();
-        errorElem.innerText = err.detail || "Game creation failed.";
+        const errorData = await resp.json();
+		const detail = errorData.detail;
+		if (Array.isArray(detail)) {
+		  createError.innerText = detail.map(e => e.msg).join("; ");
+		} else {
+		  createError.innerText = String(detail);
+		}
       }
     } catch (err) {
-      console.error("Game creation error:", err);
-      errorElem.innerText = "An error occurred creating the game.";
+      console.error(err);
+      createError.innerText = "Network error.";
     }
   });
 });
+

@@ -58,20 +58,11 @@ def create_initial_prompt(
     if ruleset_id:
         rs = get_ruleset(ruleset_id)
         if rs:
-            summary = get_summary(ruleset_id)
-            if not summary:
-                # generate a concise summary (max ~2000 chars) and cache it
-                snippet = rs["full_text"][:20000]  # first 20k chars
-                summary_prompt = (
-                    "You are an expert game designer. "
-                    "Summarize the following ruleset into a concise overview (≤2000 characters):\n\n"
-                    + snippet
-                )
-                summary = generate_completion(summary_prompt)
-                set_summary(ruleset_id, summary)
+            # Prefer the precomputed long_summary from the DB
+            long_summary = rs.get("long_summary") or ""
             ruleset_section = (
                 f"Ruleset: {rs['name']} — {rs['description']}\n\n"
-                f"{summary}\n\n"
+                f"{long_summary}\n\n"
             )
 
     # 2) Existing rule-file loading (unchanged)

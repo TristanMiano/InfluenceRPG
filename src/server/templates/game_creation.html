@@ -23,11 +23,26 @@
     <label for="new-game-name">Game Name:</label>
     <input type="text" id="new-game-name" placeholder="Enter game name" />
 
-    <label for="initial-details">Initial Setup Details:</label>
-    <textarea id="initial-details" placeholder="Setup details..." rows="4"></textarea>
+	<label for="game-description">Game Description:</label>
+	<textarea id="game-description" placeholder="Describe your game…" rows="4"></textarea>
 
-    <button id="create-game-button">Create Game</button>
-    <p id="create-game-error" class="error"></p>
+	<!-- 1) Generate Prompt -->
+	<button id="generate-prompt-button">Generate Initial Prompt</button>
+	<p id="generate-error" class="error"></p>
+
+	<!-- 2) Editable Prompt -->
+	<div id="prompt-container" style="display:none; margin-top:1rem;">
+	  <label for="generated-prompt">Generated Setup Prompt (editable):</label>
+	  <textarea id="generated-prompt" rows="8" style="width:100%;"></textarea>
+	  <button id="regenerate-button">Regenerate</button>
+	</div>
+
+	<!-- 3) Final Create Game -->
+	<button id="create-game-button" style="display:none; margin-top:1rem;">
+	  Create Game
+	</button>
+	<p id="create-error" class="error"></p>
+
   </div>
 {% endblock %}
 

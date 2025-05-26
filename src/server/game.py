@@ -12,10 +12,13 @@ router = APIRouter()
 
 class GameCreateRequest(BaseModel):
     name: str
-    initial_details: str
     character_id: str
     universe_id: Optional[str] = Field(
         None, description="If set, new game will be joined into this universe"
+    )
+    initial_details: str = Field(..., description="User-provided setup details")
+    setup_prompt: Optional[str] = Field(
+        None, description="Full RAG-assembled prompt to feed into the GM LLM"
     )
 
 class GameCreateResponse(BaseModel):
@@ -62,15 +65,15 @@ def create_game_endpoint(game_req: GameCreateRequest):
                 uni_desc     = uni["description"]
                 ruleset_id   = uni.get("ruleset_id")
 
-        # Then:
         opening_scene = generate_initial_scene(
-            initial_details=game_req.initial_details,
+            initial_details=game_req.setup_prompt or "",
             game_name=new_game["name"],
             universe_name=uni_name,
             universe_description=uni_desc,
             starting_player=player_name,
-            ruleset_id=ruleset_id          # ← pass it here
+            ruleset_id=ruleset_id
         )
+        
         game_db.save_chat_message(new_game["id"], "GM", opening_scene)
     except HTTPException:
         raise
