@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any
 from src.db import character_db, game_db
 from src.db.character_db import create_character as db_create_character, get_character_by_owner_and_universe
+import logging
 
 router = APIRouter()
 
@@ -27,13 +28,14 @@ class AvailableCharacter(BaseModel):
 
 @router.post("/character/create", response_model=CharacterResponse)
 def create_character_endpoint(req: CharacterCreateRequest):
-    # enforce one-per-universe (you already added this)
     existing = get_character_by_owner_and_universe(req.username, req.universe_id)
     if existing:
-        raise HTTPException(
-            status_code=400,
-            detail="You already have a character in that universe."
+        detail = "You already have a character in that universe."
+        logging.warning(
+            f"[character:create] 400 Bad Request – existing character: "
+            f"username={req.username}, universe_id={req.universe_id}"
         )
+        raise HTTPException(status_code=400, detail=detail)
 
     try:
         new_char = db_create_character(
@@ -42,7 +44,16 @@ def create_character_endpoint(req: CharacterCreateRequest):
             req.name,
             req.character_data    
         )
+    except HTTPException as he:
+        # log any 4xx that you re-raise
+        logging.error(f"[character:create] HTTPException: {he.detail}")
+        raise
     except Exception as e:
+        # catch-all for 5xx
+        logging.exception(
+            f"[character:create] 500 Error creating character: "
+            f"username={req.username}, universe_id={req.universe_id}"
+        )
         raise HTTPException(status_code=500, detail=f"Could not create character: {e}")
     return new_char
 

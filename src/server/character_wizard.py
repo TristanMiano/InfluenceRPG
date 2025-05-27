@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 import json
+import re
 
 from src.db.ruleset_db import get_ruleset
 from src.llm.llm_client import generate_completion
@@ -38,6 +39,7 @@ def character_wizard(req: WizardRequest):
     system_prompt = (
         "You are a character-creation assistant. Your job is to ask the user one question "
         "at a time to gather all information required by the following ruleset. "
+        "Always output exactly one question and nothing else—do not include any answers or commentary.\n\n"
         "When all required fields have been collected, output **only** the final JSON object with "
         "– name: the character’s name string "
         "– all other fields under character_data as a sub-object.\n\n"
@@ -53,7 +55,7 @@ def character_wizard(req: WizardRequest):
     if not req.history:
         next_step_prompt = "Begin by asking for the character's name."
     else:
-        next_step_prompt = "Based on the above, ask the next question."
+        next_step_prompt = "Based on the above, ask the next question. If there are no further questions, output only the final JSON object."
 
     full_prompt = system_prompt + history_prompt + next_step_prompt
     
@@ -73,6 +75,15 @@ def character_wizard(req: WizardRequest):
         if lines and lines[-1].startswith("```"):
             lines = lines[:-1]
         cleaned = "\n".join(lines)
+        
+    m = re.search(r'(\{[\s\S]*\})', cleaned)
+    if m:
+        # Found JSON → discard everything else
+        cleaned = m.group(1).strip()
+    else:
+        # 2) Otherwise, strip off any “A:” and what follows
+        if cleaned.startswith("Q:") and "A:" in cleaned:
+            cleaned = cleaned.split("A:")[0].strip()
     
     print("Response:")
     print(cleaned)
