@@ -36,17 +36,25 @@ function startChat(username, gameId, characterId, universeId) {
     }
   };
 
-  ws.onmessage = (event) => {
-    const msg = JSON.parse(event.data);
-    const chatBox = document.getElementById("chat-box");
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message");
-    messageDiv.innerHTML =
-      `<strong>${msg.sender}:</strong> ${msg.message} ` +
-      `<span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
-    chatBox.appendChild(messageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  };
+ ws.onmessage = (event) => {
+  const msg = JSON.parse(event.data);
+  const chatBox = document.getElementById("chat-box");
+
+  // 1) Convert Markdown → HTML
+  const rawHtml = marked.parse(msg.message);
+  // 2) Sanitize it
+  const safeHtml = DOMPurify.sanitize(rawHtml);
+
+  // 3) Build the message node
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("message");
+  messageDiv.innerHTML =
+    `<strong>${msg.sender}:</strong> ${safeHtml} ` +
+    `<span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
+
+  chatBox.appendChild(messageDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+};
 
   ws.onclose = () => {
     document.getElementById("status").innerText = "Disconnected from game chat.";

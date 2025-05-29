@@ -23,5 +23,9 @@
 {% endblock %}
 
 {% block scripts %}
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Sanitizer -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
   <script type="module" src="{{ url_for('static', path=asset_path('chat.js')) }}"></script>
 {% endblock %}
