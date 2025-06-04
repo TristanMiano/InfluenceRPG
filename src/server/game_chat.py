@@ -1,21 +1,25 @@
 # src/server/game_chat.py
+
 import json
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict, List
-from datetime import datetime
-from src.db import game_db, universe_db  
+from datetime import datetime, timezone
+from src.db import game_db, universe_db
 from src.db.game_db import list_chat_messages, get_db_connection
 from sentence_transformers import SentenceTransformer
-from src.llm.gm_llm import generate_gm_response, generate_completion
-from src.db.character_db import get_character_by_id   
+from src.llm.gm_llm import generate_gm_response
+from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 
 router = APIRouter()
 
-summary_model = SentenceTransformer('all-MiniLM-L6-v2')
+summary_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Global conversation history storage per game instance.
 conversation_histories: Dict[str, List[str]] = {}
+
+# Track, per‐game, the latest news‐timestamp we've already included in a GM prompt
+last_included_news_time: Dict[str, datetime] = {}
 
 class GameConnectionManager:
     def __init__(self):
@@ -28,6 +32,10 @@ class GameConnectionManager:
         self.active_connections[game_id].append(websocket)
         if game_id not in conversation_histories:
             conversation_histories[game_id] = []
+        # Initialize last_included_news_time if not set
+        if game_id not in last_included_news_time:
+            # Start with epoch so that the first time we include any news
+            last_included_news_time[game_id] = datetime.fromtimestamp(0, tz=timezone.utc)
 
     def disconnect(self, game_id: str, websocket: WebSocket):
         if game_id in self.active_connections and websocket in self.active_connections[game_id]:
@@ -58,8 +66,8 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
     # 4. Register this connection
     await manager.connect(game_id, websocket)
+
     # 4.1 Load & send existing messages from the DB to this socket
-    #     and seed our in-memory context for the GM.
     if not conversation_histories.get(game_id):
         conversation_histories[game_id] = []
 
@@ -79,7 +87,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
     # 5. Log & broadcast a “join” event for both players and GM context
     join_msg = f"{sender_display} has joined the game."
     system_entry = f"System: {join_msg}"
-    conversation_histories.setdefault(game_id, []).append(system_entry)
+    conversation_histories[game_id].append(system_entry)
 
     await manager.broadcast(game_id, json.dumps({
         "game_id": game_id,
@@ -87,11 +95,10 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
         "message": join_msg,
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }))
-    
+
     # 5.1 Broadcast full character details so the GM knows their stats
     try:
         full_char = get_character_by_id(character_id) or {}
-        # Expecting your character table to have a `character_data` JSON column
         char_data = full_char.get("character_data", {})
         attrs_msg = f"{character_name}'s full profile: {json.dumps(char_data)}"
         conversation_histories[game_id].append(f"System: {attrs_msg}")
@@ -116,7 +123,8 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                 # 1) Summarize new chat since last summary
                 if cmd == "summarize":
-                    # find last summary timestamp
+                    # (Unchanged from before…)
+
                     conn = get_db_connection()
                     with conn.cursor() as cur:
                         cur.execute(
@@ -125,7 +133,6 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         )
                         last_dt = cur.fetchone()[0]  # may be None
 
-                        # grab new chat_messages
                         if last_dt:
                             cur.execute(
                                 "SELECT sender, message FROM chat_messages "
@@ -141,18 +148,16 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         rows = cur.fetchall()
                     conn.close()
 
-                    # stitch into a prompt
                     convo = "\n".join(f"{r[0]}: {r[1]}" for r in rows)
                     summary_prompt = (
                         "Please provide a concise summary of the following game chat:\n\n"
                         f"{convo}"
                     )
-                    summary_text = generate_completion(summary_prompt)
+                    summary_text = generate_gm_response(summary_prompt) \
+                                   if summary_prompt.strip() else ""
 
-                    # embed it
                     embedding = summary_model.encode(summary_text).tolist()
 
-                    # insert into game_history
                     conn = get_db_connection()
                     with conn.cursor() as cur:
                         cur.execute(
@@ -161,9 +166,8 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         )
                         conn.commit()
                     conn.close()
-                    
-                    # --- record this summary as a universe‐event ---
-                    # find all universes this game belongs to
+
+                    # Record this summary as a universe event
                     universe_ids = universe_db.list_universes_for_game(game_id)
                     for uni in universe_ids:
                         universe_db.record_event(
@@ -173,11 +177,10 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             event_payload={"summary": summary_text}
                         )
 
-                    # --- run conflict detection for this universe ---
+                    # Run conflict detection
                     for uni in universe_ids:
                         run_conflict_detector(uni)
 
-                    # update in-memory context and broadcast
                     note = f"[Summary generated at {datetime.utcnow().isoformat()}]"
                     conversation_histories[game_id].append(f"System: {note}")
                     await manager.broadcast(game_id, json.dumps({
@@ -189,12 +192,11 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                 # 2) Show history of summaries
                 elif cmd == "history":
-                    # parse optional k
+                    # (Unchanged from before…)
                     k = None
                     if len(parts) > 2 and parts[2].isdigit():
                         k = int(parts[2])
 
-                    # fetch from game_history
                     conn = get_db_connection()
                     with conn.cursor() as cur:
                         if k:
@@ -212,7 +214,6 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         summaries = cur.fetchall()
                     conn.close()
 
-                    # broadcast each summary
                     for dt, text in summaries:
                         msg = f"[{dt.isoformat()}] {text}"
                         await manager.broadcast(game_id, json.dumps({
@@ -224,12 +225,62 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                 # 3) Fallback: narrative GM
                 else:
-                    gm_prompt = stripped[3:].strip() or "Provide a narrative update."
-                    full_context = "\n".join(conversation_histories[game_id])
-                    gm_response = generate_gm_response(
-                        f"{full_context}\nUser (trigger): {gm_prompt}"
-                    )
-                    # persist & broadcast as before
+                    # --- NEW: Fetch recent universe news, up to 5 items newer than last_included_news_time ---
+                    # Determine the first universe this game is in (if any)
+                    universe_ids = universe_db.list_universes_for_game(game_id)
+                    news_block = ""
+                    if universe_ids:
+                        uni = universe_ids[0]
+                        # Get all recent news items (limit 5)
+                        raw_news = universe_db.list_news(uni, limit=5)
+                        # Filter only those strictly newer than last_included_news_time
+                        newest_allowed = last_included_news_time.get(game_id)
+                        fresh_items = []
+                        for item in raw_news:
+                            published = item["published_at"]
+                            # Make sure both are timezone-aware UTC
+                            if published.tzinfo is None:
+                                published = published.replace(tzinfo=timezone.utc)
+                            if newest_allowed is None or published > newest_allowed:
+                                fresh_items.append(item)
+
+                        if fresh_items:
+                            # Build a short “Recent Universe News” block
+                            lines = [
+                                f"Recent Universe News (as of {datetime.utcnow().isoformat()}Z):"
+                            ]
+                            # Sort by published_at ascending so oldest of the fresh first
+                            fresh_items.sort(key=lambda x: x["published_at"])
+                            for idx, itm in enumerate(fresh_items, start=1):
+                                ts = itm["published_at"].astimezone(timezone.utc).isoformat()
+                                summary = itm["summary"].replace("\n", " ").strip()
+                                lines.append(f"{idx}) [{ts}] {summary}")
+                                # Update our last included timestamp
+                                if itm["published_at"] > last_included_news_time[game_id]:
+                                    last_included_news_time[game_id] = itm["published_at"]
+                            news_block = "\n".join(lines) + "\n\n"
+                        else:
+                            # No new items since last time: no block
+                            news_block = ""
+                    else:
+                        news_block = ""
+
+                    # --- Build the conversation context as before ---
+                    if stripped.startswith("/gm"):
+                        gm_prompt = stripped[3:].strip() or "Provide a narrative update."
+                    else:
+                        # If it somehow was not a /gm (rare), treat as default
+                        gm_prompt = "Provide a narrative update."
+
+                    full_history = "\n".join(conversation_histories[game_id])
+
+                    # Prepend news_block before “Conversation History”
+                    assembled_prompt = f"{news_block}Conversation History:\n{full_history}\n\nUser (trigger): {gm_prompt}\n\nGM Response:"
+
+                    # Call the GM LLM
+                    gm_response = generate_gm_response(assembled_prompt)
+
+                    # Persist & broadcast GM output
                     game_db.save_chat_message(game_id, "GM", gm_response)
                     conversation_histories[game_id].append(f"GM: {gm_response}")
                     await manager.broadcast(game_id, json.dumps({
@@ -254,4 +305,3 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                 }))
     except WebSocketDisconnect:
         manager.disconnect(game_id, websocket)
-
