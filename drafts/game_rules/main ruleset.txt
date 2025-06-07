@@ -1,0 +1,131 @@
+# InfluenceRPG Main Ruleset – Draft v1
+
+## 1. Purpose & Scope
+
+This document defines the core rules and conventions for InfluenceRPG’s grand‑strategy system, optimized for LLM‑based Game Master automation. It is intended for storage as plain text, directly loaded into prompt buffers, and referenced by LLM modules for narrative generation, event resolution, and universe management.
+
+**Key Goals:**
+
+1. Clear, unambiguous language suitable for LLM prompts
+2. Support for shared‑world event synchronization across multiple game instances
+3. Robust asset tracking with high error tolerance
+4. Explicit randomness and quasi‑random processes
+5. Integration points for maps, data blobs, and JSON payloads
+
+## 2. Prompt Formatting Conventions
+
+* Use `### SECTION NAME` to delimit major sections.
+* Use bullet lists with `- ` for short rules.
+* Embed JSON examples in fenced blocks (`json ... `).
+* Label each rule with a unique numeric tag (`[R1]`, `[R2]`, ...).
+* Separate narrative examples with `>>>` lines.
+
+## 3. Core Concepts
+
+### 3.1 Assets \[R1]
+
+An **asset** is any persistent object under player or GM control (character, unit, territory, resource, map tile). Each asset has:
+
+* `id`: UUID string
+* `type`: category (e.g., "character", "army", "city", "resource")
+* `state`: JSON object of key‑value properties
+
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "type": "character",
+  "state": { "name": "Commander Zara", "influence": 12, "location": "Sector 7G" }
+}
+```
+
+### 3.2 Time & Turns \[R2]
+
+* The game proceeds in discrete **Turns**, each representing one strategic interval (e.g., one week).
+* LLM prompts must include `Turn: <number>` at the top.
+* All asset updates occur at turn boundary.
+
+### 3.3 Universe Events \[R3]
+
+* **Universe events** record changes visible across all linked game instances.
+* Format: `<TIMESTAMP> [GAME_ID] <EVENT_TYPE>: <PAYLOAD>`
+* LLM modules consume the last N events for news & conflict detection.
+
+## 4. Randomness & Determinism \[R4]
+
+### 4.1 Random Seed Protocol
+
+* All random processes use a 64‑bit seed derived from `hash(TURN + GAME_ID + "salt")`.
+* Quasi‑random draws must be reproducible given the same seed.
+
+### 4.2 Die Rolls & Probability
+
+* Use standard notation: `1d20 + modifier`.
+* Roll resolution:
+
+  1. Generate uniform integer `r` in \[1, faces]
+  2. Add modifiers
+  3. Compare to threshold
+
+> > > Example: Resolve a Diplomacy Check: roll `1d20 + CharismaMod`, success if ≥15.
+
+## 5. Conflict Detection & Merger \[R5]
+
+* Two instances conflict if they share the same asset location or reference the same asset ID.
+* LLM Conflict Detector rules:
+
+  1. Scan last 20 Universe Events
+  2. Flag pairs of Game IDs with overlapping `location` or `asset_id` references
+  3. Output JSON array: `[{"game_ids":[...],"description":"..."}, ...]`
+
+## 6. Asset Lossy Synchronization \[R6]
+
+* Asset state updates may omit non‑critical fields to reduce prompt length.
+* LLM GM must infer missing properties from context or default values.
+* Use `...` placeholder to indicate omitted fields.
+
+```json
+{ "id": "xxx", "type": "army", "state": { "strength": 150, ... } }
+```
+
+## 7. LLM GM Integration
+
+### 7.1 Initial Prompt Structure
+
+```
+You are the GM for InfluenceRPG, a grand‑strategy shared‑world system.
+Rules:
+<Insert compacted ruleset here>
+
+Universe: {universe_name}
+Turn: {turn_number}
+Recent Events:
+- {event1}
+- {event2}
+
+Player Actions:
+{player_actions}
+
+Generate narrative, enforce rules, schedule next random events.
+```
+
+### 7.2 Narrative Generation \[R7]
+
+* Output must start with `### GM SCENE START` and end with `### GM SCENE END`.
+* Integrate at least one asset state update in JSON form.
+
+## 8. Asset Queries & Commands
+
+* **List assets**: `!list assets --type=<type>`
+* **Inspect asset**: `!inspect <asset_id>`
+* **Modify asset**: `!update <asset_id> <json_patch>`
+
+## 9. Glossary
+
+* **GM**: Game Master (LLM)
+* **Player**: Human or agent controlling assets
+* **Universe**: Shared context grouping multiple games
+* **Event**: Atomic change recorded for synchronization
+
+---
+
+*This draft fulfills the initial full ruleset, optimized for text‑based LLM prompts, grand‑strategy focus, asset tolerance, and shared‑world compatibility.*

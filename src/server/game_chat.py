@@ -1,6 +1,7 @@
 # src/server/game_chat.py
 
 import json
+import logging
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict, List
 from datetime import datetime, timezone
@@ -10,6 +11,10 @@ from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
+from src.utils.token_counter import count_tokens, compute_usage_percentage
+
+logging.getLogger().setLevel(logging.INFO)
+MODEL_NAME = "gemini-2.0-flash"
 
 router = APIRouter()
 
@@ -276,6 +281,12 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                     # Prepend news_block before “Conversation History”
                     assembled_prompt = f"{news_block}Conversation History:\n{full_history}\n\nUser (trigger): {gm_prompt}\n\nGM Response:"
+                    
+                    # —— Token counting instrumentation ——
+                    prompt_tokens = count_tokens(assembled_prompt, MODEL_NAME)
+                    pct = compute_usage_percentage(prompt_tokens, MODEL_NAME)
+                    logging.info(f"[TokenUsage] game={game_id} prompt={prompt_tokens} tokens ({pct:.1f}%)")
+                    # —————————————————————————————
 
                     # Call the GM LLM
                     gm_response = generate_gm_response(assembled_prompt)
