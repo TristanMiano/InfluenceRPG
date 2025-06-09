@@ -121,14 +121,31 @@ async function refreshGames() {
   }
 }
 
+// Page setup
 document.addEventListener("DOMContentLoaded", () => {
   const params     = new URLSearchParams(window.location.search);
   username         = params.get("username")    || "";
   universeId       = params.get("universe_id") || "";
 
+  // Set welcome text
   document.getElementById("user-display").innerText = username;
+
+  // Hamburger menu elements
+  const btn  = document.getElementById('menu-button');
+  const menu = document.getElementById('dropdown-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      menu.classList.toggle('show');
+    });
+    document.addEventListener('click', () => menu.classList.remove('show'));
+    menu.addEventListener('click', e => e.stopPropagation());
+  }
+
+  // Load characters & games
   loadAvailableCharacters().then(() => refreshGames());
 
+  // Button handlers
   document.getElementById("refresh-games-button").addEventListener("click", refreshGames);
 
   document.getElementById("join-game-button").addEventListener("click", async () => {

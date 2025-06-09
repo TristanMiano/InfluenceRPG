@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Profile – Influence RPG{% endblock %}
+
+{% block css %}
+  <!-- Reuse lobby styles for consistency -->
+  <link rel="stylesheet" href="{{ url_for('static', path=asset_path('lobby.css')) }}">
+  <style>
+    /* Small table tweaks */
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+    .profile-table th,
+    .profile-table td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    .profile-table th {
+      background: #f5f5f5;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="container lobby-container">
+    <h2>{{ username }}’s Profile</h2>
+
+    <section id="profile-characters">
+      <h3>Your Characters</h3>
+      {% if characters %}
+        <ul>
+          {% for char in characters %}
+            <li>{{ char.name }} <small>(ID: {{ char.id }})</small></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>You have no characters yet.</p>
+      {% endif %}
+    </section>
+
+    <section id="profile-games">
+      <h3>Your Games</h3>
+      {% if games %}
+        <table class="profile-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for game in games %}
+              <tr>
+                <td>{{ game.name }}</td>
+                <td>{{ game.id }}</td>
+                <td>{{ game.status }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>You’re not in any games.</p>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

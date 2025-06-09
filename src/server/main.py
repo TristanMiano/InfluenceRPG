@@ -64,6 +64,7 @@ templates.env.globals["asset_path"] = asset_path
 
 # Include routers
 from src.server.game_chat import router as game_chat_router
+from src.server.profile import router as profile_router
 app.include_router(game_chat_router)
 app.include_router(chat_router, prefix="/chat/ws")  # WebSocket chat
 app.include_router(game_router, prefix="/api")
@@ -72,6 +73,7 @@ app.include_router(universe_router, prefix="/api")
 app.include_router(ruleset_router)
 app.include_router(character_wizard_router)
 app.include_router(setup_router)
+app.include_router(profile_router)
 
 @app.on_event("startup")
 async def start_periodic_news_loop():

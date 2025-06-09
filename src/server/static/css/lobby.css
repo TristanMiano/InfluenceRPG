@@ -89,3 +89,51 @@
 
 /* reflect backend “active” flag */
 .status-active   { background-color: #20c997; }
+
+/* === Hamburger menu button === */
+.lobby-container .hamburger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  /* override the 100% width from .lobby-container button */
+  width: auto;
+  padding: 0;            /* remove extra padding */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
+/* === Dropdown panel === */
+#dropdown-menu {
+  display: none;               /* hidden by default */
+  position: absolute;
+  top: 3rem;                   /* just below the button */
+  right: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+/* Menu links */
+#dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+#dropdown-menu a:hover {
+  background: #f0f0f0;
+}
+
+/* When we add the “show” class, make it visible */
+#dropdown-menu.show {
+  display: block;
+}
