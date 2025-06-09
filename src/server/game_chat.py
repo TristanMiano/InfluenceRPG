@@ -6,15 +6,18 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict, List
 from datetime import datetime, timezone
 from src.db import game_db, universe_db
-from src.db.game_db import list_chat_messages, get_db_connection
+from src.db.game_db import list_chat_messages, get_db_connection, list_players_in_game
 from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 from src.utils.token_counter import count_tokens, compute_usage_percentage
+from src.db.universe_db import list_universes_for_game, get_universe
+from src.db.ruleset_db import get_ruleset
 
 logging.getLogger().setLevel(logging.INFO)
 MODEL_NAME = "gemini-2.0-flash"
+CONTEXT_USAGE_THRESHOLD = 50.0
 
 router = APIRouter()
 
@@ -25,6 +28,90 @@ conversation_histories: Dict[str, List[str]] = {}
 
 # Track, per‐game, the latest news‐timestamp we've already included in a GM prompt
 last_included_news_time: Dict[str, datetime] = {}
+
+def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> str:
+    """
+    Returns a prompt string composed of:
+      1) Universe metadata (name, description)
+      2) Ruleset info (name, description, summary, long_summary)
+      3) Current players in the game
+      4) The opening scene (first GM message)
+      5) The latest stored summary from game_history
+      6) The last `last_k` chat messages
+      7) The current user trigger (gm_prompt)
+    """
+    # 1) Universe & ruleset
+    uni_section = ""
+    ruleset_section = ""
+    uni_ids = list_universes_for_game(game_id)
+    if uni_ids:
+        uni = get_universe(uni_ids[0])
+        if uni:
+            uni_section = f"Universe: {uni['name']} — {uni['description']}\n\n"
+            rs = get_ruleset(uni.get("ruleset_id"))
+            if rs:
+                ruleset_section = (
+                    f"Ruleset: {rs['name']} — {rs['description']}\n"
+                    f"Summary: {rs.get('summary','')}\n\n"
+                    f"Details: {rs.get('long_summary','')}\n\n"
+                )
+
+    # 2) Players list
+    player_ids = list_players_in_game(game_id)
+    names = []
+    for cid in player_ids:
+        char = get_character_by_id(cid)
+        if char:
+            names.append(char["name"])
+    players_section = "Players: " + ", ".join(names) + "\n\n" if names else ""
+
+    # 3) Opening scene (first GM message)
+    opening_scene = ""
+    for m in list_chat_messages(game_id):
+        if m["sender"] == "GM":
+            opening_scene = m["message"]
+            break
+
+    # 4) Latest stored summary
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT summary FROM game_history "
+                "WHERE game_id=%s ORDER BY summary_date DESC LIMIT 1",
+                (game_id,)
+            )
+            row = cur.fetchone()
+        summary = row[0] if row else ""
+    finally:
+        conn.close()
+
+    # 5) Recent messages
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT sender, message FROM chat_messages "
+                "WHERE game_id=%s ORDER BY timestamp DESC LIMIT %s",
+                (game_id, last_k)
+            )
+            rows = cur.fetchall()
+        rows.reverse()
+        recent = "\n".join(f"{r[0]}: {r[1]}" for r in rows)
+    finally:
+        conn.close()
+
+    # 6) Assemble compressed prompt
+    return (
+        f"{uni_section}"
+        f"{ruleset_section}"
+        f"{players_section}"
+        f"Opening Scene:\n{opening_scene}\n\n"
+        f"Summary of the Game So Far:\n{summary}\n\n"
+        f"Recent Messages:\n{recent}\n\n"
+        f"User (trigger): {gm_prompt}\n\n"
+        "GM Response:"
+    )
 
 class GameConnectionManager:
     def __init__(self):
@@ -277,17 +364,25 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         # If it somehow was not a /gm (rare), treat as default
                         gm_prompt = "Provide a narrative update."
 
+                    # ——— Build prompt, with 50%‐of‐context threshold ———
+                    # count on the full history version
                     full_history = "\n".join(conversation_histories[game_id])
-
-                    # Prepend news_block before “Conversation History”
-                    assembled_prompt = f"{news_block}Conversation History:\n{full_history}\n\nUser (trigger): {gm_prompt}\n\nGM Response:"
-                    
-                    # —— Token counting instrumentation ——
-                    prompt_tokens = count_tokens(assembled_prompt, MODEL_NAME)
+                    baseline_prompt = (
+                        f"{news_block}"
+                        f"Conversation History:\n{full_history}\n\n"
+                        f"User (trigger): {gm_prompt}\n\n"
+                        "GM Response:"
+                    )
+                    prompt_tokens = count_tokens(baseline_prompt, MODEL_NAME)
                     pct = compute_usage_percentage(prompt_tokens, MODEL_NAME)
                     logging.info(f"[TokenUsage] game={game_id} prompt={prompt_tokens} tokens ({pct:.1f}%)")
-                    # —————————————————————————————
 
+                    if pct >= CONTEXT_USAGE_THRESHOLD:
+                        # compress
+                        assembled_prompt = build_compressed_context(game_id, gm_prompt, last_k=20)
+                    else:
+                        assembled_prompt = baseline_prompt
+                    # —————————————————————————————
                     # Call the GM LLM
                     gm_response = generate_gm_response(assembled_prompt)
 
