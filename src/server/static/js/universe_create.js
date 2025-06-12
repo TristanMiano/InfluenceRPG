@@ -1,3 +1,5 @@
+// src/server/static/js/universe_create.js
+
 async function loadRulesets() {
   try {
     const resp = await fetch("/api/ruleset/list");
@@ -18,7 +20,6 @@ async function loadRulesets() {
 document.addEventListener("DOMContentLoaded", () => {
   loadRulesets();
 
-  const username = document.getElementById("username").value;
   const btn = document.getElementById("create-universe-button");
   const errorElem = document.getElementById("universe-create-error");
   const nameInput = document.getElementById("universe-name");
@@ -48,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (resp.ok) {
-        // success → back to lobby
-        window.location.href = `/lobby?username=${encodeURIComponent(username)}`;
-	  } else {
+        // success → back to lobby (session retains username)
+        window.location.href = "/lobby";
+      } else {
         const err = await resp.json();
         errorElem.innerText = err.detail || "Universe creation failed.";
       }

@@ -9,9 +9,9 @@
 </head>
 <body>
   {# show a lobby link on every page except when you’re already on /lobby #}
-  {% if request.query_params.username and request.url.path != '/lobby' %}
+  {% if username and request.url.path != '/lobby' %}
   <div style="margin-bottom:1rem;">
-    <a href="/lobby?username={{ request.query_params.username }}">← Return to Lobby</a>
+    <a href="/lobby">← Return to Lobby</a>
   </div>
   {% endif %}
   <div class="container">

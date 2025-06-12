@@ -1,11 +1,16 @@
 // src/server/static/js/chat.js
-// Ensure universeId is passed into startChat to avoid undefined errors
+// Use session-injected username rather than URL param
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Read username from hidden input
+  const userElem = document.getElementById("username");
+  const username = userElem ? userElem.value : "";
+
   const params = new URLSearchParams(window.location.search);
-  const username = params.get("username") || "";
   const gameId = params.get("game_id") || "";
   const characterId = params.get("character_id") || "";
+
+  // Universe ID: prefer URL, fallback to hidden input
   let universeId = params.get("universe_id");
   if (!universeId) {
     const hidden = document.getElementById("universe-id");
@@ -18,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function startChat(username, gameId, characterId, universeId) {
   const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+  // Pass username and character_id in WS query
   const wsUrl =
     `${protocol}//${window.location.host}/ws/game/${gameId}/chat?` +
     `username=${encodeURIComponent(username)}` +
@@ -27,34 +33,29 @@ function startChat(username, gameId, characterId, universeId) {
   ws.onopen = () => {
     document.getElementById("status").innerText = "Connected to game chat.";
     if (universeId) {
-      // initial load
       loadNews(universeId);
       loadConflicts(universeId);
-      // refresh every 30 seconds
       setInterval(() => loadNews(universeId), 30 * 1000);
       setInterval(() => loadConflicts(universeId), 30 * 1000);
     }
   };
 
- ws.onmessage = (event) => {
-  const msg = JSON.parse(event.data);
-  const chatBox = document.getElementById("chat-box");
+  ws.onmessage = (event) => {
+    const msg = JSON.parse(event.data);
+    const chatBox = document.getElementById("chat-box");
 
-  // 1) Convert Markdown → HTML
-  const rawHtml = marked.parse(msg.message);
-  // 2) Sanitize it
-  const safeHtml = DOMPurify.sanitize(rawHtml);
+    const rawHtml = marked.parse(msg.message);
+    const safeHtml = DOMPurify.sanitize(rawHtml);
 
-  // 3) Build the message node
-  const messageDiv = document.createElement("div");
-  messageDiv.classList.add("message");
-  messageDiv.innerHTML =
-    `<strong>${msg.sender}:</strong> ${safeHtml} ` +
-    `<span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message");
+    messageDiv.innerHTML =
+      `<strong>${msg.sender}:</strong> ${safeHtml} ` +
+      `<span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
 
-  chatBox.appendChild(messageDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
-};
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  };
 
   ws.onclose = () => {
     document.getElementById("status").innerText = "Disconnected from game chat.";

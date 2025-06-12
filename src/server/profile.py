@@ -1,9 +1,9 @@
 # src/server/profile.py
 
 from fastapi import APIRouter, Request, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 
-# import the templates instance from main.py so asset_path is available
+# import the templates instance from main.py so asset_path and session username are available
 from src.server.main import templates
 
 from src.db.character_db import get_characters_by_owner
@@ -12,7 +12,13 @@ from src.db.game_db import list_games, get_character_for_user_in_game
 router = APIRouter()
 
 @router.get("/profile", response_class=HTMLResponse)
-def profile_page(request: Request, username: str):
+def profile_page(request: Request):
+    # Ensure user is authenticated via session
+    username = request.session.get("username")
+    if not username:
+        # Redirect to login
+        return RedirectResponse(url="/", status_code=302)
+
     # 1) Fetch their characters
     try:
         characters = get_characters_by_owner(username)
@@ -35,7 +41,6 @@ def profile_page(request: Request, username: str):
         "profile.html",
         {
             "request": request,
-            "username": username,
             "characters": characters,
             "games": user_games
         }

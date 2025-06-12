@@ -1,10 +1,10 @@
 // src/server/static/js/game_creation.js
 
 // Load only characters that aren’t already in another active game
-async function loadAvailableCharacters(username) {
+async function loadAvailableCharacters() {
   try {
     const resp = await fetch(
-      `/character/list_available?username=${encodeURIComponent(username)}`
+      `/character/list_available`
     );
     const select = document.getElementById("character-select");
     select.innerHTML = "";
@@ -60,26 +60,27 @@ async function loadUniverses(presetUniverse) {
   }
 }
 
+// Main initialization
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
+  // Username is stored in hidden input #username
   const username = document.getElementById("username").value;
-  const universeSelect = document.getElementById("universe-select");
-  const charSelect     = document.getElementById("character-select");
+  const params = new URLSearchParams(window.location.search);
+  const universeParam = params.get("universe_id");
 
-  loadAvailableCharacters(username);
-  loadUniverses(params.get("universe_id"));
+  loadAvailableCharacters();
+  loadUniverses(universeParam);
 
-  const genBtn      = document.getElementById("generate-prompt-button");
-  const regenBtn    = document.getElementById("regenerate-button");
-  const createBtn   = document.getElementById("create-game-button");
-  const promptBox   = document.getElementById("prompt-container");
+  const genBtn    = document.getElementById("generate-prompt-button");
+  const regenBtn  = document.getElementById("regenerate-button");
+  const createBtn = document.getElementById("create-game-button");
+  const promptBox = document.getElementById("prompt-container");
   const promptField = document.getElementById("generated-prompt");
-  const genError    = document.getElementById("generate-error");
+  const genError  = document.getElementById("generate-error");
   const createError = document.getElementById("create-error");
 
   async function fetchGeneratedPrompt() {
     genError.innerText = "";
-    const universeId = universeSelect.value;
+    const universeId = document.getElementById("universe-select").value;
     const gameDesc   = document.getElementById("game-description").value.trim();
     if (!universeId) {
       genError.innerText = "Please select a universe.";
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return null;
       }
       const { generated_setup } = await resp.json();
-	  return generated_setup;
+      return generated_setup;
     } catch (err) {
       console.error(err);
       genError.innerText = "Network error.";
@@ -129,9 +130,9 @@ document.addEventListener("DOMContentLoaded", () => {
   createBtn.addEventListener("click", async () => {
     createError.innerText = "";
     const gameName = document.getElementById("new-game-name").value.trim();
-	const initialDetails = document.getElementById("game-description").value.trim();
-    const charId   = charSelect.value;
-    const universeId = universeSelect.value;
+    const initialDetails = document.getElementById("game-description").value.trim();
+    const charId   = document.getElementById("character-select").value;
+    const universeId = document.getElementById("universe-select").value;
     const setupPrompt = promptField.value.trim();
 
     if (!gameName) {
@@ -151,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: gameName,
       character_id: charId,
       universe_id: universeId,
-	  initial_details: initialDetails,
+      initial_details: initialDetails,
       setup_prompt: setupPrompt
     };
 
@@ -164,19 +165,19 @@ document.addEventListener("DOMContentLoaded", () => {
       if (resp.ok) {
         const data = await resp.json();
         const gameId = data.id;
+        // Redirect to chat; username is maintained in session
         window.location.href =
-          `/chat?username=${encodeURIComponent(username)}` +
-          `&game_id=${encodeURIComponent(gameId)}` +
+          `/chat?game_id=${encodeURIComponent(gameId)}` +
           `&character_id=${encodeURIComponent(charId)}` +
           `&universe_id=${encodeURIComponent(universeId)}`;
       } else {
         const errorData = await resp.json();
-		const detail = errorData.detail;
-		if (Array.isArray(detail)) {
-		  createError.innerText = detail.map(e => e.msg).join("; ");
-		} else {
-		  createError.innerText = String(detail);
-		}
+        const detail = errorData.detail;
+        if (Array.isArray(detail)) {
+          createError.innerText = detail.map(e => e.msg).join("; ");
+        } else {
+          createError.innerText = String(detail);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -184,4 +185,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-

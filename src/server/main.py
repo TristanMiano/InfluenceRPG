@@ -1,11 +1,19 @@
-import json
+import os
 from pathlib import Path
 from typing import Optional
+import json
+import logging
+import asyncio
+
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, status, Request, Form, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
+# Import the base Jinja2Templates so we can subclass it
+from fastapi.templating import Jinja2Templates as _Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from starlette.middleware.sessions import SessionMiddleware
+
 from src.auth.auth import authenticate_user, get_db_connection
 from src.utils.security import hash_password
 from src.models.user import User
@@ -16,55 +24,61 @@ from src.server.universe import router as universe_router
 from src.server.ruleset import router as ruleset_router
 from src.server.game_setup import router as setup_router
 from src.server.character_wizard import router as character_wizard_router
-import asyncio
+from src.server.game_chat import router as game_chat_router
+
 from src.db import universe_db
 from src.game.news_extractor import run_news_extractor
-from starlette.staticfiles import StaticFiles as _StaticFiles
 
+# Load environment variables from .env
+load_dotenv()
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+# Initialize FastAPI app
 app = FastAPI(title="Influence RPG Prototype Server")
 
-# serve fingerprinted files with long-term caching
+# Mount static files for fingerprinted assets
 app.mount(
     "/static",
-    _StaticFiles(directory="dist/static", html=False),
+    StaticFiles(directory="dist/static", html=False),
     name="static",
 )
 
-templates = Jinja2Templates(directory="src/server/templates")
+# Set up session middleware 
+SESSION_SECRET = os.getenv("SESSION_SECRET", "CHANGE_ME")
+if SESSION_SECRET == "CHANGE_ME":
+    logging.warning("SESSION_SECRET is using default; override in environment.")
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SESSION_SECRET
+)
 
-# load once at startup
-_manifest = json.loads(Path("dist/static/.vite/manifest.json").read_text())
+# Subclass Jinja2Templates to automatically inject session username
+class Jinja2TemplatesWithSession(_Jinja2Templates):
+    def TemplateResponse(self, name: str, context: dict, **kwargs):
+        request: Request = context.get('request')
+        if request:
+            # Inject 'username' into the template context from session
+            context.setdefault('username', request.session.get('username'))
+        return super().TemplateResponse(name, context, **kwargs)
 
-def asset_path(name: str) -> str:
-    """
-    Look up the manifest entry under:
-      1) the bare name, e.g. "style.css"
-      2) "css/style.css"
-      3) "js/style.css"
-    and return its .file (the hashed filename).
-    """
-    # try bare
-    entry = _manifest.get(name)
-    # try sub‐dirs
-    if entry is None:
-        for subdir in ("js", "css"):
-            key = f"{subdir}/{name}"
-            entry = _manifest.get(key)
-            if entry:
-                break
+# Set up Jinja2 templates with session support
+templates = Jinja2TemplatesWithSession(directory="src/server/templates")
 
-    if not entry:
-        raise KeyError(f"Asset not found in manifest: {name}")
+# Load Vite manifest for asset paths
+_manifest_path = Path("dist/static/.vite/manifest.json")
+_manifest = json.loads(_manifest_path.read_text())
 
-    # if entry is a dict, return its 'file'; if for some reason it's a string, return it
-    return entry["file"] if isinstance(entry, dict) else entry
+# Expose asset_path function to templates
+templates.env.globals["asset_path"] = lambda name: (
+    _manifest.get(name, {}).get("file") or
+    next((v.get("file") for k, v in _manifest.items() if k.endswith(f"/{name}") and isinstance(v, dict)), None)
+)
 
-# expose to Jinja
-templates.env.globals["asset_path"] = asset_path
+from src.server.profile import router as profile_router
 
 # Include routers
-from src.server.game_chat import router as game_chat_router
-from src.server.profile import router as profile_router
 app.include_router(game_chat_router)
 app.include_router(chat_router, prefix="/chat/ws")  # WebSocket chat
 app.include_router(game_router, prefix="/api")
@@ -74,6 +88,9 @@ app.include_router(ruleset_router)
 app.include_router(character_wizard_router)
 app.include_router(setup_router)
 app.include_router(profile_router)
+
+logging.info(f"Session secret loaded: {'SET' if SESSION_SECRET != 'CHANGE_ME' else 'DEFAULT'}")
+
 
 @app.on_event("startup")
 async def start_periodic_news_loop():
@@ -87,12 +104,13 @@ async def start_periodic_news_loop():
                 try:
                     run_news_extractor(uni["id"])
                 except Exception as e:
-                    print("Error in scheduled news:", e)
-            await asyncio.sleep(30 * 60)  # 30 minutes
+                    logging.error(f"Error in scheduled news for {uni["id"]}: {e}")
+            await asyncio.sleep(30 * 60)
 
     asyncio.create_task(news_loop())
 
-# Login models
+
+# Models for login
 class LoginRequest(BaseModel):
     username: str
     password: str
@@ -102,17 +120,27 @@ class LoginResponse(BaseModel):
     role: str
     message: str
 
+
 @app.get("/", response_class=HTMLResponse)
 def read_login(request: Request):
     # Render the login page
     return templates.TemplateResponse("login.html", {"request": request})
 
+
 @app.post("/login", response_model=LoginResponse)
-def login(request_data: LoginRequest):
+def login(request_data: LoginRequest, request: Request):
     user = authenticate_user(request_data.username, request_data.password)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+    request.session["username"] = user["username"]
     return LoginResponse(username=user["username"], role=user["role"], message="Login successful")
+
+
+@app.get("/logout")
+def logout(request: Request):
+    request.session.clear()
+    return RedirectResponse(url="/", status_code=302)
+
 
 @app.get("/create-account", response_class=HTMLResponse)
 def create_account_form(request: Request):
@@ -125,14 +153,12 @@ async def create_account_submit(
     password: str = Form(...),
     password2: str = Form(...)
 ):
-    # Basic validation
     if password != password2:
         return templates.TemplateResponse(
             "create_account.html",
             {"request": request, "error": "Passwords do not match."},
             status_code=400
         )
-
     conn = get_db_connection()
     try:
         with conn.cursor() as cur:
@@ -157,100 +183,86 @@ async def create_account_submit(
         )
     finally:
         conn.close()
-
-    # On success, redirect back to login
     return RedirectResponse(url="/", status_code=302)
 
+
 @app.get("/lobby", response_class=HTMLResponse)
-def read_lobby(request: Request, username: str = Query(...)):
-    # Render the lobby page
+def read_lobby(request: Request, game_id: Optional[str] = Query(None)):
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
     return templates.TemplateResponse(
-        "lobby.html", {"request": request, "username": username}
+        "lobby.html", {"request": request}
     )
 
-from src.db.universe_db import list_universes_for_game  # add this import
 
 @app.get("/chat", response_class=HTMLResponse)
 def read_chat(
     request: Request,
-    username: str = Query(...),
     game_id: str = Query(...),
     character_id: Optional[str] = Query(None),
     universe_id: Optional[str] = Query(None),
 ):
-    """
-    Ensure both character_id and universe_id live in the URL.
-    If either is missing, look it up and redirect accordingly.
-    """
-    # 1) If no character, find it and redirect
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
+    from src.db.game_db import get_character_for_user_in_game
     if not character_id:
-        from src.db.game_db import get_character_for_user_in_game
         char_id = get_character_for_user_in_game(game_id, username)
         if char_id:
-            url = f"/chat?username={username}&game_id={game_id}&character_id={char_id}"
+            url = f"/chat?game_id={game_id}&character_id={char_id}"
             if universe_id:
                 url += f"&universe_id={universe_id}"
             return RedirectResponse(url)
-        return RedirectResponse(f"/lobby?username={username}")
-
-    # 2) If no universe_id, fetch it and redirect
+        return RedirectResponse("/lobby")
     if not universe_id:
-        from src.db.universe_db import list_universes_for_game
-        try:
-            uni_list = list_universes_for_game(game_id)
-            if uni_list:
-                fetched = uni_list[0]
-                url = (
-                    f"/chat?username={username}"
-                    f"&game_id={game_id}"
-                    f"&character_id={character_id}"
-                    f"&universe_id={fetched}"
-                )
-                return RedirectResponse(url)
-        except:
-            pass  # if lookup fails, fall through to rendering without universe box
-
-    # 3) Finally, render with a guaranteed universe_id in the template context
+        uni_list = universe_db.list_universes_for_game(game_id)
+        if uni_list:
+            url = f"/chat?game_id={game_id}&character_id={character_id}&universe_id={uni_list[0]}"
+            return RedirectResponse(url)
     return templates.TemplateResponse(
         "chat.html",
         {
             "request": request,
-            "username":       username,
-            "game_id":        game_id,
-            "character_id":   character_id,
-            "universe_id":    universe_id or "",
+            "game_id": game_id,
+            "character_id": character_id,
+            "universe_id": universe_id or "",
         },
     )
 
 
-
 @app.get("/character/new", response_class=HTMLResponse)
-def read_character_create(request: Request, username: str = Query(...)):
-    """
-    Render the standalone character‐creation form.
-    """
+def read_character_create(request: Request):
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
     return templates.TemplateResponse(
-        "character_create.html",
-        {"request": request, "username": username}
+        "character_create.html", {"request": request}
     )
+
 
 @app.get("/game/new", response_class=HTMLResponse)
 def read_game_create(
     request: Request,
-    username: str = Query(...),
-    universe_id: str | None = Query(None),
+    universe_id: Optional[str] = Query(None),
 ):
-    """
-    Render the standalone game‐creation form, optionally pre‐selecting a universe.
-    """
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
+    context = {"request": request}
+    if universe_id:
+        context["universe_id"] = universe_id
     return templates.TemplateResponse(
         "game_creation.html",
-        {"request": request, "username": username, "universe_id": universe_id}
+        context
     )
-    
+
+
 @app.get("/universe/new", response_class=HTMLResponse)
-def read_universe_create(request: Request, username: str = Query(...)):
+def read_universe_create(request: Request):
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
     return templates.TemplateResponse(
-        "universe_create.html",
-        {"request": request, "username": username}
+        "universe_create.html", {"request": request}
     )

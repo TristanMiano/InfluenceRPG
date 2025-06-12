@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         // Redirect to lobby, passing username
-        window.location.href = `/lobby?username=${encodeURIComponent(username)}`;
+        window.location.href = `/lobby`;
       } else {
         const errorData = await response.json();
         errorElem.innerText = errorData.detail || "Login failed";

@@ -8,30 +8,35 @@
 
 {% block content %}
   <div class="container lobby-container">
+    <!-- Session data for JS -->
+    <input type="hidden" id="username" value="{{ username }}" />
+    <input type="hidden" id="universe-id" value="" />
+
     <button id="menu-button" class="hamburger" aria-label="Menu">&#9776;</button>
-	<!-- Dropdown panel (hidden by default) -->
+    <!-- Dropdown panel (hidden by default) -->
     <div id="dropdown-menu">
-      <a href="/profile?username={{username}}">Profile</a>
+      <a href="/profile">Profile</a>
+      <a href="/logout">Log Out</a>
     </div>
     <h2>Game Lobby</h2>
-    <p>Welcome, <span id="user-display"></span>!</p>
+    <p>Welcome, <strong><span id="user-display">{{ username }}</span></strong>!</p>
 
     <!-- Create Universe -->
     <section id="create-universe-link">
       <h3>Create New Universe</h3>
-      <a href="/universe/new?username={{username}}" class="btn-link">Go to Universe Creation →</a>
+      <a href="/universe/new" class="btn-link">Go to Universe Creation &rarr;</a>
     </section>
 
     <!-- Create Character -->
     <section id="create-character-link">
       <h3>Create New Character</h3>
-      <a href="/character/new?username={{username}}">Go to Character Creation →</a>
+      <a href="/character/new">Go to Character Creation &rarr;</a>
     </section>
 
     <!-- Create New Game -->
     <section id="create-game-link" class="lobby-section">
       <h3>Create New Game</h3>
-      <a href="/game/new?username={{username}}" class="btn-link">Go to Game Creation →</a>
+      <a href="/game/new" class="btn-link">Go to Game Creation &rarr;</a>
     </section>
 
     <!-- Character Selection -->
