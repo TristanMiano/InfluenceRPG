@@ -40,9 +40,8 @@ An **asset** is any persistent object under player or GM control (character, uni
 
 ### 3.2 Time & Turns \[R2]
 
-* The game proceeds in discrete **Turns**, each representing one strategic interval (e.g., one week).
-* LLM prompts must include `Turn: <number>` at the top.
-* All asset updates occur at turn boundary.
+* Each game is presumed to take some interval amount of time, although it is not synchronized to real time.
+* 
 
 ### 3.3 Universe Events \[R3]
 

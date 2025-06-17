@@ -77,6 +77,7 @@ templates.env.globals["asset_path"] = lambda name: (
 )
 
 from src.server.profile import router as profile_router
+from src.server.account import router as account_router
 
 # Include routers
 app.include_router(game_chat_router)
@@ -88,6 +89,7 @@ app.include_router(ruleset_router)
 app.include_router(character_wizard_router)
 app.include_router(setup_router)
 app.include_router(profile_router)
+app.include_router(account_router)
 
 logging.info(f"Session secret loaded: {'SET' if SESSION_SECRET != 'CHANGE_ME' else 'DEFAULT'}")
 
