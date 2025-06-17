@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
+from src.server.notifications import notify_game_advanced
 from src.utils.token_counter import count_tokens, compute_usage_percentage
 from src.db.universe_db import list_universes_for_game, get_universe
 from src.db.ruleset_db import get_ruleset
@@ -395,6 +396,9 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         "message":   gm_response,
                         "timestamp": datetime.utcnow().isoformat() + "Z"
                     }))
+                    
+                    # Notify other players that the game advanced via /gm
+                    notify_game_advanced(game_id, username)
 
             # --- Player message branch ---
             else:
