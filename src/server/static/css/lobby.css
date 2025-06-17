@@ -106,6 +106,51 @@
   z-index: 1001;
 }
 
+/* === Notification bell === */
+.lobby-container .notification-bell {
+  position: absolute;
+  top: 1rem;
+  right: 3.5rem;
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.notification-count {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+}
+
+/* Notification dropdown */
+#notification-panel {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 3.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+#notification-panel.show {
+  display: block;
+}
 
 /* === Dropdown panel === */
 #dropdown-menu {

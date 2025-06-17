@@ -4,6 +4,34 @@ let selectedGameId = null;
 let boundCharId = null;
 let universeId = null;
 let availableChars = [];
+let notifications = [];
+
+async function loadNotifications() {
+  try {
+    const resp = await fetch('/api/notifications');
+    if (!resp.ok) return;
+    const data = await resp.json();
+    notifications = data.notifications || [];
+    const countElem = document.getElementById('notification-count');
+    const unread = notifications.filter(n => !n.read).length;
+    countElem.textContent = unread > 0 ? unread : '';
+    const panel = document.getElementById('notification-panel');
+    panel.innerHTML = '';
+    if (notifications.length === 0) {
+      panel.innerHTML = '<em>No notifications</em>';
+    } else {
+      const list = document.createElement('ul');
+      notifications.forEach(n => {
+        const li = document.createElement('li');
+        li.textContent = n.message;
+        list.appendChild(li);
+      });
+      panel.appendChild(list);
+    }
+  } catch (err) {
+    console.error('Error loading notifications:', err);
+  }
+}
 
 // Fetch any character already tied to this game (if any)
 async function getBoundCharacter(gameId) {
@@ -136,6 +164,23 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', () => menu.classList.remove('show'));
     menu.addEventListener('click', e => e.stopPropagation());
   }
+  
+  // Notification bell
+  const notifBtn = document.getElementById('notification-button');
+  const notifPanel = document.getElementById('notification-panel');
+  if (notifBtn && notifPanel) {
+    notifBtn.addEventListener('click', async e => {
+      e.stopPropagation();
+      notifPanel.classList.toggle('show');
+      await fetch('/api/notifications/mark_read', { method: 'POST' });
+      loadNotifications();
+    });
+    document.addEventListener('click', () => notifPanel.classList.remove('show'));
+    notifPanel.addEventListener('click', e => e.stopPropagation());
+  }
+
+  loadNotifications();
+
 
   // Load characters & games
   loadAvailableCharacters().then(() => refreshGames());
