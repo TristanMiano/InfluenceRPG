@@ -9,7 +9,7 @@ from src.db import game_db, universe_db
 from src.db.game_db import list_chat_messages, get_db_connection, list_players_in_game
 from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response
-from src.game.tools import plan_tool_calls, roll_dice
+from src.game.tools import plan_tool_calls, roll_dice, query_ruleset_chunks
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 from src.server.notifications import notify_game_advanced
@@ -370,6 +370,8 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                     full_history = "\n".join(conversation_histories[game_id])
                     tool_plan = plan_tool_calls(full_history, gm_prompt)
                     dice_results = []
+                    lore_chunks = []
+                    lore_query = ""
                     if isinstance(tool_plan, dict) and tool_plan.get("dice"):
                         spec = tool_plan["dice"] or {}
                         num = int(spec.get("num_rolls", 1))
@@ -385,11 +387,30 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             "timestamp": datetime.utcnow().isoformat() + "Z",
                         }))
 
+                    if isinstance(tool_plan, dict) and tool_plan.get("lore"):
+                        spec = tool_plan["lore"] or {}
+                        lore_query = spec.get("query", "")
+                        top_k = int(spec.get("top_k", 5))
+                        if lore_query:
+                            uni_ids = universe_db.list_universes_for_game(game_id)
+                            if uni_ids:
+                                uni = get_universe(uni_ids[0])
+                                if uni and uni.get("ruleset_id"):
+                                    lore_chunks = query_ruleset_chunks(uni["ruleset_id"], lore_query, top_k)
+
                     # ——— Build prompt, with 50%‐of‐context threshold ———
                     # count on the full history version (including any dice results)
                     full_history = "\n".join(conversation_histories[game_id])
+                    lore_block = ""
+                    if lore_chunks:
+                        lore_lines = [f"Relevant Lore for '{lore_query}':"]
+                        for idx, chunk in enumerate(lore_chunks, start=1):
+                            lore_lines.append(f"{idx}. {chunk.strip()}")
+                        lore_block = "\n".join(lore_lines) + "\n\n"
+
                     baseline_prompt = (
                         f"{news_block}"
+                        f"{lore_block}"
                         f"Conversation History:\n{full_history}\n\n"
                         f"User (trigger): {gm_prompt}\n\n"
                         "GM Response:"
@@ -400,7 +421,11 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                     if pct >= CONTEXT_USAGE_THRESHOLD:
                         # compress
-                        assembled_prompt = build_compressed_context(game_id, gm_prompt, last_k=20)
+                        assembled_prompt = (
+                            f"{news_block}"
+                            f"{lore_block}"
+                            + build_compressed_context(game_id, gm_prompt, last_k=20)
+                        )
                     else:
                         assembled_prompt = baseline_prompt
                     # —————————————————————————————
