@@ -1,5 +1,5 @@
 # src/server/game.py
-from fastapi import APIRouter, HTTPException, status, Request
+from fastapi import APIRouter, HTTPException, status, Request, Query
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from src.db import universe_db, game_db
@@ -8,6 +8,18 @@ from src.db.character_db import get_character_by_id
 from src.game.initial_prompt import generate_initial_scene
 
 router = APIRouter()
+
+def _add_universe_names(game: dict) -> dict:
+    """Return a new game dict with universe_names attached."""
+    uni_ids = universe_db.list_universes_for_game(game["id"])
+    names = []
+    for uid in uni_ids:
+        uni = get_universe(uid)
+        if uni:
+            names.append(uni["name"])
+    game_with_names = dict(game)
+    game_with_names["universe_names"] = names
+    return game_with_names
 
 class GameCreateRequest(BaseModel):
     name: str
@@ -24,6 +36,7 @@ class GameCreateResponse(BaseModel):
     id: str
     name: str
     status: str
+    universe_names: List[str] = []
 
 class GameListResponse(BaseModel):
     games: List[GameCreateResponse]
@@ -84,10 +97,14 @@ def create_game_endpoint(game_req: GameCreateRequest, request: Request):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    return new_game
+    return _add_universe_names(new_game)
 
 @router.get("/game/list", response_model=GameListResponse)
-def list_games_endpoint(request: Request):
+def list_games_endpoint(
+    request: Request,
+    search: Optional[str] = Query(None),
+    universe_id: Optional[str] = Query(None),
+):
     username = request.session.get("username")
     if not username:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
@@ -95,7 +112,18 @@ def list_games_endpoint(request: Request):
         games = game_db.list_games()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    return {"games": games}
+
+    filtered = []
+    for g in games:
+        uni_ids = universe_db.list_universes_for_game(g["id"])
+        if universe_id and universe_id not in uni_ids:
+            continue
+        if search and search.lower() not in g["name"].lower():
+            continue
+        game_with_names = _add_universe_names(g)
+        filtered.append(game_with_names)
+
+    return {"games": filtered}
 
 @router.get("/game/{game_id}", response_model=GameCreateResponse)
 def get_game_endpoint(game_id: str, request: Request):
@@ -105,7 +133,7 @@ def get_game_endpoint(game_id: str, request: Request):
     game = game_db.get_game(game_id)
     if not game:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Game not found")
-    return game
+    return _add_universe_names(game)
 
 class CharacterInGameResponse(BaseModel):
     character_id: Optional[str] = None
@@ -123,7 +151,7 @@ def join_game_endpoint(game_id: str, join_req: GameJoinRequest, request: Request
     existing = game_db.get_character_for_user_in_game(game_id, username)
     if existing:
         if existing == join_req.character_id:
-            return game_db.get_game(game_id)
+            return _add_universe_names(game_db.get_game(game_id))
         raise HTTPException(status_code=400, detail="You have already joined this game with a different character.")
 
     if game_db.is_character_in_active_game(join_req.character_id):
@@ -136,7 +164,7 @@ def join_game_endpoint(game_id: str, join_req: GameJoinRequest, request: Request
     game = game_db.get_game(game_id)
     if not game:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Game not found")
-    return game
+    return _add_universe_names(game)
 
 @router.get("/game/{game_id}/character", response_model=CharacterInGameResponse)
 def get_user_character(game_id: str, request: Request):

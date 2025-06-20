@@ -46,6 +46,19 @@
   cursor: pointer;
 }
 
+.game-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.game-controls input,
+.game-controls select,
+.game-controls button {
+  flex: 1;
+  width: auto;
+}
+
 /* Game list items: clickable blocks */
 .lobby-container #game-list div {
   padding: 0.5rem;

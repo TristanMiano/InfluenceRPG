@@ -49,11 +49,13 @@
     <!-- Join Existing Game -->
     <section id="join-game-form">
       <h3>Join Existing Game</h3>
-      <button id="refresh-games-button">Refresh Game List</button>
+      <div class="game-controls">
+        <input type="text" id="search-games-input" placeholder="Search games" />
+        <select id="universe-filter"></select>
+        <button id="refresh-games-button">Refresh</button>
+      </div>
       <div id="game-list"></div>
 
-      <label for="join-game-id">Game ID to Join:</label>
-      <input type="text" id="join-game-id" placeholder="Enter game ID" />
       <button id="join-game-button">Join Game</button>
       <p id="join-game-error" class="error"></p>
     </section>

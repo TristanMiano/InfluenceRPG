@@ -6,6 +6,31 @@ let universeId = null;
 let availableChars = [];
 let notifications = [];
 
+async function loadUniverses() {
+  const select = document.getElementById("universe-filter");
+  select.innerHTML = "";
+  const optAll = document.createElement("option");
+  optAll.value = "";
+  optAll.innerText = "All Universes";
+  select.appendChild(optAll);
+  try {
+    const resp = await fetch('/api/universe/list');
+    if (!resp.ok) throw new Error();
+    const universes = await resp.json();
+    universes.forEach(u => {
+      const opt = document.createElement("option");
+      opt.value = u.id;
+      opt.innerText = u.name;
+      select.appendChild(opt);
+    });
+  } catch {
+    const err = document.createElement("option");
+    err.value = "";
+    err.innerText = "Error loading universes";
+    select.appendChild(err);
+  }
+}
+
 async function loadNotifications() {
   try {
     const resp = await fetch('/api/notifications');
@@ -86,7 +111,12 @@ async function refreshGames() {
   const listDiv = document.getElementById("game-list");
   listDiv.innerHTML = "";
   try {
-    const resp = await fetch("/api/game/list");
+    const search = document.getElementById("search-games-input").value.trim();
+    const uniFilter = document.getElementById("universe-filter").value;
+    const params = new URLSearchParams();
+    if (search) params.set("search", search);
+    if (uniFilter) params.set("universe_id", uniFilter);
+    const resp = await fetch(`/api/game/list?${params.toString()}`);
     if (!resp.ok) throw new Error();
     const { games } = await resp.json();
 
@@ -109,7 +139,10 @@ async function refreshGames() {
 
       const div = document.createElement("div");
       div.style.cursor = "pointer";
-      let html = `ID: ${game.id}, Name: ${game.name}`;
+      let html = `Name: ${game.name}`;
+      if (game.universe_names && game.universe_names.length > 0) {
+        html += ` – ${game.universe_names.join(', ')}`;
+      }
       badges.forEach(b => {
         html += ` <span class="status-badge ${b.cls}">${b.text}</span>`;
       });
@@ -182,8 +215,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loadNotifications();
 
 
-  // Load characters & games
-  loadAvailableCharacters().then(() => refreshGames());
+  // Load universes, characters & games
+  loadUniverses().then(() => {
+    loadAvailableCharacters().then(() => refreshGames());
+  });
+
+  document.getElementById("search-games-input").addEventListener("input", refreshGames);
+  document.getElementById("universe-filter").addEventListener("change", refreshGames);
 
   document.getElementById("refresh-games-button").addEventListener("click", refreshGames);
 
