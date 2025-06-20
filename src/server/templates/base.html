@@ -9,7 +9,7 @@
 </head>
 <body>
   {# show a lobby link on every page except when you’re already on /lobby #}
-  {% if username and request.url.path != '/lobby' %}
+  {% if username and request.url.path not in ['/lobby', '/'] %}
   <div style="margin-bottom:1rem;">
     <a href="/lobby">← Return to Lobby</a>
   </div>

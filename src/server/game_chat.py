@@ -369,6 +369,24 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                     # Decide if any game mechanics should run before the GM response
                     full_history = "\n".join(conversation_histories[game_id])
                     tool_plan = plan_tool_calls(full_history, gm_prompt)
+
+                    # Announce what tasks will run (if any)
+                    planned = []
+                    if isinstance(tool_plan, dict):
+                        planned = [key for key in tool_plan.keys() if tool_plan.get(key)]
+                    tasks_msg = (
+                        "GM will run no additional tasks." if not planned
+                        else f"GM will run tasks: {', '.join(planned)}"
+                    )
+                    game_db.save_chat_message(game_id, "System", tasks_msg)
+                    conversation_histories[game_id].append(f"System: {tasks_msg}")
+                    await manager.broadcast(game_id, json.dumps({
+                        "game_id":   game_id,
+                        "sender":    "System",
+                        "message":   tasks_msg,
+                        "timestamp": datetime.utcnow().isoformat() + "Z",
+                    }))
+
                     dice_results = []
                     lore_chunks = []
                     lore_query = ""
