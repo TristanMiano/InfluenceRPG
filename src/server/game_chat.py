@@ -9,6 +9,7 @@ from src.db import game_db, universe_db
 from src.db.game_db import list_chat_messages, get_db_connection, list_players_in_game
 from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response
+from src.game.tools import plan_tool_calls, roll_dice
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 from src.server.notifications import notify_game_advanced
@@ -358,15 +359,34 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                     else:
                         news_block = ""
 
-                    # --- Build the conversation context as before ---
+                     # --- Build the conversation context as before ---
                     if stripped.startswith("/gm"):
                         gm_prompt = stripped[3:].strip() or "Provide a narrative update."
                     else:
                         # If it somehow was not a /gm (rare), treat as default
                         gm_prompt = "Provide a narrative update."
 
+                    # Decide if any game mechanics should run before the GM response
+                    full_history = "\n".join(conversation_histories[game_id])
+                    tool_plan = plan_tool_calls(full_history, gm_prompt)
+                    dice_results = []
+                    if isinstance(tool_plan, dict) and tool_plan.get("dice"):
+                        spec = tool_plan["dice"] or {}
+                        num = int(spec.get("num_rolls", 1))
+                        sides = int(spec.get("sides", 20))
+                        dice_results = roll_dice(num, sides)
+                        result_msg = f"Rolled {num}d{sides}: {dice_results}"
+                        game_db.save_chat_message(game_id, "System", result_msg)
+                        conversation_histories[game_id].append(f"System: {result_msg}")
+                        await manager.broadcast(game_id, json.dumps({
+                            "game_id":   game_id,
+                            "sender":    "System",
+                            "message":   result_msg,
+                            "timestamp": datetime.utcnow().isoformat() + "Z",
+                        }))
+
                     # ——— Build prompt, with 50%‐of‐context threshold ———
-                    # count on the full history version
+                    # count on the full history version (including any dice results)
                     full_history = "\n".join(conversation_histories[game_id])
                     baseline_prompt = (
                         f"{news_block}"
