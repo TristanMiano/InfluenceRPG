@@ -26,10 +26,10 @@
 
 {% block content %}
   <div class="container lobby-container">
-    <h2>{{ username }}’s Profile</h2>
+    <h2>{{ profile_username }}’s Profile</h2>
 
     <section id="profile-characters">
-      <h3>Your Characters</h3>
+      <h3>{% if is_self %}Your Characters{% else %}{{ profile_username }}'s Characters{% endif %}</h3>
       {% if characters %}
         <ul>
           {% for char in characters %}
@@ -37,12 +37,12 @@
           {% endfor %}
         </ul>
       {% else %}
-        <p>You have no characters yet.</p>
+        <p>{% if is_self %}You have no characters yet.{% else %}They have no characters yet.{% endif %}</p>
       {% endif %}
     </section>
 
     <section id="profile-games">
-      <h3>Your Games</h3>
+      <h3>{% if is_self %}Your Games{% else %}{{ profile_username }}'s Games{% endif %}</h3>
       {% if games %}
         <table class="profile-table">
           <thead>
@@ -63,7 +63,7 @@
           </tbody>
         </table>
       {% else %}
-        <p>You’re not in any games.</p>
+        <p>{% if is_self %}You’re not in any games.{% else %}They’re not in any games.{% endif %}</p>
       {% endif %}
     </section>
   </div>
