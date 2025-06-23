@@ -79,6 +79,7 @@ templates.env.globals["asset_path"] = lambda name: (
 from src.server.profile import router as profile_router
 from src.server.account import router as account_router
 from src.server.notifications import router as notifications_router
+from src.server.messages import router as messages_router
 
 # Include routers
 app.include_router(game_chat_router)
@@ -90,6 +91,7 @@ app.include_router(ruleset_router)
 app.include_router(character_wizard_router)
 app.include_router(setup_router)
 app.include_router(notifications_router, prefix="/api")
+app.include_router(messages_router, prefix="/api")
 app.include_router(profile_router)
 app.include_router(account_router)
 

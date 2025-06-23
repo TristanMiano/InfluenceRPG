@@ -5,6 +5,7 @@ let boundCharId = null;
 let universeId = null;
 let availableChars = [];
 let notifications = [];
+let currentMessages = [];
 
 async function loadUniverses() {
   const select = document.getElementById("universe-filter");
@@ -55,6 +56,62 @@ async function loadNotifications() {
     }
   } catch (err) {
     console.error('Error loading notifications:', err);
+  }
+}
+
+async function loadMessageCount() {
+  try {
+    const resp = await fetch('/api/messages/unread_count');
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const countElem = document.getElementById('messages-count');
+    countElem.textContent = data.unread > 0 ? data.unread : '';
+  } catch (err) {
+    console.error('Error loading message count:', err);
+  }
+}
+
+async function loadMessages(withUser) {
+  if (!withUser) return;
+  try {
+    const resp = await fetch(`/api/messages?user=${encodeURIComponent(withUser)}`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    currentMessages = data.messages || [];
+    const list = document.getElementById('message-list');
+    list.innerHTML = '';
+    currentMessages.forEach(m => {
+      const div = document.createElement('div');
+      div.textContent = `${m.sender}: ${m.message}`;
+      list.appendChild(div);
+    });
+  } catch (err) {
+    console.error('Error loading messages:', err);
+  }
+}
+
+async function markMessagesRead(withUser) {
+  if (!withUser) return;
+  try {
+    await fetch('/api/messages/mark_read', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: withUser })
+    });
+  } catch (err) {
+    console.error('Error marking messages read:', err);
+  }
+}
+
+async function sendMessage(recipient, text) {
+  try {
+    await fetch('/api/messages/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ recipient, message: text })
+    });
+  } catch (err) {
+    console.error('Error sending message:', err);
   }
 }
 
@@ -211,8 +268,54 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', () => notifPanel.classList.remove('show'));
     notifPanel.addEventListener('click', e => e.stopPropagation());
   }
+  
+  // Messages icon
+  const msgBtn = document.getElementById('message-button');
+  const msgPanel = document.getElementById('message-panel');
+  const recipientInput = document.getElementById('message-recipient');
+  const msgInput = document.getElementById('message-input');
+  const sendBtn = document.getElementById('send-message-button');
+  if (msgBtn && msgPanel) {
+    msgBtn.addEventListener('click', async e => {
+      e.stopPropagation();
+      msgPanel.classList.toggle('show');
+      const user = recipientInput.value.trim();
+      if (msgPanel.classList.contains('show') && user) {
+        await markMessagesRead(user);
+        await loadMessages(user);
+        loadMessageCount();
+      }
+    });
+    document.addEventListener('click', () => msgPanel.classList.remove('show'));
+    msgPanel.addEventListener('click', e => e.stopPropagation());
+  }
+
+  if (recipientInput) {
+    recipientInput.addEventListener('change', async () => {
+      const user = recipientInput.value.trim();
+      if (user) {
+        await markMessagesRead(user);
+        await loadMessages(user);
+        loadMessageCount();
+      } else {
+        document.getElementById('message-list').innerHTML = '';
+      }
+    });
+  }
+
+  if (sendBtn && recipientInput && msgInput) {
+    sendBtn.addEventListener('click', async () => {
+      const user = recipientInput.value.trim();
+      const text = msgInput.value.trim();
+      if (!user || !text) return;
+      await sendMessage(user, text);
+      msgInput.value = '';
+      await loadMessages(user);
+    });
+  }
 
   loadNotifications();
+  loadMessageCount();
 
 
   // Load universes, characters & games

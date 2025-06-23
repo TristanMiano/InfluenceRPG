@@ -133,6 +133,21 @@
   z-index: 1001;
 }
 
+/* === Message icon === */
+.lobby-container .message-icon {
+  position: absolute;
+  top: 1rem;
+  right: 2.25rem;
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
 .notification-count {
   position: absolute;
   top: -0.4rem;
@@ -162,6 +177,27 @@
 }
 
 #notification-panel.show {
+  display: block;
+}
+
+/* Message dropdown */
+#message-panel {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 2.25rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 220px;
+  max-width: 320px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+#message-panel.show {
   display: block;
 }
 
