@@ -123,7 +123,7 @@
 .lobby-container .notification-bell {
   position: absolute;
   top: 1rem;
-  right: 3.5rem;
+  right: 5.0rem;
   width: auto;
   padding: 0;
   background: none;
@@ -137,7 +137,7 @@
 .lobby-container .message-icon {
   position: absolute;
   top: 1rem;
-  right: 2.25rem;
+  right: 3.25rem;
   width: auto;
   padding: 0;
   background: none;
