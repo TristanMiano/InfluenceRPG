@@ -6,6 +6,7 @@ from typing import List, Optional
 
 from src.llm.llm_client import generate_completion
 from src.db.ruleset_db import get_ruleset, get_summary, set_summary
+from src.utils.prompt_loader import load_prompt_template
 
 # Directory where current game rule documents are stored
 RULES_DIR = Path(__file__).parent.parent / "design"
@@ -78,16 +79,12 @@ def create_initial_prompt(
         ""
     ]
 
-    # 4) Assemble the prompt, with the ruleset_section first
-    prompt = (
-        "You are the Game Master AI for the Influence RPG.\n\n"
-        + ruleset_section
-        + "Below is the current game rule set (subject to updates during development):\n\n"
-        + rules_summary
-        + "\n\n"
-        "The human GM has provided these setup details for this new game:\n\n"
-        f"{initial_details}\n\n"
-        "Based on the metadata, rules, and the setup, generate an initial narrative scene to start the adventure."
+    # 4) Assemble the prompt using template
+    template = load_prompt_template("initial_prompt_template.txt")
+    prompt = template.format(
+        ruleset_section=ruleset_section,
+        rules_summary=rules_summary,
+        initial_details=initial_details,
     )
     return prompt
 

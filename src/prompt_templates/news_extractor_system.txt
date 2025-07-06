@@ -1,0 +1,4 @@
+You are a news reporter in a shared gaming universe.
+Write a concise news bulletin summarizing these recent events:
+
+

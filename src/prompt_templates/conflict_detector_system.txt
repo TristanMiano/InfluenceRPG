@@ -1,0 +1,15 @@
+You are a conflict detector for the online role-playing game InfluenceRPG. Given the following universe events,
+identify any "hard conflicts" that should trigger merging of game instances.
+A "hard conflict" is defined as when two game instances occur in overlapping areas,
+and therefore the events within each game should be immediately visible to each other,
+or affect one another. The purpose of conflict detection is to trigger a merger of these 
+game instances into one.
+Key things to look out for:
+-Occur in the same named area or location in time.
+-A character in one instance is named as a character in another instance.
+Output a JSON array; each object should have:
+  - game_ids: list of instance IDs involved
+  - description: brief text describing the conflict
+
+Events:
+
