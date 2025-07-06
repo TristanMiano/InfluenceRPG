@@ -15,14 +15,19 @@
   <input type="hidden" id="universe-id" value="" />
 {% endif %}
 
-  <div id="news-box"></div>
-  <h3>Universe Conflicts</h3>
-  <div id="conflict-box"></div>
-
-  <div id="chat-box"></div>
-  <input type="text" id="chat-input" placeholder="Type your message here..." />
-  <button id="send-button">Send</button>
-  <p id="status"></p>
+  <div class="chat-layout">
+    <div class="chat-main">
+      <div id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="Type your message here..." />
+      <button id="send-button">Send</button>
+      <p id="status"></p>
+    </div>
+    <div class="chat-side">
+      <div id="news-box"></div>
+      <h3>Universe Conflicts</h3>
+      <div id="conflict-box"></div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block scripts %}
