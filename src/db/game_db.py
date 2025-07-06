@@ -193,3 +193,18 @@ def update_game_status(game_id: str, status: str):
         raise
     finally:
         conn.close()
+
+def get_latest_game_summary(game_id: str) -> Optional[str]:
+    """Return the latest summary text for the given game, if any."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT summary FROM game_history "
+                "WHERE game_id = %s ORDER BY summary_date DESC LIMIT 1",
+                (game_id,),
+            )
+            row = cur.fetchone()
+            return row[0] if row else None
+    finally:
+        conn.close()
