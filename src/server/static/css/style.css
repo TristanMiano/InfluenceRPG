@@ -95,3 +95,16 @@ button {
   height: 30vh;
 }
 
+
+# GM command buttons
+# ------------------
+# Container for GM buttons
+# Provides spacing below the send button
+
+#gm-controls {
+  margin-top: 10px;
+}
+
+#gm-controls .gm-btn {
+  margin-right: 5px;
+}

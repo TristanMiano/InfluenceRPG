@@ -85,6 +85,15 @@ async function startChat(username, gameId, characterId, universeId) {
       input.value = "";
     }
   });
+
+  document.querySelectorAll(".gm-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cmd = btn.getAttribute("data-command");
+      if (cmd && ws.readyState === WebSocket.OPEN) {
+        ws.send(cmd);
+      }
+    });
+  });
 }
 
 async function loadPastMessages(gameId) {
