@@ -6,6 +6,7 @@ import re
 
 from src.db.ruleset_db import get_ruleset
 from src.llm.llm_client import generate_completion
+from src.utils.prompt_loader import load_prompt_template
 
 router = APIRouter(prefix="/api/character", tags=["character"])
 
@@ -35,16 +36,9 @@ def character_wizard(req: WizardRequest):
 
     ruleset_text = rs["char_creation"]
 
-    # 2) Build system prompt
-    system_prompt = (
-        "You are a character-creation assistant. Your job is to ask the user one question "
-        "at a time to gather all information required by the following ruleset. "
-        "Always output exactly one question and nothing else—do not include any answers or commentary.\n\n"
-        "When all required fields have been collected, output **only** the final JSON object with "
-        "– name: the character’s name string "
-        "– all other fields under character_data as a sub-object.\n\n"
-        f"--- RULESET BEGIN ---\n{ruleset_text}\n--- RULESET END ---\n\n"
-    )
+    # 2) Build system prompt from template
+    template = load_prompt_template("character_wizard_system.txt")
+    system_prompt = template.format(ruleset_text=ruleset_text)
 
     # 3) Append history
     history_prompt = ""

@@ -1,0 +1,9 @@
+Act as the Game Master. Analyze the conversation below and provide an immersive narrative update.
+
+Conversation History:
+{conversation_context}
+
+User Prompt: {trigger_prompt}
+
+GM Response:
+

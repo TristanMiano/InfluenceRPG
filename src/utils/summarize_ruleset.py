@@ -22,6 +22,7 @@ if project_root not in sys.path:
 
 from src.db.ruleset_db import list_chunks, set_summary
 from src.llm.llm_client import generate_completion, GEMINI_AVAILABLE
+from src.utils.prompt_loader import load_prompt_template
 
 # Local summarizer fallback if Gemini unavailable
 local_summarizer = None
@@ -54,16 +55,8 @@ def summarize_ruleset(ruleset_id: str):
     for c in chunks:
         idx, text = c["chunk_index"], c["chunk_text"]
         if GEMINI_AVAILABLE:
-            prompt = (
-                "You are a ruleset summarization assistant. "
-                "Extract **only** the core game mechanics (combat resolution, dice rolls, skill checks) "
-                "from the text below. Discard narrative, lore, and any non-mechanical content. "
-                f"Your summary must not exceed {max_tokens} tokens. "
-                "If there are no discernible rules from this extract, please output only the following token: \"NONE\".\n\n"
-                "----- BEGIN TEXT -----\n"
-                f"{text}\n"
-                "-----  END TEXT  -----"
-            )
+            template = load_prompt_template("ruleset_summarization.txt")
+            prompt = template.format(max_tokens=max_tokens, text=text)
             summary = generate_completion(prompt).strip()
         else:
             max_chars = max_tokens * 4

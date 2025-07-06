@@ -3,6 +3,7 @@
 import json
 from src.db import universe_db
 from src.llm.llm_client import generate_completion
+from src.utils.prompt_loader import load_prompt_template
 
 def run_news_extractor(universe_id: str, event_limit: int = 50) -> str:
     """
@@ -27,12 +28,9 @@ def run_news_extractor(universe_id: str, event_limit: int = 50) -> str:
             print(f"[news_extractor] No new events since {last_published}, skipping.")
             return ""
 
-    # 3) Build an LLM prompt
-    prompt_lines = [
-        "You are a news reporter in a shared gaming universe.",
-        "Write a concise news bulletin summarizing these recent events:",
-        ""
-    ]
+    # 3) Build an LLM prompt using template
+    template = load_prompt_template("news_extractor_system.txt")
+    prompt_lines = [template]
     # oldest first
     for e in reversed(events):
         payload = e["event_payload"]
