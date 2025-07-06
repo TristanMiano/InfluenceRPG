@@ -192,7 +192,15 @@ def list_game_messages(game_id: str, request: Request):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
     try:
         msgs = game_db.list_chat_messages(game_id)
-        return {"messages": msgs}
+        serialized = [
+            {
+                "sender": msg["sender"],
+                "message": msg["message"],
+                "timestamp": msg["timestamp"].isoformat() + "Z",
+            }
+            for msg in msgs
+        ]
+        return {"messages": serialized}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
