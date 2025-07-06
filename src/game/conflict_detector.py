@@ -55,6 +55,11 @@ def run_conflict_detector(universe_id: str):
     for conflict in conflicts:
         # ---- DEBUG START ----
         print(f"[conflict_detector] 🔍 Detected conflict: {conflict}")
+
+        # Deduplicate any repeated game IDs
+        game_ids = conflict.get("game_ids", [])
+        conflict["game_ids"] = list(dict.fromkeys(game_ids))
+
         try:
             universe_db.record_conflict(universe_id, conflict)
             print(f"[conflict_detector] ✅ Recorded conflict to DB for universe {universe_id}")

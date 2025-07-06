@@ -110,7 +110,7 @@ async def start_periodic_news_loop():
                 try:
                     run_news_extractor(uni["id"])
                 except Exception as e:
-                    logging.error(f"Error in scheduled news for {uni["id"]}: {e}")
+                    logging.error(f"Error in scheduled news for {uni['id']}: {e}")
             await asyncio.sleep(30 * 60)
 
     asyncio.create_task(news_loop())

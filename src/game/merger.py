@@ -15,8 +15,12 @@ def run_merger_for_conflict(universe_id: str, conflict_info: dict):
     Merge the game instances in conflict_info['game_ids'] into a new single game.
     """
     from_ids = conflict_info.get("game_ids", [])
+
+    # Deduplicate IDs to avoid merging a game with itself
+    from_ids = list(dict.fromkeys(from_ids))
+
     if len(from_ids) < 2:
-        # nothing to merge
+        # nothing to merge after removing duplicates
         return
 
     # 1) Build a merged game name from the existing ones
