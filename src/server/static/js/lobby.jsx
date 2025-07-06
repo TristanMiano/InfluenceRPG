@@ -189,9 +189,13 @@ async function refreshGames() {
         badges.push({ text: "Joinable", cls: "status-joinable" });
       } else if (game.status === "active") {
         badges.push({ text: "Active", cls: "status-active" });
+      } else if (game.status === "closed") {
+        badges.push({ text: "Closed", cls: "status-closed" });
+      } else if (game.status === "merged") {
+        badges.push({ text: "Merged", cls: "status-merged" });
+        badges.push({ text: "Closed", cls: "status-closed" });
       } else {
         badges.push({ text: game.status.charAt(0).toUpperCase() + game.status.slice(1), cls: `status-${game.status}` });
-        badges.push({ text: "Closed", cls: "status-closed" });
       }
 
       const div = document.createElement("div");

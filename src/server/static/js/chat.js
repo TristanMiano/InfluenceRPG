@@ -21,9 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
   startChat(username, gameId, characterId, universeId);
 });
 
-function startChat(username, gameId, characterId, universeId) {
+async function startChat(username, gameId, characterId, universeId) {
+  const gameResp = await fetch(`/api/game/${encodeURIComponent(gameId)}`);
+  if (!gameResp.ok) return;
+  const game = await gameResp.json();
+  if (game.status === "closed" || game.status === "merged") {
+    document.getElementById("status").innerText = "Game closed – chat disconnected.";
+    await loadPastMessages(gameId);
+    if (universeId) {
+      loadNews(universeId);
+      loadConflicts(universeId);
+    }
+    return;
+  }
+
   const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-  // Pass username and character_id in WS query
   const wsUrl =
     `${protocol}//${window.location.host}/ws/game/${gameId}/chat?` +
     `username=${encodeURIComponent(username)}` +
@@ -73,6 +85,29 @@ function startChat(username, gameId, characterId, universeId) {
       input.value = "";
     }
   });
+}
+
+async function loadPastMessages(gameId) {
+  try {
+    const resp = await fetch(`/api/game/${encodeURIComponent(gameId)}/messages`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML = "";
+    data.messages.forEach((msg) => {
+      const raw = marked.parse(msg.message);
+      const safe = DOMPurify.sanitize(raw);
+      const div = document.createElement("div");
+      div.classList.add("message");
+      div.innerHTML =
+        `<strong>${msg.sender}:</strong> ${safe} ` +
+        `<span class="timestamp">[${new Date(msg.timestamp).toLocaleTimeString()}]</span>`;
+      chatBox.appendChild(div);
+    });
+    chatBox.scrollTop = chatBox.scrollHeight;
+  } catch (e) {
+    console.error("Error loading messages:", e);
+  }
 }
 
 async function loadNews(universeId) {

@@ -176,3 +176,37 @@ def get_user_character(game_id: str, request: Request):
         return CharacterInGameResponse(character_id=char_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching bound character: {e}")
+
+class ChatMessage(BaseModel):
+    sender: str
+    message: str
+    timestamp: str
+
+class GameMessagesResponse(BaseModel):
+    messages: List[ChatMessage]
+
+@router.get("/game/{game_id}/messages", response_model=GameMessagesResponse)
+def list_game_messages(game_id: str, request: Request):
+    username = request.session.get("username")
+    if not username:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+    try:
+        msgs = game_db.list_chat_messages(game_id)
+        return {"messages": msgs}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/game/{game_id}/close", response_model=GameCreateResponse)
+def close_game_endpoint(game_id: str, request: Request):
+    username = request.session.get("username")
+    if not username:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+    game = game_db.get_game(game_id)
+    if not game:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Game not found")
+    try:
+        game_db.update_game_status(game_id, "closed")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    game["status"] = "closed"
+    return _add_universe_names(game)
