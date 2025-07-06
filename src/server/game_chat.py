@@ -158,6 +158,21 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
     # 3. Combine into a display name
     sender_display = f"{character_name} ({username})"
 
+    # Check if this game is closed before fully connecting
+    game_info = game_db.get_game(game_id)
+    if game_info and game_info.get("status") in ("closed", "merged"):
+        await websocket.accept()
+        persisted = list_chat_messages(game_id)
+        for msg in persisted:
+            await websocket.send_text(json.dumps({
+                "game_id":   game_id,
+                "sender":    msg["sender"],
+                "message":   msg["message"],
+                "timestamp": msg["timestamp"].isoformat() + "Z"
+            }))
+        await websocket.close()
+        return
+
     # 4. Register this connection
     await manager.connect(game_id, websocket)
 
