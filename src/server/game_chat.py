@@ -12,6 +12,7 @@ from src.llm.gm_llm import generate_gm_response
 from src.game.tools import plan_tool_calls, roll_dice, query_ruleset_chunks
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
+from src.game.named_entity_extractor import run_named_entity_extractor
 from src.server.notifications import notify_game_advanced
 from src.utils.token_counter import count_tokens, compute_usage_percentage
 from src.db.universe_db import list_universes_for_game, get_universe
@@ -332,7 +333,31 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             "timestamp": datetime.utcnow().isoformat() + "Z"
                         }))
 
-                # 3) Fallback: narrative GM
+                # 3) Extract named entities from the conversation history
+                elif cmd == "extract_entities":
+                    convo_text = "\n".join(conversation_histories[game_id])
+                    entities = run_named_entity_extractor(convo_text)
+                    entity_json = json.dumps(entities)
+
+                    game_db.save_chat_message(game_id, "System", entity_json)
+                    conversation_histories[game_id].append(f"System: {entity_json}")
+                    await manager.broadcast(game_id, json.dumps({
+                        "game_id":   game_id,
+                        "sender":    "System",
+                        "message":   entity_json,
+                        "timestamp": datetime.utcnow().isoformat() + "Z"
+                    }))
+
+                    universe_ids = universe_db.list_universes_for_game(game_id)
+                    for uni in universe_ids:
+                        universe_db.record_event(
+                            universe_id=uni,
+                            game_id=game_id,
+                            event_type="named_entities",
+                            event_payload=entities
+                        )
+
+                # 4) Fallback: narrative GM
                 else:
                     # --- NEW: Fetch recent universe news, up to 5 items newer than last_included_news_time ---
                     # Determine the first universe this game is in (if any)

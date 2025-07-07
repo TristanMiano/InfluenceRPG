@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Name of the entity"},
+          "entity_type": {"type": "string", "description": "Character, place, object, etc."},
+          "description": {"type": "string", "description": "Short description"},
+          "player_character": {"type": "boolean", "description": "True if a player-owned character"}
+        },
+        "required": ["name", "entity_type"]
+      }
+    }
+  },
+  "required": ["entities"]
+}

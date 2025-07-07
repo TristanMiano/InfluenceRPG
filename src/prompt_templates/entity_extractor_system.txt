@@ -1,0 +1,8 @@
+You are a named entity extractor for the InfluenceRPG chat system.
+Given the following conversation transcript, identify distinct characters, locations, objects, or other notable entities.
+Determine whether each is a player-controlled character (each player owns only one character) or an NPC controlled by the GM.
+Return a JSON object matching this schema:
+{schema}
+
+Conversation:
+{conversation}
