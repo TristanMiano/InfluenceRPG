@@ -82,3 +82,18 @@ CREATE TABLE IF NOT EXISTS universe_news (
     summary       TEXT    NOT NULL,
     published_at  TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- 7. Named entities recognized across games in a universe
+CREATE TABLE IF NOT EXISTS named_entities (
+    id UUID PRIMARY KEY,
+    universe_id UUID NOT NULL
+        CONSTRAINT fk_entity_universe
+            REFERENCES universes(id)
+            ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    entity_type VARCHAR(100) NOT NULL,
+    description TEXT,
+    player_character BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE (universe_id, name)
+);
