@@ -242,3 +242,103 @@ def list_conflicts(universe_id: str, limit: int = 20) -> list[dict]:
             ]
     finally:
         conn.close()
+
+def get_named_entity(universe_id: str, name: str) -> dict | None:
+    """Fetch a named entity by name for the given universe."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT id, universe_id, name, entity_type, description,
+                       player_character, created_at
+                  FROM named_entities
+                 WHERE universe_id = %s AND name = %s
+                """,
+                (universe_id, name),
+            )
+            return cur.fetchone()
+    finally:
+        conn.close()
+
+
+def upsert_named_entity(
+    universe_id: str,
+    name: str,
+    entity_type: str,
+    description: str | None = None,
+    player_character: bool = False,
+) -> dict:
+    """Insert or update a named entity record for the universe."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT id FROM named_entities
+                 WHERE universe_id = %s AND name = %s
+                """,
+                (universe_id, name),
+            )
+            row = cur.fetchone()
+            if row:
+                cur.execute(
+                    """
+                    UPDATE named_entities
+                       SET entity_type = %s,
+                           description = COALESCE(%s, description),
+                           player_character = %s
+                     WHERE id = %s
+                    RETURNING id, universe_id, name, entity_type,
+                              description, player_character, created_at
+                    """,
+                    (entity_type, description, player_character, row["id"]),
+                )
+            else:
+                entity_id = str(uuid4())
+                cur.execute(
+                    """
+                    INSERT INTO named_entities
+                      (id, universe_id, name, entity_type, description,
+                       player_character)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    RETURNING id, universe_id, name, entity_type,
+                              description, player_character, created_at
+                    """,
+                    (
+                        entity_id,
+                        universe_id,
+                        name,
+                        entity_type,
+                        description,
+                        player_character,
+                    ),
+                )
+            conn.commit()
+            return cur.fetchone()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def list_named_entities(universe_id: str, limit: int = 100) -> list[dict]:
+    """Return named entities recorded for the universe."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT id, universe_id, name, entity_type, description,
+                       player_character, created_at
+                  FROM named_entities
+                 WHERE universe_id = %s
+                 ORDER BY created_at DESC
+                 LIMIT %s
+                """,
+                (universe_id, limit),
+            )
+            return cur.fetchall()
+    finally:
+        conn.close()

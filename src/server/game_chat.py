@@ -15,7 +15,11 @@ from src.game.conflict_detector import run_conflict_detector
 from src.game.named_entity_extractor import run_named_entity_extractor
 from src.server.notifications import notify_game_advanced
 from src.utils.token_counter import count_tokens, compute_usage_percentage
-from src.db.universe_db import list_universes_for_game, get_universe
+from src.db.universe_db import (
+    list_universes_for_game,
+    get_universe,
+    upsert_named_entity,
+)
 from src.db.ruleset_db import get_ruleset
 
 logging.getLogger().setLevel(logging.INFO)
@@ -356,6 +360,14 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             event_type="named_entities",
                             event_payload=entities
                         )
+                        for e in entities.get("entities", []):
+                            upsert_named_entity(
+                                universe_id=uni,
+                                name=e.get("name"),
+                                entity_type=e.get("entity_type"),
+                                description=e.get("description"),
+                                player_character=e.get("player_character", False),
+                            )
 
                 # 4) Fallback: narrative GM
                 else:
