@@ -340,7 +340,26 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                 # 3) Extract named entities from the conversation history
                 elif cmd == "extract_entities":
                     convo_text = "\n".join(conversation_histories[game_id])
-                    entities = run_named_entity_extractor(convo_text)
+
+                    # Gather known player characters in this game
+                    known_entities = []
+                    try:
+                        player_ids = list_players_in_game(game_id)
+                        for cid in player_ids:
+                            char = get_character_by_id(cid)
+                            if char:
+                                known_entities.append({
+                                    "name": char.get("name"),
+                                    "entity_type": "Character",
+                                    "description": "",
+                                    "player_character": True,
+                                })
+                    except Exception:
+                        known_entities = []
+
+                    entities = run_named_entity_extractor(
+                        convo_text, known_entities=known_entities
+                    )
                     entity_json = json.dumps(entities)
 
                     game_db.save_chat_message(game_id, "System", entity_json)

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from src.llm.llm_client import generate_completion
 from src.utils.prompt_loader import load_prompt_template
@@ -17,13 +17,19 @@ from src.utils.prompt_loader import load_prompt_template
 SCHEMA_PATH = Path(__file__).resolve().parent / "entity_schema.json"
 
 
-def run_named_entity_extractor(conversation: str) -> Dict[str, Any]:
+def run_named_entity_extractor(
+    conversation: str, known_entities: List[Dict[str, Any]] | None = None
+) -> Dict[str, Any]:
     """Run the LLM based extractor on a conversation transcript.
 
     Parameters
     ----------
     conversation: str
         The chat history to analyze.
+    known_entities: list[dict] | None
+        Existing player characters and owned objects that should not be
+        overwritten by the extractor. Each entry should match the schema
+        defined in entity_schema.json.
 
     Returns
     -------
@@ -33,7 +39,12 @@ def run_named_entity_extractor(conversation: str) -> Dict[str, Any]:
     """
     schema_text = SCHEMA_PATH.read_text(encoding="utf-8")
     template = load_prompt_template("entity_extractor_system.txt")
-    prompt = template.format(schema=schema_text, conversation=conversation)
+    known_text = json.dumps(known_entities or [], ensure_ascii=False)
+    prompt = template.format(
+        schema=schema_text,
+        conversation=conversation,
+        known_entities=known_text,
+    )
 
     response_text = generate_completion(prompt)
 

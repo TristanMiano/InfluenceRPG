@@ -4,5 +4,11 @@ Determine whether each is a player-controlled character (each player owns only o
 Return a JSON object matching this schema:
 {schema}
 
+Known player characters and owned objects:
+{known_entities}
+
+Treat any occurrence of these names as referring to the canonical entity.
+Do not change their `player_character` flag if it is already set to true.
+
 Conversation:
 {conversation}
