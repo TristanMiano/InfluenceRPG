@@ -181,21 +181,31 @@ async function refreshGames() {
       const joinedId = await getBoundCharacter(game.id);
 
       const badges = [];
-      if (joinedId) {
-        badges.push({ text: "Joined", cls: "status-joined" });
-      } else if (availableChars.length === 0) {
-        badges.push({ text: "No characters", cls: "status-none" });
-      } else if (game.status === "waiting") {
-        badges.push({ text: "Joinable", cls: "status-joinable" });
+
+      // Always show the game's current status
+      if (game.status === "waiting") {
+        badges.push({ text: "Waiting", cls: "status-waiting" });
       } else if (game.status === "active") {
         badges.push({ text: "Active", cls: "status-active" });
       } else if (game.status === "closed") {
         badges.push({ text: "Closed", cls: "status-closed" });
       } else if (game.status === "merged") {
         badges.push({ text: "Merged", cls: "status-merged" });
+        // merged games are also closed
         badges.push({ text: "Closed", cls: "status-closed" });
       } else {
         badges.push({ text: game.status.charAt(0).toUpperCase() + game.status.slice(1), cls: `status-${game.status}` });
+      }
+
+      // User-specific statuses - show all that apply
+      if (joinedId) {
+        badges.push({ text: "Joined", cls: "status-joined" });
+      }
+      if (availableChars.length === 0) {
+        badges.push({ text: "No characters", cls: "status-none" });
+      }
+      if (!joinedId && availableChars.length > 0 && game.status === "waiting") {
+        badges.push({ text: "Joinable", cls: "status-joinable" });
       }
 
       const div = document.createElement("div");
