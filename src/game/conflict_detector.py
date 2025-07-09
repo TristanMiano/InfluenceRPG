@@ -2,6 +2,7 @@
 
 import json
 from src.db import universe_db
+from src.db import game_db
 from src.llm.llm_client import generate_completion
 from src.game.merger import run_merger_for_conflict
 from src.utils.prompt_loader import load_prompt_template
@@ -12,6 +13,23 @@ def run_conflict_detector(universe_id: str):
     """
     # 1) Pull the most recent events
     events = universe_db.list_events(universe_id, limit=20)
+
+    # Filter out events from games that are already closed or merged
+    filtered_events = []
+    status_cache: dict[str, str | None] = {}
+    for e in events:
+        gid = e.get("game_id")
+        if gid not in status_cache:
+            try:
+                g = game_db.get_game(gid)
+                status_cache[gid] = g.get("status") if g else None
+            except Exception:
+                status_cache[gid] = None
+
+        if status_cache[gid] in ("closed", "merged"):
+            continue
+        filtered_events.append(e)
+    events = filtered_events
 
     # 2) Build an LLM prompt using template
     template = load_prompt_template("conflict_detector_system.txt")
