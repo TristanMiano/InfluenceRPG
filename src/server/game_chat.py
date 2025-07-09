@@ -36,6 +36,20 @@ conversation_histories: Dict[str, List[str]] = {}
 # Track, per‐game, the latest news‐timestamp we've already included in a GM prompt
 last_included_news_time: Dict[str, datetime] = {}
 
+# Cache of the latest entity list per game
+entity_cache: Dict[str, str] = {}
+
+def fetch_full_entity_list(game_id: str) -> str:
+    """Return the full JSON list of known entities for this game's universes."""
+    uni_ids = list_universes_for_game(game_id)
+    entities = []
+    for uid in uni_ids:
+        try:
+            entities.extend(universe_db.list_named_entities(uid, limit=100))
+        except Exception:
+            continue
+    return json.dumps(entities, ensure_ascii=False)
+
 def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> str:
     """
     Returns a prompt string composed of:
@@ -108,11 +122,17 @@ def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> 
     finally:
         conn.close()
 
-    # 6) Assemble compressed prompt
+    # 6) Latest entity list
+    entity_json = fetch_full_entity_list(game_id)
+    entity_cache[game_id] = entity_json
+    entity_section = f"Known Entities:\n{entity_json}\n\n" if entity_json else ""
+
+    # 7) Assemble compressed prompt
     return (
         f"{uni_section}"
         f"{ruleset_section}"
         f"{players_section}"
+        f"{entity_section}"
         f"Opening Scene:\n{opening_scene}\n\n"
         f"Summary of the Game So Far:\n{summary}\n\n"
         f"Recent Messages:\n{recent}\n\n"
@@ -198,6 +218,12 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
             "timestamp": msg["timestamp"].isoformat() + "Z"
         }))
 
+    # If this is a brand new history, prepend the entity list for the GM
+    if not conversation_histories[game_id]:
+        entity_json = fetch_full_entity_list(game_id)
+        entity_cache[game_id] = entity_json
+        conversation_histories[game_id].append(f"System: Entities: {entity_json}")
+
     # 5. Log & broadcast a “join” event for both players and GM context
     join_msg = f"{sender_display} has joined the game."
     system_entry = f"System: {join_msg}"
@@ -267,8 +293,10 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         "Please provide a concise summary of the following game chat:\n\n"
                         f"{convo}"
                     )
-                    summary_text = generate_gm_response(summary_prompt) \
-                                   if summary_prompt.strip() else ""
+                    summary_text = generate_gm_response(
+                        summary_prompt,
+                        entity_list=entity_cache.get(game_id, fetch_full_entity_list(game_id)),
+                    ) if summary_prompt.strip() else ""
 
                     embedding = summary_model.encode(summary_text).tolist()
 
@@ -388,6 +416,17 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                                 player_character=e.get("player_character", False),
                             )
 
+                    # Refresh entity cache and include in conversation
+                    entity_cache[game_id] = fetch_full_entity_list(game_id)
+                    refreshed_msg = f"Entities updated: {entity_cache[game_id]}"
+                    conversation_histories[game_id].append(f"System: {refreshed_msg}")
+                    await manager.broadcast(game_id, json.dumps({
+                        "game_id":   game_id,
+                        "sender":    "System",
+                        "message":   refreshed_msg,
+                        "timestamp": datetime.utcnow().isoformat() + "Z"
+                    }))
+
                 # 4) Fallback: narrative GM
                 else:
                     # --- NEW: Fetch recent universe news, up to 5 items newer than last_included_news_time ---
@@ -497,9 +536,16 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             lore_lines.append(f"{idx}. {chunk.strip()}")
                         lore_block = "\n".join(lore_lines) + "\n\n"
 
+                    entity_json = entity_cache.get(game_id)
+                    if not entity_json:
+                        entity_json = fetch_full_entity_list(game_id)
+                        entity_cache[game_id] = entity_json
+                    entity_block = f"Known Entities:\n{entity_json}\n\n" if entity_json else ""
+
                     baseline_prompt = (
                         f"{news_block}"
                         f"{lore_block}"
+                        f"{entity_block}"
                         f"Conversation History:\n{full_history}\n\n"
                         f"User (trigger): {gm_prompt}\n\n"
                         "GM Response:"
@@ -519,7 +565,10 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         assembled_prompt = baseline_prompt
                     # —————————————————————————————
                     # Call the GM LLM
-                    gm_response = generate_gm_response(assembled_prompt)
+                    gm_response = generate_gm_response(
+                        assembled_prompt,
+                        entity_list=entity_cache.get(game_id, fetch_full_entity_list(game_id))
+                    )
 
                     # Persist & broadcast GM output
                     game_db.save_chat_message(game_id, "GM", gm_response)

@@ -9,6 +9,9 @@ Known player characters and owned objects:
 
 Treat any occurrence of these names as referring to the canonical entity.
 Do not change their `player_character` flag if it is already set to true.
+While player characters themselves must remain, it is acceptable to update
+the objects they own as well as any relationships, skills, or attributes the
+GM has explicitly described as changing.
 
 Conversation:
 {conversation}
