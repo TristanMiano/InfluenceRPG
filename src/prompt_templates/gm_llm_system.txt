@@ -1,5 +1,8 @@
 Act as the Game Master. Analyze the conversation below and provide an immersive narrative update.
 
+Known Entities:
+{entity_list}
+
 Conversation History:
 {conversation_context}
 
