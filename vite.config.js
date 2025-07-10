@@ -31,6 +31,7 @@ export default defineConfig({
         'lobby': resolve(__dirname, 'src/server/static/js/lobby.jsx'),
         'login': resolve(__dirname, 'src/server/static/js/login.js'),
         'universe_create': resolve(__dirname, 'src/server/static/js/universe_create.js'),
+        'universes': resolve(__dirname, 'src/server/static/js/universes.jsx'),
 
         // CSS entries
         'style': resolve(__dirname, 'src/server/static/css/style.css'),
@@ -38,6 +39,7 @@ export default defineConfig({
         'game_creation_css': resolve(__dirname, 'src/server/static/css/game_creation.css'),
         'lobby_css': resolve(__dirname, 'src/server/static/css/lobby.css'),
         'login_css': resolve(__dirname, 'src/server/static/css/login.css'),
+        'universes_css': resolve(__dirname, 'src/server/static/css/universes.css'),
       },
       output: {
         // Place all assets under 'assets/' with content hashes

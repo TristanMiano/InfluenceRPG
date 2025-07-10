@@ -272,3 +272,14 @@ def read_universe_create(request: Request):
     return templates.TemplateResponse(
         "universe_create.html", {"request": request}
     )
+
+
+@app.get("/universes", response_class=HTMLResponse)
+def read_universes_page(request: Request):
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
+    return templates.TemplateResponse(
+        "universes.html",
+        {"request": request}
+    )
