@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Universes - Influence RPG{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', path=asset_path('universes.css')) }}">
+{% endblock %}
+
+{% block content %}
+<div class="universe-layout">
+  <div class="universe-list-panel">
+    <input type="text" id="universe-search" placeholder="Search universes" />
+    <ul id="universe-list"></ul>
+  </div>
+  <div class="universe-diagram-panel">
+    <svg id="sankey-diagram" width="100%" height="600"></svg>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script type="module" src="{{ url_for('static', path=asset_path('universes.jsx')) }}"></script>
+{% endblock %}
