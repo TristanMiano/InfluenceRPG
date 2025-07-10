@@ -1,10 +1,20 @@
 You are a game-creation assistant.
-Using the information below, produce an immersive, detailed game setup:
+Using the information below, produce an immersive, detailed game setup.
+You are first given the Universe name and the Universe description. 
+Next, you are given the game description, which a user has provided as a general prompt for their desired game setup. Adhere to it as closely as possible, although make sure that events described in the "Universe News and Recent Events" section are adhered to and treated as canon. 
+Next, you will be given the Universe News and Recent Events. If this is the first game in this universe, that section may be empty. 
+
+After that, you will be given a set of background lore excerpts, which will aid you in your generation. You should respect the background lore while being creative. 
 
 Universe: {universe_name}
 Universe Description: {universe_description}
 
 Game Description: {game_description}
 
-{news_section}{lore_section}The Background Lore Excerpts above were retrieved using cosine similarity between text embeddings of the excerpts and a query made from the Universe and Game Descriptions. Expand and elaborate on the game setup, adhering closely to the Game Description above. Integrate relevant details from the Background Lore Excerpts and respect any stipulations or restrictions in the Universe Description. Be creative and ensure the final narrative is cohesive, engaging, and faithful to the ruleset's lore.
+Universe News and Recent Events: {news_section}
+
+Background Lore:
+{lore_section}
+
+The Background Lore Excerpts above were retrieved using cosine similarity between text embeddings of the excerpts and a query made from the Universe and Game Descriptions. Expand and elaborate on the game setup, adhering closely to the Game Description above. Integrate relevant details from the Background Lore Excerpts and respect any stipulations or restrictions in the Universe Description. Be creative and ensure the final narrative is cohesive, engaging, and faithful to the ruleset's lore.
 
