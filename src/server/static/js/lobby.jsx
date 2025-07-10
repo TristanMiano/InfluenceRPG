@@ -193,6 +193,9 @@ async function refreshGames() {
         badges.push({ text: "Merged", cls: "status-merged" });
         // merged games are also closed
         badges.push({ text: "Closed", cls: "status-closed" });
+      } else if (game.status === "branched") {
+        badges.push({ text: "Branched", cls: "status-branched" });
+        badges.push({ text: "Closed", cls: "status-closed" });
       } else {
         badges.push({ text: game.status.charAt(0).toUpperCase() + game.status.slice(1), cls: `status-${game.status}` });
       }

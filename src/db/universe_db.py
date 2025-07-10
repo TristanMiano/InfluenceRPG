@@ -183,6 +183,23 @@ def record_merger(universe_id: str, from_instance_ids: list[str], into_instance_
     finally:
         conn.close()
 
+def record_branch(original_game_id: str, new_game_ids: list[str], branch_info: dict):
+    """Insert a branch record into the game_branches table."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO game_branches (original_game, new_game_ids, branch_info) "
+                "VALUES (%s, %s, %s)",
+                (original_game_id, json.dumps(new_game_ids), json.dumps(branch_info))
+            )
+            conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
 def list_news(universe_id: str, limit: int = 20) -> list[dict]:
     """
     Retrieve recent news items for a universe.

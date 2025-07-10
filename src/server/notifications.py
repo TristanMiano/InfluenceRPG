@@ -62,3 +62,30 @@ def notify_game_advanced(game_id: str, triggering_user: str) -> None:
                 owner,
                 f'Game "{game_name}" advanced via /gm command.'
             )
+
+def notify_branch(original_game_id: str, branch_results: List[dict]) -> None:
+    """Notify players which new game they are in after a branch."""
+    from src.db.character_db import get_character_by_id
+    from src.db.game_db import get_game
+
+    try:
+        orig = get_game(original_game_id)
+        base_name = orig["name"] if orig else original_game_id
+    except Exception:
+        base_name = original_game_id
+
+    for res in branch_results:
+        new_game = res.get("game")
+        if not new_game:
+            continue
+        new_name = new_game.get("name", "")
+        for cid in res.get("character_ids", []):
+            char = get_character_by_id(cid)
+            if not char:
+                continue
+            owner = char.get("owner")
+            if owner:
+                add_notification(
+                    owner,
+                    f'Game "{base_name}" branched. You are now in "{new_name}".'
+                )

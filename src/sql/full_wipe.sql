@@ -7,6 +7,7 @@ DELETE FROM game_history;
 DELETE FROM universe_events;
 DELETE FROM conflict_detections;
 DELETE FROM mergers;
+DELETE FROM game_branches;
 DELETE FROM universe_news;
 DELETE FROM universe_games;
 

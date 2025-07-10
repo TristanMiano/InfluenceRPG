@@ -6,6 +6,8 @@ from src.db import universe_db, game_db
 from src.db.universe_db import get_universe
 from src.db.character_db import get_character_by_id
 from src.game.initial_prompt import generate_initial_scene
+from src.game.brancher import run_branch
+from src.server.notifications import notify_branch
 
 router = APIRouter()
 
@@ -138,6 +140,13 @@ def get_game_endpoint(game_id: str, request: Request):
 class CharacterInGameResponse(BaseModel):
     character_id: Optional[str] = None
 
+class BranchGroup(BaseModel):
+    character_ids: List[str]
+    description: str = ""
+
+class BranchRequest(BaseModel):
+    groups: List[BranchGroup]
+
 @router.post("/game/{game_id}/join", response_model=GameCreateResponse)
 def join_game_endpoint(game_id: str, join_req: GameJoinRequest, request: Request):
     username = request.session.get("username")
@@ -203,6 +212,41 @@ def list_game_messages(game_id: str, request: Request):
         return {"messages": serialized}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/game/{game_id}/branch", response_model=List[GameCreateResponse])
+def branch_game_endpoint(game_id: str, req: BranchRequest, request: Request):
+    username = request.session.get("username")
+    if not username:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    try:
+        players = set(game_db.list_players_in_game(game_id))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    assigned: set[str] = set()
+    for grp in req.groups:
+        if not grp.character_ids:
+            raise HTTPException(status_code=400, detail="Each group must have at least one character")
+        for cid in grp.character_ids:
+            if cid not in players:
+                raise HTTPException(status_code=400, detail=f"Character {cid} not in game")
+            if cid in assigned:
+                raise HTTPException(status_code=400, detail="Character assigned multiple times")
+            assigned.add(cid)
+
+    if assigned != players:
+        raise HTTPException(status_code=400, detail="All characters must be assigned to one group")
+
+    try:
+        results = run_branch(game_id, [grp.dict() for grp in req.groups])
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    notify_branch(game_id, results)
+
+    return [GameCreateResponse(**_add_universe_names(r["game"])) for r in results]
 
 @router.post("/game/{game_id}/close", response_model=GameCreateResponse)
 def close_game_endpoint(game_id: str, request: Request):

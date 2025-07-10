@@ -72,7 +72,19 @@ CREATE TABLE IF NOT EXISTS mergers (
     merged_at         TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 6. Published universe‐level news
+-- 6. Branch records
+CREATE TABLE IF NOT EXISTS game_branches (
+    id             SERIAL PRIMARY KEY,
+    original_game  UUID    NOT NULL
+        CONSTRAINT fk_branch_original
+            REFERENCES games(id)
+            ON DELETE CASCADE,
+    new_game_ids   JSONB   NOT NULL,
+    branch_info    JSONB   NOT NULL,
+    branched_at    TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 7. Published universe‐level news
 CREATE TABLE IF NOT EXISTS universe_news (
     id            SERIAL PRIMARY KEY,
     universe_id   UUID    NOT NULL

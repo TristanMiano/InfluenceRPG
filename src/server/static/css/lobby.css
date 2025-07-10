@@ -96,6 +96,7 @@
 
 /* reflect backend “merged” flag */
 .status-merged   { background-color: #fd7e14; }
+.status-branched { background-color: #6f42c1; }
 
 /* reflect backend “waiting” flag */
 .status-waiting  { background-color: #17a2b8; }
