@@ -105,6 +105,25 @@ def list_universes_for_game(game_id: str) -> list[str]:
     finally:
         conn.close()
 
+def list_games_in_universe(universe_id: str) -> list[dict]:
+    """Return games linked to the given universe."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT g.id, g.name, g.status, g.created_at
+                  FROM games g
+                  JOIN universe_games ug ON g.id = ug.game_id
+                 WHERE ug.universe_id = %s
+                 ORDER BY g.created_at
+                """,
+                (universe_id,)
+            )
+            return cur.fetchall()
+    finally:
+        conn.close()
+
 def record_event(universe_id: str, game_id: str, event_type: str, event_payload: dict):
     """
     Insert a new event into the universe_events table.

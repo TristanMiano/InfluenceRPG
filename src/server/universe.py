@@ -30,6 +30,19 @@ class ConflictResponse(BaseModel):
     conflict_info: dict
     detected_at: datetime
 
+class EventResponse(BaseModel):
+    id: int
+    game_id: str
+    event_type: str
+    event_payload: dict
+    event_time: datetime
+
+class GameBrief(BaseModel):
+    id: str
+    name: str
+    status: str
+    created_at: datetime
+
 @router.post("/universe/create", response_model=UniverseResponse)
 def create_universe_endpoint(req: UniverseCreateRequest):
     try:
@@ -75,3 +88,22 @@ def list_universe_conflicts(universe_id: str):
         return universe_db.list_conflicts(universe_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/universe/{universe_id}/events", response_model=List[EventResponse])
+def list_universe_events(universe_id: str, limit: int = 100):
+    """Return recent universe events for diagramming."""
+    try:
+        return universe_db.list_events(universe_id, limit=limit)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/universe/{universe_id}/games", response_model=List[GameBrief])
+def list_universe_games(universe_id: str):
+    """List games linked to a universe."""
+    try:
+        return universe_db.list_games_in_universe(universe_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
