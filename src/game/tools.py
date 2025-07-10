@@ -16,6 +16,7 @@ def plan_tool_calls(conversation_context: str, trigger_prompt: str) -> Dict[str,
     describing the desired tool calls. Supported tools:
       - ``dice``: request dice rolls. Example ``{"dice": {"num_rolls": 2, "sides": 20}}``
       - ``lore``: retrieve ruleset lore. Example ``{"lore": {"query": "stealth rules", "top_k": 3}}``
+      - ``branch``: split the game into groups. Example ``{"branch": {"groups": [{"character_ids": ["c1"], "description": "Team A"}]}}``
     If no tools are needed, it should return ``{}``.
     """
     tool_prompt = (
@@ -23,6 +24,7 @@ def plan_tool_calls(conversation_context: str, trigger_prompt: str) -> Dict[str,
         "Return ONLY a JSON object describing necessary tool calls.\n"
         "Example for dice: {\"dice\": {\"num_rolls\": 1, \"sides\": 20}}\n"
         "Example for lore lookup: {\"lore\": {\"query\": \"movement rules\", \"top_k\": 3}}\n"
+        "Example for branching: {\"branch\": {\"groups\": [{\"character_ids\": [\"c1\"], \"description\": \"Team A\"}]}}\n"
         "If nothing is required, return {}.\n\n"
         f"Conversation History:\n{conversation_context}\n\n"
         f"Latest Prompt: {trigger_prompt}\n\n"

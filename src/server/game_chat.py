@@ -13,7 +13,8 @@ from src.game.tools import plan_tool_calls, roll_dice, query_ruleset_chunks
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 from src.game.named_entity_extractor import run_named_entity_extractor
-from src.server.notifications import notify_game_advanced
+from src.server.notifications import notify_game_advanced, notify_branch
+from src.game.brancher import run_branch
 from src.utils.token_counter import count_tokens, compute_usage_percentage
 from src.db.universe_db import (
     list_universes_for_game,
@@ -185,7 +186,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
     # Check if this game is closed before fully connecting
     game_info = game_db.get_game(game_id)
-    if game_info and game_info.get("status") in ("closed", "merged"):
+    if game_info and game_info.get("status") in ("closed", "merged", "branched"):
         await websocket.accept()
         persisted = list_chat_messages(game_id)
         for msg in persisted:
@@ -525,6 +526,34 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                                 uni = get_universe(uni_ids[0])
                                 if uni and uni.get("ruleset_id"):
                                     lore_chunks = query_ruleset_chunks(uni["ruleset_id"], lore_query, top_k)
+
+                    if isinstance(tool_plan, dict) and tool_plan.get("branch"):
+                        spec = tool_plan["branch"] or {}
+                        groups = spec.get("groups", [])
+                        try:
+                            results = run_branch(game_id, groups)
+                            ids = [r["game"]["id"] for r in results]
+                            msg = f"Game branched into {len(ids)} parts."
+                            game_db.save_chat_message(game_id, "System", msg)
+                            conversation_histories[game_id].append(f"System: {msg}")
+                            await manager.broadcast(game_id, json.dumps({
+                                "game_id":   game_id,
+                                "sender":    "System",
+                                "message":   msg,
+                                "timestamp": datetime.utcnow().isoformat() + "Z",
+                            }))
+                            notify_branch(game_id, results)
+                            return
+                        except Exception as e:
+                            err = f"Branch failed: {e}"
+                            game_db.save_chat_message(game_id, "System", err)
+                            conversation_histories[game_id].append(f"System: {err}")
+                            await manager.broadcast(game_id, json.dumps({
+                                "game_id":   game_id,
+                                "sender":    "System",
+                                "message":   err,
+                                "timestamp": datetime.utcnow().isoformat() + "Z",
+                            }))
 
                     # ——— Build prompt, with 50%‐of‐context threshold ———
                     # count on the full history version (including any dice results)

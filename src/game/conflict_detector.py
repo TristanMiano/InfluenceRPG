@@ -14,7 +14,7 @@ def run_conflict_detector(universe_id: str):
     # 1) Pull the most recent events
     events = universe_db.list_events(universe_id, limit=20)
 
-    # Filter out events from games that are already closed or merged
+    # Filter out events from games that are already closed, merged, or branched
     filtered_events = []
     status_cache: dict[str, str | None] = {}
     for e in events:
@@ -26,7 +26,7 @@ def run_conflict_detector(universe_id: str):
             except Exception:
                 status_cache[gid] = None
 
-        if status_cache[gid] in ("closed", "merged"):
+        if status_cache[gid] in ("closed", "merged", "branched"):
             continue
         filtered_events.append(e)
     events = filtered_events
