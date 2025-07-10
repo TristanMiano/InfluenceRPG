@@ -10,9 +10,10 @@ from src.db.game_db import (
     save_chat_message,
     get_latest_game_summary,
 )
+from src.server.notifications import notify_branch
 
 
-def run_branch(original_game_id: str, groups: list[dict]) -> list[dict]:
+def run_branch(original_game_id: str, groups: list[dict], *, send_notifications: bool = True) -> list[dict]:
     """Split a single game into multiple new ones based on character groups.
 
     Each group should be a dict with ``character_ids`` (list[str]) and
@@ -60,5 +61,15 @@ def run_branch(original_game_id: str, groups: list[dict]) -> list[dict]:
             event_type="branch",
             event_payload={"new_game_ids": new_ids, "groups": groups},
         )
+        for ng in new_games:
+            universe_db.record_event(
+                universe_id=uid,
+                game_id=ng["game"]["id"],
+                event_type="branched_from",
+                event_payload={"original_game_id": original_game_id},
+            )
+
+    if send_notifications:
+        notify_branch(original_game_id, new_games)
 
     return new_games

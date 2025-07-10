@@ -542,8 +542,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                                 "message":   msg,
                                 "timestamp": datetime.utcnow().isoformat() + "Z",
                             }))
-                            notify_branch(game_id, results)
-                            return
+                            continue
                         except Exception as e:
                             err = f"Branch failed: {e}"
                             game_db.save_chat_message(game_id, "System", err)
