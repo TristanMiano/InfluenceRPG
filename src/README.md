@@ -47,7 +47,7 @@ The `src/` directory is organized into logical layers:
 
 ## 2. Technology Stack
 
-* **Python 3.13**
+* **Python 3.11+**
 * **FastAPI** (API & WebSockets)
 * **Uvicorn/ASGI** server
 * **PostgreSQL** with **psycopg2-binary**
@@ -55,14 +55,17 @@ The `src/` directory is organized into logical layers:
 * **Pydantic** for request/response validation
 * **Sentence Transformers** (`all-MiniLM-L6-v2`) for embeddings
 * **Google Gemini API** (optional) for LLM completions
+* **tiktoken** for token counting
 * **Vite** + **JSX/React** for character wizard
 * **Jinja2** for server‑side HTML templates
+* **python-dotenv** for loading environment variables
+* **pdfminer.six** for parsing PDF rulesets
 
 ---
 
 ## 3. High‑Level Flow
 
-1. **Startup**: Load manifest, mount static files, schedule periodic news extraction every 30 min.
+1. **Startup**: Load manifest, mount static files, and launch an asyncio background task that runs the news extractor every 30 min.
 2. **Authentication**: `/login` and account creation endpoints use hashed passwords.
 3. **Character Creation**: Wizard flow (`/api/character/wizard`) iteratively collects data via LLM.
 4. **Game Lifecycle**:
@@ -102,7 +105,7 @@ psql -U postgres -d influence_rpg -f src/sql/rulesets.sql
 psql -U postgres -d influence_rpg -f src/sql/universes_setup.sql
 
 # 4. Start the server
-uvicorn src.server.main:app --reload
+uvicorn src.server.main:app --reload  # or use `python src/server_control.py start` for background mode
 ```
 
 ---
