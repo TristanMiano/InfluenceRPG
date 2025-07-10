@@ -6,5 +6,5 @@ Universe Description: {universe_description}
 
 Game Description: {game_description}
 
-{lore_section}The Background Lore Excerpts above were retrieved using cosine similarity between text embeddings of the excerpts and a query made from the Universe and Game Descriptions. Expand and elaborate on the game setup, adhering closely to the Game Description above. Integrate relevant details from the Background Lore Excerpts and respect any stipulations or restrictions in the Universe Description. Be creative and ensure the final narrative is cohesive, engaging, and faithful to the ruleset's lore.
+{news_section}{lore_section}The Background Lore Excerpts above were retrieved using cosine similarity between text embeddings of the excerpts and a query made from the Universe and Game Descriptions. Expand and elaborate on the game setup, adhering closely to the Game Description above. Integrate relevant details from the Background Lore Excerpts and respect any stipulations or restrictions in the Universe Description. Be creative and ensure the final narrative is cohesive, engaging, and faithful to the ruleset's lore.
 

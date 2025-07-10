@@ -70,7 +70,7 @@ The `src/` directory is organized into logical layers:
 3. **Character Creation**: Wizard flow (`/api/character/wizard`) iteratively collects data via LLM.
 4. **Game Lifecycle**:
 
-   * **Create**: `/api/game/create` checks for active characters, persists game, seeds with an AI‑generated opening scene.
+   * **Create**: `/api/game/create` checks for active characters, persists game, and seeds with an AI‑generated opening scene. When a game is initialized using the RAG endpoint `/api/game/generate-setup`, the prompt now includes the most recent universe news so the opening respects current events.
    * **Join**: `/api/game/{id}/join`, enforces one‑character‑per‑game, persists join.
    * **Chat**: Real‑time WebSocket at `/ws/game/{id}/chat` broadcasts messages, persists them, and handles `/gm` commands for summaries, history, and ad‑hoc narrative generation.
 5. **Universe Management**:
