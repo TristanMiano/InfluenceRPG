@@ -240,13 +240,17 @@ def branch_game_endpoint(game_id: str, req: BranchRequest, request: Request):
         raise HTTPException(status_code=400, detail="All characters must be assigned to one group")
 
     try:
-        results = run_branch(game_id, [grp.dict() for grp in req.groups])
+        results = run_branch(game_id, [grp.dict() for grp in req.groups], send_notifications=False)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
     notify_branch(game_id, results)
 
-    return [GameCreateResponse(**_add_universe_names(r["game"])) for r in results]
+    enriched = []
+    for r in results:
+        g = _add_universe_names(r["game"])
+        enriched.append(GameCreateResponse(**g))
+    return enriched
 
 @router.post("/game/{game_id}/close", response_model=GameCreateResponse)
 def close_game_endpoint(game_id: str, request: Request):
