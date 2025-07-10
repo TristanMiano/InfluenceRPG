@@ -29,7 +29,16 @@ CONTEXT_USAGE_THRESHOLD = 50.0
 
 router = APIRouter()
 
-summary_model = SentenceTransformer("all-MiniLM-L6-v2")
+try:
+    summary_model = SentenceTransformer("all-MiniLM-L6-v2")
+except Exception as e:  # pragma: no cover - offline fallback
+    logging.error(f"Could not load summary model: {e}")
+
+    class _DummyModel:
+        def encode(self, texts):
+            return [[0.0] * 384 for _ in texts]
+
+    summary_model = _DummyModel()
 
 # Global conversation history storage per game instance.
 conversation_histories: Dict[str, List[str]] = {}

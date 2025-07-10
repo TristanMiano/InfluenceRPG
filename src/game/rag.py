@@ -14,8 +14,18 @@ import logging
 from sentence_transformers import SentenceTransformer
 from src.db.character_db import get_db_connection
 
-# Load the embedding model once
-_embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+# Load the embedding model once, falling back to a dummy model if download fails
+try:
+    _embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+except Exception as e:  # pragma: no cover - network/offline fallback
+    logging.error(f"Could not load embedding model: {e}")
+
+    class _DummyModel:
+        def encode(self, texts):
+            # Return a fixed-size zero vector for each text
+            return [[0.0] * 384 for _ in texts]
+
+    _embedding_model = _DummyModel()
 # Default number of chunks to retrieve
 DEFAULT_TOP_K = 5
 
