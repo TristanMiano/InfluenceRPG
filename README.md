@@ -4,6 +4,7 @@
 This project aims to create a revolutionary tabletop role-playing game (RPG) that fuses detailed character-driven narrative with expansive strategic simulation. Unlike traditional RPGs that focus solely on adventuring, our game places players in the roles of high-status figures—such as military leaders, political masterminds, corporate magnates, and cultural icons—who wield influence over vast social, economic, and military domains. Players will experience both the intricate personal development typical of RPGs and the large-scale decision-making found in strategy games.
 
 ## Table of Contents
+- [Game Format](#game-format)
 - [Project Vision](#project-vision)
 - [Game Mechanics](#game-mechanics)
   - [Military Mechanics](#military-mechanics)
@@ -15,7 +16,9 @@ This project aims to create a revolutionary tabletop role-playing game (RPG) tha
 - [Future Extensions](#future-extensions)
 - [Development Roadmap](#development-roadmap)
 - [Requirements](#requirements)
-- [Developer Tools](#developer-tools)
+
+## Game Format
+This game is played entirely online. Players connect through a web browser and share a single game instance managed by an AI gamemaster powered by large language models. The system supports multiple players at once, and the AI handles scene narration, NPC dialogue, and dice rolls. While there's no physical table, you still create characters, cooperate with other players, and experience a collaborative story much like a traditional tabletop RPG.
 
 ## Project Vision
 The game is designed to merge intimate, character-driven role-playing with the high-stakes dynamics of strategic management. Players assume the roles of influential figures—from military commanders and political leaders to CEOs and even deities in fantasy or sci-fi settings—whose personal actions and grand strategic decisions shape the world around them. The core design emphasizes:
@@ -92,29 +95,3 @@ While the initial focus is on modern military mechanics and high-level strategy,
 - **AI Integration:** Uses LLM APIs (e.g., Google Gemini) for narrative generation.
 - **Database:** A relational or NoSQL database for persistent state management.
 
-## Developer Tools
-To further aid in project development, contributors can use the following utilities:
-
-### `generate_project_overview.py`
-- **Purpose:**  
-  Aggregates the project's directory structure, source code, and documentation into a comprehensive overview (`project_overview.txt`).  
-- **Usage:**  
-  - **Full Output:** Run without flags for a complete listing of all files and their contents.  
-  - **Short Output:** Use the `--short` flag to include only Python function/class signatures and docstrings.  
-  - **Exclusions:** Provide additional file paths (relative to the project root) after `--short` to output those files in full.  
-  - **Skipping:** Use the `--skip` flag to omit specified directories or files entirely.  
-- **Benefit:**  
-  Quickly get a snapshot of the entire project’s architecture and documentation, which is especially useful for onboarding new contributors or conducting audits.
-
-### `project_query.py`
-- **Purpose:**  
-  Constructs a prompt by dynamically loading the project background from `README.md` and combining it with a user query. It then traverses project files to collect and assess relevant content using AI-based summarization or inclusion logic.
-- **Usage:**  
-  - Provide a user query via the `--prompt` argument to search for specific details across project files.
-  - Adjust the `--token_limit` to control the output length.
-- **Benefit:**  
-  Efficiently gather targeted project information, which is particularly useful during development for troubleshooting, design reviews, or feature planning.
-
----
-
-Contributors are encouraged to explore these tools as part of the development workflow. They serve as powerful utilities to understand the project structure, assess file relevance, and streamline collaboration on this ambitious RPG project.
