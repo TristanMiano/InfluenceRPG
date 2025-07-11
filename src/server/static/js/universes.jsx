@@ -111,7 +111,7 @@ function drawSankey(name, games, events) {
 
   const sankeyGen = d3.sankey()
     .nodeId(d => d.id)
-    .nodeWidth(15)
+    .nodeWidth(8)
     .nodePadding(10)
     .nodeAlign(d => timeIndex.get(d.time.getTime()))
     .extent([[0, 0], [width, height]]);
@@ -120,22 +120,26 @@ function drawSankey(name, games, events) {
 
   const scale = d3.scaleTime()
     .domain(d3.extent(times))
-    .range([0, width - sankeyGen.nodeWidth()]);
+    .range([0, height - sankeyGen.nodeWidth()]);
+
+  svg.append('g')
+    .attr('transform', 'translate(30,0)')
+    .call(d3.axisLeft(scale).tickValues(times));
 
   graph.nodes.forEach(n => {
-    const x = scale(n.time);
-    n.x0 = x;
-    n.x1 = x + sankeyGen.nodeWidth();
+    const y = scale(n.time);
+    n.y0 = y;
+    n.y1 = y + sankeyGen.nodeWidth();
   });
 
   svg.append('g')
     .selectAll('path')
     .data(graph.links)
     .join('path')
-    .attr('d', d3.sankeyLinkHorizontal())
+    .attr('d', d3.sankeyLinkVertical())
     .attr('fill', 'none')
     .attr('stroke', '#888')
-    .attr('stroke-width', d => Math.max(1, d.width))
+    .attr('stroke-width', 8)
     .attr('opacity', 0.6);
 
   svg.append('g')
@@ -153,7 +157,7 @@ function drawSankey(name, games, events) {
     .selectAll('text')
     .data(graph.nodes)
     .join('text')
-    .attr('x', d => d.x0 + 5)
+    .attr('x', d => d.x1 + 5)
     .attr('y', d => (d.y0 + d.y1) / 2)
     .attr('dy', '0.35em')
     .text(d => d.name)
