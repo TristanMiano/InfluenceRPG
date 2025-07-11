@@ -9,6 +9,12 @@
 .universe-diagram-panel {
   flex: 1;
 }
+
+.diagram-scroll {
+  height: 600px;
+  overflow-y: auto;
+  margin: 0 30px;
+}
 #universe-list {
   list-style: none;
   padding: 0;
