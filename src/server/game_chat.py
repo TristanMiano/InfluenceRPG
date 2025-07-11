@@ -58,6 +58,13 @@ def fetch_full_entity_list(game_id: str) -> str:
             entities.extend(universe_db.list_named_entities(uid, limit=100))
         except Exception:
             continue
+    # Convert any datetime objects in the entity list to ISO strings so the
+    # structure is fully JSON serializable.
+    for entity in entities:
+        for key, value in list(entity.items()):
+            if isinstance(value, datetime):
+                entity[key] = value.isoformat()
+
     return json.dumps(entities, ensure_ascii=False)
 
 def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> str:
