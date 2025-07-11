@@ -39,7 +39,8 @@ async function selectUniverse(universe) {
     const games = await gamesResp.json();
     drawSankey(universe.name, games, events);
   } catch (e) {
-    drawPlaceholder(universe.name);
+    showError(`Failed to load diagram for ${universe.name}`);
+    console.error(e);
   }
 }
 
@@ -62,6 +63,28 @@ function drawPlaceholder(name) {
     .attr('x', 10)
     .attr('y', 20)
     .text(`Sankey placeholder for ${name}`);
+}
+
+function showError(message) {
+  const svg = d3.select('#sankey-diagram');
+  svg.selectAll('*').remove();
+  svg.append('text')
+    .attr('x', 10)
+    .attr('y', 20)
+    .attr('fill', 'red')
+    .text(message);
+}
+
+function sankeyLinkVertical() {
+  const curvature = 0.5;
+  return function(d) {
+    const y0 = d.source.y1;
+    const y1 = d.target.y0;
+    const yi = d3.interpolateNumber(y0, y1);
+    const y2 = yi(curvature);
+    const y3 = yi(1 - curvature);
+    return `M${d.source.x1},${y0}C${d.source.x1},${y2} ${d.target.x0},${y3} ${d.target.x0},${y1}`;
+  };
 }
 
 function drawSankey(name, games, events) {
@@ -128,15 +151,24 @@ function drawSankey(name, games, events) {
 
   graph.nodes.forEach(n => {
     const y = scale(n.time);
+    const delta = y - n.y0;
     n.y0 = y;
     n.y1 = y + sankeyGen.nodeWidth();
+    n._dy = delta; // store shift for links
   });
+
+  graph.links.forEach(l => {
+    l.y0 += l.source._dy;
+    l.y1 += l.target._dy;
+  });
+
+  graph.nodes.forEach(n => delete n._dy);
 
   svg.append('g')
     .selectAll('path')
     .data(graph.links)
     .join('path')
-    .attr('d', d3.sankeyLinkVertical())
+    .attr('d', sankeyLinkVertical())
     .attr('fill', 'none')
     .attr('stroke', '#888')
     .attr('stroke-width', 8)
