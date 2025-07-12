@@ -6,7 +6,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict, List
 from datetime import datetime, timezone
 from src.db import game_db, universe_db
-from src.db.game_db import list_chat_messages, get_db_connection, list_players_in_game
+from src.db import game_db
 from sentence_transformers import SentenceTransformer
 from src.llm.gm_llm import generate_gm_response, generate_gm_output
 from src.game.tools import roll_dice, query_ruleset_chunks
@@ -17,7 +17,6 @@ from src.server.notifications import notify_game_advanced, notify_branch
 from src.game.brancher import run_branch
 from src.utils.token_counter import count_tokens, compute_usage_percentage
 from src.db.universe_db import (
-    list_universes_for_game,
     get_universe,
     upsert_named_entity,
 )
@@ -51,7 +50,7 @@ entity_cache: Dict[str, str] = {}
 
 def fetch_full_entity_list(game_id: str) -> str:
     """Return the full JSON list of known entities for this game's universes."""
-    uni_ids = list_universes_for_game(game_id)
+    uni_ids = universe_db.list_universes_for_game(game_id)
     entities = []
     for uid in uni_ids:
         try:
@@ -81,7 +80,7 @@ def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> 
     # 1) Universe & ruleset
     uni_section = ""
     ruleset_section = ""
-    uni_ids = list_universes_for_game(game_id)
+    uni_ids = universe_db.list_universes_for_game(game_id)
     if uni_ids:
         uni = get_universe(uni_ids[0])
         if uni:
@@ -95,7 +94,7 @@ def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> 
                 )
 
     # 2) Players list
-    player_ids = list_players_in_game(game_id)
+    player_ids = game_db.list_players_in_game(game_id)
     names = []
     for cid in player_ids:
         char = get_character_by_id(cid)
@@ -105,13 +104,13 @@ def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> 
 
     # 3) Opening scene (first GM message)
     opening_scene = ""
-    for m in list_chat_messages(game_id):
+    for m in game_db.list_chat_messages(game_id):
         if m["sender"] == "GM":
             opening_scene = m["message"]
             break
 
     # 4) Latest stored summary
-    conn = get_db_connection()
+    conn = game_db.get_db_connection()
     try:
         with conn.cursor() as cur:
             cur.execute(
@@ -125,7 +124,7 @@ def build_compressed_context(game_id: str, gm_prompt: str, last_k: int = 20) -> 
         conn.close()
 
     # 5) Recent messages
-    conn = get_db_connection()
+    conn = game_db.get_db_connection()
     try:
         with conn.cursor() as cur:
             cur.execute(
@@ -204,7 +203,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
     game_info = game_db.get_game(game_id)
     if game_info and game_info.get("status") in ("closed", "merged", "branched"):
         await websocket.accept()
-        persisted = list_chat_messages(game_id)
+        persisted = game_db.list_chat_messages(game_id)
         for msg in persisted:
             await websocket.send_text(json.dumps({
                 "game_id":   game_id,
@@ -223,7 +222,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
         conversation_histories[game_id] = []
 
     # Pull everything from chat_messages table
-    persisted = list_chat_messages(game_id)
+    persisted = game_db.list_chat_messages(game_id)
     for msg in persisted:
         entry = f"{msg['sender']}: {msg['message']}"
         conversation_histories[game_id].append(entry)
@@ -246,12 +245,15 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
     system_entry = f"System: {join_msg}"
     conversation_histories[game_id].append(system_entry)
 
-    await manager.broadcast(game_id, json.dumps({
+    join_payload = json.dumps({
         "game_id": game_id,
         "sender": "System",
         "message": join_msg,
-        "timestamp": datetime.utcnow().isoformat() + "Z"
-    }))
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+    })
+    for conn in manager.active_connections.get(game_id, []):
+        if conn is not websocket:
+            await conn.send_text(join_payload)
 
     # 5.1 Broadcast full character details so the GM knows their stats
     try:
@@ -259,12 +261,15 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
         char_data = full_char.get("character_data", {})
         attrs_msg = f"{character_name}'s full profile: {json.dumps(char_data)}"
         conversation_histories[game_id].append(f"System: {attrs_msg}")
-        await manager.broadcast(game_id, json.dumps({
+        payload = json.dumps({
             "game_id":   game_id,
             "sender":    "System",
             "message":   attrs_msg,
             "timestamp": datetime.utcnow().isoformat() + "Z"
-        }))
+        })
+        for conn in manager.active_connections.get(game_id, []):
+            if conn is not websocket:
+                await conn.send_text(payload)
     except Exception as e:
         print(f"Error broadcasting character data: {e}")
 
@@ -282,7 +287,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                 if cmd == "summarize":
                     # (Unchanged from before…)
 
-                    conn = get_db_connection()
+                    conn = game_db.get_db_connection()
                     with conn.cursor() as cur:
                         cur.execute(
                             "SELECT max(summary_date) FROM game_history WHERE game_id=%s",
@@ -317,7 +322,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
 
                     embedding = summary_model.encode(summary_text).tolist()
 
-                    conn = get_db_connection()
+                    conn = game_db.get_db_connection()
                     with conn.cursor() as cur:
                         cur.execute(
                             "INSERT INTO game_history (game_id, summary, embedding) VALUES (%s, %s, %s)",
@@ -356,7 +361,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                     if len(parts) > 2 and parts[2].isdigit():
                         k = int(parts[2])
 
-                    conn = get_db_connection()
+                    conn = game_db.get_db_connection()
                     with conn.cursor() as cur:
                         if k:
                             cur.execute(
@@ -389,7 +394,7 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                     # Gather known player characters in this game
                     known_entities = []
                     try:
-                        player_ids = list_players_in_game(game_id)
+                        player_ids = game_db.list_players_in_game(game_id)
                         for cid in player_ids:
                             char = get_character_by_id(cid)
                             if char:

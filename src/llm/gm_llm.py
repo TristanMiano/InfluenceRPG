@@ -12,6 +12,7 @@ Usage:
 
 from typing import Any, Dict, Tuple
 import json
+import re
 import yaml
 
 from src.llm.llm_client import generate_completion
@@ -31,12 +32,29 @@ def generate_gm_output(
         entity_list=entity_list,
     )
     raw = generate_completion(prompt=gm_prompt, conversation_context="")
+
+    # 1) Strip markdown fences if present
     cleaned = raw.strip()
+    if cleaned.startswith("```"):
+        lines = cleaned.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+
+    # 2) Extract the first `{ ... }` blob
+    m = re.search(r'(\{[\s\S]*\})', cleaned)
+    if m:
+        json_str = m.group(1)
+    else:
+        json_str = cleaned
+
     try:
-        data = json.loads(cleaned)
+        data = json.loads(json_str)
     except Exception:
         try:
-            data = yaml.safe_load(cleaned)
+            data = yaml.safe_load(json_str)
         except Exception:
             # If parsing fails, treat entire output as narrative only
             return cleaned, {}
