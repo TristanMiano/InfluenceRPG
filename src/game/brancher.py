@@ -59,14 +59,14 @@ def run_branch(original_game_id: str, groups: list[dict], *, send_notifications:
             universe_id=uid,
             game_id=original_game_id,
             event_type="branch",
-            event_payload={"new_game_ids": new_ids, "groups": groups},
+            payload={"new_game_ids": new_ids, "groups": groups},
         )
         for ng in new_games:
             universe_db.record_event(
                 universe_id=uid,
                 game_id=ng["game"]["id"],
                 event_type="branched_from",
-                event_payload={"original_game_id": original_game_id},
+                payload={"original_game_id": original_game_id},
             )
 
     if send_notifications:

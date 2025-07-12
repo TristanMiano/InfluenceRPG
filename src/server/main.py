@@ -14,7 +14,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from starlette.middleware.sessions import SessionMiddleware
 
-from src.auth.auth import authenticate_user, get_db_connection
+from src.auth import auth
 from src.utils.security import hash_password
 from src.models.user import User
 from src.server.chat import router as chat_router
@@ -135,7 +135,7 @@ def read_login(request: Request):
 
 @app.post("/login", response_model=LoginResponse)
 def login(request_data: LoginRequest, request: Request):
-    user = authenticate_user(request_data.username, request_data.password)
+    user = auth.authenticate_user(request_data.username, request_data.password)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     request.session["username"] = user["username"]
@@ -165,7 +165,7 @@ async def create_account_submit(
             {"request": request, "error": "Passwords do not match."},
             status_code=400
         )
-    conn = get_db_connection()
+    conn = auth.get_db_connection()
     try:
         with conn.cursor() as cur:
             cur.execute("SELECT username FROM users WHERE username = %s", (username,))
