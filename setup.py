@@ -13,6 +13,7 @@ setup(
         "pydantic",
         "requests",
         "tiktoken",
+        "PyYAML>=5.3",
         # Add any other dependencies here
     ],
     entry_points={

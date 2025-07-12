@@ -12,6 +12,7 @@ Usage:
 
 from typing import Any, Dict, Tuple
 import json
+import yaml
 
 from src.llm.llm_client import generate_completion
 from src.utils.prompt_loader import load_prompt_template
@@ -30,14 +31,23 @@ def generate_gm_output(
         entity_list=entity_list,
     )
     raw = generate_completion(prompt=gm_prompt, conversation_context="")
+    cleaned = raw.strip()
     try:
-        data = json.loads(raw.strip())
+        data = json.loads(cleaned)
+    except Exception:
+        try:
+            data = yaml.safe_load(cleaned)
+        except Exception:
+            # If parsing fails, treat entire output as narrative only
+            return cleaned, {}
+
+    if isinstance(data, dict):
         text = data.get("narrative", "")
         tools = data.get("tool_calls", {}) if isinstance(data.get("tool_calls"), dict) else {}
         return text, tools
-    except Exception:
-        # If parsing fails, treat entire output as narrative only
-        return raw.strip(), {}
+
+    # Unexpected non-dict structure
+    return cleaned, {}
 
 def generate_gm_response(
     conversation_context: str,
