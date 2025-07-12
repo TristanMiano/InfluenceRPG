@@ -8,8 +8,8 @@ from datetime import datetime, timezone
 from src.db import game_db, universe_db
 from src.db.game_db import list_chat_messages, get_db_connection, list_players_in_game
 from sentence_transformers import SentenceTransformer
-from src.llm.gm_llm import generate_gm_response
-from src.game.tools import plan_tool_calls, roll_dice, query_ruleset_chunks
+from src.llm.gm_llm import generate_gm_response, generate_gm_output
+from src.game.tools import roll_dice, query_ruleset_chunks
 from src.db.character_db import get_character_by_id
 from src.game.conflict_detector import run_conflict_detector
 from src.game.named_entity_extractor import run_named_entity_extractor
@@ -493,139 +493,128 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                         # If it somehow was not a /gm (rare), treat as default
                         gm_prompt = "Provide a narrative update."
 
-                    # Decide if any game mechanics should run before the GM response
-                    full_history = "\n".join(conversation_histories[game_id])
-                    tool_plan = plan_tool_calls(full_history, gm_prompt)
-
-                    # Announce what tasks will run (if any)
-                    planned = []
-                    if isinstance(tool_plan, dict):
-                        planned = [key for key in tool_plan.keys() if tool_plan.get(key)]
-                    tasks_msg = (
-                        "GM will run no additional tasks." if not planned
-                        else f"GM will run tasks: {', '.join(planned)}"
-                    )
-                    game_db.save_chat_message(game_id, "System", tasks_msg)
-                    conversation_histories[game_id].append(f"System: {tasks_msg}")
-                    await manager.broadcast(game_id, json.dumps({
-                        "game_id":   game_id,
-                        "sender":    "System",
-                        "message":   tasks_msg,
-                        "timestamp": datetime.utcnow().isoformat() + "Z",
-                    }))
-
-                    dice_results = []
+                    # Iteratively let the GM decide on tool usage before broadcasting
                     lore_chunks = []
                     lore_query = ""
-                    if isinstance(tool_plan, dict) and tool_plan.get("dice"):
-                        spec = tool_plan["dice"] or {}
-                        num = int(spec.get("num_rolls", 1))
-                        sides = int(spec.get("sides", 20))
-                        dice_results = roll_dice(num, sides)
-                        result_msg = f"Rolled {num}d{sides}: {dice_results}"
-                        game_db.save_chat_message(game_id, "System", result_msg)
-                        conversation_histories[game_id].append(f"System: {result_msg}")
-                        await manager.broadcast(game_id, json.dumps({
-                            "game_id":   game_id,
-                            "sender":    "System",
-                            "message":   result_msg,
-                            "timestamp": datetime.utcnow().isoformat() + "Z",
-                        }))
+                    branch_performed = False
+                    while True:
+                        full_history = "\n".join(conversation_histories[game_id])
+                        entity_json = entity_cache.get(game_id)
+                        if not entity_json:
+                            entity_json = fetch_full_entity_list(game_id)
+                            entity_cache[game_id] = entity_json
+                        entity_block = f"Known Entities:\n{entity_json}\n\n" if entity_json else ""
 
-                    if isinstance(tool_plan, dict) and tool_plan.get("lore"):
-                        spec = tool_plan["lore"] or {}
-                        lore_query = spec.get("query", "")
-                        top_k = int(spec.get("top_k", 5))
-                        if lore_query:
-                            uni_ids = universe_db.list_universes_for_game(game_id)
-                            if uni_ids:
-                                uni = get_universe(uni_ids[0])
-                                if uni and uni.get("ruleset_id"):
-                                    lore_chunks = query_ruleset_chunks(uni["ruleset_id"], lore_query, top_k)
+                        lore_block = ""
+                        if lore_chunks:
+                            lore_lines = [f"Relevant Lore for '{lore_query}':"]
+                            for idx, chunk in enumerate(lore_chunks, start=1):
+                                lore_lines.append(f"{idx}. {chunk.strip()}")
+                            lore_block = "\n".join(lore_lines) + "\n\n"
 
-                    if isinstance(tool_plan, dict) and tool_plan.get("branch"):
-                        spec = tool_plan["branch"] or {}
-                        groups = spec.get("groups", [])
-                        try:
-                            results = run_branch(game_id, groups)
-                            ids = [r["game"]["id"] for r in results]
-                            msg = f"Game branched into {len(ids)} parts."
-                            game_db.save_chat_message(game_id, "System", msg)
-                            conversation_histories[game_id].append(f"System: {msg}")
-                            await manager.broadcast(game_id, json.dumps({
-                                "game_id":   game_id,
-                                "sender":    "System",
-                                "message":   msg,
-                                "timestamp": datetime.utcnow().isoformat() + "Z",
-                            }))
-                            continue
-                        except Exception as e:
-                            err = f"Branch failed: {e}"
-                            game_db.save_chat_message(game_id, "System", err)
-                            conversation_histories[game_id].append(f"System: {err}")
-                            await manager.broadcast(game_id, json.dumps({
-                                "game_id":   game_id,
-                                "sender":    "System",
-                                "message":   err,
-                                "timestamp": datetime.utcnow().isoformat() + "Z",
-                            }))
-
-                    # ——— Build prompt, with 50%‐of‐context threshold ———
-                    # count on the full history version (including any dice results)
-                    full_history = "\n".join(conversation_histories[game_id])
-                    lore_block = ""
-                    if lore_chunks:
-                        lore_lines = [f"Relevant Lore for '{lore_query}':"]
-                        for idx, chunk in enumerate(lore_chunks, start=1):
-                            lore_lines.append(f"{idx}. {chunk.strip()}")
-                        lore_block = "\n".join(lore_lines) + "\n\n"
-
-                    entity_json = entity_cache.get(game_id)
-                    if not entity_json:
-                        entity_json = fetch_full_entity_list(game_id)
-                        entity_cache[game_id] = entity_json
-                    entity_block = f"Known Entities:\n{entity_json}\n\n" if entity_json else ""
-
-                    baseline_prompt = (
-                        f"{news_block}"
-                        f"{lore_block}"
-                        f"{entity_block}"
-                        f"Conversation History:\n{full_history}\n\n"
-                        f"User (trigger): {gm_prompt}\n\n"
-                        "GM Response:"
-                    )
-                    prompt_tokens = count_tokens(baseline_prompt, MODEL_NAME)
-                    pct = compute_usage_percentage(prompt_tokens, MODEL_NAME)
-                    logging.info(f"[TokenUsage] game={game_id} prompt={prompt_tokens} tokens ({pct:.1f}%)")
-
-                    if pct >= CONTEXT_USAGE_THRESHOLD:
-                        # compress
-                        assembled_prompt = (
+                        baseline_prompt = (
                             f"{news_block}"
                             f"{lore_block}"
-                            + build_compressed_context(game_id, gm_prompt, last_k=20)
+                            f"{entity_block}"
+                            f"Conversation History:\n{full_history}\n\n"
+                            f"User (trigger): {gm_prompt}\n\n"
+                            "GM Response:"
                         )
-                    else:
-                        assembled_prompt = baseline_prompt
-                    # —————————————————————————————
-                    # Call the GM LLM
-                    gm_response = generate_gm_response(
-                        assembled_prompt,
-                        entity_list=entity_cache.get(game_id, fetch_full_entity_list(game_id))
-                    )
 
-                    # Persist & broadcast GM output
-                    game_db.save_chat_message(game_id, "GM", gm_response)
-                    conversation_histories[game_id].append(f"GM: {gm_response}")
-                    await manager.broadcast(game_id, json.dumps({
-                        "game_id":   game_id,
-                        "sender":    "GM",
-                        "message":   gm_response,
-                        "timestamp": datetime.utcnow().isoformat() + "Z"
-                    }))
-                    
-                    # Notify other players that the game advanced via /gm
-                    notify_game_advanced(game_id, username)
+                        prompt_tokens = count_tokens(baseline_prompt, MODEL_NAME)
+                        pct = compute_usage_percentage(prompt_tokens, MODEL_NAME)
+                        logging.info(f"[TokenUsage] game={game_id} prompt={prompt_tokens} tokens ({pct:.1f}%)")
+
+                        if pct >= CONTEXT_USAGE_THRESHOLD:
+                            assembled_prompt = (
+                                f"{news_block}"
+                                f"{lore_block}"
+                                + build_compressed_context(game_id, gm_prompt, last_k=20)
+                            )
+                        else:
+                            assembled_prompt = baseline_prompt
+
+                        gm_text, tool_plan = generate_gm_output(
+                            assembled_prompt,
+                            entity_list=entity_json,
+                        )
+
+                        conversation_histories[game_id].append(f"GM: {gm_text}")
+
+                        if tool_plan.get("dice"):
+                            spec = tool_plan["dice"] or {}
+                            num = int(spec.get("num_rolls", 1))
+                            sides = int(spec.get("sides", 20))
+                            dice_results = roll_dice(num, sides)
+                            result_msg = f"Rolled {num}d{sides}: {dice_results}"
+                            game_db.save_chat_message(game_id, "System", result_msg)
+                            conversation_histories[game_id].append(f"System: {result_msg}")
+                            await manager.broadcast(game_id, json.dumps({
+                                "game_id":   game_id,
+                                "sender":    "System",
+                                "message":   result_msg,
+                                "timestamp": datetime.utcnow().isoformat() + "Z",
+                            }))
+
+                        if tool_plan.get("lore"):
+                            spec = tool_plan["lore"] or {}
+                            lore_query = spec.get("query", "")
+                            top_k = int(spec.get("top_k", 5))
+                            if lore_query:
+                                uni_ids = universe_db.list_universes_for_game(game_id)
+                                if uni_ids:
+                                    uni = get_universe(uni_ids[0])
+                                    if uni and uni.get("ruleset_id"):
+                                        lore_chunks = query_ruleset_chunks(uni["ruleset_id"], lore_query, top_k)
+
+                        if tool_plan.get("branch"):
+                            spec = tool_plan["branch"] or {}
+                            groups = spec.get("groups", [])
+                            try:
+                                results = run_branch(game_id, groups)
+                                ids = [r["game"]["id"] for r in results]
+                                msg = f"Game branched into {len(ids)} parts."
+                                game_db.save_chat_message(game_id, "System", msg)
+                                conversation_histories[game_id].append(f"System: {msg}")
+                                await manager.broadcast(game_id, json.dumps({
+                                    "game_id":   game_id,
+                                    "sender":    "System",
+                                    "message":   msg,
+                                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                                }))
+                                branch_performed = True
+                                break
+                            except Exception as e:
+                                err = f"Branch failed: {e}"
+                                game_db.save_chat_message(game_id, "System", err)
+                                conversation_histories[game_id].append(f"System: {err}")
+                                await manager.broadcast(game_id, json.dumps({
+                                    "game_id":   game_id,
+                                    "sender":    "System",
+                                    "message":   err,
+                                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                                }))
+
+                        if branch_performed:
+                            break
+                        if tool_plan:
+                            # Append tool results and loop again
+                            continue
+
+                        # No tools requested, broadcast final GM text
+                        game_db.save_chat_message(game_id, "GM", gm_text)
+                        await manager.broadcast(game_id, json.dumps({
+                            "game_id":   game_id,
+                            "sender":    "GM",
+                            "message":   gm_text,
+                            "timestamp": datetime.utcnow().isoformat() + "Z",
+                        }))
+                        notify_game_advanced(game_id, username)
+                        break
+
+                    if branch_performed:
+                        continue
+
 
             # --- Player message branch ---
             else:
