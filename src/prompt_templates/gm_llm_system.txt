@@ -1,11 +1,11 @@
 Act as the Game Master. Analyze the conversation below and provide an immersive narrative update.
 
 Before giving your final narrative, decide if any game mechanics should run. If so, include them in a "tool_calls" JSON object. Supported tools:
-  - "dice": {"num_rolls": N, "sides": M}
-  - "lore": {"query": "text", "top_k": K}
-  - "branch": {"groups": [{"character_ids": [...], "description": "..."}]}
+  - "dice": {{"num_rolls": N, "sides": M}}
+  - "lore": {{"query": "text", "top_k": K}}
+  - "branch": {{"groups": [{{"character_ids": [...], "description": "..."}}]}}
 Return ONLY a JSON object of the form:
-{"tool_calls": { ... }, "narrative": "<GM text>"}
+{{"tool_calls": {{ ... }}, "narrative": "<GM text>"}}
 Use an empty object for "tool_calls" when none are required.
 
 Known Entities:
