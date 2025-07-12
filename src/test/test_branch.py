@@ -115,7 +115,6 @@ def test_branch_endpoint(monkeypatch):
 def test_websocket_branch(monkeypatch):
     from src.server import game_chat
     from src.game import brancher
-    from src.game import tools
 
     monkeypatch.setattr(game_chat.game_db, "list_chat_messages", lambda gid: [])
     monkeypatch.setattr(game_chat.game_db, "get_game", lambda gid: {"id": gid, "name": "Base", "status": "active"})
@@ -123,7 +122,7 @@ def test_websocket_branch(monkeypatch):
     monkeypatch.setattr(game_chat.game_db, "list_players_in_game", lambda gid: ["c1"])
     monkeypatch.setattr(game_chat.universe_db, "list_universes_for_game", lambda gid: [])
     monkeypatch.setattr(game_chat, "get_character_by_id", lambda cid: {"id": cid, "name": "Char", "owner": "u"})
-    monkeypatch.setattr(tools, "plan_tool_calls", lambda h, g: {"branch": {"groups": [{"character_ids": ["c1"], "description": ""}]}} if g.startswith("branch") else {})
+    monkeypatch.setattr(game_chat, "generate_gm_output", lambda *a, **k: ("", {"branch": {"groups": [{"character_ids": ["c1"], "description": ""}]}}))
     monkeypatch.setattr(brancher, "notify_branch", lambda *a, **k: None)
     monkeypatch.setattr(brancher, "create_game", lambda name: {"id": "n1", "name": name, "status": "waiting"})
     monkeypatch.setattr(brancher, "join_game", lambda *a, **k: None)
