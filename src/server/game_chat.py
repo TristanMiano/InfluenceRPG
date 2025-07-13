@@ -544,7 +544,19 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             entity_list=entity_json,
                         )
 
-                        conversation_histories[game_id].append(f"GM: {gm_text}")
+                        if tool_plan:
+                            tag = "GM chain-of-thought"
+                        else:
+                            tag = "GM"
+
+                        conversation_histories[game_id].append(f"{tag}: {gm_text}")
+
+                        await manager.broadcast(game_id, json.dumps({
+                            "game_id":   game_id,
+                            "sender":    tag,
+                            "message":   gm_text,
+                            "timestamp": datetime.utcnow().isoformat() + "Z",
+                        }))
 
                         if tool_plan.get("dice"):
                             spec = tool_plan["dice"] or {}
@@ -606,14 +618,8 @@ async def game_chat_endpoint(game_id: str, websocket: WebSocket):
                             # Append tool results and loop again
                             continue
 
-                        # No tools requested, broadcast final GM text
+                        # No tools requested, finalize GM text
                         game_db.save_chat_message(game_id, "GM", gm_text)
-                        await manager.broadcast(game_id, json.dumps({
-                            "game_id":   game_id,
-                            "sender":    "GM",
-                            "message":   gm_text,
-                            "timestamp": datetime.utcnow().isoformat() + "Z",
-                        }))
                         notify_game_advanced(game_id, username)
                         break
 

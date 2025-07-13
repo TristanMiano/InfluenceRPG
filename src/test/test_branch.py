@@ -137,6 +137,7 @@ def test_websocket_branch(monkeypatch):
     client = TestClient(app)
     with client.websocket_connect("/ws/game/base/chat?username=u&character_id=c1") as ws:
         ws.send_text("/gm branch {}")
+        _thought = ws.receive_text()
         data = ws.receive_text()
         assert "Game branched" in data
         ws.send_text("hello")
