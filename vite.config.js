@@ -39,6 +39,7 @@ export default defineConfig({
         'game_creation_css': resolve(__dirname, 'src/server/static/css/game_creation.css'),
         'lobby_css': resolve(__dirname, 'src/server/static/css/lobby.css'),
         'login_css': resolve(__dirname, 'src/server/static/css/login.css'),
+        'create_account_css': resolve(__dirname, 'src/server/static/css/create_account.css'),
         'universes_css': resolve(__dirname, 'src/server/static/css/universes.css'),
       },
       output: {
