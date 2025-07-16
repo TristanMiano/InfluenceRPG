@@ -40,6 +40,9 @@ button {
 
 .message {
   margin-bottom: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .timestamp {
