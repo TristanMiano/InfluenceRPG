@@ -30,6 +30,7 @@ export default defineConfig({
         'game_creation': resolve(__dirname, 'src/server/static/js/game_creation.js'),
         'lobby': resolve(__dirname, 'src/server/static/js/lobby.jsx'),
         'login': resolve(__dirname, 'src/server/static/js/login.js'),
+        'messages': resolve(__dirname, 'src/server/static/js/messages.jsx'),
         'universe_create': resolve(__dirname, 'src/server/static/js/universe_create.js'),
         'universes': resolve(__dirname, 'src/server/static/js/universes.jsx'),
 

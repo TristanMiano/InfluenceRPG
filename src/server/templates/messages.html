@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Messages - Influence RPG{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', path=asset_path('lobby.css')) }}">
+{% endblock %}
+
+{% block content %}
+  <div class="container lobby-container">
+    <h2>Messages</h2>
+    <div id="threads">
+      {% if participants %}
+        <label for="with-user-select">Conversations:</label>
+        <select id="with-user-select">
+          <option value="">-- Select --</option>
+          {% for p in participants %}
+            <option value="{{ p }}" {% if with_user==p %}selected{% endif %}>{{ p }}</option>
+          {% endfor %}
+        </select>
+      {% else %}
+        <p>No conversations yet.</p>
+      {% endif %}
+    </div>
+    <div id="message-thread">
+      {% if with_user %}
+        <h3>Conversation with {{ with_user }}</h3>
+        <div id="message-list">
+          {% for m in messages %}
+            <div class="message"><strong>{{ m.sender }}</strong> [{{ m.timestamp }}]: {{ m.message }}</div>
+          {% endfor %}
+        </div>
+        <input type="hidden" id="with-user" value="{{ with_user }}" />
+        <input type="text" id="message-input" placeholder="Type a message" />
+        <button id="send-message-button">Send</button>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="module" src="{{ url_for('static', path=asset_path('messages.jsx')) }}"></script>
+{% endblock %}

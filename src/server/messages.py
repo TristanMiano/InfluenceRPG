@@ -1,8 +1,11 @@
 from fastapi import APIRouter, Request, HTTPException, status
+from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel
 from typing import List, Dict, Optional
 import uuid
 from datetime import datetime
+
+from src.server.main import templates
 
 router = APIRouter()
 
@@ -27,6 +30,40 @@ class SendMessageRequest(BaseModel):
 class MarkReadRequest(BaseModel):
     user: Optional[str] = None
 
+
+def messages_page(request: Request, user: str | None = None):
+    """Render the messages page and optional conversation."""
+    username = request.session.get("username")
+    if not username:
+        return RedirectResponse(url="/", status_code=302)
+
+    participants = set()
+    for m in _messages:
+        if m["sender"] == username:
+            participants.add(m["recipient"])
+        elif m["recipient"] == username:
+            participants.add(m["sender"])
+
+    conv = []
+    if user:
+        conv = [
+            m
+            for m in _messages
+            if (m["sender"] == username and m["recipient"] == user)
+            or (m["sender"] == user and m["recipient"] == username)
+        ]
+        conv.sort(key=lambda x: x["timestamp"])
+
+    return templates.TemplateResponse(
+        "messages.html",
+        {
+            "request": request,
+            "participants": sorted(participants),
+            "with_user": user,
+            "messages": conv,
+        },
+    )
+
 @router.get("/messages", response_model=MessageList)
 def list_messages(request: Request, user: str):
     """List messages in the conversation with the given user."""
@@ -36,6 +73,7 @@ def list_messages(request: Request, user: str):
     conv = [m for m in _messages
             if (m["sender"] == username and m["recipient"] == user) or
                (m["sender"] == user and m["recipient"] == username)]
+    conv.sort(key=lambda x: x["timestamp"])
     return {"messages": [Message(**m) for m in conv]}
 
 @router.get("/messages/unread_count")
