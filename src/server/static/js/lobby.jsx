@@ -288,46 +288,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Messages icon
   const msgBtn = document.getElementById('message-button');
-  const msgPanel = document.getElementById('message-panel');
-  const recipientInput = document.getElementById('message-recipient');
-  const msgInput = document.getElementById('message-input');
-  const sendBtn = document.getElementById('send-message-button');
-  if (msgBtn && msgPanel) {
-    msgBtn.addEventListener('click', async e => {
-      e.stopPropagation();
-      msgPanel.classList.toggle('show');
-      const user = recipientInput.value.trim();
-      if (msgPanel.classList.contains('show') && user) {
-        await markMessagesRead(user);
-        await loadMessages(user);
-        loadMessageCount();
-      }
-    });
-    document.addEventListener('click', () => msgPanel.classList.remove('show'));
-    msgPanel.addEventListener('click', e => e.stopPropagation());
-  }
-
-  if (recipientInput) {
-    recipientInput.addEventListener('change', async () => {
-      const user = recipientInput.value.trim();
-      if (user) {
-        await markMessagesRead(user);
-        await loadMessages(user);
-        loadMessageCount();
-      } else {
-        document.getElementById('message-list').innerHTML = '';
-      }
-    });
-  }
-
-  if (sendBtn && recipientInput && msgInput) {
-    sendBtn.addEventListener('click', async () => {
-      const user = recipientInput.value.trim();
-      const text = msgInput.value.trim();
-      if (!user || !text) return;
-      await sendMessage(user, text);
-      msgInput.value = '';
-      await loadMessages(user);
+  if (msgBtn) {
+    msgBtn.addEventListener('click', () => {
+      window.location.href = '/messages';
     });
   }
 

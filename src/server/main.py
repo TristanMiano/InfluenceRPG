@@ -79,7 +79,7 @@ templates.env.globals["asset_path"] = lambda name: (
 from src.server.profile import router as profile_router
 from src.server.account import router as account_router
 from src.server.notifications import router as notifications_router
-from src.server.messages import router as messages_router
+from src.server.messages import router as messages_router, messages_page
 
 # Include routers
 app.include_router(game_chat_router)
@@ -200,6 +200,11 @@ def read_lobby(request: Request, game_id: Optional[str] = Query(None)):
     return templates.TemplateResponse(
         "lobby.html", {"request": request}
     )
+
+
+@app.get("/messages", response_class=HTMLResponse)
+def read_messages_page(request: Request, user: Optional[str] = Query(None)):
+    return messages_page(request, user)
 
 
 @app.get("/chat", response_class=HTMLResponse)
