@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const messageList = document.getElementById('message-list');
   const msgInput = document.getElementById('message-input');
   const sendBtn = document.getElementById('send-message-button');
+  const newRecipient = document.getElementById('new-recipient');
+  const newMessage = document.getElementById('new-message');
+  const startBtn = document.getElementById('start-convo-button');
+  const newError = document.getElementById('new-convo-error');
   const withUser = withUserInput ? withUserInput.value : '';
 
   async function loadMessages(user) {
@@ -56,6 +60,31 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMessages(withUser);
       } catch (err) {
         console.error('Error sending message:', err);
+      }
+    });
+  }
+
+  if (startBtn) {
+    startBtn.addEventListener('click', async () => {
+      const recipient = newRecipient.value.trim();
+      const text = newMessage.value.trim();
+      if (!recipient || !text) return;
+      newError.textContent = '';
+      try {
+        const resp = await fetch('/api/messages/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ recipient, message: text })
+        });
+        if (resp.ok) {
+          window.location.href = `/messages?user=${encodeURIComponent(recipient)}`;
+        } else {
+          const data = await resp.json().catch(() => null);
+          newError.textContent = (data && data.detail) || 'Error sending message';
+        }
+      } catch (err) {
+        console.error('Error sending message:', err);
+        newError.textContent = 'Error sending message';
       }
     });
   }

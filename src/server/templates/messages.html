@@ -22,6 +22,13 @@
         <p>No conversations yet.</p>
       {% endif %}
     </div>
+    <div id="new-conversation">
+      <h3>Start New Conversation</h3>
+      <input type="text" id="new-recipient" placeholder="Username" />
+      <input type="text" id="new-message" placeholder="Your message" />
+      <button id="start-convo-button">Send</button>
+      <div id="new-convo-error" class="error"></div>
+    </div>
     <div id="message-thread">
       {% if with_user %}
         <h3>Conversation with {{ with_user }}</h3>
