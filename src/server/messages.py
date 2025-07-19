@@ -6,6 +6,7 @@ import uuid
 from datetime import datetime
 
 from src.server.main import templates
+from src.db import user_db
 
 router = APIRouter()
 
@@ -89,6 +90,8 @@ def send_message(data: SendMessageRequest, request: Request):
     username = request.session.get("username")
     if not username:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+    if not user_db.user_exists(data.recipient):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipient does not exist")
     _messages.append({
         "id": str(uuid.uuid4()),
         "sender": username,

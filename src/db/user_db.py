@@ -42,6 +42,17 @@ def verify_user_password(username: str, password: str) -> bool:
         conn.close()
 
 
+def user_exists(username: str) -> bool:
+    """Return True if a user with the given username exists."""
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1 FROM users WHERE username = %s", (username,))
+            return cur.fetchone() is not None
+    finally:
+        conn.close()
+
+
 def update_password(username: str, new_password: str) -> None:
     """Update the user's password hash."""
     conn = get_db_connection()
