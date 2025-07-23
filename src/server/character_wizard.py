@@ -7,6 +7,32 @@ import re
 from src.db.ruleset_db import get_ruleset
 from src.llm.llm_client import generate_completion
 from src.utils.prompt_loader import load_prompt_template
+from src.game.tools import roll_dice
+
+def _extract_tools(text: str) -> (str, Dict[str, Any]):
+    """Return plain text and any requested tool calls."""
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        lines = cleaned.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+
+    m = re.search(r'(\{[\s\S]*\})', cleaned)
+    json_str = m.group(1).strip() if m else cleaned
+    try:
+        data = json.loads(json_str)
+        if isinstance(data, dict) and "tool_calls" in data:
+            tools = data.get("tool_calls") or {}
+            if not isinstance(tools, dict):
+                tools = {}
+            text_out = data.get("narrative", "")
+            return text_out, tools
+    except Exception:
+        pass
+    return cleaned, {}
 
 router = APIRouter(prefix="/api/character", tags=["character"])
 
@@ -51,47 +77,52 @@ def character_wizard(req: WizardRequest):
     else:
         next_step_prompt = "Based on the above, ask the next question. If there are no further questions, output only the final JSON object."
 
-    full_prompt = system_prompt + history_prompt + next_step_prompt
-    
-    print("Prompt:")
-    print(full_prompt)
+    extra_context = ""
+    while True:
+        full_prompt = system_prompt + history_prompt + extra_context + next_step_prompt
 
-    # 5) Call the LLM
-    response_text = generate_completion(full_prompt).strip()
-    
-    cleaned = response_text.strip()
-    if cleaned.startswith("```"):
-        lines = cleaned.splitlines()
-        # remove first fence line
-        if lines and lines[0].startswith("```"):
-            lines = lines[1:]
-        # remove last fence line
-        if lines and lines[-1].startswith("```"):
-            lines = lines[:-1]
-        cleaned = "\n".join(lines)
-        
-    m = re.search(r'(\{[\s\S]*\})', cleaned)
-    if m:
-        # Found JSON → discard everything else
-        cleaned = m.group(1).strip()
-    else:
-        # 2) Otherwise, strip off any “A:” and what follows
-        if cleaned.startswith("Q:") and "A:" in cleaned:
-            cleaned = cleaned.split("A:")[0].strip()
-    
-    print("Response:")
-    print(cleaned)
+        print("Prompt:")
+        print(full_prompt)
 
-    # 6) If the LLM returned JSON, treat as completion
-    try:
-        data = json.loads(cleaned)
-        name = data.pop("name", None)
-        return WizardResponse(
-            question=None,
-            complete=True,
-            name=name,
-            character_data=data
-        )
-    except json.JSONDecodeError:
-        # Otherwise, it's a question to ask the user
-        return WizardResponse(question=cleaned, complete=False)
+        response_text = generate_completion(full_prompt).strip()
+        text, tools = _extract_tools(response_text)
+
+        if tools.get("dice"):
+            spec = tools["dice"] or {}
+            num = int(spec.get("num_rolls", 1))
+            sides = int(spec.get("sides", 20))
+            results = roll_dice(num, sides)
+            extra_context += f"Dice results for {num}d{sides}: {results}\n\n"
+            continue
+
+        cleaned = text.strip()
+        if cleaned.startswith("```"):
+            lines = cleaned.splitlines()
+            if lines and lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].startswith("```"):
+                lines = lines[:-1]
+            cleaned = "\n".join(lines)
+
+        m = re.search(r'(\{[\s\S]*\})', cleaned)
+        if m:
+            cleaned = m.group(1).strip()
+        else:
+            if cleaned.startswith("Q:") and "A:" in cleaned:
+                cleaned = cleaned.split("A:")[0].strip()
+
+        print("Response:")
+        print(cleaned)
+
+        try:
+            data = json.loads(cleaned)
+            name = data.pop("name", None)
+            char_data = data.get("character_data", data)
+            return WizardResponse(
+                question=None,
+                complete=True,
+                name=name,
+                character_data=char_data
+            )
+        except json.JSONDecodeError:
+            return WizardResponse(question=cleaned, complete=False)
